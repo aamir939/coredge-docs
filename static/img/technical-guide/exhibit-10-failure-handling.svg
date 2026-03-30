@@ -1,0 +1,104 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="headerFH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="controlFH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="nodeFH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="networkFH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="storageFH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="550" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1A1A2E">HIGH AVAILABILITY &amp; FAILURE HANDLING</text>
+  <text x="450" y="52" text-anchor="middle" font-size="11" fill="#6B7280">Deep Dive — Systematic Redundancy and Isolation</text>
+
+  <!-- Main Container -->
+  <rect x="30" y="70" width="840" height="440" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Row 1: Control Plane Failures -->
+  <rect x="50" y="90" width="200" height="45" rx="8" fill="url(#headerFH)"/>
+  <text x="150" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Control Plane Failures</text>
+
+  <rect x="270" y="90" width="580" height="95" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+  <rect x="285" y="105" width="170" height="65" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="370" y="125" text-anchor="middle" font-size="10" font-weight="600" fill="#1E40AF">Stateless Services</text>
+  <text x="370" y="142" text-anchor="middle" font-size="9" fill="#3B82F6">Auto-restart on</text>
+  <text x="370" y="155" text-anchor="middle" font-size="9" fill="#3B82F6">health check failure</text>
+
+  <rect x="470" y="105" width="170" height="65" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="555" y="125" text-anchor="middle" font-size="10" font-weight="600" fill="#1E40AF">Stateful Services</text>
+  <text x="555" y="142" text-anchor="middle" font-size="9" fill="#3B82F6">etcd, DB replicated</text>
+  <text x="555" y="155" text-anchor="middle" font-size="9" fill="#3B82F6">≥3 quorum members</text>
+
+  <rect x="655" y="105" width="180" height="65" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="745" y="125" text-anchor="middle" font-size="10" font-weight="600" fill="#1E40AF">API Access</text>
+  <text x="745" y="142" text-anchor="middle" font-size="9" fill="#3B82F6">Load balancer →</text>
+  <text x="745" y="155" text-anchor="middle" font-size="9" fill="#3B82F6">automatic node failover</text>
+
+  <!-- Row 2: Node Failures -->
+  <rect x="50" y="200" width="200" height="45" rx="8" fill="url(#nodeFH)"/>
+  <text x="150" y="228" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Node Failures</text>
+
+  <rect x="270" y="200" width="580" height="95" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+  <rect x="285" y="215" width="270" height="65" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+  <text x="420" y="235" text-anchor="middle" font-size="10" font-weight="600" fill="#065F46">Kubernetes</text>
+  <text x="420" y="252" text-anchor="middle" font-size="9" fill="#059669">Pods rescheduled to healthy nodes</text>
+  <text x="420" y="265" text-anchor="middle" font-size="9" fill="#059669">within seconds</text>
+
+  <rect x="565" y="215" width="270" height="65" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+  <text x="700" y="235" text-anchor="middle" font-size="10" font-weight="600" fill="#065F46">Slurm</text>
+  <text x="700" y="252" text-anchor="middle" font-size="9" fill="#059669">Jobs re-queued with optional</text>
+  <text x="700" y="265" text-anchor="middle" font-size="9" fill="#059669">checkpoint/restart support</text>
+
+  <!-- Row 3: Network Failures -->
+  <rect x="50" y="310" width="200" height="45" rx="8" fill="url(#networkFH)"/>
+  <text x="150" y="338" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Network Failures</text>
+
+  <rect x="270" y="310" width="580" height="95" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+  <rect x="285" y="325" width="270" height="65" rx="6" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="420" y="345" text-anchor="middle" font-size="10" font-weight="600" fill="#6D28D9">Ethernet</text>
+  <text x="420" y="362" text-anchor="middle" font-size="9" fill="#8B5CF6">ECMP multi-path redundancy</text>
+  <text x="420" y="375" text-anchor="middle" font-size="9" fill="#8B5CF6">ToR failure → reroutes via spine</text>
+
+  <rect x="565" y="325" width="270" height="65" rx="6" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="700" y="345" text-anchor="middle" font-size="10" font-weight="600" fill="#6D28D9">InfiniBand</text>
+  <text x="700" y="362" text-anchor="middle" font-size="9" fill="#8B5CF6">Hardware multipath routing</text>
+  <text x="700" y="375" text-anchor="middle" font-size="9" fill="#8B5CF6">Adaptive routing at fabric layer</text>
+
+  <!-- Row 4: Storage Failures -->
+  <rect x="50" y="420" width="200" height="45" rx="8" fill="url(#storageFH)"/>
+  <text x="150" y="448" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Storage Failures</text>
+
+  <rect x="270" y="420" width="580" height="75" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+  <rect x="285" y="435" width="270" height="50" rx="6" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
+  <text x="420" y="455" text-anchor="middle" font-size="10" font-weight="600" fill="#92400E">Parallel FS Metadata</text>
+  <text x="420" y="472" text-anchor="middle" font-size="9" fill="#D97706">Replicated 3x for durability</text>
+
+  <rect x="565" y="435" width="270" height="50" rx="6" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
+  <text x="700" y="455" text-anchor="middle" font-size="10" font-weight="600" fill="#92400E">Data</text>
+  <text x="700" y="472" text-anchor="middle" font-size="9" fill="#D97706">Striping + replication (or erasure codes)</text>
+
+  <!-- Footer -->
+  <text x="450" y="530" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 10: HA failure handling deep dive — systematic redundancy across all layers.</text>
+</svg>

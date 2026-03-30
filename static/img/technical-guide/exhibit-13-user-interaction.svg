@@ -1,0 +1,137 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="userHeader" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="devGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1A1A2E">USER INTERACTION MODEL</text>
+  <text x="450" y="52" text-anchor="middle" font-size="11" fill="#6B7280">Declarative, API-First Workflow</text>
+
+  <!-- Main Container -->
+  <rect x="40" y="70" width="820" height="410" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- API-Driven Workflow Section -->
+  <text x="450" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="#1A1A2E">API-Driven Workflow</text>
+
+  <!-- Step 1: Submit -->
+  <rect x="60" y="120" width="105" height="70" rx="8" fill="url(#stepGrad)"/>
+  <text x="112" y="148" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">1. Submit</text>
+  <text x="112" y="165" text-anchor="middle" font-size="8" fill="#BFDBFE">Cluster/workload</text>
+  <text x="112" y="178" text-anchor="middle" font-size="8" fill="#BFDBFE">via API/CLI</text>
+
+  <!-- Arrow -->
+  <path d="M170 155 L185 155" stroke="#6B7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2: Authenticate -->
+  <rect x="190" y="120" width="105" height="70" rx="8" fill="url(#stepGrad)"/>
+  <text x="242" y="148" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">2. Auth</text>
+  <text x="242" y="165" text-anchor="middle" font-size="8" fill="#BFDBFE">OAuth2/OIDC</text>
+  <text x="242" y="178" text-anchor="middle" font-size="8" fill="#BFDBFE">tenant scoping</text>
+
+  <!-- Arrow -->
+  <path d="M300 155 L315 155" stroke="#6B7280" stroke-width="2" fill="none"/>
+
+  <!-- Step 3: Authorize -->
+  <rect x="320" y="120" width="105" height="70" rx="8" fill="url(#stepGrad)"/>
+  <text x="372" y="148" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">3. Authorize</text>
+  <text x="372" y="165" text-anchor="middle" font-size="8" fill="#BFDBFE">RBAC/ABAC</text>
+  <text x="372" y="178" text-anchor="middle" font-size="8" fill="#BFDBFE">policy eval</text>
+
+  <!-- Arrow -->
+  <path d="M430 155 L445 155" stroke="#6B7280" stroke-width="2" fill="none"/>
+
+  <!-- Step 4: Provision -->
+  <rect x="450" y="120" width="105" height="70" rx="8" fill="url(#stepGrad)"/>
+  <text x="502" y="148" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">4. Provision</text>
+  <text x="502" y="165" text-anchor="middle" font-size="8" fill="#BFDBFE">Workflow engine</text>
+  <text x="502" y="178" text-anchor="middle" font-size="8" fill="#BFDBFE">orchestrates</text>
+
+  <!-- Arrow -->
+  <path d="M560 155 L575 155" stroke="#6B7280" stroke-width="2" fill="none"/>
+
+  <!-- Step 5: Execute -->
+  <rect x="580" y="120" width="105" height="70" rx="8" fill="url(#stepGrad)"/>
+  <text x="632" y="148" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">5. Execute</text>
+  <text x="632" y="165" text-anchor="middle" font-size="8" fill="#BFDBFE">Workload runs</text>
+  <text x="632" y="178" text-anchor="middle" font-size="8" fill="#BFDBFE">on GPU nodes</text>
+
+  <!-- Arrow -->
+  <path d="M690 155 L705 155" stroke="#6B7280" stroke-width="2" fill="none"/>
+
+  <!-- Step 6: Monitor -->
+  <rect x="710" y="120" width="65" height="70" rx="8" fill="url(#stepGrad)"/>
+  <text x="742" y="152" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">6. Mon</text>
+  <text x="742" y="168" text-anchor="middle" font-size="7" fill="#BFDBFE">Metrics</text>
+
+  <!-- Arrow -->
+  <path d="M780 155 L795 155" stroke="#6B7280" stroke-width="2" fill="none"/>
+
+  <!-- Step 7: Bill -->
+  <rect x="800" y="120" width="50" height="70" rx="8" fill="url(#stepGrad)"/>
+  <text x="825" y="152" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">7. Bill</text>
+  <text x="825" y="168" text-anchor="middle" font-size="7" fill="#BFDBFE">Usage</text>
+
+  <!-- Developer Experience Section -->
+  <text x="450" y="230" text-anchor="middle" font-size="14" font-weight="700" fill="#1A1A2E">Developer Experience</text>
+
+  <!-- Tool Cards -->
+  <rect x="60" y="250" width="185" height="100" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="60" y="250" width="185" height="35" rx="10" fill="url(#devGrad)"/>
+  <text x="152" y="273" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Declarative Specs</text>
+  <text x="152" y="305" text-anchor="middle" font-size="10" fill="#065F46">YAML/JSON cluster and</text>
+  <text x="152" y="320" text-anchor="middle" font-size="10" fill="#065F46">workload specifications</text>
+  <text x="152" y="340" text-anchor="middle" font-size="9" fill="#059669">Infrastructure as Code</text>
+
+  <rect x="265" y="250" width="185" height="100" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="265" y="250" width="185" height="35" rx="10" fill="url(#devGrad)"/>
+  <text x="357" y="273" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">CLI Tool</text>
+  <text x="357" y="305" text-anchor="middle" font-size="10" fill="#065F46">Rapid cluster lifecycle</text>
+  <text x="357" y="320" text-anchor="middle" font-size="10" fill="#065F46">management</text>
+  <text x="357" y="340" text-anchor="middle" font-size="9" fill="#059669">Command-line interface</text>
+
+  <rect x="470" y="250" width="185" height="100" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="470" y="250" width="185" height="35" rx="10" fill="url(#devGrad)"/>
+  <text x="562" y="273" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Python SDK</text>
+  <text x="562" y="305" text-anchor="middle" font-size="10" fill="#065F46">Programmatic</text>
+  <text x="562" y="320" text-anchor="middle" font-size="10" fill="#065F46">interaction</text>
+  <text x="562" y="340" text-anchor="middle" font-size="9" fill="#059669">Native Python library</text>
+
+  <rect x="675" y="250" width="175" height="100" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="675" y="250" width="175" height="35" rx="10" fill="url(#devGrad)"/>
+  <text x="762" y="273" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Web Portal</text>
+  <text x="762" y="305" text-anchor="middle" font-size="10" fill="#065F46">Visual monitoring</text>
+  <text x="762" y="320" text-anchor="middle" font-size="10" fill="#065F46">and management</text>
+  <text x="762" y="340" text-anchor="middle" font-size="9" fill="#059669">Dashboard UI</text>
+
+  <!-- Key Benefits -->
+  <text x="450" y="390" text-anchor="middle" font-size="14" font-weight="700" fill="#1A1A2E">Key Benefits</text>
+
+  <rect x="100" y="410" width="200" height="50" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="200" y="430" text-anchor="middle" font-size="10" font-weight="600" fill="#4B5563">Self-Service</text>
+  <text x="200" y="448" text-anchor="middle" font-size="9" fill="#6B7280">No tickets, instant provisioning</text>
+
+  <rect x="350" y="410" width="200" height="50" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="450" y="430" text-anchor="middle" font-size="10" font-weight="600" fill="#4B5563">Automation-First</text>
+  <text x="450" y="448" text-anchor="middle" font-size="9" fill="#6B7280">CI/CD integration ready</text>
+
+  <rect x="600" y="410" width="200" height="50" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="700" y="430" text-anchor="middle" font-size="10" font-weight="600" fill="#4B5563">Unified Experience</text>
+  <text x="700" y="448" text-anchor="middle" font-size="9" fill="#6B7280">Same APIs for K8s and Slurm</text>
+
+  <!-- Footer -->
+  <text x="450" y="500" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 13: User interaction model — declarative, API-first workflow for enterprise and developers.</text>
+</svg>

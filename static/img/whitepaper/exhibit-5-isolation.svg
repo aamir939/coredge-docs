@@ -1,0 +1,140 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="tenantAGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="tenantBGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1A1A2E">Multi-Layer Tenant Isolation</text>
+  <text x="450" y="52" text-anchor="middle" font-size="12" fill="#6B7280">Each Layer Independently Enforced</text>
+
+  <!-- Column Headers -->
+  <!-- Layer Column -->
+  <rect x="40" y="70" width="180" height="45" rx="8" fill="url(#headerGrad)"/>
+  <text x="130" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Layer</text>
+
+  <!-- Tenant A Column -->
+  <rect x="240" y="70" width="280" height="45" rx="8" fill="url(#tenantAGrad)"/>
+  <text x="380" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Tenant A</text>
+
+  <!-- Tenant B Column -->
+  <rect x="580" y="70" width="280" height="45" rx="8" fill="url(#tenantBGrad)"/>
+  <text x="720" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Tenant B</text>
+
+  <!-- Isolation Boundary - Simple vertical line -->
+  <line x1="540" y1="70" x2="540" y2="470" stroke="#EF4444" stroke-width="4" stroke-dasharray="10,5"/>
+
+  <!-- Row 1: Identity -->
+  <rect x="40" y="130" width="180" height="55" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <g transform="translate(60, 145)" stroke="#0F4C75" stroke-width="1.5" fill="none">
+    <circle cx="10" cy="10" r="6"/>
+    <line x1="14" y1="14" x2="24" y2="24"/>
+    <line x1="20" y1="20" x2="24" y2="16"/>
+  </g>
+  <text x="130" y="165" text-anchor="middle" font-size="13" font-weight="600" fill="#0F4C75">Identity</text>
+
+  <rect x="240" y="130" width="280" height="55" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="380" y="155" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF">Dedicated IAM Realm</text>
+  <text x="380" y="172" text-anchor="middle" font-size="9" fill="#3B82F6">OAuth2/OIDC + MFA + SSO</text>
+
+  <rect x="580" y="130" width="280" height="55" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="720" y="155" text-anchor="middle" font-size="11" font-weight="600" fill="#6D28D9">Dedicated IAM Realm</text>
+  <text x="720" y="172" text-anchor="middle" font-size="9" fill="#8B5CF6">OAuth2/OIDC + MFA + SSO</text>
+
+  <!-- Row 2: Network (Eth) -->
+  <rect x="40" y="200" width="180" height="55" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <g transform="translate(60, 215)" stroke="#0F4C75" stroke-width="1.5" fill="none">
+    <circle cx="12" cy="5" r="4"/>
+    <circle cx="5" cy="22" r="4"/>
+    <circle cx="19" cy="22" r="4"/>
+    <line x1="12" y1="9" x2="7" y2="18"/>
+    <line x1="12" y1="9" x2="17" y2="18"/>
+  </g>
+  <text x="130" y="235" text-anchor="middle" font-size="13" font-weight="600" fill="#0F4C75">Network (Eth)</text>
+
+  <rect x="240" y="200" width="280" height="55" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="380" y="225" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF">VRF + VLAN</text>
+  <text x="380" y="242" text-anchor="middle" font-size="9" fill="#3B82F6">VXLAN/EVPN Isolated</text>
+
+  <rect x="580" y="200" width="280" height="55" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="720" y="225" text-anchor="middle" font-size="11" font-weight="600" fill="#6D28D9">VRF + VLAN</text>
+  <text x="720" y="242" text-anchor="middle" font-size="9" fill="#8B5CF6">VXLAN/EVPN Isolated</text>
+
+  <!-- Row 3: Network (IB) -->
+  <rect x="40" y="270" width="180" height="55" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <g transform="translate(60, 285)" stroke="#0F4C75" stroke-width="1.5" fill="none">
+    <rect x="2" y="2" width="20" height="20" rx="2"/>
+    <line x1="2" y1="2" x2="22" y2="22"/>
+    <line x1="22" y1="2" x2="2" y2="22"/>
+    <circle cx="12" cy="12" r="4"/>
+  </g>
+  <text x="130" y="305" text-anchor="middle" font-size="13" font-weight="600" fill="#0F4C75">Network (IB)</text>
+
+  <rect x="240" y="270" width="280" height="55" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="380" y="295" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF">Partition Key</text>
+  <text x="380" y="312" text-anchor="middle" font-size="9" fill="#3B82F6">Hardware Enforced</text>
+
+  <rect x="580" y="270" width="280" height="55" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="720" y="295" text-anchor="middle" font-size="11" font-weight="600" fill="#6D28D9">Partition Key</text>
+  <text x="720" y="312" text-anchor="middle" font-size="9" fill="#8B5CF6">Hardware Enforced</text>
+
+  <!-- Row 4: Storage -->
+  <rect x="40" y="340" width="180" height="55" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <g transform="translate(60, 352)" stroke="#0F4C75" stroke-width="1.5" fill="none">
+    <ellipse cx="12" cy="6" rx="10" ry="4"/>
+    <path d="M2 6v16c0 2.2 4.5 4 10 4s10-1.8 10-4V6"/>
+    <path d="M2 14c0 2.2 4.5 4 10 4s10-1.8 10-4"/>
+  </g>
+  <text x="130" y="375" text-anchor="middle" font-size="13" font-weight="600" fill="#0F4C75">Storage</text>
+
+  <rect x="240" y="340" width="280" height="55" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="380" y="365" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF">Access Control Map</text>
+  <text x="380" y="382" text-anchor="middle" font-size="9" fill="#3B82F6">Dual-Layer Isolation</text>
+
+  <rect x="580" y="340" width="280" height="55" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="720" y="365" text-anchor="middle" font-size="11" font-weight="600" fill="#6D28D9">Access Control Map</text>
+  <text x="720" y="382" text-anchor="middle" font-size="9" fill="#8B5CF6">Dual-Layer Isolation</text>
+
+  <!-- Row 5: Compute -->
+  <rect x="40" y="410" width="180" height="55" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <g transform="translate(60, 425)" stroke="#0F4C75" stroke-width="1.5" fill="none">
+    <rect x="2" y="2" width="20" height="20" rx="2"/>
+    <rect x="6" y="6" width="4" height="4" fill="#0F4C75"/>
+    <rect x="14" y="6" width="4" height="4" fill="#0F4C75"/>
+    <rect x="6" y="14" width="4" height="4" fill="#0F4C75"/>
+    <rect x="14" y="14" width="4" height="4" fill="#0F4C75"/>
+  </g>
+  <text x="130" y="445" text-anchor="middle" font-size="13" font-weight="600" fill="#0F4C75">Compute</text>
+
+  <rect x="240" y="410" width="135" height="55" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="307" y="435" text-anchor="middle" font-size="10" font-weight="600" fill="#1E40AF">K8s NS</text>
+  <text x="307" y="452" text-anchor="middle" font-size="8" fill="#3B82F6">cgroups v2</text>
+
+  <rect x="385" y="410" width="135" height="55" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="452" y="435" text-anchor="middle" font-size="10" font-weight="600" fill="#1E40AF">Slurm</text>
+  <text x="452" y="452" text-anchor="middle" font-size="8" fill="#3B82F6">Partitions</text>
+
+  <rect x="580" y="410" width="135" height="55" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="647" y="435" text-anchor="middle" font-size="10" font-weight="600" fill="#6D28D9">K8s NS</text>
+  <text x="647" y="452" text-anchor="middle" font-size="8" fill="#8B5CF6">cgroups v2</text>
+
+  <rect x="725" y="410" width="135" height="55" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="792" y="435" text-anchor="middle" font-size="10" font-weight="600" fill="#6D28D9">Slurm</text>
+  <text x="792" y="452" text-anchor="middle" font-size="8" fill="#8B5CF6">Partitions</text>
+
+  <!-- Footer -->
+  <text x="450" y="500" text-anchor="middle" font-size="9" fill="#9CA3AF">Exhibit 5: Multi-layer tenant isolation — each layer independently enforced</text>
+</svg>

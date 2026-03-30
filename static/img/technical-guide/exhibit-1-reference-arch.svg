@@ -1,0 +1,140 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="accessGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="controlGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="securityGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="520" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1A1A2E">DFLARE AI — REFERENCE ARCHITECTURE</text>
+
+  <!-- Access Layer -->
+  <rect x="40" y="60" width="720" height="55" rx="8" fill="url(#accessGrad)"/>
+  <text x="80" y="92" font-size="12" font-weight="700" fill="#FFFFFF">ACCESS LAYER</text>
+  <text x="450" y="92" text-anchor="middle" font-size="12" fill="#E2E8F0">Portal | REST API | CLI</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="115" x2="400" y2="135" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- Control Plane -->
+  <rect x="40" y="145" width="720" height="130" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="60" y="170" font-size="12" font-weight="700" fill="#0F4C75">CONTROL PLANE</text>
+
+  <!-- Control Plane Components -->
+  <rect x="60" y="185" width="120" height="70" rx="6" fill="url(#controlGrad)"/>
+  <g transform="translate(85, 200)" fill="#FFFFFF">
+    <circle cx="10" cy="8" r="6" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+    <path d="M6 14h8M10 18v-4" stroke="#FFFFFF" stroke-width="1.5"/>
+  </g>
+  <text x="120" y="240" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">IAM &amp;</text>
+  <text x="120" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">RBAC</text>
+
+  <rect x="195" y="185" width="120" height="70" rx="6" fill="url(#controlGrad)"/>
+  <g transform="translate(220, 200)" fill="#FFFFFF">
+    <rect x="2" y="2" width="8" height="8" rx="1" fill="#FFFFFF"/>
+    <rect x="14" y="2" width="8" height="8" rx="1" fill="#FFFFFF"/>
+    <rect x="2" y="14" width="8" height="8" rx="1" fill="#FFFFFF"/>
+    <rect x="14" y="14" width="8" height="8" rx="1" fill="#FFFFFF"/>
+  </g>
+  <text x="255" y="240" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Workflow</text>
+  <text x="255" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Orch.</text>
+
+  <rect x="330" y="185" width="120" height="70" rx="6" fill="url(#controlGrad)"/>
+  <g transform="translate(365, 200)" fill="#FFFFFF">
+    <circle cx="8" cy="8" r="3" fill="#FFFFFF"/>
+    <circle cx="20" cy="8" r="3" fill="#FFFFFF"/>
+    <circle cx="8" cy="20" r="3" fill="#FFFFFF"/>
+    <circle cx="20" cy="20" r="3" fill="#FFFFFF"/>
+  </g>
+  <text x="390" y="240" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Cluster</text>
+  <text x="390" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Mgr</text>
+
+  <rect x="465" y="185" width="120" height="70" rx="6" fill="url(#controlGrad)"/>
+  <g transform="translate(500, 200)" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+    <circle cx="14" cy="14" r="10"/>
+    <line x1="4" y1="14" x2="24" y2="14"/>
+    <line x1="14" y1="4" x2="14" y2="24"/>
+  </g>
+  <text x="525" y="240" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Network</text>
+  <text x="525" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Ctlr</text>
+
+  <rect x="600" y="185" width="120" height="70" rx="6" fill="url(#controlGrad)"/>
+  <g transform="translate(635, 200)" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+    <rect x="2" y="2" width="24" height="20" rx="2"/>
+    <line x1="2" y1="10" x2="26" y2="10"/>
+    <line x1="10" y1="10" x2="10" y2="22"/>
+    <line x1="18" y1="10" x2="18" y2="22"/>
+  </g>
+  <text x="660" y="240" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Billing &amp;</text>
+  <text x="660" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Usage</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="275" x2="400" y2="295" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- Data Plane -->
+  <rect x="40" y="305" width="430" height="130" rx="8" fill="#F0FDF4" stroke="#10B981" stroke-width="1"/>
+  <text x="60" y="330" font-size="12" font-weight="700" fill="#065F46">DATA PLANE</text>
+
+  <!-- Data Plane Components -->
+  <rect x="60" y="345" width="120" height="70" rx="6" fill="url(#dataGrad)"/>
+  <g transform="translate(85, 358)" fill="#FFFFFF">
+    <rect x="2" y="2" width="24" height="18" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+    <rect x="6" y="6" width="6" height="6" fill="#FFFFFF"/>
+    <rect x="16" y="6" width="6" height="6" fill="#FFFFFF"/>
+  </g>
+  <text x="120" y="400" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">GPU</text>
+  <text x="120" y="412" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Cluster</text>
+
+  <rect x="195" y="345" width="120" height="70" rx="6" fill="url(#dataGrad)"/>
+  <g transform="translate(230, 358)" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+    <ellipse cx="14" cy="6" rx="12" ry="4"/>
+    <path d="M2 6v14c0 2.2 5.4 4 12 4s12-1.8 12-4V6"/>
+    <path d="M2 14c0 2.2 5.4 4 12 4s12-1.8 12-4"/>
+  </g>
+  <text x="255" y="400" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Storage</text>
+
+  <rect x="330" y="345" width="120" height="70" rx="6" fill="url(#dataGrad)"/>
+  <g transform="translate(365, 358)" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+    <circle cx="14" cy="6" r="4"/>
+    <circle cx="6" cy="20" r="4"/>
+    <circle cx="22" cy="20" r="4"/>
+    <line x1="14" y1="10" x2="8" y2="16"/>
+    <line x1="14" y1="10" x2="20" y2="16"/>
+  </g>
+  <text x="390" y="400" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">Network</text>
+
+  <!-- Security & Monitoring -->
+  <rect x="490" y="305" width="270" height="130" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
+  <text x="510" y="330" font-size="12" font-weight="700" fill="#92400E">SECURITY &amp;</text>
+  <text x="510" y="344" font-size="12" font-weight="700" fill="#92400E">MONITORING</text>
+
+  <rect x="510" y="355" width="110" height="60" rx="6" fill="url(#securityGrad)"/>
+  <text x="565" y="385" text-anchor="middle" font-size="9" font-weight="600" fill="#FFFFFF">Identity &amp;</text>
+  <text x="565" y="397" text-anchor="middle" font-size="9" font-weight="600" fill="#FFFFFF">Access</text>
+
+  <rect x="630" y="355" width="110" height="60" rx="6" fill="url(#securityGrad)"/>
+  <text x="685" y="385" text-anchor="middle" font-size="9" font-weight="600" fill="#FFFFFF">Telemetry &amp;</text>
+  <text x="685" y="397" text-anchor="middle" font-size="9" font-weight="600" fill="#FFFFFF">Metrics</text>
+
+  <!-- Footer -->
+  <text x="400" y="475" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 1: Dflare AI reference architecture — from users to infrastructure.</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="controlHA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="dataHA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="netHA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="350" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1A1A2E">HIGH AVAILABILITY &amp; FAILURE DOMAINS</text>
+
+  <!-- Main Container -->
+  <rect x="40" y="55" width="720" height="230" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Control Plane -->
+  <rect x="60" y="80" width="210" height="180" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="60" y="80" width="210" height="35" rx="10" fill="url(#controlHA)"/>
+  <text x="165" y="103" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Control Plane</text>
+
+  <circle cx="85" cy="140" r="4" fill="#10B981"/>
+  <text x="95" y="144" font-size="10" fill="#4B5563">Replicated services</text>
+
+  <circle cx="85" cy="170" r="4" fill="#10B981"/>
+  <text x="95" y="174" font-size="10" fill="#4B5563">HA databases</text>
+
+  <circle cx="85" cy="200" r="4" fill="#10B981"/>
+  <text x="95" y="204" font-size="10" fill="#4B5563">Leader election</text>
+
+  <!-- Data Plane -->
+  <rect x="295" y="80" width="210" height="180" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="295" y="80" width="210" height="35" rx="10" fill="url(#dataHA)"/>
+  <text x="400" y="103" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Data Plane</text>
+
+  <circle cx="320" cy="140" r="4" fill="#10B981"/>
+  <text x="330" y="144" font-size="10" fill="#4B5563">Node-level isolation</text>
+
+  <circle cx="320" cy="170" r="4" fill="#10B981"/>
+  <text x="330" y="174" font-size="10" fill="#4B5563">Job rescheduling</text>
+
+  <circle cx="320" cy="200" r="4" fill="#10B981"/>
+  <text x="330" y="204" font-size="10" fill="#4B5563">Health checks</text>
+
+  <!-- Network -->
+  <rect x="530" y="80" width="210" height="180" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="530" y="80" width="210" height="35" rx="10" fill="url(#netHA)"/>
+  <text x="635" y="103" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Network</text>
+
+  <circle cx="555" cy="140" r="4" fill="#10B981"/>
+  <text x="565" y="144" font-size="10" fill="#4B5563">Redundant fabric</text>
+
+  <circle cx="555" cy="170" r="4" fill="#10B981"/>
+  <text x="565" y="174" font-size="10" fill="#4B5563">Dual uplinks</text>
+
+  <circle cx="555" cy="200" r="4" fill="#10B981"/>
+  <text x="565" y="204" font-size="10" fill="#4B5563">Path failover</text>
+
+  <!-- Footer -->
+  <text x="400" y="320" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 8: High availability and failure domain isolation.</text>
+</svg>

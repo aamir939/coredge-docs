@@ -1,0 +1,99 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="stepGradP" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="doneGradP" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="380" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1A1A2E">AUTOMATED PROVISIONING LIFECYCLE</text>
+
+  <!-- Main Container -->
+  <rect x="40" y="55" width="720" height="260" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Steps -->
+  <g>
+    <!-- Step 01 -->
+    <circle cx="100" cy="110" r="25" fill="url(#stepGradP)"/>
+    <text x="100" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">01</text>
+    <rect x="60" y="145" width="80" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="100" y="165" text-anchor="middle" font-size="10" font-weight="600" fill="#0F4C75">Request</text>
+    <text x="100" y="182" text-anchor="middle" font-size="8" fill="#6B7280">Tenant submits via</text>
+    <text x="100" y="193" text-anchor="middle" font-size="8" fill="#6B7280">portal or API</text>
+
+    <!-- Arrow -->
+    <line x1="145" y1="110" x2="175" y2="110" stroke="#0F4C75" stroke-width="2"/>
+    <polygon points="175,105 185,110 175,115" fill="#0F4C75"/>
+
+    <!-- Step 02 -->
+    <circle cx="220" cy="110" r="25" fill="url(#stepGradP)"/>
+    <text x="220" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">02</text>
+    <rect x="180" y="145" width="80" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="220" y="165" text-anchor="middle" font-size="10" font-weight="600" fill="#0F4C75">Network</text>
+    <text x="220" y="182" text-anchor="middle" font-size="8" fill="#6B7280">VRFs + VLANs +</text>
+    <text x="220" y="193" text-anchor="middle" font-size="8" fill="#6B7280">IB partitions</text>
+
+    <!-- Arrow -->
+    <line x1="265" y1="110" x2="295" y2="110" stroke="#0F4C75" stroke-width="2"/>
+    <polygon points="295,105 305,110 295,115" fill="#0F4C75"/>
+
+    <!-- Step 03 -->
+    <circle cx="340" cy="110" r="25" fill="url(#stepGradP)"/>
+    <text x="340" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">03</text>
+    <rect x="300" y="145" width="80" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="340" y="165" text-anchor="middle" font-size="10" font-weight="600" fill="#0F4C75">Bootstrap</text>
+    <text x="340" y="182" text-anchor="middle" font-size="8" fill="#6B7280">IPMI power-on →</text>
+    <text x="340" y="193" text-anchor="middle" font-size="8" fill="#6B7280">PXE → Golden OS</text>
+
+    <!-- Arrow -->
+    <line x1="385" y1="110" x2="415" y2="110" stroke="#0F4C75" stroke-width="2"/>
+    <polygon points="415,105 425,110 415,115" fill="#0F4C75"/>
+
+    <!-- Step 04 -->
+    <circle cx="460" cy="110" r="25" fill="url(#stepGradP)"/>
+    <text x="460" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">04</text>
+    <rect x="420" y="145" width="80" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="460" y="165" text-anchor="middle" font-size="10" font-weight="600" fill="#0F4C75">Configure</text>
+    <text x="460" y="182" text-anchor="middle" font-size="8" fill="#6B7280">Cloud-init:</text>
+    <text x="460" y="193" text-anchor="middle" font-size="8" fill="#6B7280">hostname, net, GPU</text>
+
+    <!-- Arrow -->
+    <line x1="505" y1="110" x2="535" y2="110" stroke="#0F4C75" stroke-width="2"/>
+    <polygon points="535,105 545,110 535,115" fill="#0F4C75"/>
+
+    <!-- Step 05 -->
+    <circle cx="580" cy="110" r="25" fill="url(#stepGradP)"/>
+    <text x="580" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">05</text>
+    <rect x="540" y="145" width="80" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="580" y="165" text-anchor="middle" font-size="10" font-weight="600" fill="#0F4C75">Storage</text>
+    <text x="580" y="182" text-anchor="middle" font-size="8" fill="#6B7280">Parallel FS dir +</text>
+    <text x="580" y="193" text-anchor="middle" font-size="8" fill="#6B7280">ACLs + quotas</text>
+
+    <!-- Arrow -->
+    <line x1="625" y1="110" x2="655" y2="110" stroke="#0F4C75" stroke-width="2"/>
+    <polygon points="655,105 665,110 655,115" fill="#0F4C75"/>
+
+    <!-- Step 06 (Complete) -->
+    <circle cx="700" cy="110" r="25" fill="url(#doneGradP)"/>
+    <text x="700" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">06</text>
+    <rect x="660" y="145" width="80" height="55" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <text x="700" y="165" text-anchor="middle" font-size="10" font-weight="600" fill="#065F46">Register</text>
+    <text x="700" y="182" text-anchor="middle" font-size="8" fill="#065F46">Agent registers →</text>
+    <text x="700" y="193" text-anchor="middle" font-size="8" fill="#065F46">Node ready!</text>
+  </g>
+
+  <!-- Progress bar -->
+  <rect x="60" y="260" width="680" height="10" rx="5" fill="#E5E7EB"/>
+  <rect x="60" y="260" width="680" height="10" rx="5" fill="url(#doneGradP)"/>
+
+  <!-- Footer -->
+  <text x="400" y="345" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 4: Automated bare metal provisioning lifecycle.</text>
+</svg>

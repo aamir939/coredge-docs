@@ -1,0 +1,73 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="480" fill="#FAFBFC"/>
+
+  <!-- Outer container -->
+  <rect x="20" y="15" width="760" height="440" rx="12" fill="#FAF0FF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Header -->
+  <rect x="20" y="15" width="760" height="45" rx="12" fill="#8E44AD"/>
+  <rect x="20" y="45" width="760" height="15" fill="#8E44AD"/>
+  <text x="400" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">Backend Fabric (InfiniBand)</text>
+
+  <!-- IB Fabric Manager -->
+  <rect x="40" y="75" width="720" height="50" rx="8" fill="#4A235A" filter="url(#shadow)"/>
+  <text x="400" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">IB Fabric Manager — Partition Key Management</text>
+  <text x="400" y="117" text-anchor="middle" font-size="9" fill="#C39BD3">Routing, telemetry, per-tenant PKey isolation at switch hardware level</text>
+
+  <!-- PKey Pool Label -->
+  <text x="48" y="150" font-size="9" font-weight="700" fill="#9CA3AF" letter-spacing="1.2">PARTITION KEY (PKEY) ISOLATION</text>
+
+  <!-- Tenant 1 PKey -->
+  <rect x="40" y="165" width="230" height="100" rx="8" fill="#FFFFFF" stroke="#27AE60" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="40" y="165" width="230" height="24" rx="8" fill="#27AE60"/>
+  <rect x="40" y="181" width="230" height="8" fill="#27AE60"/>
+  <text x="155" y="183" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">Tenant 1 PKey</text>
+  <text x="55" y="210" font-size="9" fill="#4B5563">GPU HCA GUIDs: Tenant 1</text>
+  <text x="55" y="226" font-size="9" fill="#4B5563">RDMA / Collective Comms</text>
+  <text x="55" y="242" font-size="9" fill="#4B5563">GPU ↔ GPU (training)</text>
+  <text x="55" y="258" font-size="8" fill="#27AE60" font-weight="600">HW-ENFORCED ISOLATION</text>
+
+  <!-- Tenant 2 PKey -->
+  <rect x="285" y="165" width="230" height="100" rx="8" fill="#FFFFFF" stroke="#2980B9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="285" y="165" width="230" height="24" rx="8" fill="#2980B9"/>
+  <rect x="285" y="181" width="230" height="8" fill="#2980B9"/>
+  <text x="400" y="183" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">Tenant 2 PKey</text>
+  <text x="300" y="210" font-size="9" fill="#4B5563">GPU HCA GUIDs: Tenant 2</text>
+  <text x="300" y="226" font-size="9" fill="#4B5563">RDMA / Collective Comms</text>
+  <text x="300" y="242" font-size="9" fill="#4B5563">GPU ↔ GPU (training)</text>
+  <text x="300" y="258" font-size="8" fill="#2980B9" font-weight="600">HW-ENFORCED ISOLATION</text>
+
+  <!-- Tenant N PKey -->
+  <rect x="530" y="165" width="230" height="100" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="530" y="165" width="230" height="24" rx="8" fill="#8E44AD"/>
+  <rect x="530" y="181" width="230" height="8" fill="#8E44AD"/>
+  <text x="645" y="183" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">Tenant N PKey</text>
+  <text x="545" y="210" font-size="9" fill="#4B5563">GPU HCA GUIDs: Tenant N</text>
+  <text x="545" y="226" font-size="9" fill="#4B5563">RDMA / Collective Comms</text>
+  <text x="545" y="242" font-size="9" fill="#4B5563">GPU ↔ GPU (training)</text>
+  <text x="545" y="258" font-size="8" fill="#8E44AD" font-weight="600">HW-ENFORCED ISOLATION</text>
+
+  <!-- Storage Access Label -->
+  <text x="48" y="290" font-size="9" font-weight="700" fill="#9CA3AF" letter-spacing="1.2">STORAGE ACCESS (INFINIBAND)</text>
+
+  <rect x="40" y="305" width="720" height="60" rx="8" fill="#FFFFFF" stroke="#E67E22" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="400" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#D35400">Parallel Filesystem — Double Isolation</text>
+  <text x="400" y="350" text-anchor="middle" font-size="9" fill="#4B5563">Layer 1: IB Partition Key • Layer 2: Access Control Map (tenant IB IPs only)</text>
+
+  <!-- IB Switches -->
+  <rect x="40" y="380" width="720" height="35" rx="8" fill="#4A235A" filter="url(#shadow)"/>
+  <text x="400" y="403" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">InfiniBand Switches — High-Speed Fabric • RDMA • Low Latency</text>
+
+  <!-- GPU Nodes -->
+  <rect x="40" y="425" width="720" height="25" rx="6" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="400" y="442" text-anchor="middle" font-size="9" font-weight="600" fill="#1F2937">GPU Nodes — InfiniBand HCAs (Training + Storage Traffic)</text>
+
+  <!-- Footer -->
+  <text x="400" y="468" text-anchor="middle" font-size="8" fill="#9CA3AF">Dflare AI • Backend Fabric Architecture</text>
+</svg>

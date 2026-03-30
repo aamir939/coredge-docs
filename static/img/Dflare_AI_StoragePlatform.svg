@@ -1,0 +1,72 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="480" fill="#FAFBFC"/>
+
+  <!-- Outer container -->
+  <rect x="20" y="15" width="760" height="440" rx="12" fill="#F0F7FF" stroke="#0F4C75" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Header -->
+  <rect x="20" y="15" width="760" height="50" rx="12" fill="#0F4C75"/>
+  <rect x="20" y="50" width="760" height="15" fill="#0F4C75"/>
+  <text x="400" y="48" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Platform Tier — Object/File Storage</text>
+
+  <!-- Purpose -->
+  <rect x="40" y="80" width="720" height="40" rx="6" fill="#E8F4FD" stroke="#B0D4F1" stroke-width="1"/>
+  <text x="400" y="106" text-anchor="middle" font-size="11" font-weight="600" fill="#0F4C75">Connection: Ethernet • Protocol: S3 / NFS / CSI</text>
+
+  <!-- Platform Services Label -->
+  <text x="48" y="150" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="1.2">PLATFORM SERVICES STORAGE</text>
+
+  <rect x="40" y="165" width="720" height="140" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#shadow)"/>
+
+  <rect x="55" y="185" width="340" height="35" rx="6" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="225" y="208" text-anchor="middle" font-size="10" fill="#0F4C75">Databases — PostgreSQL, MongoDB, Redis</text>
+
+  <rect x="410" y="185" width="340" height="35" rx="6" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="580" y="208" text-anchor="middle" font-size="10" fill="#0F4C75">Container Registry — Air-gapped image store</text>
+
+  <rect x="55" y="230" width="340" height="35" rx="6" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="225" y="253" text-anchor="middle" font-size="10" fill="#0F4C75">Backups — Metering data, configs, snapshots</text>
+
+  <rect x="410" y="230" width="340" height="35" rx="6" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="580" y="253" text-anchor="middle" font-size="10" fill="#0F4C75">Logs — Centralized audit &amp; monitoring logs</text>
+
+  <!-- Data Lifecycle -->
+  <text x="55" y="290" font-size="10" font-weight="700" fill="#9CA3AF">DATA LIFECYCLE:</text>
+
+  <rect x="170" y="275" width="130" height="35" rx="6" fill="#E8F8F5" stroke="#27AE60" stroke-width="1"/>
+  <text x="235" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#1E8449">Standard</text>
+
+  <text x="315" y="298" font-size="12" fill="#6B7280">→</text>
+
+  <rect x="335" y="275" width="130" height="35" rx="6" fill="#FDF2E9" stroke="#E67E22" stroke-width="1"/>
+  <text x="400" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#D35400">Infrequent</text>
+
+  <text x="480" y="298" font-size="12" fill="#6B7280">→</text>
+
+  <rect x="500" y="275" width="130" height="35" rx="6" fill="#F3F4F6" stroke="#95A5A6" stroke-width="1"/>
+  <text x="565" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#7F8C8D">Archive</text>
+
+  <!-- Retention Policy -->
+  <rect x="40" y="330" width="720" height="50" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="400" y="352" text-anchor="middle" font-size="11" font-weight="700" fill="#1F2937">Configurable Retention Policy</text>
+  <text x="400" y="370" text-anchor="middle" font-size="10" fill="#4B5563">S3 lifecycle rules • HA replication • Automated backups • Versioning support</text>
+
+  <!-- Features row -->
+  <rect x="40" y="395" width="235" height="40" rx="6" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="157" y="420" text-anchor="middle" font-size="9" fill="#4B5563">Multi-protocol: S3 / NFS / CSI</text>
+
+  <rect x="283" y="395" width="235" height="40" rx="6" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="400" y="420" text-anchor="middle" font-size="9" fill="#4B5563">High Availability Replication</text>
+
+  <rect x="525" y="395" width="235" height="40" rx="6" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="642" y="420" text-anchor="middle" font-size="9" fill="#4B5563">Encryption at Rest &amp; In Transit</text>
+
+  <!-- Footer -->
+  <text x="400" y="468" text-anchor="middle" font-size="8" fill="#9CA3AF">Dflare AI • Platform Storage Tier</text>
+</svg>

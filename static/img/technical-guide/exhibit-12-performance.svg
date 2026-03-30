@@ -1,0 +1,97 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="perfHeader" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="gpuPerf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="netPerf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="storPerf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1A1A2E">PERFORMANCE CHARACTERISTICS</text>
+  <text x="450" y="52" text-anchor="middle" font-size="11" fill="#6B7280">Purpose-Built for Performance-Critical AI Workloads</text>
+
+  <!-- GPU Performance Section -->
+  <rect x="50" y="75" width="800" height="120" rx="12" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+  <rect x="50" y="75" width="180" height="120" rx="12" fill="url(#gpuPerf)"/>
+  <text x="140" y="125" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">GPU</text>
+  <text x="140" y="145" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Performance</text>
+
+  <g transform="translate(260, 95)">
+    <rect width="180" height="80" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+    <text x="90" y="25" text-anchor="middle" font-size="22" font-weight="700" fill="#065F46">99%+</text>
+    <text x="90" y="45" text-anchor="middle" font-size="10" fill="#059669">of bare metal</text>
+    <text x="90" y="60" text-anchor="middle" font-size="10" fill="#059669">GPU peak</text>
+  </g>
+
+  <g transform="translate(460, 95)">
+    <rect width="180" height="80" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+    <text x="90" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#065F46">Zero Hypervisor</text>
+    <text x="90" y="45" text-anchor="middle" font-size="12" font-weight="600" fill="#065F46">Overhead</text>
+    <text x="90" y="65" text-anchor="middle" font-size="9" fill="#059669">Direct device access</text>
+  </g>
+
+  <g transform="translate(660, 95)">
+    <rect width="170" height="80" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+    <text x="85" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#065F46">Optimized</text>
+    <text x="85" y="42" text-anchor="middle" font-size="11" font-weight="600" fill="#065F46">Kernel Drivers</text>
+    <text x="85" y="62" text-anchor="middle" font-size="9" fill="#059669">Platform-specific GPUs</text>
+  </g>
+
+  <!-- Network Performance Section -->
+  <rect x="50" y="210" width="800" height="120" rx="12" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="50" y="210" width="180" height="120" rx="12" fill="url(#netPerf)"/>
+  <text x="140" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Network</text>
+  <text x="140" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Performance</text>
+
+  <g transform="translate(260, 230)">
+    <rect width="280" height="80" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+    <text x="140" y="22" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF">InfiniBand RDMA</text>
+    <text x="140" y="48" text-anchor="middle" font-size="18" font-weight="700" fill="#3B82F6">Sub-microsecond</text>
+    <text x="140" y="68" text-anchor="middle" font-size="10" fill="#3B82F6">latency for GPU-to-GPU communication</text>
+  </g>
+
+  <g transform="translate(560, 230)">
+    <rect width="270" height="80" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+    <text x="135" y="22" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF">Ethernet</text>
+    <text x="135" y="48" text-anchor="middle" font-size="18" font-weight="700" fill="#3B82F6">Millisecond-level</text>
+    <text x="135" y="68" text-anchor="middle" font-size="10" fill="#3B82F6">latency for control and management</text>
+  </g>
+
+  <!-- Storage Performance Section -->
+  <rect x="50" y="345" width="800" height="120" rx="12" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="50" y="345" width="180" height="120" rx="12" fill="url(#storPerf)"/>
+  <text x="140" y="395" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Storage</text>
+  <text x="140" y="415" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Performance</text>
+
+  <g transform="translate(260, 365)">
+    <rect width="280" height="80" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
+    <text x="140" y="22" text-anchor="middle" font-size="11" font-weight="600" fill="#92400E">Parallel FS</text>
+    <text x="140" y="48" text-anchor="middle" font-size="14" font-weight="700" fill="#D97706">Aggregate bandwidth</text>
+    <text x="140" y="68" text-anchor="middle" font-size="10" fill="#D97706">matches GPU I/O demand</text>
+  </g>
+
+  <g transform="translate(560, 365)">
+    <rect width="270" height="80" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
+    <text x="135" y="22" text-anchor="middle" font-size="11" font-weight="600" fill="#92400E">Multi-Level Caching</text>
+    <text x="135" y="48" text-anchor="middle" font-size="14" font-weight="700" fill="#D97706">Compute + Storage</text>
+    <text x="135" y="68" text-anchor="middle" font-size="10" fill="#D97706">layers for optimal throughput</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="490" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 12: Performance characteristics — optimized for AI workloads.</text>
+</svg>

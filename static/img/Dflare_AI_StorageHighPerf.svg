@@ -1,0 +1,93 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrP" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#8E44AD"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="480" fill="#FAFBFC"/>
+
+  <!-- Outer container -->
+  <rect x="20" y="15" width="760" height="440" rx="12" fill="#FAF0FF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Header -->
+  <rect x="20" y="15" width="760" height="50" rx="12" fill="#8E44AD"/>
+  <rect x="20" y="50" width="760" height="15" fill="#8E44AD"/>
+  <text x="400" y="48" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">High-Performance Tier — Parallel Filesystem</text>
+
+  <!-- Purpose label -->
+  <rect x="40" y="80" width="720" height="35" rx="6" fill="#F5EEF8" stroke="#D7BDE2" stroke-width="1"/>
+  <text x="400" y="103" text-anchor="middle" font-size="11" font-weight="600" fill="#6C3483">Purpose: Training datasets • Model checkpoints • Experiment results • HPC scratch</text>
+
+  <!-- Provisioning steps label -->
+  <text x="48" y="140" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="1.2">AUTOMATED STORAGE PROVISIONING</text>
+
+  <!-- Step boxes -->
+  <rect x="40" y="155" width="155" height="60" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="117" y="178" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 1</text>
+  <text x="117" y="196" text-anchor="middle" font-size="9" fill="#4B5563">Create tenant</text>
+  <text x="117" y="209" text-anchor="middle" font-size="9" fill="#4B5563">directory on FS</text>
+
+  <line x1="195" y1="185" x2="212" y2="185" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="222" y="155" width="155" height="60" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="299" y="178" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 2</text>
+  <text x="299" y="196" text-anchor="middle" font-size="9" fill="#4B5563">Create access</text>
+  <text x="299" y="209" text-anchor="middle" font-size="9" fill="#4B5563">control map</text>
+
+  <line x1="377" y1="185" x2="394" y2="185" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="404" y="155" width="155" height="60" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="481" y="178" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 3</text>
+  <text x="481" y="196" text-anchor="middle" font-size="9" fill="#4B5563">Assign tenant's</text>
+  <text x="481" y="209" text-anchor="middle" font-size="9" fill="#4B5563">GPU IB IPs</text>
+
+  <line x1="559" y1="185" x2="576" y2="185" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="586" y="155" width="105" height="60" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="638" y="178" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 4</text>
+  <text x="638" y="196" text-anchor="middle" font-size="9" fill="#4B5563">Set capacity</text>
+  <text x="638" y="209" text-anchor="middle" font-size="9" fill="#4B5563">quotas</text>
+
+  <line x1="691" y1="185" x2="708" y2="185" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="718" y="155" width="62" height="60" rx="8" fill="#27AE60" filter="url(#shadow)"/>
+  <text x="749" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">✓</text>
+  <text x="749" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">Ready</text>
+
+  <!-- Double Isolation label -->
+  <text x="48" y="245" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="1.2">DOUBLE ISOLATION — DEFENSE IN DEPTH</text>
+
+  <!-- Layer 1 -->
+  <rect x="40" y="260" width="355" height="90" rx="8" fill="#FFFFFF" stroke="#E74C3C" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="40" y="260" width="355" height="26" rx="8" fill="#E74C3C"/>
+  <rect x="40" y="278" width="355" height="8" fill="#E74C3C"/>
+  <text x="217" y="280" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Layer 1: InfiniBand Partition Key</text>
+  <text x="55" y="310" font-size="10" fill="#4B5563">Only the tenant's GPU ports can</text>
+  <text x="55" y="326" font-size="10" fill="#4B5563">communicate on the tenant's IB partition.</text>
+  <text x="55" y="344" font-size="9" font-weight="600" fill="#E74C3C">Enforced at IB switch hardware level</text>
+
+  <!-- Layer 2 -->
+  <rect x="405" y="260" width="355" height="90" rx="8" fill="#FFFFFF" stroke="#E74C3C" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="405" y="260" width="355" height="26" rx="8" fill="#E74C3C"/>
+  <rect x="405" y="278" width="355" height="8" fill="#E74C3C"/>
+  <text x="582" y="280" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Layer 2: Filesystem Access Control Map</text>
+  <text x="420" y="310" font-size="10" fill="#4B5563">Only the tenant's IB IP addresses</text>
+  <text x="420" y="326" font-size="10" fill="#4B5563">can mount the tenant's directory.</text>
+  <text x="420" y="344" font-size="9" font-weight="600" fill="#E74C3C">Enforced at filesystem level</text>
+
+  <!-- Isolation message -->
+  <rect x="40" y="360" width="720" height="35" rx="6" fill="#FDEDEC" stroke="#E74C3C" stroke-width="1"/>
+  <text x="400" y="383" text-anchor="middle" font-size="11" font-weight="600" fill="#C0392B">Even if one layer is compromised, the other still blocks unauthorized access</text>
+
+  <!-- Performance -->
+  <rect x="40" y="405" width="720" height="42" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="400" y="424" text-anchor="middle" font-size="11" font-weight="700" fill="#1F2937">Performance Characteristics</text>
+  <text x="400" y="440" text-anchor="middle" font-size="10" fill="#6B7280">Data striped across multiple OSTs • Parallel I/O • Multiple high-bandwidth IB links per node</text>
+
+  <!-- Footer -->
+  <text x="400" y="470" text-anchor="middle" font-size="8" fill="#9CA3AF">Dflare AI • High-Performance Storage Tier</text>
+</svg>

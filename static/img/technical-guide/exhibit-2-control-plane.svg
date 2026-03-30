@@ -1,0 +1,75 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="serviceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="busGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="480" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1A1A2E">CONTROL PLANE — MICROSERVICES ARCHITECTURE</text>
+
+  <!-- Main Container -->
+  <rect x="40" y="55" width="820" height="360" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Services Row -->
+  <rect x="60" y="80" width="150" height="120" rx="8" fill="url(#serviceGrad)"/>
+  <text x="135" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Workflow Engine</text>
+  <text x="135" y="140" text-anchor="middle" font-size="9" fill="#B0D4F1">Declarative workflows</text>
+  <text x="135" y="155" text-anchor="middle" font-size="9" fill="#B0D4F1">Idempotent operations</text>
+  <text x="135" y="170" text-anchor="middle" font-size="9" fill="#B0D4F1">Retryable steps</text>
+
+  <rect x="225" y="80" width="150" height="120" rx="8" fill="url(#serviceGrad)"/>
+  <text x="300" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Cluster Manager</text>
+  <text x="300" y="140" text-anchor="middle" font-size="9" fill="#B0D4F1">K8s bootstrapping</text>
+  <text x="300" y="155" text-anchor="middle" font-size="9" fill="#B0D4F1">Slurm orchestration</text>
+  <text x="300" y="170" text-anchor="middle" font-size="9" fill="#B0D4F1">CAPI lifecycle</text>
+
+  <rect x="390" y="80" width="150" height="120" rx="8" fill="url(#serviceGrad)"/>
+  <text x="465" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Network Manager</text>
+  <text x="465" y="140" text-anchor="middle" font-size="9" fill="#B0D4F1">VRF allocation</text>
+  <text x="465" y="155" text-anchor="middle" font-size="9" fill="#B0D4F1">VLAN management</text>
+  <text x="465" y="170" text-anchor="middle" font-size="9" fill="#B0D4F1">ACL programming</text>
+
+  <rect x="555" y="80" width="150" height="120" rx="8" fill="url(#serviceGrad)"/>
+  <text x="630" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Auth Service</text>
+  <text x="630" y="140" text-anchor="middle" font-size="9" fill="#B0D4F1">OIDC / OAuth2</text>
+  <text x="630" y="155" text-anchor="middle" font-size="9" fill="#B0D4F1">JWT tokens</text>
+  <text x="630" y="170" text-anchor="middle" font-size="9" fill="#B0D4F1">RBAC + ABAC</text>
+
+  <rect x="720" y="80" width="150" height="120" rx="8" fill="url(#serviceGrad)"/>
+  <text x="795" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Metering Service</text>
+  <text x="795" y="140" text-anchor="middle" font-size="9" fill="#B0D4F1">Usage aggregation</text>
+  <text x="795" y="155" text-anchor="middle" font-size="9" fill="#B0D4F1">Billing records</text>
+  <text x="795" y="170" text-anchor="middle" font-size="9" fill="#B0D4F1">Chargeback</text>
+
+  <!-- API Bus -->
+  <rect x="60" y="220" width="800" height="40" rx="8" fill="url(#busGrad)"/>
+  <text x="460" y="245" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">Internal API Bus (gRPC / REST) | Event Store | State Database</text>
+
+  <!-- Guarantees Section -->
+  <rect x="60" y="280" width="380" height="115" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="80" y="305" font-size="11" font-weight="700" fill="#0F4C75">GUARANTEES</text>
+  <circle cx="85" cy="330" r="3" fill="#10B981"/>
+  <text x="95" y="334" font-size="10" fill="#4B5563">Idempotent operations (safe retries)</text>
+  <circle cx="85" cy="352" r="3" fill="#10B981"/>
+  <text x="95" y="356" font-size="10" fill="#4B5563">Strong tenant isolation at API layer</text>
+  <circle cx="85" cy="374" r="3" fill="#10B981"/>
+  <text x="95" y="378" font-size="10" fill="#4B5563">Deterministic cluster provisioning from declarative specs</text>
+
+  <!-- Design Rationale -->
+  <rect x="460" y="280" width="400" height="115" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <text x="480" y="305" font-size="11" font-weight="700" fill="#92400E">DESIGN RATIONALE</text>
+  <text x="480" y="340" font-size="10" fill="#78350F">Microservices enable independent scaling and failure isolation —</text>
+  <text x="480" y="358" font-size="10" fill="#78350F">control plane disruptions don't impact workloads.</text>
+
+  <!-- Footer -->
+  <text x="450" y="445" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 2: Control plane microservices architecture with guarantees.</text>
+</svg>

@@ -1,0 +1,151 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 600" font-family="Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8E44AD"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0F4C75"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="600" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="700" y="35" text-anchor="middle" font-size="22" font-weight="700" fill="#1A1A2E">Storage Architecture — Dual-Tier with Double Isolation</text>
+  <text x="700" y="58" text-anchor="middle" font-size="12" fill="#6B7280">High-performance parallel filesystem over InfiniBand + platform object storage over Ethernet</text>
+
+  <!-- ==================== LEFT: HIGH-PERFORMANCE TIER ==================== -->
+  <rect x="60" y="80" width="780" height="460" rx="12" fill="#FAF0FF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Header -->
+  <rect x="60" y="80" width="780" height="50" rx="12" fill="#8E44AD"/>
+  <rect x="60" y="110" width="780" height="20" fill="#8E44AD"/>
+  <text x="450" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">⚡ High-Performance Tier — Parallel Filesystem over InfiniBand</text>
+
+  <!-- Training purpose label -->
+  <rect x="80" y="145" width="740" height="35" rx="6" fill="#F5EEF8" stroke="#D7BDE2" stroke-width="1"/>
+  <text x="450" y="168" text-anchor="middle" font-size="11" font-weight="600" fill="#6C3483">Purpose: Training datasets  •  Model checkpoints  •  Experiment results  •  HPC scratch</text>
+
+  <!-- How it works -->
+  <text x="88" y="205" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="1.5">TENANT ONBOARDING — AUTOMATED STORAGE PROVISIONING</text>
+
+  <!-- Step boxes -->
+  <rect x="80" y="220" width="140" height="65" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="150" y="243" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 1</text>
+  <text x="150" y="260" text-anchor="middle" font-size="9" fill="#4B5563">Create tenant</text>
+  <text x="150" y="274" text-anchor="middle" font-size="9" fill="#4B5563">directory on FS</text>
+
+  <line x1="220" y1="252" x2="240" y2="252" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="250" y="220" width="140" height="65" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="320" y="243" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 2</text>
+  <text x="320" y="260" text-anchor="middle" font-size="9" fill="#4B5563">Create access</text>
+  <text x="320" y="274" text-anchor="middle" font-size="9" fill="#4B5563">control map</text>
+
+  <line x1="390" y1="252" x2="410" y2="252" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="420" y="220" width="140" height="65" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="490" y="243" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 3</text>
+  <text x="490" y="260" text-anchor="middle" font-size="9" fill="#4B5563">Assign tenant's</text>
+  <text x="490" y="274" text-anchor="middle" font-size="9" fill="#4B5563">GPU IB IPs</text>
+
+  <line x1="560" y1="252" x2="580" y2="252" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="590" y="220" width="115" height="65" rx="8" fill="#FFFFFF" stroke="#8E44AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="647" y="243" text-anchor="middle" font-size="10" font-weight="700" fill="#8E44AD">Step 4</text>
+  <text x="647" y="260" text-anchor="middle" font-size="9" fill="#4B5563">Set capacity</text>
+  <text x="647" y="274" text-anchor="middle" font-size="9" fill="#4B5563">quotas</text>
+
+  <line x1="705" y1="252" x2="720" y2="252" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <rect x="730" y="220" width="90" height="65" rx="8" fill="#27AE60" filter="url(#shadow)"/>
+  <text x="775" y="248" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">✓</text>
+  <text x="775" y="265" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">Ready</text>
+  <text x="775" y="279" text-anchor="middle" font-size="8" fill="#D5F5E3">Striped I/O</text>
+
+  <!-- ====== DOUBLE ISOLATION ====== -->
+  <text x="88" y="310" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="1.5">DOUBLE ISOLATION — DEFENSE IN DEPTH</text>
+
+  <!-- Layer 1: IB PKey -->
+  <rect x="80" y="325" width="365" height="90" rx="8" fill="#FFFFFF" stroke="#E74C3C" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="80" y="325" width="365" height="28" rx="8" fill="#E74C3C"/>
+  <rect x="80" y="345" width="365" height="8" fill="#E74C3C"/>
+  <text x="262" y="345" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">🛡️ Layer 1: InfiniBand Partition Key</text>
+  <text x="100" y="375" font-size="10" fill="#4B5563">Only the tenant's GPU ports can</text>
+  <text x="100" y="392" font-size="10" fill="#4B5563">communicate on the tenant's IB partition.</text>
+  <text x="100" y="409" font-size="9" font-weight="600" fill="#E74C3C">Enforced at IB switch hardware level</text>
+
+  <!-- Layer 2: ACL Map -->
+  <rect x="455" y="325" width="365" height="90" rx="8" fill="#FFFFFF" stroke="#E74C3C" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="455" y="325" width="365" height="28" rx="8" fill="#E74C3C"/>
+  <rect x="455" y="345" width="365" height="8" fill="#E74C3C"/>
+  <text x="637" y="345" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">🛡️ Layer 2: Filesystem Access Control Map</text>
+  <text x="475" y="375" font-size="10" fill="#4B5563">Only the tenant's IB IP addresses</text>
+  <text x="475" y="392" font-size="10" fill="#4B5563">can mount the tenant's directory.</text>
+  <text x="475" y="409" font-size="9" font-weight="600" fill="#E74C3C">Enforced at filesystem level</text>
+
+  <!-- Isolation message -->
+  <rect x="80" y="425" width="740" height="35" rx="6" fill="#FDEDEC" stroke="#E74C3C" stroke-width="1"/>
+  <text x="450" y="448" text-anchor="middle" font-size="11" font-weight="600" fill="#C0392B">Even if one layer is compromised, the other still blocks unauthorized access</text>
+
+  <!-- Performance -->
+  <rect x="80" y="475" width="740" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="450" y="497" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937">Performance Characteristics</text>
+  <text x="450" y="515" text-anchor="middle" font-size="10" fill="#6B7280">Data striped across multiple OSTs  •  Parallel I/O  •  Multiple high-bandwidth IB links per node  •  Massive aggregate throughput</text>
+
+  <!-- ==================== RIGHT: PLATFORM TIER ==================== -->
+  <rect x="870" y="80" width="470" height="460" rx="12" fill="#F0F7FF" stroke="#0F4C75" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Header -->
+  <rect x="870" y="80" width="470" height="50" rx="12" fill="#0F4C75"/>
+  <rect x="870" y="110" width="470" height="20" fill="#0F4C75"/>
+  <text x="1105" y="112" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">☁️ Platform Tier — Object/File Storage</text>
+
+  <!-- Purpose -->
+  <rect x="890" y="145" width="430" height="35" rx="6" fill="#E8F4FD" stroke="#B0D4F1" stroke-width="1"/>
+  <text x="1105" y="168" text-anchor="middle" font-size="11" font-weight="600" fill="#0F4C75">Connection: Ethernet  •  Protocol: S3 / NFS / CSI</text>
+
+  <!-- Use cases -->
+  <text x="898" y="210" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="1.5">PLATFORM SERVICES STORAGE</text>
+
+  <rect x="890" y="225" width="430" height="160" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#shadow)"/>
+
+  <rect x="905" y="240" width="400" height="28" rx="5" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="1105" y="259" text-anchor="middle" font-size="10" fill="#0F4C75">💾 Databases — PostgreSQL, MongoDB, Redis</text>
+
+  <rect x="905" y="278" width="400" height="28" rx="5" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="1105" y="297" text-anchor="middle" font-size="10" fill="#0F4C75">📦 Container Registry — Air-gapped image store</text>
+
+  <rect x="905" y="316" width="400" height="28" rx="5" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="1105" y="335" text-anchor="middle" font-size="10" fill="#0F4C75">💾 Backups — Metering data, configs, snapshots</text>
+
+  <rect x="905" y="354" width="400" height="28" rx="5" fill="#E8F4FD" stroke="#0F4C75" stroke-width="0.5"/>
+  <text x="1105" y="373" text-anchor="middle" font-size="10" fill="#0F4C75">📋 Logs — Centralized audit &amp; monitoring logs</text>
+
+  <!-- S3 Lifecycle -->
+  <text x="898" y="415" font-size="10" font-weight="700" fill="#9CA3AF" letter-spacing="1.5">DATA LIFECYCLE</text>
+
+  <rect x="890" y="428" width="120" height="40" rx="6" fill="#E8F8F5" stroke="#27AE60" stroke-width="1"/>
+  <text x="950" y="453" text-anchor="middle" font-size="10" font-weight="600" fill="#1E8449">Standard</text>
+
+  <text x="1020" y="453" font-size="12" fill="#6B7280">→</text>
+
+  <rect x="1035" y="428" width="120" height="40" rx="6" fill="#FDF2E9" stroke="#E67E22" stroke-width="1"/>
+  <text x="1095" y="453" text-anchor="middle" font-size="10" font-weight="600" fill="#D35400">Infrequent</text>
+
+  <text x="1165" y="453" font-size="12" fill="#6B7280">→</text>
+
+  <rect x="1180" y="428" width="120" height="40" rx="6" fill="#F3F4F6" stroke="#95A5A6" stroke-width="1"/>
+  <text x="1240" y="453" text-anchor="middle" font-size="10" font-weight="600" fill="#7F8C8D">Archive</text>
+
+  <!-- Retention -->
+  <rect x="890" y="480" width="430" height="45" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="1105" y="500" text-anchor="middle" font-size="11" font-weight="700" fill="#1F2937">Configurable Retention Policy</text>
+  <text x="1105" y="517" text-anchor="middle" font-size="10" fill="#6B7280">S3 lifecycle rules  •  HA replication  •  Automated backups</text>
+
+  <!-- Footer -->
+  <text x="700" y="590" text-anchor="middle" font-size="10" fill="#9CA3AF">© Dflare AI  •  Storage Architecture  •  Confidential</text>
+</svg>

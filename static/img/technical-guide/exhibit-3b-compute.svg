@@ -1,0 +1,58 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="clusterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="k8sGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="slurmGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="infraGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <marker id="arrowD" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1A1A2E">COMPUTE ORCHESTRATION — UNIFIED PLATFORM</text>
+
+  <!-- Main Container -->
+  <rect x="40" y="55" width="720" height="280" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Cluster Manager -->
+  <rect x="300" y="75" width="200" height="50" rx="8" fill="url(#clusterGrad)"/>
+  <text x="400" y="105" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Cluster Manager</text>
+
+  <!-- Arrows down -->
+  <line x1="300" y1="125" x2="200" y2="160" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowD)"/>
+  <line x1="500" y1="125" x2="600" y2="160" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowD)"/>
+
+  <!-- Kubernetes Path -->
+  <rect x="80" y="160" width="280" height="60" rx="8" fill="url(#k8sGrad)"/>
+  <text x="220" y="190" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Kubernetes Path</text>
+  <text x="220" y="208" text-anchor="middle" font-size="10" fill="#DBEAFE">API Server, Scheduler</text>
+
+  <!-- Slurm Path -->
+  <rect x="440" y="160" width="280" height="60" rx="8" fill="url(#slurmGrad)"/>
+  <text x="580" y="190" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Slurm Path</text>
+  <text x="580" y="208" text-anchor="middle" font-size="10" fill="#FEF3C7">Controller, Daemons</text>
+
+  <!-- Shared Infrastructure -->
+  <rect x="80" y="250" width="640" height="65" rx="8" fill="url(#infraGrad)"/>
+  <text x="400" y="280" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Shared Infrastructure</text>
+  <text x="400" y="300" text-anchor="middle" font-size="10" fill="#D1FAE5">GPU Nodes | Network | Storage | Monitoring</text>
+
+  <!-- Footer -->
+  <text x="400" y="370" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 3b: Compute orchestration — unified platform supporting both Kubernetes and Slurm paths.</text>
+</svg>

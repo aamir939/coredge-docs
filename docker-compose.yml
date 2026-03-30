@@ -1,0 +1,20 @@
+services:
+  docs:
+    build: .
+    container_name: coredge-docs
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./docs:/app/docs
+      - ./docusaurus.config.js:/app/docusaurus.config.js
+      - ./sidebars.js:/app/sidebars.js
+      - ./src:/app/src
+      - ./static:/app/static
+    environment:
+      - NODE_ENV=development
+
+  build:
+    build: .
+    volumes:
+      - ./build:/app/build
+    command: npm run build

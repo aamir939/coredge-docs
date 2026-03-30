@@ -1,0 +1,75 @@
+<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="submitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="100%" stop-color="#1B6FA0"/>
+    </linearGradient>
+    <linearGradient id="schedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="execGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="dataGradW" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="monitorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="billGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="280" fill="#FAFBFC"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1A1A2E">WORKLOAD EXECUTION MODEL</text>
+
+  <!-- Main Container -->
+  <rect x="40" y="55" width="820" height="160" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Workflow Steps -->
+  <rect x="60" y="80" width="110" height="110" rx="8" fill="url(#submitGrad)"/>
+  <text x="115" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Submit</text>
+  <text x="115" y="145" text-anchor="middle" font-size="9" fill="#B0D4F1">K8s / Slurm</text>
+
+  <text x="185" y="130" text-anchor="middle" font-size="18" fill="#6B7280">→</text>
+
+  <rect x="200" y="80" width="110" height="110" rx="8" fill="url(#schedGrad)"/>
+  <text x="255" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Schedule</text>
+  <text x="255" y="145" text-anchor="middle" font-size="9" fill="#DBEAFE">GPU Alloc</text>
+
+  <text x="325" y="130" text-anchor="middle" font-size="18" fill="#6B7280">→</text>
+
+  <rect x="340" y="80" width="110" height="110" rx="8" fill="url(#execGrad)"/>
+  <text x="395" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Execute</text>
+  <text x="395" y="145" text-anchor="middle" font-size="9" fill="#D1FAE5">Bare Metal</text>
+
+  <text x="465" y="130" text-anchor="middle" font-size="18" fill="#6B7280">→</text>
+
+  <rect x="480" y="80" width="110" height="110" rx="8" fill="url(#dataGradW)"/>
+  <text x="535" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Data I/O</text>
+  <text x="535" y="145" text-anchor="middle" font-size="9" fill="#FEF3C7">InfiniBand</text>
+
+  <text x="605" y="130" text-anchor="middle" font-size="18" fill="#6B7280">→</text>
+
+  <rect x="620" y="80" width="110" height="110" rx="8" fill="url(#monitorGrad)"/>
+  <text x="675" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Monitor</text>
+  <text x="675" y="145" text-anchor="middle" font-size="9" fill="#E9D5FF">Metrics</text>
+
+  <text x="745" y="130" text-anchor="middle" font-size="18" fill="#6B7280">→</text>
+
+  <rect x="760" y="80" width="80" height="110" rx="8" fill="url(#billGrad)"/>
+  <text x="800" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Bill</text>
+  <text x="800" y="145" text-anchor="middle" font-size="9" fill="#FEE2E2">Usage</text>
+
+  <!-- Footer -->
+  <text x="450" y="250" text-anchor="middle" font-size="10" fill="#9CA3AF" font-style="italic">Exhibit 5: End-to-end workload execution model.</text>
+</svg>
