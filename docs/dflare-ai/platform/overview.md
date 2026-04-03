@@ -15,6 +15,8 @@ Built to support multi-vendor GPU architectures and interconnected via high-spee
 
 **Who It's For:** Cloud service providers, sovereign AI programs, AI research institutions, enterprise AI teams, and any organization that needs dedicated GPU infrastructure without the operational burden of building and managing it from scratch.
 
+![Dflare AI System Context](/img/dflare-ai/01-system-context.png)
+
 ## The AI Infrastructure Challenge
 
 The explosive growth of AI — particularly large language models, generative AI, and deep learning — has created unprecedented demand for GPU compute. Training a single frontier model can require thousands of GPUs running continuously for weeks. Inference at scale demands low-latency, high-throughput GPU clusters. Research teams need flexible, on-demand access to high-performance computing resources.
@@ -39,7 +41,7 @@ Dflare AI is an end-to-end GPU infrastructure platform that automates seven crit
 
 - **Network Orchestration** — Creates isolated tenant networks with VRFs, VLANs, and InfiniBand partitions. *Every tenant gets their own secure, high-performance network.*
 
-- **Kubernetes Orchestration** — Builds production-grade K8s clusters with GPU operators, CNI, and monitoring. *Container-native AI/ML workflows out of the box.*
+- **Kubernetes Orchestration** — Builds production-grade K8s clusters powered by CKP (Coredge Kubernetes Platform) with GPU operators, CNI, and monitoring.
 
 - **Slurm (HPC) Orchestration** — Deploys Slurm on Kubernetes via operator-based deployment for batch job scheduling. *HPC users get familiar tools (sbatch, squeue) on modern infrastructure.*
 

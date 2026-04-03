@@ -24,7 +24,7 @@ When a tenant is onboarded, the platform automatically provisions dedicated stor
 - Sets capacity quotas based on the tenant's subscription
 - Data is striped across multiple storage targets for parallel I/O — delivering massive aggregate throughput
 
-![High-Performance Storage Tier](/img/Dflare_AI_StorageHighPerf.svg)
+![Storage Architecture & Double Isolation](/img/dflare-ai/03-storage-architecture.png)
 
 ## Storage Security — Double Isolation
 
@@ -38,5 +38,3 @@ Even if one layer were compromised, the other would still block unauthorized acc
 ## Platform Tier — Object Storage
 
 The platform tier provides unified file and object storage over Ethernet for platform services. This tier stores databases, container images, backups, and logs with configurable lifecycle policies.
-
-![Platform Storage Tier](/img/Dflare_AI_StoragePlatform.svg)

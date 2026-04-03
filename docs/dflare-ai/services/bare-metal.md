@@ -17,7 +17,7 @@ The provisioning engine coordinates multiple components in a fully automated pip
 - The storage layer creates a dedicated parallel filesystem directory with InfiniBand access control
 - The GPU agent registers with the portal, and the node is ready for cluster assignment
 
-![Bare Metal Provisioning Workflow](/img/Dflare_AI_BareMetalProvisioning.svg)
+![Bare Metal Provisioning Flow](/img/dflare-ai/02-provisioning-flow.png)
 
 ## Technical Highlights
 

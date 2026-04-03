@@ -5,9 +5,9 @@ sidebar_position: 2
 
 # Architecture
 
-## Platform Architecture Overview
+## Architecture Tiers
 
-![Dflare AI Platform Architecture](/img/Dflare_AI_Architecture.svg)
+![Dflare AI Architecture Tiers](/img/dflare-ai/07-architecture-tiers.png)
 
 ## Platform Component Map
 

@@ -1,6 +1,6 @@
 ---
 title: Identity & Access
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Identity & Access
@@ -31,6 +31,10 @@ sidebar_position: 5
 | **Storage** | Access Control Map per tenant | Filesystem directory access restricted to tenant's IB IPs |
 | **Compute** | K8s namespaces + Slurm accounts | Workload and resource isolation |
 | **Billing** | Scoped metering per tenant/project/user | Usage data and billing records |
+
+## Tenant Onboarding Sequence
+
+![Tenant Onboarding Sequence](/img/dflare-ai/09-tenant-onboarding.png)
 
 ## Authentication & Token Security
 

@@ -1,6 +1,6 @@
 ---
 title: Billing & Metering
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # Billing & Metering
@@ -23,6 +23,8 @@ sidebar_position: 7
 ## Metering Pipeline
 
 Raw metrics flow through a multi-stage pipeline: hardware-level exporters collect data at configurable intervals → time-series database scrapes and stores short-term → long-term HA storage provides retention → metering service aggregates into billable records per tenant/project/user → billing reports generated and exportable as CSV/PDF.
+
+![Metering Pipeline & Billing Flow](/img/dflare-ai/05-metering-pipeline.png)
 
 ## Quota Management
 

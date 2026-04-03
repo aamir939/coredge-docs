@@ -9,6 +9,8 @@ sidebar_position: 3
 
 Dflare AI implements defense-in-depth with zero-trust principles — no action is trusted by default, every request is authenticated and authorized at multiple levels:
 
+![Zero-Trust Defence-in-Depth Security Architecture](/img/dflare-ai/08-zero-trust-security.png)
+
 | Security Layer | Mechanism | Protection |
 |---|---|---|
 | **Authentication** | OAuth2/JWT via enterprise IAM, RS256, short TTL, MFA | Identity verification for every interaction |
@@ -19,6 +21,10 @@ Dflare AI implements defense-in-depth with zero-trust principles — no action i
 | **Compute Isolation** | K8s namespaces, Slurm cgroups v2 | Workload-level resource confinement |
 | **Audit** | Correlation ID, immutable logs, object storage backup | Full traceability of every action |
 | **Firewall** | Perimeter firewall with ACLs | Strict access control at network perimeter |
+
+## Tenant Isolation Model (6 Layers)
+
+![Tenant Isolation Model](/img/dflare-ai/04-tenant-isolation.png)
 
 ## Compliance Alignment
 

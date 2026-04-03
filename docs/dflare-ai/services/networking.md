@@ -1,6 +1,6 @@
 ---
 title: Network & VPC
-sidebar_position: 2
+sidebar_position: 5
 ---
 
 # Network & VPC
@@ -17,7 +17,7 @@ The platform automates VPC and subnet lifecycle through the network manager micr
 
 The FE (Frontend) fabric is a managed Ethernet fabric that carries all management, control plane, and tenant Ethernet traffic. It uses VXLAN/EVPN for overlay networking with BGP underlay. The fabric is managed by a centralized fabric controller, which provides an API for programmatic VRF/VLAN/subnet provisioning.
 
-![Frontend Fabric Architecture](/img/Dflare_AI_NetworkFrontend.svg)
+![Network VPC & Fabric Architecture](/img/dflare-ai/06-network-vpc.png)
 
 ### VRF Types (The Foundation of VPCs)
 
@@ -34,8 +34,6 @@ The FE fabric has five categories of VRFs, each serving a distinct purpose:
 ### Backend Fabric (InfiniBand)
 
 Separate from the Ethernet FE fabric, an InfiniBand backend fabric managed by the IB fabric manager handles GPU-to-GPU communication. Tenant isolation on IB is achieved via partition keys — each tenant gets a unique partition key, and only their GPU nodes' HCA GUIDs are added to that partition. This ensures GPU-to-GPU RDMA/collective communication traffic is completely isolated between tenants.
-
-![Backend Fabric Architecture](/img/Dflare_AI_NetworkBackend.svg)
 
 ## Portal User Experience
 
