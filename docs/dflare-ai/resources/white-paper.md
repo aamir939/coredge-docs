@@ -69,7 +69,7 @@ Managing GPU infrastructure involves provisioning hardware, maintaining clusters
 Dflare AI is a GPU-native infrastructure platform designed to address the full lifecycle of AI compute operations. It enables organizations to:
 
 - Provision bare metal GPU resources on demand
-- Deploy Kubernetes and Slurm clusters through a unified interface
+- Deploy Kubernetes clusters powered by CKP (Coredge Kubernetes Platform) and Slurm clusters through a unified interface
 - Access high-performance storage integrated with compute fabric
 - Enforce multi-tenant isolation across all infrastructure layers
 - Monitor system performance and resource utilization
@@ -135,7 +135,7 @@ Real-time monitoring with GPU telemetry, node metrics, and cluster state. Granul
 
 ### Unified Kubernetes and Slurm Orchestration
 
-Dflare AI supports both containerized and HPC workloads on the same infrastructure, enabling organizations to run diverse AI workloads without duplicating environments, standardize operations across teams, and optimize resource utilization.
+Dflare AI supports both containerized and HPC workloads on the same infrastructure. Kubernetes clusters are powered by CKP (Coredge Kubernetes Platform), enabling organizations to run diverse AI workloads without duplicating environments, standardize operations across teams, and optimize resource utilization.
 
 ### Bare Metal Performance
 

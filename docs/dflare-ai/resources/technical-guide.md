@@ -113,7 +113,7 @@ Executes declarative workflows for provisioning and lifecycle operations. It con
 
 #### Cluster Manager
 
-Translates cluster specifications into node-level actions. For Kubernetes, it bootstraps control plane components (API server, etcd, scheduler) as static pods and ensures quorum formation. For Slurm, it deploys controller, compute daemons, and accounting services via operator-based orchestration on Kubernetes.
+Translates cluster specifications into node-level actions. For Kubernetes, powered by CKP (Coredge Kubernetes Platform), it bootstraps control plane components (API server, etcd, scheduler) as static pods and ensures quorum formation. For Slurm, it deploys controller, compute daemons, and accounting services via operator-based orchestration on Kubernetes.
 
 #### Network Manager
 
@@ -240,7 +240,7 @@ The Volume Service provisions tenant directories, assigns quotas, and configures
 
 ### Kubernetes
 
-Handles containerized workloads using declarative scheduling. GPU resources are exposed via device plugins and scheduled using native Kubernetes primitives.
+Powered by CKP (Coredge Kubernetes Platform), handles containerized workloads using declarative scheduling. GPU resources are exposed via device plugins and scheduled using native Kubernetes primitives.
 
 ### Slurm
 
