@@ -11,9 +11,9 @@ The primary way to create CKP clusters is through the **Compass UI**. The UI pre
 
 | Setting | Options / Details |
 |---------|-------------------|
-| Kubernetes Version | v1.29.0, v1.30.6, v1.31.2 (selectable) |
+| Kubernetes Version | v1.29.0 through v1.35.1 (all CNCF Certified) |
 | Networking (CNI) | Calico (default) |
-| Networking Version | v3.29.2 |
+| Networking Version | Mapped per K8s version (v3.28.2 or v3.30.5) |
 | Worker Host Group | Selection from pre-registered host groups |
 | Worker Nodes | Number of worker nodes (minimum 1) |
 

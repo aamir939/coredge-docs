@@ -28,5 +28,9 @@ Each CKP Kubernetes version ships with specific component image versions:
 | v1.29.0 | 3.5.12-0 | v1.11.1 | 3.9 |
 | v1.30.6 | 3.5.15-0 | v1.11.3 | 3.9 |
 | v1.31.2 | 3.5.15-0 | v1.11.3 | 3.10 |
+| v1.32.11 | 3.5.15-0 | v1.11.3 | 3.10 |
+| v1.33.7 | 3.5.15-0 | v1.11.3 | 3.10 |
+| v1.34.3 | 3.5.15-0 | v1.11.3 | 3.10 |
+| v1.35.1 | 3.5.15-0 | v1.11.3 | 3.10 |
 
 The kube-apiserver, kube-controller-manager, kube-scheduler, and kube-proxy images are tagged with the same version as the Kubernetes release.

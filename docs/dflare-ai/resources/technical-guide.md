@@ -240,7 +240,7 @@ The Volume Service provisions tenant directories, assigns quotas, and configures
 
 ### Kubernetes
 
-Powered by CKP (Coredge Kubernetes Platform), handles containerized workloads using declarative scheduling. Supports CNCF Certified Kubernetes versions (1.28 - 1.35). GPU resources are exposed via device plugins and scheduled using native Kubernetes primitives.
+Powered by CKP (Coredge Kubernetes Platform), handles containerized workloads using declarative scheduling. Supports CNCF Certified Kubernetes versions (1.29 - 1.35). GPU resources are exposed via device plugins and scheduled using native Kubernetes primitives.
 
 ### Slurm
 

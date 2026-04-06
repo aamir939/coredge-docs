@@ -40,7 +40,6 @@ Dflare AI uses **CKP (Coredge Kubernetes Platform)**, a custom Kubernetes distri
 
 | Kubernetes Version | CNI Version |
 |-------------------|-------------|
-| 1.28.3 | 3.27.2 |
 | 1.29.0, 1.30.6 | 3.28.2 |
 | 1.31.2 | 3.30.5 |
 | 1.32.11 | 3.30.5 |
@@ -50,7 +49,7 @@ Dflare AI uses **CKP (Coredge Kubernetes Platform)**, a custom Kubernetes distri
 
 | Component | Supported |
 |-----------|-----------|
-| **OS** | Ubuntu 20.04, Ubuntu 22.04 |
+| **OS** | Ubuntu 20.04, Ubuntu 22.04, RHEL 9 |
 | **Architecture** | AMD64, ARM64 |
 
 ### Key Capabilities
