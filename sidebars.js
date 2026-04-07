@@ -49,7 +49,44 @@ const sidebars = {
       ],
     },
   ],
-  ccs: ["ccs/index"],
+  ccs: [
+    "ccs/index",
+    {
+      type: "category",
+      label: "User Guides",
+      collapsed: false,
+      items: [
+        "ccs/user-guides/index",
+        "ccs/user-guides/service-portal",
+        "ccs/user-guides/admin-portal",
+      ],
+    },
+    {
+      type: "category",
+      label: "Integrations",
+      collapsed: false,
+      items: [
+        "ccs/integrations/integration-design",
+      ],
+    },
+    {
+      type: "category",
+      label: "Functional Spec",
+      collapsed: false,
+      items: [
+        "ccs/functional/functional-spec",
+      ],
+    },
+    {
+      type: "category",
+      label: "Resources",
+      collapsed: false,
+      items: [
+        "ccs/resources/whitepaper",
+        "ccs/resources/datasheet",
+      ],
+    },
+  ],
   ckp: [
     "ckp/index",
     {

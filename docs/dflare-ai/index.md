@@ -7,7 +7,7 @@ sidebar_position: 0
 
 Dflare AI is a fully managed GPU-as-a-Service platform for organizations running AI, ML, and HPC workloads at scale. It transforms bare-metal GPU servers into production-ready, multi-tenant compute environments — delivering dedicated hardware performance with managed cloud simplicity.
 
-## What It Does
+## What it does
 
 - **Bare Metal Provisioning** — Automated server lifecycle from power-on to workload-ready
 - **GPU Cluster Orchestration** — Kubernetes and HPC clusters on dedicated GPU hardware
@@ -17,7 +17,7 @@ Dflare AI is a fully managed GPU-as-a-Service platform for organizations running
 - **Billing & Metering** — Usage-based tracking across GPU, storage, and network
 - **Monitoring** — Real-time GPU health, cluster metrics, and alerting
 
-## Who It's For
+## Who it's for
 
 - Cloud service providers building GPU cloud offerings
 - Sovereign AI programs requiring on-premises GPU infrastructure
