@@ -15,11 +15,15 @@ The output of this process is a set of custom **Debian packages** (kubeadm, kube
 
 CKP currently supports the following Kubernetes versions, selectable during cluster creation through the Compass UI or API:
 
-| Version | Status |
-|---------|--------|
-| v1.29.0 | Supported |
-| v1.30.6 | Supported |
-| v1.31.2 | Supported (Latest) |
+| Version | CNI (Calico) | CNCF Certified | Status |
+|---------|--------------|----------------|--------|
+| v1.29.0 | v3.28.2 | Yes | Supported |
+| v1.30.6 | v3.28.2 | Yes | Supported |
+| v1.31.2 | v3.30.5 | Yes | Supported |
+| v1.32.11 | v3.30.5 | Yes | Supported |
+| v1.33.7 | v3.30.5 | Yes | Supported |
+| v1.34.3 | v3.30.5 | Yes | Supported |
+| v1.35.1 | v3.30.5 | Yes | Supported (Latest) |
 
 ## CKP Packages
 
@@ -40,4 +44,11 @@ All CKP packages are **digitally signed by Coredge.io using PGP** to ensure supp
 
 ## CKP BYOH Bundle Distribution
 
-For CAPI-managed cluster provisioning, CKP packages are distributed as **BYOH (Bring Your Own Host) bundles** hosted on the Coredge Docker Hub registry. Each bundle is an OCI-compliant image artifact that contains all required CKP packages for a specific Kubernetes version and Ubuntu release. This approach ensures consistent, version-locked package delivery across all cluster nodes.
+For CAPI-managed cluster provisioning, CKP packages are distributed as **BYOH (Bring Your Own Host) bundles** hosted on the Coredge Docker Hub registry. Each bundle is an OCI-compliant image artifact that contains all required CKP packages for a specific Kubernetes version and operating system. This approach ensures consistent, version-locked package delivery across all cluster nodes.
+
+BYOH bundles are available for the following operating systems:
+
+| Operating System | Availability |
+|------------------|--------------|
+| Ubuntu 20.04 | Available for all supported K8s versions (v1.29.0+) |
+| Red Hat Enterprise Linux 9 | Available from K8s v1.29.0 onwards |

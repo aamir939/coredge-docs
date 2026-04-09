@@ -21,3 +21,15 @@ The complete end-to-end cluster lifecycle via CAPI follows these steps:
 12. **Addon Deployment** — CKP Storage Plugin, Cilium CNI, and Velero backup are deployed
 13. **Autoscaling** — Karpenter is installed (CCS Virtual Machine provider only)
 14. **Certificates** — TLS certificates are issued with 10-year validity
+
+## Cluster Configuration Summary
+
+| Configuration | Details |
+|---------------|---------|
+| Kubernetes Versions | v1.29.0, v1.30.6, v1.31.2, v1.32.11, v1.33.7, v1.34.3, v1.35.1 (All CNCF Certified) |
+| Control Plane | Kamaji v0.16.0 (Hosted) with Konnectivity, CoreDNS, KubeProxy, LoadBalancer |
+| CAPI Stack | Cluster API v1.7.7 \| BYOH v0.6.1 \| Cert-Manager v1.15.3 |
+| Infrastructure | Orbiter Baremetal (BMS) or CCS Virtual Machine (CCP) |
+| Networking | Configurable Pod/Service CIDR \| CNI: Calico v3.28.2 (K8s 1.29-1.30), v3.30.5 (K8s 1.31+) |
+| Operating Systems | Ubuntu 20.04, Red Hat Enterprise Linux 9 |
+| Storage & Backup | CKP Storage Plugin (ckp-block / Ceph) \| Velero Backup (S3-compatible) \| 10-year TLS Certificates |

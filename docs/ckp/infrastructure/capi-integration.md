@@ -24,6 +24,6 @@ CKP uses **Kamaji** as the hosted control plane provider. For each managed clust
 
 | Network | CIDR |
 |---------|------|
-| Pod Network | 10.32.0.0/12 (CAPI-managed) or 10.244.0.0/16 (standalone) |
-| Service Network | 10.96.0.0/12 |
+| Pod Network | Configurable CIDR, set during cluster creation |
+| Service Network | Configurable CIDR, set during cluster initialization |
 | Default CNI | Cilium (CAPI-managed), Calico or Flannel (standalone) |

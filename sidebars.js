@@ -164,14 +164,24 @@ const sidebars = {
         "ckp/addons/certificates",
       ],
     },
+    // {
+    //   type: "category",
+    //   label: "Operations",
+    //   collapsed: false,
+    //   items: [
+    //     "ckp/operations/build-artifacts",
+    //     "ckp/operations/troubleshooting",
+    //     "ckp/operations/glossary",
+    //   ],
+    // },
     {
       type: "category",
-      label: "Operations",
+      label: "Resources",
       collapsed: false,
       items: [
-        "ckp/operations/build-artifacts",
-        "ckp/operations/troubleshooting",
-        "ckp/operations/glossary",
+        "ckp/resources/white-paper",
+        "ckp/resources/technical-guide",
+        "ckp/resources/datasheet",
       ],
     },
   ],

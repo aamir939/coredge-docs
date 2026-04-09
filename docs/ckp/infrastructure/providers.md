@@ -15,7 +15,13 @@ The BMS Provider integrates CKP with the **Orbiter Baremetal** infrastructure, e
 | Cloud-Init Provisioning | Server initialization using cloud-init templates |
 | Hardware Secret Management | Secure handling of hardware credentials and access keys |
 
-**Note:** Autoscaling is not supported for physical hardware. AMD64 architecture only.
+**Supported Architecture:** AMD64
+
+**Supported OS:** Ubuntu 20.04, RHEL 9
+
+**Use Case:** Physical / Edge / High-Performance
+
+**Note:** Autoscaling is not supported for physical hardware.
 
 ## CKP CCP Provider (CCS Virtual Machine)
 
@@ -28,5 +34,9 @@ The CCP Provider integrates CKP with **Coredge Cloud Services (CCS)**, enabling 
 | Network Integration | Subnet and network configuration via the Neutron networking service |
 | OS Image Selection | CKP-optimized operating system images for cluster nodes |
 | Supported Architectures | AMD64 and ARM64 |
+
+**Supported OS:** Ubuntu 20.04, RHEL 9
+
+**Use Case:** Virtual / Cloud / Elastic Scaling
 
 **Note:** Autoscaling is supported via Karpenter (CPU-based).

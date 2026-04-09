@@ -17,7 +17,8 @@ The following abbreviations and acronyms are used throughout the CKP documentati
 | CCP | Coredge Cloud Provider |
 | CCS | Coredge Cloud Services |
 | CIDR | Classless Inter-Domain Routing |
-| CKP | Cloud Kubernetes Platform (Coredge Kubernetes Platform) |
+| CNCF | Cloud Native Computing Foundation |
+| CKP | Coredge Kubernetes Platform (Coredge Kubernetes Platform) |
 | CNI | Container Network Interface |
 | CRD | Custom Resource Definition |
 | CRI | Container Runtime Interface |
