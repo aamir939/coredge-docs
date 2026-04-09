@@ -5,63 +5,6 @@ sidebar_position: 1
 
 # Functional Specification Document
 
-## Document Control
-
-## Document Information
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <tbody>
-    <tr><th style={{padding: '4px 12px', textAlign: 'left'}}>Field</th><th style={{padding: '4px 12px', textAlign: 'left'}}>Details</th></tr>
-    <tr><td style={{padding: '3px 12px'}}>Document Title</td><td style={{padding: '3px 12px'}}>Functional Specification Document – Cirrus Cloud Suite (CCS)</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Document ID</td><td style={{padding: '3px 12px'}}>FSD-CCS-001</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Version</td><td style={{padding: '3px 12px'}}>1.0</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Status</td><td style={{padding: '3px 12px'}}>Draft</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Date</td><td style={{padding: '3px 12px'}}>February 24, 2026</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Classification</td><td style={{padding: '3px 12px'}}>Confidential</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Author</td><td style={{padding: '3px 12px'}}>Aamir</td></tr>
-  </tbody>
-</table>
-
-## Document Approvals
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <tbody>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Name</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Role</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Organization</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Signature</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Date</th>
-    </tr>
-    <tr><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td></tr>
-    <tr><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td></tr>
-    <tr><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td></tr>
-    <tr><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td><td style={{padding: '3px 12px'}}></td></tr>
-  </tbody>
-</table>
-
-## Document Distribution
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <tbody>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Name / Team</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Role</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Organization</th>
-    </tr>
-    <tr><td style={{padding: '3px 12px'}}>CCS Delivery Team</td><td style={{padding: '3px 12px'}}>Implementation</td><td style={{padding: '3px 12px'}}>Coredge</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Cloud Operations Team</td><td style={{padding: '3px 12px'}}>Operations</td><td style={{padding: '3px 12px'}}>The Client</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Infrastructure Team</td><td style={{padding: '3px 12px'}}>Infrastructure Provisioning</td><td style={{padding: '3px 12px'}}>The Client</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Security Team</td><td style={{padding: '3px 12px'}}>Security Review</td><td style={{padding: '3px 12px'}}>The Client</td></tr>
-  </tbody>
-</table>
-
-## Intellectual Property & Confidentiality
-
-This document contains valuable trade secrets and confidential information of the Client, its suppliers, vendors, and partners. The document shall not be disclosed to any person, organization, or entity unless such disclosure is subject to the provisions of a written non-disclosure and proprietary rights agreement, or intellectual property license agreement approved by the Client. The distribution of this document does not grant any license in or rights, in whole or in part, to the content, the product(s), technology, or intellectual property described herein.
-
----
-
 # 1. Introduction
 
 ## 1.1 Purpose

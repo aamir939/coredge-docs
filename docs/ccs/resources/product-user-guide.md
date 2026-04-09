@@ -1,40 +1,7 @@
 ---
-title: CCS Service Portal User Guide
+title: CCS Product User Guide
 sidebar_position: 2
 ---
-
-## Document Version Control
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <tr>
-    <th style={{padding: '4px 12px', textAlign: 'left'}}>Version</th>
-    <th style={{padding: '4px 12px', textAlign: 'left'}}>Date</th>
-    <th style={{padding: '4px 12px', textAlign: 'left'}}>Author</th>
-    <th style={{padding: '4px 12px', textAlign: 'left'}}>Reviewer</th>
-    <th style={{padding: '4px 12px', textAlign: 'left'}}>Description of Change</th>
-  </tr>
-  <tr>
-    <td style={{padding: '3px 12px'}}>1.0</td>
-    <td style={{padding: '3px 12px'}}>23rd Sep 2025</td>
-    <td style={{padding: '3px 12px'}}>Priti Shukla</td>
-    <td style={{padding: '3px 12px'}}>Archana Prasad</td>
-    <td style={{padding: '3px 12px'}}>Initial Draft</td>
-  </tr>
-  <tr>
-    <td style={{padding: '3px 12px'}}>1.1</td>
-    <td style={{padding: '3px 12px'}}>27th Feb 2026</td>
-    <td style={{padding: '3px 12px'}}>Priti Shukla</td>
-    <td style={{padding: '3px 12px'}}>Md Aamir</td>
-    <td style={{padding: '3px 12px'}}>Latest updates till Feb</td>
-  </tr>
-  <tr>
-    <td style={{padding: '3px 12px'}}>1.2</td>
-    <td style={{padding: '3px 12px'}}>26th March 2026</td>
-    <td style={{padding: '3px 12px'}}>Priti Shukla</td>
-    <td style={{padding: '3px 12px'}}>Md Aamir</td>
-    <td style={{padding: '3px 12px'}}>Updates as per portal</td>
-  </tr>
-</table>
 
 # Overview
 

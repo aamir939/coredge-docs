@@ -3,22 +3,60 @@ title: Cirrus Cloud Suite
 sidebar_position: 0
 ---
 
-Cirrus Cloud Suite (CCS) is Coredge's enterprise-grade unified cloud management platform. It enables organizations to manage, automate, and optimize their entire cloud infrastructure -- across private, public, hybrid, and edge environments -- through a single pane of glass.
+# Cirrus Cloud Suite
 
-Built on open, modular architecture, CCS replaces fragmented point tools with one integrated platform that handles compute, storage, networking, containers, databases, security, and cost management.
+Cirrus Cloud Suite (CCS) is Coredge's hyper-scaler grade Cloud Management Platform (CMP) purpose-built for sovereign and enterprise cloud environments. It delivers a unified self-service experience for Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service (SaaS) — enabling service providers, governments, and enterprises to operate cloud infrastructure at national scale with full governance and control.
 
-CCS is designed for enterprises, cloud service providers, telecom operators, and regulated industries that need operational simplicity, security, compliance, and cost efficiency at scale.
+CCS works in combination with **Cirrus Cloud Platform (CCP)**, the IaaS Orchestrator, and **Cloud Orbiter**, the Kubernetes Orchestrator, to provide a complete end-to-end cloud management stack above the underlying infrastructure.
 
 ## What it does
-CCS orchestrates the full lifecycle of your cloud resources, ensuring that infrastructure moves at the speed of your business.
-- **Unified Management:** Manage compute, storage, and networking across private, public, hybrid, and edge environments from one interface.
-- **Container & Database Orchestration:** Simplify the deployment and scaling of modern microservices and data workloads.
-- **Automated Governance:** Reduce manual overhead with automated provisioning, security policy enforcement, and compliance monitoring.
-- **Cost & Resource Optimization:** Gain deep visibility into cloud spend and resource utilization to eliminate waste and improve ROI.
-- **Integrated Security:** Protect your perimeter and internal workloads with built-in security protocols designed for regulated environments.
+
+- **Self-Service Provisioning** — On-demand VMs, containers, bare metal, storage, and networking without manual intervention
+- **Centralised Governance** — Unified management plane across all regions and availability zones with built-in API gateway and access control
+- **Multi-Tenant IAM** — Keycloak-based identity with per-tenant realm isolation, SAML 2.0 federation, and 18 pre-defined RBAC roles
+- **High Availability** — Active-passive dual-cluster per region with automated GSLB failover and 2N+1 quorum detection
+- **Metering & FinOps** — Built-in metering, showback, and quota management across all tenants and cells
+- **Enterprise Security** — mTLS in-transit, AES-256 at-rest, OpenFGA RBAC, and per-tenant Keycloak realm isolation
+- **Scalable Architecture** — Scales to 50,000 VMs and 200,000 pods; add worker nodes on demand as workloads grow
+
+## Platform Stack
+
+| Layer | Component | Role |
+|---|---|---|
+| Management | Cirrus Cloud Suite (CCS) | Self-service portal, admin console, governance, metering |
+| IaaS Orchestration | Cirrus Cloud Platform (CCP) | OpenStack-based compute, storage, and networking |
+| Container Orchestration | Cloud Orbiter | Kubernetes cluster management and application deployment |
+| Infrastructure | Physical / Virtual Layer | Servers, storage arrays, and network fabric |
 
 ## Who it's for
-- **Large Enterprises:**	Streamlines complex hybrid cloud strategies and breaks down IT silos.
-- **Cloud Service Providers:**	Delivers a robust, modular platform to offer managed services to end-customers.
-- **Telecom Operators:**	Enables high-performance edge computing and 5G infrastructure management.
-- **Regulated Industries:**	Meets stringent compliance and data sovereignty requirements (Finance, Healthcare, Gov).
+
+- **Government & Sovereign Cloud** — Locally controlled, nationally operated cloud platforms that meet data residency and compliance mandates
+- **Cloud Service Providers** — Deliver managed IaaS, PaaS, and SaaS to customers through a self-service portal with full billing integration
+- **Telecom Operators** — Build and operate carrier-grade cloud infrastructure for enterprise customers and 5G edge workloads
+- **Regulated Enterprises** — Finance, healthcare, and critical infrastructure organisations requiring full data sovereignty
+- **Large Enterprises** — Internal cloud platforms with chargeback, quota enforcement, and multi-department isolation
+
+## Service Portfolio
+
+CCS delivers services in three phased milestones:
+
+| Phase | Highlights |
+|---|---|
+| MVP1 | Compute (VM, CaaS, BMaaS), Storage, Networking, Security, Database, Monitoring, IAM, Backup |
+| MVP2 | Archival Storage, MS SQL DBaaS, CDN, MPLS, HSM, DDoS, TLS Management, Kafka |
+| MVP3 | Bandwidth as a Service, MariaDB, NoSQL, DRaaS, Message Broker |
+
+## Key Specifications
+
+| Specification | Value |
+|---|---|
+| Platform Type | Cloud Management Platform (CMP) |
+| Scalability | 50,000 VMs · 200,000 pods |
+| HA Model | Active-Passive dual cluster per region |
+| Failover | Automated GSLB · 2N+1 quorum detection |
+| Encryption | mTLS in-transit · AES-256 at-rest |
+| IAM Engine | Keycloak v24.0.5 · SAML 2.0 |
+| AuthZ Engine | OpenFGA |
+| Database | PostgreSQL 15.7 · MongoDB 5.0.3 |
+| Deployment | Kubernetes — control plane per AZ |
+| OpenStack | v2023.2 |

@@ -5,31 +5,6 @@ sidebar_position: 1
 
 # Integration Design Document
 
-## Document Control
-
-### Version History
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Version</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Date</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Author</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Reviewed By</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Changes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style={{padding: '3px 12px'}}>1.0</td>
-      <td style={{padding: '3px 12px'}}>Feb 2026</td>
-      <td style={{padding: '3px 12px'}}>Platform Arch. Team</td>
-      <td style={{padding: '3px 12px'}}>Integration Team</td>
-      <td style={{padding: '3px 12px'}}>Initial release</td>
-    </tr>
-  </tbody>
-</table>
-
 ### Acronyms & Abbreviations
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
