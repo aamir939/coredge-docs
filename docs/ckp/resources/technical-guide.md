@@ -51,10 +51,6 @@ CKP currently supports the following CNCF Certified Kubernetes versions:
 
 | Version | CNI (Calico) | CNCF Certified | Status |
 |---------|--------------|----------------|--------|
-| v1.29.0 | v3.28.2 | Yes | Supported |
-| v1.30.6 | v3.28.2 | Yes | Supported |
-| v1.31.2 | v3.30.5 | Yes | Supported |
-| v1.32.11 | v3.30.5 | Yes | Supported |
 | v1.33.7 | v3.30.5 | Yes | Supported |
 | v1.34.3 | v3.30.5 | Yes | Supported |
 | v1.35.1 | v3.30.5 | Yes | Supported (Latest) |
@@ -86,8 +82,8 @@ For CAPI-managed cluster provisioning, CKP packages are distributed as **BYOH (B
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | Available for all supported K8s versions (v1.29.0+) |
-| Red Hat Enterprise Linux 9 | Available from K8s v1.29.0 onwards |
+| Ubuntu 20.04 | Available for all supported K8s versions (v1.33.7+) |
+| Red Hat Enterprise Linux 9 | Available for all supported K8s versions (v1.33.7+) |
 
 Each bundle is published as an OCI artifact per Kubernetes version and OS combination, ensuring precise version-locked delivery.
 
@@ -115,10 +111,6 @@ Each CKP Kubernetes version ships with specific component image versions, all ho
 
 | K8s Version | etcd | CoreDNS | Pause |
 |-------------|------|---------|-------|
-| v1.29.0 | 3.5.12-0 | v1.11.1 | 3.9 |
-| v1.30.6 | 3.5.15-0 | v1.11.3 | 3.9 |
-| v1.31.2 | 3.5.15-0 | v1.11.3 | 3.10 |
-| v1.32.11 | 3.5.15-0 | v1.11.3 | 3.10 |
 | v1.33.7 | 3.5.15-0 | v1.11.3 | 3.10 |
 | v1.34.3 | 3.5.15-0 | v1.11.3 | 3.10 |
 | v1.35.1 | 3.5.15-0 | v1.11.3 | 3.10 |
@@ -131,10 +123,6 @@ The kube-apiserver, kube-controller-manager, kube-scheduler, and kube-proxy imag
 
 | K8s Ver | etcd | CoreDNS | Containerd | CRI | Pause | Calico | CNCF |
 |---------|------|---------|------------|-----|-------|--------|------|
-| v1.29.0 | v3.5.12-0 | v1.11.1 | 1.7.0+ | v1 | v3.9 | v3.28.2 | Yes |
-| v1.30.6 | v3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.9 | v3.28.2 | Yes |
-| v1.31.2 | v3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
-| v1.32.11 | v3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
 | v1.33.7 | v3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
 | v1.34.3 | v3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
 | v1.35.1 | v3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
@@ -162,8 +150,7 @@ CKP requires specific Linux kernel modules (overlay filesystem, bridge netfilter
 
 | CNI | Description |
 |-----|-------------|
-| Calico (v3.28.2 / v3.30.5) | Default CNI in Compass UI. Networking and security solution for Kubernetes. |
-| Flannel | Simple layer 3 network fabric designed for Kubernetes |
+| Calico (v3.30.5) | Default CNI in Compass UI. Networking and security solution for Kubernetes. |
 | Cilium | Cloud native networking using eBPF kernel technology. Used as default CNI in CAPI-provisioned clusters. |
 
 ---
@@ -176,13 +163,13 @@ The primary way to create CKP clusters is through the **Compass UI**. The UI pre
 
 | Setting | Options / Details |
 |---------|-------------------|
-| Kubernetes Version | v1.29.0 through v1.35.1 (selectable, all CNCF Certified) |
+| Kubernetes Version | v1.33.7 through v1.35.1 (selectable, all CNCF Certified) |
 | Networking (CNI) | Calico (default) |
-| Networking Version | Version mapped per K8s version (v3.28.2 or v3.30.5) |
+| Networking Version | v3.30.5 |
 | Worker Host Group | Selection from pre-registered host groups |
 | Worker Nodes | Number of worker nodes (minimum 1) |
 
-The Node Configuration section allows managing master host node settings, worker node setup, and the cluster's Virtual IP for communication. The control plane uses **Kamaji** (hosted control plane), so users only configure worker nodes and host group assignment.
+The Node Configuration section allows managing master host node settings, worker node setup, and the cluster's Virtual IP for communication. The control plane uses **Managed Control Plane** (hosted control plane), so users only configure worker nodes and host group assignment.
 
 ### 6.2 Manual Cluster Installation (Standalone)
 
@@ -285,12 +272,12 @@ The CCP Provider integrates CKP with the **Coredge Cloud Services (CCS)** virtua
 | Kubeadm | Bootstrap Provider | v1.7.7 |
 | Kubeadm | Control Plane Provider | v1.7.7 |
 | BYOH | Infrastructure Provider | v0.6.1 |
-| Kamaji | Control Plane Provider | v0.16.0 |
+| Managed Control Plane | Control Plane Provider | - |
 | Cert-Manager | Certificate Management | v1.15.3 |
 
-### 9.2 Kamaji Control Plane
+### 9.2 Managed Control Plane
 
-CKP uses **Kamaji** as the hosted control plane provider. For each managed cluster, Kamaji creates a full set of CAPI resources including the control plane (with Konnectivity agent, CoreDNS, KubeProxy, and LoadBalancer), the BYOH infrastructure binding, machine deployment configurations, and bootstrap templates. This approach keeps control plane components off the worker nodes, reducing resource overhead and simplifying management.
+CKP uses **Managed Control Plane** as the hosted control plane provider. For each managed cluster, the Managed Control Plane creates a full set of CAPI resources including the control plane (with Konnectivity agent, CoreDNS, KubeProxy, and LoadBalancer), the BYOH infrastructure binding, machine deployment configurations, and bootstrap templates. This approach keeps control plane components off the worker nodes, reducing resource overhead and simplifying management.
 
 ### 9.3 Default Network Configuration
 
@@ -298,7 +285,7 @@ CKP uses **Kamaji** as the hosted control plane provider. For each managed clust
 |---------|---------------|
 | Pod Network | Configurable CIDR, set during cluster creation (CAPI-managed and standalone use different defaults) |
 | Service Network | Configurable CIDR, set during cluster initialization |
-| Default CNI | Cilium (CAPI-managed clusters), Calico or Flannel (standalone clusters) |
+| Default CNI | Cilium (CAPI-managed clusters), Calico (standalone clusters) |
 
 ![CKP CAPI Integration Architecture](/img/ckp/diagram_capi_stack_HD.png)
 
@@ -430,9 +417,9 @@ The full end-to-end lifecycle for a CAPI-managed CKP cluster:
 4. Host agents register with the management plane via mutual TLS (mTLS)
 5. Hosts are approved (automatically or manually, depending on configuration)
 6. Approved hosts are assigned to the designated host group
-7. CAPI resources are created using the Kamaji control plane template
+7. CAPI resources are created using the Managed Control Plane template
 8. The Machine Reconciler and BYOH Host Reconciler drive the bootstrap process
-9. The Kamaji-hosted control plane comes up with Konnectivity, CoreDNS, KubeProxy, and LoadBalancer
+9. The Managed Control Plane comes up with Konnectivity, CoreDNS, KubeProxy, and LoadBalancer
 10. Worker nodes join the cluster via the bootstrap configuration
 11. The cluster reaches Ready state
 12. Addons are deployed: CKP Storage Plugin, Cilium CNI, and Velero backup
@@ -471,14 +458,14 @@ If the container runtime appears active in system status but containers are not 
 | CKP | Coredge Kubernetes Platform — Coredge's custom Kubernetes distribution |
 | CAPI | Cluster API — Kubernetes sub-project for declarative cluster lifecycle management |
 | BYOH | Bring Your Own Host — Infrastructure provider for pre-existing hosts |
-| Kamaji | Hosted control plane provider used by CKP |
+| Managed Control Plane | Hosted control plane provider used by CKP |
 | Compass | Coredge platform for CKP cluster management (UI and API) |
-| Calico | Default CNI in Compass UI (v3.28.2 for K8s 1.29/1.30, v3.30.5 for K8s 1.31+) |
+| Calico | Default CNI in Compass UI (v3.30.5) |
 | Cilium | eBPF-based CNI, default in CAPI-provisioned clusters |
 | Karpenter | Kubernetes autoscaler integrated in CKP (CCS VM provider only) |
 | Velero | Backup and disaster recovery tool integrated in CKP |
 | imgpkg | OCI image tool used to pull BYOH bundles onto target hosts |
-| Konnectivity | Agent for secure management-to-worker communication in Kamaji control planes |
+| Konnectivity | Agent for secure management-to-worker communication in Managed Control Planes |
 | BMS | Baremetal Server — Orbiter Baremetal infrastructure provider |
 | CCP / CCS | Coredge Cloud Services — Virtual Machine infrastructure provider |
 | PSK | Pre-Shared Key — Used for host agent authentication |

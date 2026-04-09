@@ -13,9 +13,9 @@ The complete end-to-end cluster lifecycle via CAPI follows these steps:
 4. **Agent Registration** — Host agents register with the management plane via mutual TLS
 5. **Host Approval** — Hosts are approved automatically or manually
 6. **Host Grouping** — Approved hosts are assigned to the designated host group
-7. **CAPI Resources** — Resources are created using the Kamaji control plane template
+7. **CAPI Resources** — Resources are created using the Managed Control Plane template
 8. **Bootstrap** — The Machine Reconciler and BYOH Host Reconciler drive the bootstrap process
-9. **Control Plane Up** — Kamaji-hosted control plane comes up with Konnectivity, CoreDNS, KubeProxy, and LoadBalancer
+9. **Control Plane Up** — Managed Control Plane comes up with Konnectivity, CoreDNS, KubeProxy, and LoadBalancer
 10. **Workers Join** — Worker nodes join the cluster via the bootstrap configuration
 11. **Cluster Ready** — The cluster reaches Ready state
 12. **Addon Deployment** — CKP Storage Plugin, Cilium CNI, and Velero backup are deployed
@@ -26,10 +26,10 @@ The complete end-to-end cluster lifecycle via CAPI follows these steps:
 
 | Configuration | Details |
 |---------------|---------|
-| Kubernetes Versions | v1.29.0, v1.30.6, v1.31.2, v1.32.11, v1.33.7, v1.34.3, v1.35.1 (All CNCF Certified) |
-| Control Plane | Kamaji v0.16.0 (Hosted) with Konnectivity, CoreDNS, KubeProxy, LoadBalancer |
+| Kubernetes Versions | v1.33.7, v1.34.3, v1.35.1 (All CNCF Certified) |
+| Control Plane | Managed Control Plane (Hosted) with Konnectivity, CoreDNS, KubeProxy, LoadBalancer |
 | CAPI Stack | Cluster API v1.7.7 \| BYOH v0.6.1 \| Cert-Manager v1.15.3 |
 | Infrastructure | Orbiter Baremetal (BMS) or CCS Virtual Machine (CCP) |
-| Networking | Configurable Pod/Service CIDR \| CNI: Calico v3.28.2 (K8s 1.29-1.30), v3.30.5 (K8s 1.31+) |
+| Networking | Configurable Pod/Service CIDR \| CNI: Calico v3.30.5 |
 | Operating Systems | Ubuntu 20.04, Red Hat Enterprise Linux 9 |
 | Storage & Backup | CKP Storage Plugin (ckp-block / Ceph) \| Velero Backup (S3-compatible) \| 10-year TLS Certificates |

@@ -17,10 +17,6 @@ CKP currently supports the following Kubernetes versions, selectable during clus
 
 | Version | CNI (Calico) | CNCF Certified | Status |
 |---------|--------------|----------------|--------|
-| v1.29.0 | v3.28.2 | Yes | Supported |
-| v1.30.6 | v3.28.2 | Yes | Supported |
-| v1.31.2 | v3.30.5 | Yes | Supported |
-| v1.32.11 | v3.30.5 | Yes | Supported |
 | v1.33.7 | v3.30.5 | Yes | Supported |
 | v1.34.3 | v3.30.5 | Yes | Supported |
 | v1.35.1 | v3.30.5 | Yes | Supported (Latest) |
@@ -50,5 +46,5 @@ BYOH bundles are available for the following operating systems:
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | Available for all supported K8s versions (v1.29.0+) |
-| Red Hat Enterprise Linux 9 | Available from K8s v1.29.0 onwards |
+| Ubuntu 20.04 | Available for all supported K8s versions (v1.33.7+) |
+| Red Hat Enterprise Linux 9 | Available for all supported K8s versions (v1.33.7+) |

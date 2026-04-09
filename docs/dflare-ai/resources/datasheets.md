@@ -63,7 +63,7 @@ Integrates with enterprise identity providers (OIDC/OAuth2). Issues short-lived 
 
 ### Unified Kubernetes + Slurm
 
-Single control plane manages Kubernetes and Slurm. Kubernetes, powered by CKP (Coredge Kubernetes Platform), handles containerized workloads via device plugins. Supports CNCF Certified Kubernetes versions (1.29 - 1.35). Slurm handles batch workloads with GPU-aware scheduling using GRES. Both share the same underlying nodes, storage, and network.
+Single control plane manages Kubernetes and Slurm. Kubernetes, powered by CKP (Coredge Kubernetes Platform), handles containerized workloads via device plugins. Supports CNCF Certified Kubernetes versions (1.33 - 1.35). Slurm handles batch workloads with GPU-aware scheduling using GRES. Both share the same underlying nodes, storage, and network.
 
 ---
 

@@ -20,7 +20,7 @@ sidebar_position: 3
 | Certification | CNCF Certified Kubernetes (all supported versions) |
 | Package Signing | PGP-signed by Coredge.io with mandatory integrity verification |
 | Architecture | Two-layer: Distribution Layer (distro) + Management Layer (CAPI/Compass) |
-| Supported K8s Versions | v1.29.0, v1.30.6, v1.31.2, v1.32.11, v1.33.7, v1.34.3, v1.35.1 |
+| Supported K8s Versions | v1.33.7, v1.34.3, v1.35.1 |
 | Version Suffix | -ckp (e.g., v1.31.2-ckp) |
 
 ---
@@ -42,8 +42,8 @@ sidebar_position: 3
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | All K8s versions (v1.29.0+) |
-| RHEL 9 | All K8s versions (v1.29.0+) |
+| Ubuntu 20.04 | All K8s versions (v1.33.7+) |
+| RHEL 9 | All K8s versions (v1.33.7+) |
 
 All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-compliant image artifacts pulled via imgpkg. Container images for all core components (kube-apiserver, kube-controller-manager, kube-scheduler, kube-proxy, etcd, CoreDNS, pause) are hosted on the Coredge Docker Hub registry.
 
@@ -53,10 +53,6 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 
 | K8s Version | etcd | CoreDNS | Containerd | CRI | Pause | Calico (CNI) | CNCF |
 |-------------|------|---------|------------|-----|-------|--------------|------|
-| v1.29.0 | 3.5.12-0 | v1.11.1 | 1.7.0+ | v1 | 3.9 | v3.28.2 | Yes |
-| v1.30.6 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | 3.9 | v3.28.2 | Yes |
-| v1.31.2 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | 3.10 | v3.30.5 | Yes |
-| v1.32.11 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | 3.10 | v3.30.5 | Yes |
 | v1.33.7 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | 3.10 | v3.30.5 | Yes |
 | v1.34.3 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | 3.10 | v3.30.5 | Yes |
 | v1.35.1 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | 3.10 | v3.30.5 | Yes |
@@ -70,7 +66,7 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 | Cluster API (Core) | v1.7.7 |
 | Kubeadm (Bootstrap + CP) | v1.7.7 |
 | BYOH (Infrastructure) | v0.6.1 |
-| Kamaji (Control Plane) | v0.16.0 — Konnectivity, CoreDNS, KubeProxy, LoadBalancer |
+| Managed Control Plane | Konnectivity, CoreDNS, KubeProxy, LoadBalancer |
 | Cert-Manager | v1.15.3 (10-year TLS certificates) |
 | Compass Platform | Unified UI + REST/gRPC APIs; multi-tenant (domain + project scoped) |
 
@@ -97,8 +93,7 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 | Pod Network | Configurable CIDR |
 | Service Network | Configurable CIDR |
 | CNI (CAPI) | Cilium (eBPF) |
-| CNI (Compass) | Calico v3.28.2/v3.30.5 |
-| Additional CNI | Flannel |
+| CNI (Compass) | Calico v3.30.5 |
 | Storage | Ceph (ckp-block) |
 | Standalone CSI | OpenEBS hostpath |
 
@@ -149,7 +144,7 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 |-------|-------|
 | Provisioning | Request → Resolve provider → Provision hosts → Register (mTLS) |
 | Bootstrap | Approve → Assign group → CAPI resources → Reconcilers |
-| Cluster Ready | Kamaji CP up → Workers join → Ready state |
+| Cluster Ready | Control Plane up → Workers join → Ready state |
 | Addons | Storage + Cilium + Velero + Karpenter + 10yr TLS |
 
 ---

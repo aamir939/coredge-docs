@@ -26,6 +26,5 @@ Additionally, **swap must be disabled** on all nodes, which is a standard Kubern
 
 | CNI | Description |
 |-----|-------------|
-| Calico (v3.28.2 / v3.30.5) | Default CNI in Compass UI. Networking and security solution for Kubernetes workloads. Version varies by K8s version. |
-| Flannel | Simple layer 3 network fabric designed for Kubernetes |
+| Calico (v3.30.5) | Default CNI in Compass UI. Networking and security solution for Kubernetes workloads. |
 | Cilium | Cloud native networking using eBPF kernel technology. Default CNI in CAPI-provisioned clusters. |

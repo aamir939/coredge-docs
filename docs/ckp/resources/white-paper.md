@@ -17,11 +17,11 @@ A complete, CNCF-certified Kubernetes distribution with integrated cluster lifec
 
 **CKP (Coredge Kubernetes Platform)** is a custom Kubernetes distribution built and maintained by Coredge.io. It takes upstream Kubernetes source code and produces enterprise-grade, digitally signed binaries and container images, providing organizations with a fully supported, supply-chain-verified Kubernetes platform.
 
-The platform operates across two layers: the **CKP Distribution Layer**, which delivers custom-built Kubernetes packages and Coredge-hosted core component images; and the **CKP Management Layer**, which handles cluster lifecycle management through CAPI (Cluster API) with Kamaji as the hosted control plane provider.
+The platform operates across two layers: the **CKP Distribution Layer**, which delivers custom-built Kubernetes packages and Coredge-hosted core component images; and the **CKP Management Layer**, which handles cluster lifecycle management through CAPI (Cluster API) with Managed Control Plane.
 
-> **CKP currently supports Kubernetes versions v1.29.0 through v1.35.1, all CNCF Certified, running on Ubuntu 20.04 and Red Hat Enterprise Linux 9 across both baremetal and virtual infrastructure.**
+> **CKP currently supports Kubernetes versions v1.33.7 through v1.35.1, all CNCF Certified, running on Ubuntu 20.04 and Red Hat Enterprise Linux 9 across both baremetal and virtual infrastructure.**
 
-Key capabilities include PGP-signed package distribution via BYOH (Bring Your Own Host) bundles, automated cluster provisioning through the Compass UI and API, Karpenter-based autoscaling, Ceph-backed persistent storage, Velero backup and disaster recovery, and TLS certificate management with 10-year validity. The platform integrates Cluster API v1.7.7, Kamaji v0.16.0, BYOH Infrastructure Provider v0.6.1, and Cert-Manager v1.15.3.
+Key capabilities include PGP-signed package distribution via BYOH (Bring Your Own Host) bundles, automated cluster provisioning through the Compass UI and API, Karpenter-based autoscaling, Ceph-backed persistent storage, Velero backup and disaster recovery, and TLS certificate management with 10-year validity. The platform integrates Cluster API v1.7.7, Managed Control Plane, BYOH Infrastructure Provider v0.6.1, and Cert-Manager v1.15.3.
 
 ---
 
@@ -51,7 +51,7 @@ Custom-built Kubernetes binaries (kubeadm, kubelet, kubectl) tagged with a **-ck
 
 ### Management Layer
 
-Cluster lifecycle management via CAPI (Cluster API), with hosted control planes through Kamaji, automated provisioning through the Compass platform, and integrated addons for storage, networking, backup, and autoscaling.
+Cluster lifecycle management via CAPI (Cluster API), with Managed Control Plane for hosted control planes, automated provisioning through the Compass platform, and integrated addons for storage, networking, backup, and autoscaling.
 
 > **CKP binaries are functionally identical to upstream Kubernetes, but are versioned, packaged, and digitally signed by Coredge.io for enterprise traceability and supply chain integrity.**
 
@@ -81,19 +81,15 @@ For CAPI-managed cluster provisioning, CKP packages are distributed as BYOH (Bri
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | Available for all supported K8s versions (v1.29.0+) |
-| Red Hat Enterprise Linux 9 | Available from K8s v1.29.0 onwards |
+| Ubuntu 20.04 | Available for all supported K8s versions (v1.33.7+) |
+| Red Hat Enterprise Linux 9 | Available for all supported K8s versions (v1.33.7+) |
 
 ### 5.4 Supported Kubernetes Versions
 
-CKP currently supports seven CNCF Certified Kubernetes versions with version-mapped CNI (Calico) support:
+CKP currently supports three CNCF Certified Kubernetes versions with CNI (Calico v3.30.5) support:
 
 | K8s Version | CNI (Calico) | CNCF Certified | Status |
 |-------------|--------------|----------------|--------|
-| v1.29.0 | v3.28.2 | Yes | Supported |
-| v1.30.6 | v3.28.2 | Yes | Supported |
-| v1.31.2 | v3.30.5 | Yes | Supported |
-| v1.32.11 | v3.30.5 | Yes | Supported |
 | v1.33.7 | v3.30.5 | Yes | Supported |
 | v1.34.3 | v3.30.5 | Yes | Supported |
 | v1.35.1 | v3.30.5 | Yes | Supported (Latest) |
@@ -116,13 +112,13 @@ CKP integrates Cluster API (CAPI) as the core lifecycle management engine:
 |----------|------|---------|
 | Cluster API | Core Provider | v1.7.7 |
 | Kubeadm | Bootstrap Provider | v1.7.7 |
-| Kamaji | Control Plane Provider | v0.16.0 |
+| Managed Control Plane | Control Plane Provider | - |
 | BYOH | Infrastructure Provider | v0.6.1 |
 | Cert-Manager | Certificate Management | v1.15.3 |
 
-### 6.3 Kamaji Hosted Control Plane
+### 6.3 Managed Control Plane
 
-CKP uses Kamaji as the hosted control plane provider. For each managed cluster, Kamaji creates a full set of CAPI resources including the control plane (with Konnectivity agent, CoreDNS, KubeProxy, and LoadBalancer), the BYOH infrastructure binding, machine deployment configurations, and bootstrap templates. This approach keeps control plane components off the worker nodes, reducing resource overhead and simplifying management.
+CKP uses Managed Control Plane as the hosted control plane provider. For each managed cluster, the Managed Control Plane creates a full set of CAPI resources including the control plane (with Konnectivity agent, CoreDNS, KubeProxy, and LoadBalancer), the BYOH infrastructure binding, machine deployment configurations, and bootstrap templates. This approach keeps control plane components off the worker nodes, reducing resource overhead and simplifying management.
 
 ---
 
@@ -209,10 +205,6 @@ CKP integrates Karpenter for automated cluster autoscaling with CPU-based scalin
 
 | K8s Ver | etcd | CoreDNS | Containerd | CRI | Pause | Calico | CNCF |
 |---------|------|---------|------------|-----|-------|--------|------|
-| v1.29.0 | 3.5.12-0 | v1.11.1 | 1.7.0+ | v1 | v3.9 | v3.28.2 | Yes |
-| v1.30.6 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.9 | v3.28.2 | Yes |
-| v1.31.2 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
-| v1.32.11 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
 | v1.33.7 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
 | v1.34.3 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
 | v1.35.1 | 3.5.15-0 | v1.11.3 | 1.7.0+ | v1 | v3.10 | v3.30.5 | Yes |
@@ -232,8 +224,7 @@ CKP integrates Karpenter for automated cluster autoscaling with CPU-based scalin
 
 | CNI | Description |
 |-----|-------------|
-| Calico (v3.28.2 / v3.30.5) | Default CNI in Compass UI. Version varies by K8s version. |
-| Flannel | Simple layer 3 network fabric for Kubernetes |
+| Calico (v3.30.5) | Default CNI in Compass UI. |
 | Cilium | eBPF-based CNI. Default in CAPI-provisioned clusters. |
 
 ---
@@ -244,10 +235,10 @@ CKP delivers a complete, enterprise-ready Kubernetes platform that addresses the
 
 | Component | Details |
 |-----------|---------|
-| Distribution | Custom-built K8s binaries (v1.29.0–v1.35.1), PGP-signed, CNCF Certified |
-| Management | CAPI v1.7.7 + Kamaji v0.16.0 hosted control plane |
+| Distribution | Custom-built K8s binaries (v1.33.7–v1.35.1), PGP-signed, CNCF Certified |
+| Management | CAPI v1.7.7 + Managed Control Plane |
 | Infrastructure | Orbiter Baremetal (BMS) and CCS Virtual Machine (CCP) |
-| Networking | Calico v3.28.2/v3.30.5, Cilium, Flannel; Configurable CIDR |
+| Networking | Calico v3.30.5, Cilium; Configurable CIDR |
 | Storage | CKP Storage Plugin (ckp-block / Ceph) + OpenEBS (standalone) |
 | Backup | Velero with S3-compatible storage |
 | Autoscaling | Karpenter (CCS VM provider, CPU-based) |
