@@ -104,4 +104,4 @@ For more information or questions about Coredge's Dflare AI:
 
 ---
 
-[Download PDF](/downloads/datasheets/Dflare_AI_Datasheet.pdf)
+[Download PDF](/downloads/datasheets/DFlare%20AI-Datasheet.pdf)

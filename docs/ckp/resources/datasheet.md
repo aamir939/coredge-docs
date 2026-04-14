@@ -158,4 +158,4 @@ For more information or questions about Coredge's CKP:
 
 ---
 
-[Download PDF](/downloads/datasheets/CKP_Datasheet.pdf)
+[Download PDF](/downloads/datasheets/CKP%20-Datasheet.pdf)

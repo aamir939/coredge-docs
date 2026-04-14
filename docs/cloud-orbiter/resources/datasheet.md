@@ -47,8 +47,12 @@ Manages the lifecycle of applications deployed on clusters, public clouds, and e
 - **Comprehensive Observability:** Provides tools for monitoring and troubleshooting infrastructure and applications.
 - **Zero Trust Security:** Ensures a high level of security for the managed infrastructure.
 
-For more information or questions about Coredge’s Cloud Orbiter:
+For more information or questions about Coredge's Cloud Orbiter:
 
 Please visit https://coredge.io
 
 Contact us at info@coredge.io
+
+---
+
+[Download PDF](/downloads/datasheets/Cloud%20Orbiter-Datasheet.pdf)

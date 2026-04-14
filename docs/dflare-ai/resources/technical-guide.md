@@ -600,4 +600,4 @@ Dflare AI represents a paradigm shift in enterprise GPU infrastructure. By unify
 
 ---
 
-[Download PDF](/downloads/technical-guides/Dflare_AI_Technical_Guide.pdf)
+[Download PDF](/downloads/technical-guides/DFlare%20AI-Technical%20Guide.pdf)

@@ -250,4 +250,4 @@ CKP delivers a complete, enterprise-ready Kubernetes platform that addresses the
 
 ---
 
-[Download PDF](/downloads/whitepapers/CKP_White_Paper.pdf)
+[Download PDF](/downloads/whitepapers/CKP-Whitepaper.pdf)
