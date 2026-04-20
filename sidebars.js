@@ -29,6 +29,21 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "ML Platform",
+      collapsed: false,
+      items: [
+        "dflare-ai/ml-platform/overview",
+        "dflare-ai/ml-platform/notebooks",
+        "dflare-ai/ml-platform/training",
+        "dflare-ai/ml-platform/inference",
+        "dflare-ai/ml-platform/fine-tuning",
+        "dflare-ai/ml-platform/mlflow",
+        "dflare-ai/ml-platform/evaluation",
+        "dflare-ai/ml-platform/datasets",
+      ],
+    },
+    {
+      type: "category",
       label: "Integrations",
       collapsed: false,
       items: [

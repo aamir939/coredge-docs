@@ -44,7 +44,7 @@ Traditional cloud and on-prem systems fail to deliver all four simultaneously.
 
 ### 3.1 Bare Metal Performance
 
-Eliminate virtualization overhead to maximize GPU efficiency.
+Eliminate virtualization overhead to maximize GPU efficiency. Standard GPU slicing via NVIDIA MIG (Multi-Instance GPU) profiles enables partitioning supported GPUs into isolated instances.
 
 ### 3.2 Dual Fabric Separation
 
@@ -422,6 +422,8 @@ The platform is designed for resilience across all layers.
 **Hardware-Level Tenant Isolation.** Isolation at InfiniBand switch hardware (partition key), filesystem (access control map), and network fabric (VRF/VXLAN).
 
 **Automated Lifecycle Management.** From bare metal power-on to production cluster — fully automated. No SSH, no manual configuration.
+
+**ML Platform.** Integrated machine learning environment with GPU notebooks, distributed training, LLM inference, fine-tuning, experiment tracking, and dataset management — enabling complete ML lifecycle within workspace isolation.
 
 > **KEY INSIGHT**
 >
