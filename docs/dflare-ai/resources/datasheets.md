@@ -18,6 +18,7 @@ Dflare AI is an enterprise GPU infrastructure platform designed to deliver bare 
 - **Access Layer** — Portal UI, REST APIs, CLI
 - **Control Plane** — Workflow Orchestrator, Cluster Manager, Network Manager, Identity & Access, Monitoring & Metering
 - **Data Plane** — GPU nodes, Kubernetes / Slurm workloads, InfiniBand fabric, Parallel filesystem
+- **ML Platform** — GPU notebooks, distributed training, LLM inference, fine-tuning, experiment tracking, dataset management
 
 Dflare AI efficiently manages bare metal GPU nodes across any infrastructure, offering a unified experience for application and infrastructure lifecycle management. The platform caters to enterprises, AI labs, managed service providers, and government organizations, assisting in GPU provisioning, workload orchestration, security, and billing.
 
@@ -43,7 +44,7 @@ Offer dedicated bare metal GPU clusters to multiple tenants with hardware-level 
 
 ### Bare Metal GPU Performance
 
-Direct GPU access without virtualization overhead. Hardware-level BIOS and OS tuning pre-applied via golden images. Near-native efficiency (99%+ of bare metal GPU peak).
+Direct GPU access without virtualization overhead. Hardware-level BIOS and OS tuning pre-applied via golden images. Near-native efficiency (99%+ of bare metal GPU peak). Standard GPU slicing via NVIDIA MIG (Multi-Instance GPU) profiles enables efficient resource utilization.
 
 ### Observability
 
@@ -63,7 +64,11 @@ Integrates with enterprise identity providers (OIDC/OAuth2). Issues short-lived 
 
 ### Unified Kubernetes + Slurm
 
-Single control plane manages Kubernetes and Slurm. Kubernetes, powered by CKP (Coredge Kubernetes Platform), handles containerized workloads via device plugins. Supports CNCF Certified Kubernetes versions (1.28 - 1.35). Slurm handles batch workloads with GPU-aware scheduling using GRES. Both share the same underlying nodes, storage, and network.
+Single control plane manages Kubernetes and Slurm. Kubernetes, powered by CKP (Coredge Kubernetes Platform), handles containerized workloads via device plugins. Supports CNCF Certified Kubernetes versions (1.33 - 1.35). Slurm handles batch workloads with GPU-aware scheduling using GRES. Both share the same underlying nodes, storage, and network.
+
+### ML Platform
+
+Integrated machine learning environment with GPU notebooks, distributed training, LLM inference with OpenAI-compatible APIs, model fine-tuning, experiment tracking with MLflow, and dataset management.
 
 ---
 
@@ -104,4 +109,4 @@ For more information or questions about Coredge's Dflare AI:
 
 ---
 
-[Download PDF](/downloads/datasheets/Dflare_AI_Datasheet.pdf)
+[Download PDF](/downloads/datasheets/DFlare%20AI-Datasheet.pdf)

@@ -74,14 +74,15 @@ Dflare AI is a GPU-native infrastructure platform designed to address the full l
 - Enforce multi-tenant isolation across all infrastructure layers
 - Monitor system performance and resource utilization
 - Track and report usage with granular billing metrics
+- Run ML workloads through an integrated ML Platform with GPU notebooks, distributed training, LLM inference, fine-tuning, and experiment tracking
 
 The platform abstracts infrastructure complexity while preserving direct access to hardware performance.
 
-### Seven Operational Pillars
+### Eight Operational Pillars
 
-![Seven Operational Pillars](/img/whitepaper/exhibit-1-pillars.svg)
+![Eight Operational Pillars](/img/whitepaper/exhibit-1-pillars.svg)
 
-*Exhibit 1: Dflare AI automates seven critical operational pillars.*
+*Exhibit 1: Dflare AI automates eight critical operational pillars.*
 
 ---
 
@@ -139,7 +140,7 @@ Dflare AI supports both containerized and HPC workloads on the same infrastructu
 
 ### Bare Metal Performance
 
-The platform provides direct access to GPU hardware without virtualization overhead. System-level optimizations are applied automatically, ensuring consistent and predictable performance.
+The platform provides direct access to GPU hardware without virtualization overhead. System-level optimizations are applied automatically, ensuring consistent and predictable performance. Standard GPU slicing via NVIDIA MIG (Multi-Instance GPU) profiles enables partitioning supported GPUs into isolated instances for efficient resource utilization.
 
 ### Automated Provisioning Lifecycle
 
@@ -162,6 +163,10 @@ The platform automates infrastructure provisioning, cluster deployment, scaling 
 ### Monitoring and Billing
 
 Comprehensive visibility into system performance, real-time resource usage metrics, and detailed billing and reporting capabilities. Every GPU-hour, CPU-hour, and storage byte is tracked.
+
+### ML Platform
+
+Integrated machine learning environment providing GPU notebooks, distributed training, LLM inference with OpenAI-compatible APIs, model fine-tuning, experiment tracking with MLflow, and dataset management — enabling the complete ML lifecycle within workspace isolation.
 
 ---
 

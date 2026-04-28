@@ -9,7 +9,7 @@ sidebar_position: 1
 
 Dflare AI is a fully managed, enterprise-grade GPU-as-a-Service (GPUaaS) platform purpose-built for organizations running large-scale artificial intelligence, machine learning, and high-performance computing workloads. The platform transforms bare metal GPU servers into production-ready, multi-tenant compute environments — delivering the raw power of dedicated hardware with the operational simplicity of a managed cloud service.
 
-From a single unified portal, enterprises can provision bare metal GPU nodes, orchestrate Kubernetes and Slurm (HPC) clusters, access high-performance InfiniBand-connected storage, enforce granular multi-tenant security, and track resource consumption with transparent usage-based billing — all without managing the underlying infrastructure complexity.
+From a single unified portal, enterprises can provision bare metal GPU nodes, orchestrate Kubernetes and Slurm (HPC) clusters, access high-performance InfiniBand-connected storage, run ML workloads through an integrated ML platform with notebooks and training jobs, enforce granular multi-tenant security, and track resource consumption with transparent usage-based billing — all without managing the underlying infrastructure complexity.
 
 Built to support multi-vendor GPU architectures and interconnected via high-speed InfiniBand fabric backed by parallel storage, Dflare AI delivers the performance density required for frontier AI training, large language model fine-tuning, scientific simulation, and enterprise inference workloads — at scale, with isolation, and with full operational visibility.
 
@@ -33,9 +33,9 @@ Yet building and operating GPU infrastructure at this scale is extraordinarily c
 
 Dflare AI eliminates these challenges by delivering a fully integrated, automated platform that handles the entire lifecycle — from bare metal provisioning to workload execution — through a single pane of glass. Organizations get the performance of dedicated GPU hardware with the operational model of a managed service.
 
-## Seven Operational Pillars
+## Eight Operational Pillars
 
-Dflare AI is an end-to-end GPU infrastructure platform that automates seven critical operational pillars:
+Dflare AI is an end-to-end GPU infrastructure platform that automates eight critical operational pillars:
 
 - **Bare Metal Provisioning** — Takes physical GPU servers from powered-off to workload-ready automatically. *Minutes to production, not weeks of manual setup.*
 
@@ -50,6 +50,8 @@ Dflare AI is an end-to-end GPU infrastructure platform that automates seven crit
 - **Security & Access Control** — Enforces RBAC + ABAC with enterprise IAM, per-tenant isolation at every layer. *Zero-trust by design — no action is trusted by default.*
 
 - **Billing & Metering** — Tracks GPU-hours, CPU-hours, storage, network — converts to billable records. *Transparent, accurate, usage-based billing.*
+
+- **ML Platform** — Provides an integrated machine learning environment with GPU notebooks, distributed training, LLM inference, fine-tuning, experiment tracking, and dataset management. *Complete ML lifecycle in your workspace.*
 
 ## How It Works — At a Glance
 

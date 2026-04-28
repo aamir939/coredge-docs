@@ -9,7 +9,7 @@ sidebar_position: 4
 
 | Dependency | Details |
 |------------|---------|
-| Supported OS | Ubuntu 20.04, Ubuntu 22.04 |
+| Supported OS | Ubuntu 20.04, Ubuntu 22.04, Red Hat Enterprise Linux 9 |
 | Container Runtime | Containerd (v1.6.14+) |
 | OCI Runtime | runc (v1.1.3 - v1.1.10) |
 | CRI Tools | crictl (v1.27.0) |
@@ -18,12 +18,13 @@ sidebar_position: 4
 
 ## Kernel and System Requirements
 
-CKP requires specific Linux kernel modules (overlay filesystem, bridge netfilter) and network forwarding settings to be enabled on all cluster nodes. These are configured automatically by the CKP installation scripts. Additionally, **swap must be disabled** on all nodes, which is a standard Kubernetes requirement.
+CKP requires specific Linux kernel modules (overlay filesystem, bridge netfilter) and network forwarding settings to be enabled on all cluster nodes. These are configured automatically by the CKP installation scripts.
+
+Additionally, **swap must be disabled** on all nodes, which is a standard Kubernetes requirement.
 
 ## Supported CNIs
 
 | CNI | Description |
 |-----|-------------|
-| Calico (v3.29.2) | Default CNI in Compass UI. Networking and security solution for Kubernetes workloads |
-| Flannel | Simple layer 3 network fabric designed for Kubernetes |
-| Cilium | Cloud native networking using eBPF kernel technology. Default CNI in CAPI-provisioned clusters |
+| Calico (v3.30.5) | Default CNI in Compass UI. Networking and security solution for Kubernetes workloads. |
+| Cilium | Cloud native networking using eBPF kernel technology. Default CNI in CAPI-provisioned clusters. |

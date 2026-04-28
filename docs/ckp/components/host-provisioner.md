@@ -9,8 +9,8 @@ The CKP Host Provisioner is a multi-cluster controller responsible for managing 
 
 | Reconciler | Purpose |
 |------------|---------|
-| Machine Reconciler | Manages CAPI Machine resources, ensuring the desired number of nodes are provisioned |
-| BYOH Host Reconciler | Manages Bring Your Own Host resources, handling host registration and bootstrap |
+| Machine Reconciler | Manages CAPI Machine resources, ensuring desired nodes are provisioned and healthy |
+| BYOH Host Reconciler | Manages BYOH resources, handling host registration and bootstrap |
 
 ## Host Status Lifecycle
 

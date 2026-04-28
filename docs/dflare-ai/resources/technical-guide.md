@@ -44,7 +44,7 @@ Traditional cloud and on-prem systems fail to deliver all four simultaneously.
 
 ### 3.1 Bare Metal Performance
 
-Eliminate virtualization overhead to maximize GPU efficiency.
+Eliminate virtualization overhead to maximize GPU efficiency. Standard GPU slicing via NVIDIA MIG (Multi-Instance GPU) profiles enables partitioning supported GPUs into isolated instances.
 
 ### 3.2 Dual Fabric Separation
 
@@ -240,7 +240,7 @@ The Volume Service provisions tenant directories, assigns quotas, and configures
 
 ### Kubernetes
 
-Powered by CKP (Coredge Kubernetes Platform), handles containerized workloads using declarative scheduling. Supports CNCF Certified Kubernetes versions (1.28 - 1.35). GPU resources are exposed via device plugins and scheduled using native Kubernetes primitives.
+Powered by CKP (Coredge Kubernetes Platform), handles containerized workloads using declarative scheduling. Supports CNCF Certified Kubernetes versions (1.33 - 1.35). GPU resources are exposed via device plugins and scheduled using native Kubernetes primitives.
 
 ### Slurm
 
@@ -423,6 +423,8 @@ The platform is designed for resilience across all layers.
 
 **Automated Lifecycle Management.** From bare metal power-on to production cluster — fully automated. No SSH, no manual configuration.
 
+**ML Platform.** Integrated machine learning environment with GPU notebooks, distributed training, LLM inference, fine-tuning, experiment tracking, and dataset management — enabling complete ML lifecycle within workspace isolation.
+
 > **KEY INSIGHT**
 >
 > Dflare AI uniquely combines unified K8s and HPC orchestration, bare metal performance, hardware-enforced isolation, and full lifecycle automation in a single platform — a combination not available from any single public cloud provider.
@@ -600,4 +602,4 @@ Dflare AI represents a paradigm shift in enterprise GPU infrastructure. By unify
 
 ---
 
-[Download PDF](/downloads/technical-guides/Dflare_AI_Technical_Guide.pdf)
+[Download PDF](/downloads/technical-guides/DFlare%20AI-Technical%20Guide.pdf)

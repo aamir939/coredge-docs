@@ -11,13 +11,13 @@ The primary way to create CKP clusters is through the **Compass UI**. The UI pre
 
 | Setting | Options / Details |
 |---------|-------------------|
-| Kubernetes Version | v1.29.0, v1.30.6, v1.31.2 (selectable) |
+| Kubernetes Version | v1.33.7 through v1.35.1 (all CNCF Certified) |
 | Networking (CNI) | Calico (default) |
-| Networking Version | v3.29.2 |
+| Networking Version | v3.30.5 |
 | Worker Host Group | Selection from pre-registered host groups |
 | Worker Nodes | Number of worker nodes (minimum 1) |
 
-The control plane uses **Kamaji** (hosted control plane), so users only configure worker nodes and host group assignment.
+The control plane uses **Managed Control Plane** (hosted control plane), so users only configure worker nodes and host group assignment.
 
 ## Manual Cluster Installation (Standalone)
 

@@ -202,18 +202,18 @@ function ProductsSection() {
       description: 'Multi-cloud management and orchestration for hybrid cloud environments.',
       link: '/cloud-orbiter',
     },
-    {
-      icon: RobotIcon,
-      title: 'CoRobots',
-      description: 'Edge computing platform for robotics and IoT workloads.',
-      link: '/corobots',
-    },
-    {
-      icon: ServerIcon,
-      title: 'CVM',
-      description: 'Coredge Virtual Machines for flexible compute resources.',
-      link: '/cvm',
-    },
+    // {
+    //   icon: RobotIcon,
+    //   title: 'CoRobots',
+    //   description: 'Edge computing platform for robotics and IoT workloads.',
+    //   link: '/corobots',
+    // },
+    // {
+    //   icon: ServerIcon,
+    //   title: 'CVM',
+    //   description: 'Coredge Virtual Machines for flexible compute resources.',
+    //   link: '/cvm',
+    // },
   ];
 
   return (
