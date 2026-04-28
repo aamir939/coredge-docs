@@ -1,13 +1,13 @@
 ---
-title: Cirrus Cloud Suite
+title: CCP - Cirrus Cloud Platform
 sidebar_position: 0
 ---
 
-# Cirrus Cloud Suite
+# CCP - Cirrus Cloud Platform
 
-Cirrus Cloud Suite (CCS) is Coredge's hyper-scaler grade Cloud Management Platform (CMP) purpose-built for sovereign and enterprise cloud environments. It delivers a unified self-service experience for Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service (SaaS) — enabling service providers, governments, and enterprises to operate cloud infrastructure at national scale with full governance and control.
+CCP - Cirrus Cloud Platform is Coredge's hyper-scaler grade Cloud Management Platform (CMP) purpose-built for sovereign and enterprise cloud environments. It delivers a unified self-service experience for Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service (SaaS) — enabling service providers, governments, and enterprises to operate cloud infrastructure at national scale with full governance and control.
 
-CCS works in combination with **Cirrus Cloud Platform (CCP)**, the IaaS Orchestrator, and **Cloud Orbiter**, the Kubernetes Orchestrator, to provide a complete end-to-end cloud management stack above the underlying infrastructure.
+CCP integrates the Cloud Management layer with the IaaS Orchestrator, working alongside **Cloud Orbiter**, the Kubernetes Orchestrator, to provide a complete end-to-end cloud management stack above the underlying infrastructure.
 
 ## What it does
 
@@ -23,8 +23,7 @@ CCS works in combination with **Cirrus Cloud Platform (CCP)**, the IaaS Orchestr
 
 | Layer | Component | Role |
 |---|---|---|
-| Management | Cirrus Cloud Suite (CCS) | Self-service portal, admin console, governance, metering |
-| IaaS Orchestration | Cirrus Cloud Platform (CCP) | OpenStack-based compute, storage, and networking |
+| Cloud Management & IaaS | CCP - Cirrus Cloud Platform | Self-service portal, admin console, governance, metering, OpenStack-based compute, storage, and networking |
 | Container Orchestration | Cloud Orbiter | Kubernetes cluster management and application deployment |
 | Infrastructure | Physical / Virtual Layer | Servers, storage arrays, and network fabric |
 
@@ -38,7 +37,7 @@ CCS works in combination with **Cirrus Cloud Platform (CCP)**, the IaaS Orchestr
 
 ## Service Portfolio
 
-CCS delivers services in three phased milestones:
+CCP delivers services in three phased milestones:
 
 | Phase | Highlights |
 |---|---|

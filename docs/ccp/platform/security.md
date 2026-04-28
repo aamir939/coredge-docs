@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Multi-Layered Security Model
 
-CCS implements defense-in-depth with a multi-layered security posture. Every request passes through authentication, authorization, encryption, and audit controls — no action is trusted by default. Security is not an add-on; it is built into every layer of the platform from the IAM engine to the storage tier.
+CCP implements defense-in-depth with a multi-layered security posture. Every request passes through authentication, authorization, encryption, and audit controls — no action is trusted by default. Security is not an add-on; it is built into every layer of the platform from the IAM engine to the storage tier.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -34,7 +34,7 @@ CCS implements defense-in-depth with a multi-layered security posture. Every req
 
 ### Keycloak IAM Engine
 
-CCS uses Keycloak v24.0.5 as its IAM engine. Every tenant gets a dedicated Keycloak realm — a completely isolated identity domain with its own users, roles, authentication flows, and federation configuration.
+CCP uses Keycloak v24.0.5 as its IAM engine. Every tenant gets a dedicated Keycloak realm — a completely isolated identity domain with its own users, roles, authentication flows, and federation configuration.
 
 - **OAuth2 / OpenID Connect:** Industry-standard token-based authentication
 - **Multi-Factor Authentication:** TOTP, SMS, email, and hardware key support
@@ -73,7 +73,7 @@ This structure ensures the principle of least privilege: a user with Compute acc
 
 ### In-Transit: Mutual TLS (mTLS)
 
-All communication between CCS microservices, between the portal and APIs, and between CCS and integrated infrastructure uses mTLS. This means:
+All communication between CCP microservices, between the portal and APIs, and between CCP and integrated infrastructure uses mTLS. This means:
 
 - Both the client and server present valid certificates to each other before any data is exchanged
 - No service can impersonate another — every communication channel is mutually authenticated
@@ -81,11 +81,11 @@ All communication between CCS microservices, between the portal and APIs, and be
 
 ### At-Rest: AES-256
 
-All data stored by CCS — platform state in PostgreSQL, event data in MongoDB, session data in Redis — is encrypted at rest using AES-256. This includes backup data stored in geo-replicated object storage.
+All data stored by CCP — platform state in PostgreSQL, event data in MongoDB, session data in Redis — is encrypted at rest using AES-256. This includes backup data stored in geo-replicated object storage.
 
 ## Security Services Portfolio
 
-CCS includes a comprehensive set of security services available through the self-service catalogue:
+CCP includes a comprehensive set of security services available through the self-service catalogue:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -110,13 +110,13 @@ CCS includes a comprehensive set of security services available through the self
 
 ## Compliance Alignment
 
-CCS is designed with compliance requirements of government and regulated industries in mind.
+CCP is designed with compliance requirements of government and regulated industries in mind.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
     <tr>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Compliance Area</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCS Implementation</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCP Implementation</th>
     </tr>
   </thead>
   <tbody>
@@ -131,4 +131,4 @@ CCS is designed with compliance requirements of government and regulated industr
 
 ## Privileged Access Management
 
-CCS includes Privileged Access Management (PAM) as a foundation service, ensuring that privileged operations — administrative actions on infrastructure, emergency access, break-glass procedures — are controlled, logged, and subject to approval workflows. PAM is delivered as part of the MVP1 Foundation Services catalogue.
+CCP includes Privileged Access Management (PAM) as a foundation service, ensuring that privileged operations — administrative actions on infrastructure, emergency access, break-glass procedures — are controlled, logged, and subject to approval workflows. PAM is delivered as part of the MVP1 Foundation Services catalogue.

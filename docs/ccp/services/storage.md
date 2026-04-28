@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Storage Services
 
-**Business Value:** CCS delivers a unified storage portfolio spanning block, object, file, and archival tiers — all backed by NetApp enterprise storage and provisioned through the self-service portal. Every storage resource is governed by the same RBAC, metered by the same billing engine, and isolated within the same tenant boundary as compute and networking.
+**Business Value:** CCP delivers a unified storage portfolio spanning block, object, file, and archival tiers — all backed by NetApp enterprise storage and provisioned through the self-service portal. Every storage resource is governed by the same RBAC, metered by the same billing engine, and isolated within the same tenant boundary as compute and networking.
 
 ## Storage Service Portfolio
 
@@ -27,7 +27,7 @@ sidebar_position: 2
 
 ## Storage Backend
 
-All CCS storage services are backed by **NetApp v11.9.0**, integrated through the `storage-plugin` microservice. NetApp provides the enterprise-grade reliability, performance, and data management features required for sovereign and regulated cloud environments:
+All CCP storage services are backed by **NetApp v11.9.0**, integrated through the `storage-plugin` microservice. NetApp provides the enterprise-grade reliability, performance, and data management features required for sovereign and regulated cloud environments:
 
 - High IOPS block storage for VM and database workloads
 - S3-compatible object storage for unstructured data

@@ -3,7 +3,7 @@ title: Data Sheet
 sidebar_position: 3
 ---
 
-# Cirrus Cloud Suite 
+# Cirrus Cloud Platform 
 
 ## Hyper-Scaler Grade Cloud Management Platform for Sovereign and Enterprise Cloud
 Coredge | coredge.io | version 1.0 | February 2026 | Datasheet
@@ -35,8 +35,8 @@ Coredge | coredge.io | version 1.0 | February 2026 | Datasheet
 </table>
 
 ## OVERVIEW
-Cirrus Cloud Suite (CCS) is a Cloud Management Platform developed by Coredge, delivering hyper-scaler grade self-service capabilities for IaaS, PaaS, and SaaS. Combined with Cirrus Cloud Platform (IaaS Orchestrator) and Cloud Orbiter (Kubernetes Orchestrator), CCS provides a unified platform for internal operations teams and customers — enabling self-service provisioning, centralized governance, and optimized cloud spend through a single portal.
-Purpose-built for sovereign and enterprise cloud environments, CCS bridges the gap between public cloud self-service convenience and the control, compliance, and security posture required for government and regulated enterprises.
+CCP - Cirrus Cloud Platform is a Cloud Management Platform developed by Coredge, delivering hyper-scaler grade self-service capabilities for IaaS, PaaS, and SaaS. Combined with Cirrus Cloud Platform (IaaS Orchestrator) and Cloud Orbiter (Kubernetes Orchestrator), CCP provides a unified platform for internal operations teams and customers — enabling self-service provisioning, centralized governance, and optimized cloud spend through a single portal.
+Purpose-built for sovereign and enterprise cloud environments, CCP bridges the gap between public cloud self-service convenience and the control, compliance, and security posture required for government and regulated enterprises.
 
 ### KEY BENEFITS
 - **Self-Service Provisioning:** On-demand VMs, containers, bare metal, storage, and networking with no manual intervention required.
@@ -56,7 +56,7 @@ Purpose-built for sovereign and enterprise cloud environments, CCS bridges the g
 - Day 2 operations, FinOps, and cloud governance for large enterprises
 
 ### PLATFORM HIERARCHY
-CCS organizes resources in a three-level hierarchy: Tenant (top-level boundary, one per customer account) → Cell (isolated project or environment within a Tenant) → Resources (cloud services consumed within a Cell). Quota is enforced at both Tenant and Cell level. The BSS Portal is the primary identity store.
+CCP organizes resources in a three-level hierarchy: Tenant (top-level boundary, one per customer account) → Cell (isolated project or environment within a Tenant) → Resources (cloud services consumed within a Cell). Quota is enforced at both Tenant and Cell level. The BSS Portal is the primary identity store.
 
 ### COMPLETE SERVICE PORTFOLIO
 
@@ -106,7 +106,7 @@ CCS organizes resources in a three-level hierarchy: Tenant (top-level boundary, 
     <tr><td style={{padding: '3px 12px'}}>Keycloak</td><td style={{padding: '3px 12px'}}>v24.0.5</td><td style={{padding: '3px 12px'}}>Authentication, IAM, multi-tenant identity management</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Zabbix</td><td style={{padding: '3px 12px'}}>v7.4.3</td><td style={{padding: '3px 12px'}}>Operational Metrics, Alarms, Notifications</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Prometheus & Grafana</td><td style={{padding: '3px 12px'}}>v9.4.3</td><td style={{padding: '3px 12px'}}>Cluster and database health monitoring</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>TCPWare</td><td style={{padding: '3px 12px'}}>ccs-1.14.0-rc5</td><td style={{padding: '3px 12px'}}>Public IP management</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>TCPWare</td><td style={{padding: '3px 12px'}}>ccp-1.14.0-rc5</td><td style={{padding: '3px 12px'}}>Public IP management</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Microsoft Entra</td><td style={{padding: '3px 12px'}}>N/A</td><td style={{padding: '3px 12px'}}>Active Directory Services</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Microsoft ADFS</td><td style={{padding: '3px 12px'}}>N/A</td><td style={{padding: '3px 12px'}}>Identity federation via SAML 2.0</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Zscaler</td><td style={{padding: '3px 12px'}}>N/A</td><td style={{padding: '3px 12px'}}>VPN Gateway — Site-to-Site & Point-to-Site</td></tr>
@@ -130,7 +130,7 @@ CCS organizes resources in a three-level hierarchy: Tenant (top-level boundary, 
 - Backup: incremental every 30 min • Full back up every 24 hrs.
 - 3-month geo-replicated retention
 #### **Pre-Requisites**
-- Wildcard SSL certificates for CCS hosting
+- Wildcard SSL certificates for CCP hosting
 - Load Balancer with Virtual IPs (VIPs) per endpoint
 - DNS server with dynamic domain support
 - Kubernetes-compliant High IOPS storage
@@ -139,7 +139,7 @@ CCS organizes resources in a three-level hierarchy: Tenant (top-level boundary, 
 
 ## Contact
 
-For more information or questions about Coredge's CCS:
+For more information or questions about Coredge's CCP:
 
 - **Website:** [https://coredge.io](https://coredge.io)
 - **Email:** [info@coredge.io](mailto:info@coredge.io)

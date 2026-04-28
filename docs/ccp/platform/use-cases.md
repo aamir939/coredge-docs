@@ -9,9 +9,9 @@ sidebar_position: 5
 
 ### Sovereign Cloud for Government and National Infrastructure
 
-CCS is purpose-built for sovereign cloud deployments — cloud platforms that are locally controlled, independently operated, and built to meet government compliance, data sovereignty, and audit requirements.
+CCP is purpose-built for sovereign cloud deployments — cloud platforms that are locally controlled, independently operated, and built to meet government compliance, data sovereignty, and audit requirements.
 
-**What CCS delivers for sovereign cloud:**
+**What CCP delivers for sovereign cloud:**
 - On-premises deployment with no dependency on external hyperscaler connectivity
 - Data residency controls — all data stored and processed within the defined sovereign boundary
 - Audit trails and compliance reporting aligned to national regulatory requirements
@@ -25,9 +25,9 @@ CCS is purpose-built for sovereign cloud deployments — cloud platforms that ar
 
 ### Enterprise Private Cloud for Regulated Industries
 
-Large enterprises in finance, healthcare, energy, and legal sectors run workloads that cannot move to public cloud due to regulatory, data sovereignty, or risk management requirements. CCS enables these organizations to build an internal private cloud with public cloud-grade self-service.
+Large enterprises in finance, healthcare, energy, and legal sectors run workloads that cannot move to public cloud due to regulatory, data sovereignty, or risk management requirements. CCP enables these organizations to build an internal private cloud with public cloud-grade self-service.
 
-**What CCS delivers for enterprise private cloud:**
+**What CCP delivers for enterprise private cloud:**
 - Self-service provisioning of VMs, containers, storage, and databases for internal teams
 - Multi-tenant isolation between business units — Finance cannot see HR infrastructure
 - Per-tenant and per-cell quota management for internal chargebacks and cost governance
@@ -40,9 +40,9 @@ Large enterprises in finance, healthcare, energy, and legal sectors run workload
 
 ### Managed Cloud Services for Telcos and CSPs
 
-Telecom operators and cloud service providers can use CCS to deliver IaaS, PaaS, and SaaS to their enterprise customers. CCS provides the multi-tenant management platform that turns raw data center capacity into a commercially operated cloud service.
+Telecom operators and cloud service providers can use CCP to deliver IaaS, PaaS, and SaaS to their enterprise customers. CCP provides the multi-tenant management platform that turns raw data center capacity into a commercially operated cloud service.
 
-**What CCS delivers for managed service providers:**
+**What CCP delivers for managed service providers:**
 - Multi-tenant portal — each enterprise customer gets their own isolated self-service environment
 - BSS Portal integration for customer onboarding, subscription management, and billing identity
 - Built-in metering and showback for accurate customer invoicing and FinOps reporting
@@ -55,9 +55,9 @@ Telecom operators and cloud service providers can use CCS to deliver IaaS, PaaS,
 
 ### Day 2 Operations, FinOps, and Cloud Governance
 
-For organizations already running OpenStack or Kubernetes, CCS adds the management and governance layer that transforms fragmented infrastructure tools into an operable, auditable cloud platform.
+For organizations already running OpenStack or Kubernetes, CCP adds the management and governance layer that transforms fragmented infrastructure tools into an operable, auditable cloud platform.
 
-**What CCS delivers for Day 2 operations:**
+**What CCP delivers for Day 2 operations:**
 - Single pane of glass across all regions, AZs, VMs, clusters, and storage
 - Centralized API gateway with access control and logging for every platform operation
 - Automated provisioning workflows — no SSH, no manual configuration
@@ -71,9 +71,9 @@ For organizations already running OpenStack or Kubernetes, CCS adds the manageme
 
 ### Multi-Tenant IaaS and PaaS Delivery at National Scale
 
-CCS can serve as the management platform for a national cloud program, delivering IaaS and PaaS services to hundreds of government agencies, public sector organizations, and enterprise tenants from a single shared infrastructure.
+CCP can serve as the management platform for a national cloud program, delivering IaaS and PaaS services to hundreds of government agencies, public sector organizations, and enterprise tenants from a single shared infrastructure.
 
-**What CCS delivers at national scale:**
+**What CCP delivers at national scale:**
 - Scales to 50,000 VMs and 200,000 pods per deployment
 - Per-tenant identity isolation via dedicated Keycloak realms
 - Granular quota management per tenant, per cell, per service category

@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Security Services
 
-**Business Value:** CCS includes a comprehensive security services catalogue that extends platform-level security (mTLS, IAM, RBAC) to active threat detection, workload protection, perimeter defence, and compliance monitoring. Security is available as self-service from the catalogue — not a separate procurement process.
+**Business Value:** CCP includes a comprehensive security services catalogue that extends platform-level security (mTLS, IAM, RBAC) to active threat detection, workload protection, perimeter defence, and compliance monitoring. Security is available as self-service from the catalogue — not a separate procurement process.
 
 ## Security Services Portfolio
 
@@ -32,11 +32,11 @@ sidebar_position: 7
 
 ## Platform Security Foundation
 
-Before the security services catalogue, the CCS platform itself provides a robust security baseline that applies to every tenant and resource automatically:
+Before the security services catalogue, the CCP platform itself provides a robust security baseline that applies to every tenant and resource automatically:
 
 - **Authentication:** Keycloak v24.0.5 with OAuth2/OIDC, MFA (TOTP, SMS, email, hardware keys)
 - **Authorization:** OpenFGA with 18 pre-defined RBAC roles; fine-grained permission enforcement on every operation
-- **Transport Security:** mTLS between all CCS microservices and APIs — no plaintext internal channels
+- **Transport Security:** mTLS between all CCP microservices and APIs — no plaintext internal channels
 - **Storage Security:** AES-256 encryption at rest for all platform data — PostgreSQL, MongoDB, Redis, and backups
 - **Network Security:** VPC isolation with VXLAN/EVPN overlay; per-tenant routing; CheckPoint / Palo Alto firewall integration
 - **Identity Isolation:** Dedicated Keycloak realm per tenant — complete identity domain isolation

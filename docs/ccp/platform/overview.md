@@ -7,9 +7,9 @@ sidebar_position: 1
 
 ## Executive Summary
 
-Cirrus Cloud Suite (CCS) is a hyper-scaler grade Cloud Management Platform (CMP) developed by Coredge, purpose-built for sovereign cloud, enterprise private cloud, and managed cloud service delivery. The platform provides a unified self-service portal, centralized governance, automated provisioning, and multi-tenant isolation for organizations that must operate cloud infrastructure with the security and compliance posture demanded by government, regulated industries, and national critical infrastructure programs.
+CCP - Cirrus Cloud Platform is a hyper-scaler grade Cloud Management Platform (CMP) developed by Coredge, purpose-built for sovereign cloud, enterprise private cloud, and managed cloud service delivery. The platform provides a unified self-service portal, centralized governance, automated provisioning, and multi-tenant isolation for organizations that must operate cloud infrastructure with the security and compliance posture demanded by government, regulated industries, and national critical infrastructure programs.
 
-CCS does not replace infrastructure — it orchestrates it. Deployed above Coredge's own Cirrus Cloud Platform (CCP) IaaS Orchestrator and Cloud Orbiter Kubernetes Orchestrator, CCS becomes the single pane of glass through which operators manage the platform and customers consume services — spanning compute, storage, networking, databases, security, and monitoring through one portal, one API gateway, and one identity system.
+CCP integrates cloud management with IaaS orchestration. Working alongside Cloud Orbiter Kubernetes Orchestrator, CCP becomes the single pane of glass through which operators manage the platform and customers consume services — spanning compute, storage, networking, databases, security, and monitoring through one portal, one API gateway, and one identity system.
 
 **Who It's For:** Cloud service providers, sovereign cloud programs, telecom operators, large enterprises, and regulated industries (finance, healthcare, government) that need operational simplicity, compliance, and cost visibility at the scale of thousands of VMs and hundreds of thousands of containers.
 
@@ -23,13 +23,13 @@ As cloud adoption matures, organizations running private, hybrid, or sovereign c
 - **Cost Opacity:** Without centralized metering and showback, cloud spending across tenants, cells, and services becomes opaque. FinOps is impossible without instrumented consumption data.
 - **Security and Compliance:** Sovereign cloud workloads demand end-to-end encryption, identity federation, role-based access control, and audit trails that meet national and industry compliance standards — built in, not bolted on.
 
-## What CCS Solves
+## What CCP Solves
 
-CCS eliminates these challenges by delivering an integrated Cloud Management Platform that handles the entire lifecycle — from tenant onboarding to service provisioning to cost governance — through a single, unified interface. Organizations get the self-service experience of a public cloud with the control, isolation, and compliance posture of a privately operated sovereign environment.
+CCP eliminates these challenges by delivering an integrated Cloud Management Platform that handles the entire lifecycle — from tenant onboarding to service provisioning to cost governance — through a single, unified interface. Organizations get the self-service experience of a public cloud with the control, isolation, and compliance posture of a privately operated sovereign environment.
 
 ## Five Operational Pillars
 
-CCS is an end-to-end cloud management platform organized around five critical operational pillars:
+CCP is an end-to-end cloud management platform organized around five critical operational pillars:
 
 - **Self-Service Provisioning** — Enables on-demand deployment of VMs, containers, bare metal, storage, and networking through an intuitive portal, with no manual intervention from the operations team. *Minutes to resource, not days of tickets.*
 
@@ -47,7 +47,7 @@ A platform administrator creates a tenant in the Admin Console, allocating quota
 
 ## Platform Stack
 
-CCS operates as the top layer of a three-tier platform stack:
+CCP operates as the top layer of the platform stack:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -58,8 +58,7 @@ CCS operates as the top layer of a three-tier platform stack:
     </tr>
   </thead>
   <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Cirrus Cloud Suite (CCS)</td><td style={{padding: '3px 12px'}}>Cloud Management Platform — self-service portal, governance, IAM, metering</td><td style={{padding: '3px 12px'}}>Keycloak, OpenFGA, Kafka, PostgreSQL, MongoDB</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Cirrus Cloud Platform (CCP)</td><td style={{padding: '3px 12px'}}>IaaS Orchestrator — compute, storage, networking at the infrastructure layer</td><td style={{padding: '3px 12px'}}>OpenStack v2023.2, NetApp v11.9.0</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>CCP - Cirrus Cloud Platform</td><td style={{padding: '3px 12px'}}>Cloud Management Platform with integrated IaaS — self-service portal, governance, IAM, metering, compute, storage, networking</td><td style={{padding: '3px 12px'}}>Keycloak, OpenFGA, Kafka, PostgreSQL, MongoDB, OpenStack v2023.2, NetApp v11.9.0</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Cloud Orbiter</td><td style={{padding: '3px 12px'}}>Kubernetes Orchestrator — container lifecycle, application deployment, PaaS</td><td style={{padding: '3px 12px'}}>Kubernetes, CKP (Coredge Kubernetes Platform)</td></tr>
   </tbody>
 </table>
@@ -86,13 +85,13 @@ CCS operates as the top layer of a three-tier platform stack:
 
 ### Primary Use Cases
 
-**Sovereign Cloud for Government:** Deploy a nationally controlled, independently operated cloud platform that meets government compliance, data sovereignty, and audit requirements. CCS provides the self-service experience of a public cloud with local control.
+**Sovereign Cloud for Government:** Deploy a nationally controlled, independently operated cloud platform that meets government compliance, data sovereignty, and audit requirements. CCP provides the self-service experience of a public cloud with local control.
 
 **Enterprise Private Cloud:** Large enterprises with regulated workloads — finance, healthcare, energy — can operate their own private cloud with multi-tenant isolation between business units, full metering for internal chargebacks, and integrated security controls.
 
-**Managed Cloud Services for Telcos and CSPs:** Telecom operators and cloud service providers can use CCS to deliver IaaS, PaaS, and SaaS to their enterprise customers through a white-labeled, multi-tenant portal with granular billing and quota management.
+**Managed Cloud Services for Telcos and CSPs:** Telecom operators and cloud service providers can use CCP to deliver IaaS, PaaS, and SaaS to their enterprise customers through a white-labeled, multi-tenant portal with granular billing and quota management.
 
-**Day 2 Operations and FinOps:** For organizations already running OpenStack or Kubernetes, CCS adds the governance, showback, and unified management layer that transforms complex infrastructure into an operable, governable cloud platform.
+**Day 2 Operations and FinOps:** For organizations already running OpenStack or Kubernetes, CCP adds the governance, showback, and unified management layer that transforms complex infrastructure into an operable, governable cloud platform.
 
 ### Target Industries
 

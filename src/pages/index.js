@@ -186,9 +186,9 @@ function ProductsSection() {
     },
     {
       icon: ContainerIcon,
-      title: 'CCS',
-      description: 'Coredge Container Service for scalable container orchestration and management.',
-      link: '/ccs',
+      title: 'CCP',
+      description: 'CCP - Cirrus Cloud Platform for enterprise cloud management.',
+      link: '/ccp',
     },
     {
       icon: KubernetesIcon,

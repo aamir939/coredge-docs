@@ -20,8 +20,8 @@ sidebar_position: 1
       <td style={{padding: '3px 12px'}}>Bare Metal as a Service</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS</td>
-      <td style={{padding: '3px 12px'}}>Cirrus Cloud Suite</td>
+      <td style={{padding: '3px 12px'}}>CCP</td>
+      <td style={{padding: '3px 12px'}}>Cirrus Cloud Platform</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>CMP</td>
@@ -92,11 +92,11 @@ This Integration Design Document (IDD) defines the technical integration archite
 
 The integration covers the following functional domains:
 
-- Identity and Access Management (IAM) — Keycloak federation between CCS and GPUaaS
+- Identity and Access Management (IAM) — Keycloak federation between CCP and GPUaaS
 - Compute — GPU as a Service provisioning via OpenStack APIs and Coredge Bare Metal
 - Container Orchestration — Kubernetes (Cloud Orbiter / OCP) cluster lifecycle integration
 - Network — VPC, VRF, VLAN, and VXLAN/EVPN fabric orchestration (Cisco NDFC)
-- Storage — NetApp (CCS) and DDN AI400 / VAST Data (GPUaaS) integration paths
+- Storage — NetApp (CCP) and DDN AI400 / VAST Data (GPUaaS) integration paths
 - Metering and Billing — orbiter-metering to billing pipeline
 - Monitoring and Alerting — Prometheus / VictoriaMetrics / Zabbix federation
 - Security — mTLS service mesh, RBAC/ABAC policy enforcement, audit trails
@@ -111,15 +111,15 @@ The integration covers the following functional domains:
 
 ## 2. System Overview
 
-### 2.1 Cirrus Cloud Suite (CCS)
+### 2.1 CCP - Cirrus Cloud Platform
 
-Coredge is building a sovereign cloud platform for government and enterprise customers across India. The Cloud Management Platform layer is delivered by Cirrus Cloud Suite (CCS), which provides a hyper-scaler-grade self-service portal spanning IaaS, PaaS, and SaaS services. CCS is composed of the following orchestration layers:
+Coredge is building a sovereign cloud platform for government and enterprise customers across India. The Cloud Management Platform layer is delivered by CCP - Cirrus Cloud Platform, which provides a hyper-scaler-grade self-service portal spanning IaaS, PaaS, and SaaS services. CCP is composed of the following orchestration layers:
 
-- Cirrus Cloud Suite (CCS) — Cloud Management Platform and self-service portal
-- Cirrus Cloud Platform (CCP) — IaaS orchestrator (OpenStack-based)
+- CCP - Cirrus Cloud Platform — Cloud Management Platform and self-service portal
+- CCP - Cirrus Cloud Platform — IaaS orchestrator (OpenStack-based)
 - Cloud Orbiter — Kubernetes orchestrator for container workloads
 
-CCS runs as a microservices application deployed on Kubernetes (management cluster) within each availability zone, with active-passive high availability across two AZs per region and global services replicated across North and South regions.
+CCP runs as a microservices application deployed on Kubernetes (management cluster) within each availability zone, with active-passive high availability across two AZs per region and global services replicated across North and South regions.
 
 ### 2.2 Coredge GPUaaS Platform — Runtime Environment
 
@@ -134,30 +134,30 @@ The Coredge GPUaaS Platform is a purpose-built, bare-metal GPU cloud that provis
 
 ### 2.3 Integration Relationship
 
-CCS acts as the unified customer-facing control plane. The Coredge GPUaaS Platform acts as a specialized compute substrate exposed through CCS service catalogue entries. When a customer provisions GPU as a Service (GPUaaS) through the our Cloud Portal, CCS delegates to Coredge platform APIs for resource lifecycle management, while retaining control of IAM, billing aggregation, quota governance, and customer onboarding.
+CCP acts as the unified customer-facing control plane. The Coredge GPUaaS Platform acts as a specialized compute substrate exposed through CCP service catalogue entries. When a customer provisions GPU as a Service (GPUaaS) through the our Cloud Portal, CCP delegates to Coredge platform APIs for resource lifecycle management, while retaining control of IAM, billing aggregation, quota governance, and customer onboarding.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
     <tr>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Concern</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Owner: CCS</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Owner: CCP</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Owner: Coredge GPUaaS</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style={{padding: '3px 12px'}}>Customer Portal / UI</td>
-      <td style={{padding: '3px 12px'}}>CCS Self-Service Console</td>
+      <td style={{padding: '3px 12px'}}>CCP Self-Service Console</td>
       <td style={{padding: '3px 12px'}}>No direct portal exposure</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Tenant Identity &amp; SSO</td>
-      <td style={{padding: '3px 12px'}}>Keycloak (CCS Auth) — Federation</td>
+      <td style={{padding: '3px 12px'}}>Keycloak (CCP Auth) — Federation</td>
       <td style={{padding: '3px 12px'}}>Keycloak (GPUaaS) — realm per tenant</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Service Catalogue</td>
-      <td style={{padding: '3px 12px'}}>CCS Service Catalogue + subscription</td>
+      <td style={{padding: '3px 12px'}}>CCP Service Catalogue + subscription</td>
       <td style={{padding: '3px 12px'}}>GPUaaS API endpoints</td>
     </tr>
     <tr>
@@ -167,7 +167,7 @@ CCS acts as the unified customer-facing control plane. The Coredge GPUaaS Platfo
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Kubernetes Orchestration</td>
-      <td style={{padding: '3px 12px'}}>Cloud Orbiter (CCS) for CaaS</td>
+      <td style={{padding: '3px 12px'}}>Cloud Orbiter (CCP) for CaaS</td>
       <td style={{padding: '3px 12px'}}>compass-orchestrator for GPU K8s</td>
     </tr>
     <tr>
@@ -187,12 +187,12 @@ CCS acts as the unified customer-facing control plane. The Coredge GPUaaS Platfo
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Monitoring</td>
-      <td style={{padding: '3px 12px'}}>Zabbix, Grafana (CCS)</td>
+      <td style={{padding: '3px 12px'}}>Zabbix, Grafana (CCP)</td>
       <td style={{padding: '3px 12px'}}>VictoriaMetrics, Prometheus, Grafana</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Quota Enforcement</td>
-      <td style={{padding: '3px 12px'}}>CCS quota service per tenant/cell</td>
+      <td style={{padding: '3px 12px'}}>CCP quota service per tenant/cell</td>
       <td style={{padding: '3px 12px'}}>orbiter-metering + domain quota</td>
     </tr>
     <tr>
@@ -208,9 +208,9 @@ CCS acts as the unified customer-facing control plane. The Coredge GPUaaS Platfo
 ### 3.1 Architecture Principles
 
 - **API-First:** All integrations are implemented through well-defined REST APIs or gRPC contracts with versioned endpoints.
-- **Loose Coupling:** CCS and GPUaaS communicate through defined interface contracts; internal implementation changes in either system must not break the integration.
+- **Loose Coupling:** CCP and GPUaaS communicate through defined interface contracts; internal implementation changes in either system must not break the integration.
 - **Zero-Trust Security:** Every inter-service call requires mutual authentication (mTLS) and JWT-based authorization. No implicit trust based on network location.
-- **Single Source of Truth per Domain:** CCS owns customer identity and billing records; Coredge GPUaaS owns GPU hardware state and real-time metrics.
+- **Single Source of Truth per Domain:** CCP owns customer identity and billing records; Coredge GPUaaS owns GPU hardware state and real-time metrics.
 - **Idempotency:** All provisioning API calls must be idempotent. Retry logic must not produce duplicate resources.
 - **Observability:** Every integration point emits structured logs with correlation IDs for end-to-end request tracing.
 
@@ -230,7 +230,7 @@ The integration is organized into four logical layers:
     <tr>
       <td style={{padding: '3px 12px'}}>L1</td>
       <td style={{padding: '3px 12px'}}>Identity &amp; Access</td>
-      <td style={{padding: '3px 12px'}}>Federated Keycloak realms, JWT propagation, RBAC/ABAC synchronization between CCS and GPUaaS.</td>
+      <td style={{padding: '3px 12px'}}>Federated Keycloak realms, JWT propagation, RBAC/ABAC synchronization between CCP and GPUaaS.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>L2</td>
@@ -254,12 +254,12 @@ The integration is organized into four logical layers:
 
 The following describes the high-level request flow from customer to GPU hardware:
 
-1. Customer accesses the CCS Cloud Portal (CCS Self-Service Console) authenticated identity, federated through CCS Keycloak.
-2. Customers place a GPU service order through the CCS service catalogue. Coredge calls the CCS onboarding API (`POST /api/organizations`) to create or update the tenant.
-3. CCS validates the request against tenant quota (orbiter-metering quota service), then dispatches a provisioning event to the Coredge GPUaaS API (baremetal-manager or compass-orchestrator) over the private integration network.
+1. Customer accesses the CCP Cloud Portal (CCP Self-Service Console) authenticated identity, federated through CCP Keycloak.
+2. Customers place a GPU service order through the CCP service catalogue. Coredge calls the CCP onboarding API (`POST /api/organizations`) to create or update the tenant.
+3. CCP validates the request against tenant quota (orbiter-metering quota service), then dispatches a provisioning event to the Coredge GPUaaS API (baremetal-manager or compass-orchestrator) over the private integration network.
 4. Coredge GPUaaS executes the provisioning pipeline: network fabric setup (Cisco NDFC), IPMI/PXE boot (MAAS), OS install, GPU agent deployment, storage allocation (DDN/UFM), and cluster formation (K8s or Slurm).
-5. The provisioned resource is registered back in CCS inventory. Tenant gains self-service access from the CCS portal.
-6. GPU usage data flows from DCGM Exporter to Prometheus to VictoriaMetrics to orbiter-metering. CCS pulls aggregated billing records for invoice generation.
+5. The provisioned resource is registered back in CCP inventory. Tenant gains self-service access from the CCP portal.
+6. GPU usage data flows from DCGM Exporter to Prometheus to VictoriaMetrics to orbiter-metering. CCP pulls aggregated billing records for invoice generation.
 
 ## 4. Integration Points
 
@@ -267,17 +267,17 @@ The following describes the high-level request flow from customer to GPU hardwar
 
 #### 4.1.1 Overview
 
-Both CCS and the Coredge GPUaaS Platform use Keycloak as their Identity Provider. The integration federates these two Keycloak deployments so that a customer authenticated on CCS does not need to re-authenticate when their workloads are dispatched to the GPUaaS platform.
+Both CCP and the Coredge GPUaaS Platform use Keycloak as their Identity Provider. The integration federates these two Keycloak deployments so that a customer authenticated on CCP does not need to re-authenticate when their workloads are dispatched to the GPUaaS platform.
 
 #### 4.1.2 Federation Model
 
-CCS Keycloak (master IdP) issues signed JWT tokens (RS256) containing tenant realm, role claims, and project/organization attributes. The Coredge GPUaaS Keycloak is configured as a relying party — it trusts tokens issued by CCS Keycloak after validating the token signature against the CCS Keycloak public key endpoint (JWKS URI).
+CCP Keycloak (master IdP) issues signed JWT tokens (RS256) containing tenant realm, role claims, and project/organization attributes. The Coredge GPUaaS Keycloak is configured as a relying party — it trusts tokens issued by CCP Keycloak after validating the token signature against the CCP Keycloak public key endpoint (JWKS URI).
 
 <div style={{borderLeft: '4px solid #0066cc', background: 'linear-gradient(135deg, #f0f6ff 0%, #e8f0fe 100%)', borderRadius: '0 8px 8px 0', padding: '16px 20px', margin: '24px 0', display: 'flex', alignItems: 'flex-start', gap: '12px'}}>
   <span style={{fontSize: '1.4rem', lineHeight: '1'}}>💡</span>
   <div>
     <div style={{fontWeight: '700', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#0066cc', marginBottom: '4px'}}>Note</div>
-    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>Coredge serves as the canonical identity store. All customer accounts are created, modified, and deactivated exclusively. CCS Keycloak federation uses SAML 2.0 or OIDC, depending on provider's configuration.</div>
+    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>Coredge serves as the canonical identity store. All customer accounts are created, modified, and deactivated exclusively. CCP Keycloak federation uses SAML 2.0 or OIDC, depending on provider's configuration.</div>
   </div>
 </div>
 
@@ -294,33 +294,33 @@ CCS Keycloak (master IdP) issues signed JWT tokens (RS256) containing tenant rea
   <tbody>
     <tr>
       <td style={{padding: '3px 12px'}}><code>sub</code></td>
-      <td style={{padding: '3px 12px'}}>CCS Keycloak</td>
+      <td style={{padding: '3px 12px'}}>CCP Keycloak</td>
       <td style={{padding: '3px 12px'}}>User unique identifier — maps to Coredge domain user record</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}><code>realm_name</code></td>
-      <td style={{padding: '3px 12px'}}>CCS Keycloak</td>
+      <td style={{padding: '3px 12px'}}>CCP Keycloak</td>
       <td style={{padding: '3px 12px'}}>Tenant realm — maps to GPUaaS Domain (tenant isolation boundary)</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}><code>roles</code></td>
-      <td style={{padding: '3px 12px'}}>CCS Keycloak</td>
+      <td style={{padding: '3px 12px'}}>CCP Keycloak</td>
       <td style={{padding: '3px 12px'}}>RBAC roles (e.g., Cell Administrator, Cell VM Admin) — translated to GPUaaS Project Admin or Domain Admin</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}><code>domain_id</code></td>
-      <td style={{padding: '3px 12px'}}>CCS (custom claim)</td>
-      <td style={{padding: '3px 12px'}}>CCS tenant identifier — maps to GPUaaS Domain ID</td>
+      <td style={{padding: '3px 12px'}}>CCP (custom claim)</td>
+      <td style={{padding: '3px 12px'}}>CCP tenant identifier — maps to GPUaaS Domain ID</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}><code>project_id</code></td>
-      <td style={{padding: '3px 12px'}}>CCS (custom claim)</td>
-      <td style={{padding: '3px 12px'}}>CCS cell/project identifier — maps to GPUaaS Project scope</td>
+      <td style={{padding: '3px 12px'}}>CCP (custom claim)</td>
+      <td style={{padding: '3px 12px'}}>CCP cell/project identifier — maps to GPUaaS Project scope</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}><code>org_id</code></td>
-      <td style={{padding: '3px 12px'}}>CCS (custom claim)</td>
-      <td style={{padding: '3px 12px'}}>CCS organization identifier — maps to GPUaaS Organization scope</td>
+      <td style={{padding: '3px 12px'}}>CCP (custom claim)</td>
+      <td style={{padding: '3px 12px'}}>CCP organization identifier — maps to GPUaaS Organization scope</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}><code>exp</code></td>
@@ -335,7 +335,7 @@ CCS Keycloak (master IdP) issues signed JWT tokens (RS256) containing tenant rea
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
     <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCS Role</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCP Role</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>GPUaaS Role</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Effective Permissions</th>
     </tr>
@@ -381,18 +381,18 @@ CCS Keycloak (master IdP) issues signed JWT tokens (RS256) containing tenant rea
 
 #### 4.1.5 Authentication Flow
 
-1. Customer logs into CCS Cloud Portal — CCS redirects to identity provider (SAML/OIDC).
+1. Customer logs into CCP Cloud Portal — CCP redirects to identity provider (SAML/OIDC).
 2. It authenticates the user (with optional MFA: TOTP, SMS, or hardware key).
-3. Coredge issues an assertion to CCS Keycloak; CCS Keycloak issues a signed JWT containing domain, org, project claims.
-4. CCS backend services validate the JWT on every request (signature + expiry + realm).
-5. When CCS dispatches a request to the Coredge GPUaaS API, it includes the JWT in the Authorization header. GPUaaS orbiter-auth validates the token against the CCS Keycloak JWKS endpoint.
+3. Coredge issues an assertion to CCP Keycloak; CCP Keycloak issues a signed JWT containing domain, org, project claims.
+4. CCP backend services validate the JWT on every request (signature + expiry + realm).
+5. When CCP dispatches a request to the Coredge GPUaaS API, it includes the JWT in the Authorization header. GPUaaS orbiter-auth validates the token against the CCP Keycloak JWKS endpoint.
 6. orbiter-auth performs RBAC (role check) + ABAC (domain/project attribute check) before allowing the request to proceed.
 
 ### 4.2 GPU Compute — Bare Metal and VM Provisioning
 
 #### 4.2.1 GPU as a Service Integration
 
-GPU as a Service (GPUaaS) is listed in the CCS Service Catalogue. Integration is via OpenStack APIs (for VM-based GPU slices where applicable) and via the Coredge baremetal-manager API for dedicated bare-metal GPU node provisioning. Both paths are fronted by the CCS API Gateway.
+GPU as a Service (GPUaaS) is listed in the CCP Service Catalogue. Integration is via OpenStack APIs (for VM-based GPU slices where applicable) and via the Coredge baremetal-manager API for dedicated bare-metal GPU node provisioning. Both paths are fronted by the CCP API Gateway.
 
 #### 4.2.2 Bare Metal GPU Provisioning — API Contract
 
@@ -435,23 +435,23 @@ GPU as a Service (GPUaaS) is listed in the CCS Service Catalogue. Integration is
 
 #### 4.2.3 End-to-End Provisioning Data Flow
 
-1. CCS Self-Service Console receives a GPU node provisioning request from tenant.
-2. CCS API Gateway validates the JWT and forwards to platform microservice.
+1. CCP Self-Service Console receives a GPU node provisioning request from tenant.
+2. CCP API Gateway validates the JWT and forwards to platform microservice.
 3. Platform service checks quota against orbiter-metering. If quota exceeded, returns HTTP 422 with quota-exceeded error to the tenant.
-4. CCS calls `POST /api/baremetal-manager/allocate` on Coredge GPUaaS over the private integration network (mTLS).
+4. CCP calls `POST /api/baremetal-manager/allocate` on Coredge GPUaaS over the private integration network (mTLS).
 5. Coredge baremetal-manager triggers: (a) NDFC network fabric setup — VRF + VLAN allocation, (b) MAAS IPMI power-on + PXE boot, (c) OS install via golden image, (d) Cloud-init, agent deployment.
 6. Storage allocation: DDN tenant directory created, NodeMap assigned, IB PKey created via UFM.
 7. Agent registers with GPUaaS portal via gRPC (port 8030/8040). Admin approves host.
-8. Provisioning state transitions to ACTIVE. GPUaaS notifies CCS via webhook (`POST /ccs/webhooks/baremetal/state-change`).
-9. CCS registers the node in its inventory, updates tenant resource view. WebSocket notification sent to portal.
+8. Provisioning state transitions to ACTIVE. GPUaaS notifies CCP via webhook (`POST /ccp/webhooks/baremetal/state-change`).
+9. CCP registers the node in its inventory, updates tenant resource view. WebSocket notification sent to portal.
 
 ### 4.3 Container Orchestration — Kubernetes
 
 #### 4.3.1 Integration Model
 
-CCS delivers Container as a Service (CaaS) via Cloud Orbiter, which supports both OCP (OpenShift Container Platform) and standard Kubernetes clusters. The Coredge GPUaaS Platform delivers GPU-accelerated Kubernetes clusters (via compass-orchestrator) on bare-metal nodes. These two systems integrate at the cluster registration and cluster agent level.
+CCP delivers Container as a Service (CaaS) via Cloud Orbiter, which supports both OCP (OpenShift Container Platform) and standard Kubernetes clusters. The Coredge GPUaaS Platform delivers GPU-accelerated Kubernetes clusters (via compass-orchestrator) on bare-metal nodes. These two systems integrate at the cluster registration and cluster agent level.
 
-GPU Kubernetes clusters provisioned by Coredge are registered back into CCS Cloud Orbiter using the Cluster Agent protocol (gRPC, port 8030/8040), enabling CCS tenants to manage GPU workloads from the unified CCS portal.
+GPU Kubernetes clusters provisioned by Coredge are registered back into CCP Cloud Orbiter using the Cluster Agent protocol (gRPC, port 8030/8040), enabling CCP tenants to manage GPU workloads from the unified CCP portal.
 
 #### 4.3.2 Cluster Registration API
 
@@ -459,7 +459,7 @@ GPU Kubernetes clusters provisioned by Coredge are registered back into CCS Clou
   <thead>
     <tr>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Method</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Endpoint (CCS Cloud Orbiter)</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Endpoint (CCP Cloud Orbiter)</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Description</th>
     </tr>
   </thead>
@@ -489,13 +489,13 @@ GPU Kubernetes clusters provisioned by Coredge are registered back into CCS Clou
 
 #### 4.3.3 GPU Operator Integration
 
-When a GPU Kubernetes cluster is provisioned, the Coredge compass-orchestrator deploys the NVIDIA GPU Operator DaemonSet, which registers GPU resources with the Kubernetes node resource API (`nvidia.com/gpu: 8` per node). These resource labels are propagated to Cloud Orbiter and are available for workload scheduling via node selectors and resource requests in CCS-deployed workloads.
+When a GPU Kubernetes cluster is provisioned, the Coredge compass-orchestrator deploys the NVIDIA GPU Operator DaemonSet, which registers GPU resources with the Kubernetes node resource API (`nvidia.com/gpu: 8` per node). These resource labels are propagated to Cloud Orbiter and are available for workload scheduling via node selectors and resource requests in CCP-deployed workloads.
 
 ### 4.4 Network Integration
 
 #### 4.4.1 Overview
 
-CCS manages tenant VPC, Firewall, and Load Balancer resources via OpenStack APIs and CheckPoint/Palo Alto integrations. The Coredge GPUaaS Platform manages GPU node networking via Cisco NDFC (VXLAN/EVPN). These two network domains are connected through a defined inter-domain routing policy that allows GPU workload traffic to reach CCS-managed services (e.g., load balancers, object storage endpoints) while maintaining tenant isolation.
+CCP manages tenant VPC, Firewall, and Load Balancer resources via OpenStack APIs and CheckPoint/Palo Alto integrations. The Coredge GPUaaS Platform manages GPU node networking via Cisco NDFC (VXLAN/EVPN). These two network domains are connected through a defined inter-domain routing policy that allows GPU workload traffic to reach CCP-managed services (e.g., load balancers, object storage endpoints) while maintaining tenant isolation.
 
 #### 4.4.2 Network Segmentation Model
 
@@ -509,9 +509,9 @@ CCS manages tenant VPC, Firewall, and Load Balancer resources via OpenStack APIs
   </thead>
   <tbody>
     <tr>
-      <td style={{padding: '3px 12px'}}>Tenant VPC (CCS)</td>
-      <td style={{padding: '3px 12px'}}>CCS / OpenStack</td>
-      <td style={{padding: '3px 12px'}}>Customer workload network. GPU nodes egress through CCS-managed VPC gateways for external services.</td>
+      <td style={{padding: '3px 12px'}}>Tenant VPC (CCP)</td>
+      <td style={{padding: '3px 12px'}}>CCP / OpenStack</td>
+      <td style={{padding: '3px 12px'}}>Customer workload network. GPU nodes egress through CCP-managed VPC gateways for external services.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Tenant VRF (GPUaaS)</td>
@@ -535,20 +535,20 @@ CCS manages tenant VPC, Firewall, and Load Balancer resources via OpenStack APIs
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>External / Internet Gateway</td>
-      <td style={{padding: '3px 12px'}}>CCS (NAT Gateway)</td>
-      <td style={{padding: '3px 12px'}}>GPU nodes access external services (package updates, ML model registries) through CCS NAT Gateway.</td>
+      <td style={{padding: '3px 12px'}}>CCP (NAT Gateway)</td>
+      <td style={{padding: '3px 12px'}}>GPU nodes access external services (package updates, ML model registries) through CCP NAT Gateway.</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS–GPUaaS Private Link</td>
+      <td style={{padding: '3px 12px'}}>CCP–GPUaaS Private Link</td>
       <td style={{padding: '3px 12px'}}>Both</td>
-      <td style={{padding: '3px 12px'}}>Dedicated private network segment for integration API calls between CCS and Coredge GPUaaS. mTLS enforced.</td>
+      <td style={{padding: '3px 12px'}}>Dedicated private network segment for integration API calls between CCP and Coredge GPUaaS. mTLS enforced.</td>
     </tr>
   </tbody>
 </table>
 
 #### 4.4.3 VPC Lifecycle Coordination
 
-When a tenant requests a VPC through the CCS portal, CCS calls OpenStack APIs to create the VPC constructs. If GPU bare-metal nodes are allocated to the tenant in the same provisioning request, CCS additionally notifies the Coredge network-manager to allocate a matching tenant VRF. The VRF is linked to the tenant VPC through a pre-configured L3 routing policy on the Palo Alto firewall, enabling east-west traffic between CCS VMs and GPU bare-metal nodes within the same tenant boundary.
+When a tenant requests a VPC through the CCP portal, CCP calls OpenStack APIs to create the VPC constructs. If GPU bare-metal nodes are allocated to the tenant in the same provisioning request, CCP additionally notifies the Coredge network-manager to allocate a matching tenant VRF. The VRF is linked to the tenant VPC through a pre-configured L3 routing policy on the Palo Alto firewall, enabling east-west traffic between CCP VMs and GPU bare-metal nodes within the same tenant boundary.
 
 <div style={{borderLeft: '4px solid #0066cc', background: 'linear-gradient(135deg, #f0f6ff 0%, #e8f0fe 100%)', borderRadius: '0 8px 8px 0', padding: '16px 20px', margin: '24px 0', display: 'flex', alignItems: 'flex-start', gap: '12px'}}>
   <span style={{fontSize: '1.4rem', lineHeight: '1'}}>💡</span>
@@ -566,7 +566,7 @@ When a tenant requests a VPC through the CCS portal, CCS calls OpenStack APIs to
   <thead>
     <tr>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Use Case</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCS Storage (NetApp)</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCP Storage (NetApp)</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>GPUaaS Storage</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Integration Notes</th>
     </tr>
@@ -576,13 +576,13 @@ When a tenant requests a VPC through the CCS portal, CCS calls OpenStack APIs to
       <td style={{padding: '3px 12px'}}>VM Block Storage</td>
       <td style={{padding: '3px 12px'}}>NetApp Block (iSCSI/FC)</td>
       <td style={{padding: '3px 12px'}}>Not applicable</td>
-      <td style={{padding: '3px 12px'}}>CCS-owned. No integration required.</td>
+      <td style={{padding: '3px 12px'}}>CCP-owned. No integration required.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Object Storage (S3)</td>
       <td style={{padding: '3px 12px'}}>NetApp S3-compatible</td>
       <td style={{padding: '3px 12px'}}>VAST S3 (platform internal)</td>
-      <td style={{padding: '3px 12px'}}>Tenant S3 endpoints served from CCS NetApp. GPUaaS uses VAST S3 internally for backup/config only.</td>
+      <td style={{padding: '3px 12px'}}>Tenant S3 endpoints served from CCP NetApp. GPUaaS uses VAST S3 internally for backup/config only.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>File Storage (NFS)</td>
@@ -600,20 +600,20 @@ When a tenant requests a VPC through the CCS portal, CCS calls OpenStack APIs to
       <td style={{padding: '3px 12px'}}>Platform DB Backup</td>
       <td style={{padding: '3px 12px'}}>NetApp-backed Veritas agent</td>
       <td style={{padding: '3px 12px'}}>VAST S3 (pg_dump, mongodump, etcd)</td>
-      <td style={{padding: '3px 12px'}}>CCS backup: Veritas. GPUaaS backup: VAST S3. Cross-region replication applies to CCS data only.</td>
+      <td style={{padding: '3px 12px'}}>CCP backup: Veritas. GPUaaS backup: VAST S3. Cross-region replication applies to CCP data only.</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS Config &amp; Logs</td>
+      <td style={{padding: '3px 12px'}}>CCP Config &amp; Logs</td>
       <td style={{padding: '3px 12px'}}>Object storage in local region (5 TB)</td>
       <td style={{padding: '3px 12px'}}>Not applicable</td>
-      <td style={{padding: '3px 12px'}}>Managed by CCS only. Backup copied cross-region.</td>
+      <td style={{padding: '3px 12px'}}>Managed by CCP only. Backup copied cross-region.</td>
     </tr>
   </tbody>
 </table>
 
 #### 4.5.2 Storage Provisioning Data Flow (GPU Workloads)
 
-1. Tenant subscribes to GPU service — CCS creates tenant record and notifies Coredge GPUaaS to create tenant storage allocation.
+1. Tenant subscribes to GPU service — CCP creates tenant record and notifies Coredge GPUaaS to create tenant storage allocation.
 2. Coredge Storage Plugin (via SSH to DDN MGS) creates tenant directory on Lustre: `/lustre/{tenant-id}/`.
 3. NVIDIA UFM creates an InfiniBand PKey for the tenant. All GPU node mlx GUIDs are added as PKey members.
 4. A DDN NodeMap is created, mapping the tenant's IB IP address ranges to the tenant directory. Only mapped IPs can mount the filesystem.
@@ -625,7 +625,7 @@ When a tenant requests a VPC through the CCS portal, CCS calls OpenStack APIs to
 
 #### 4.6.1 Metering Pipeline
 
-The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (15-second granularity) using DCGM Exporter, Node Exporter, Slurm job accounting (slurmdbd), and storage/network telemetry. The orbiter-metering service aggregates these raw metrics into billable usage records and exposes a billing export API consumed by CCS for invoice generation.
+The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (15-second granularity) using DCGM Exporter, Node Exporter, Slurm job accounting (slurmdbd), and storage/network telemetry. The orbiter-metering service aggregates these raw metrics into billable usage records and exposes a billing export API consumed by CCP for invoice generation.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -682,7 +682,7 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
   </tbody>
 </table>
 
-#### 4.6.2 Billing Export API (Coredge → CCS)
+#### 4.6.2 Billing Export API (Coredge → CCP)
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -706,7 +706,7 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
     <tr>
       <td style={{padding: '3px 12px'}}>POST</td>
       <td style={{padding: '3px 12px'}}><code>/api/metering/quota/&#123;tenant_id&#125;</code></td>
-      <td style={{padding: '3px 12px'}}>Update quota allocation (called by CCS when customer upgrades/downgrades subscription).</td>
+      <td style={{padding: '3px 12px'}}>Update quota allocation (called by CCP when customer upgrades/downgrades subscription).</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>GET</td>
@@ -718,12 +718,12 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
 
 #### 4.6.3 Quota Synchronization Flow
 
-1. Customer subscribes/upgrades GPU service tier on CCS portal.
-2. Coredge calls CCS quota management API to update tenant allocation.
-3. CCS propagates the new quota to Coredge GPUaaS via `POST /api/metering/quota/{tenant_id}`.
+1. Customer subscribes/upgrades GPU service tier on CCP portal.
+2. Coredge calls CCP quota management API to update tenant allocation.
+3. CCP propagates the new quota to Coredge GPUaaS via `POST /api/metering/quota/{tenant_id}`.
 4. orbiter-metering updates the in-memory quota counter. New quota takes effect immediately for subsequent resource requests.
-5. If a resource request would exceed quota, the Coredge API returns HTTP 422 (Quota Exceeded). CCS displays the error to the tenant with a prompt to upgrade their subscription.
-6. Quota dashboard (80% and 90% warning thresholds) is updated in both CCS portal and Coredge tenant dashboard.
+5. If a resource request would exceed quota, the Coredge API returns HTTP 422 (Quota Exceeded). CCP displays the error to the tenant with a prompt to upgrade their subscription.
+6. Quota dashboard (80% and 90% warning thresholds) is updated in both CCP portal and Coredge tenant dashboard.
 
 ### 4.7 Monitoring and Alerting Integration
 
@@ -733,7 +733,7 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
   <thead>
     <tr>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Component</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCS</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCP</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>GPUaaS (Coredge)</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Integration</th>
     </tr>
@@ -749,29 +749,29 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
       <td style={{padding: '3px 12px'}}>Metrics Storage</td>
       <td style={{padding: '3px 12px'}}>Zabbix DB</td>
       <td style={{padding: '3px 12px'}}>VictoriaMetrics (HA)</td>
-      <td style={{padding: '3px 12px'}}>API bridge for CCS consumption</td>
+      <td style={{padding: '3px 12px'}}>API bridge for CCP consumption</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Alerting</td>
       <td style={{padding: '3px 12px'}}>Zabbix Alert Rules</td>
       <td style={{padding: '3px 12px'}}>Prometheus AlertManager</td>
-      <td style={{padding: '3px 12px'}}>CCS Notification Service (SMTP/SMS)</td>
+      <td style={{padding: '3px 12px'}}>CCP Notification Service (SMTP/SMS)</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Dashboards</td>
-      <td style={{padding: '3px 12px'}}>Grafana (CCS-managed)</td>
+      <td style={{padding: '3px 12px'}}>Grafana (CCP-managed)</td>
       <td style={{padding: '3px 12px'}}>External + Internal Grafana (GPUaaS)</td>
-      <td style={{padding: '3px 12px'}}>GPU dashboards embedded in CCS portal via iFrame / API</td>
+      <td style={{padding: '3px 12px'}}>GPU dashboards embedded in CCP portal via iFrame / API</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Log Aggregation</td>
-      <td style={{padding: '3px 12px'}}>APM/NPM/IPM (CCS Log Analyzer)</td>
+      <td style={{padding: '3px 12px'}}>APM/NPM/IPM (CCP Log Analyzer)</td>
       <td style={{padding: '3px 12px'}}>VictoriaMetrics + log rotation</td>
-      <td style={{padding: '3px 12px'}}>Log forwarding via syslog/agent to CCS Log Analyzer</td>
+      <td style={{padding: '3px 12px'}}>Log forwarding via syslog/agent to CCP Log Analyzer</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Audit Logs</td>
-      <td style={{padding: '3px 12px'}}>CCS audit trail (ordr_mgmt)</td>
+      <td style={{padding: '3px 12px'}}>CCP audit trail (ordr_mgmt)</td>
       <td style={{padding: '3px 12px'}}>Correlation ID log stream (S3 every 6h)</td>
       <td style={{padding: '3px 12px'}}>Cross-correlated via X-Correlation-ID header</td>
     </tr>
@@ -794,13 +794,13 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
       <td style={{padding: '3px 12px'}}>GPU Temperature</td>
       <td style={{padding: '3px 12px'}}>&gt; 80°C for 5 min</td>
       <td style={{padding: '3px 12px'}}>&gt; 90°C for 2 min</td>
-      <td style={{padding: '3px 12px'}}>Coredge Ops + CCS Notification Service → Tenant</td>
+      <td style={{padding: '3px 12px'}}>Coredge Ops + CCP Notification Service → Tenant</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>GPU Memory Utilization</td>
       <td style={{padding: '3px 12px'}}>&gt; 90% for 15 min</td>
       <td style={{padding: '3px 12px'}}>&gt; 95%</td>
-      <td style={{padding: '3px 12px'}}>CCS Alarm Service → Tenant dashboard</td>
+      <td style={{padding: '3px 12px'}}>CCP Alarm Service → Tenant dashboard</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>CPU Utilization (K8s nodes)</td>
@@ -818,13 +818,13 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
       <td style={{padding: '3px 12px'}}>DDN Storage Quota</td>
       <td style={{padding: '3px 12px'}}>&gt; 80% used</td>
       <td style={{padding: '3px 12px'}}>&gt; 90% used</td>
-      <td style={{padding: '3px 12px'}}>CCS Notification Service → Tenant</td>
+      <td style={{padding: '3px 12px'}}>CCP Notification Service → Tenant</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Cluster Node Not Ready</td>
       <td style={{padding: '3px 12px'}}>1 node down &gt; 2 min</td>
       <td style={{padding: '3px 12px'}}>2+ nodes down</td>
-      <td style={{padding: '3px 12px'}}>Coredge Ops + CCS Alarm Service → Tenant</td>
+      <td style={{padding: '3px 12px'}}>Coredge Ops + CCP Alarm Service → Tenant</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Storage Latency (DDN)</td>
@@ -839,14 +839,14 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
 
 #### 4.8.1 End-to-End Onboarding Flow
 
-1. Customer self-registers on CCS or is onboarded by the Coredge Business team.
-2. Customer subscribes to Cirrus Cloud Platform. The platform calls CCS `POST /api/organizations` with party/billing account details.
-3. CCS Keycloak auto-provisions a tenant realm. Default roles (Tenant Super Administrator, Tenant Administrator) are created.
-4. CCS creates default resources: project/cell/VPC in the default region, default service catalogue.
-5. CCS notifies Coredge GPUaaS tenant onboarding API (`POST /api/tenants`) to create the corresponding domain, allocate a VRF pool (4 VLANs), and set initial resource quotas.
+1. Customer self-registers on CCP or is onboarded by the Coredge Business team.
+2. Customer subscribes to Cirrus Cloud Platform. The platform calls CCP `POST /api/organizations` with party/billing account details.
+3. CCP Keycloak auto-provisions a tenant realm. Default roles (Tenant Super Administrator, Tenant Administrator) are created.
+4. CCP creates default resources: project/cell/VPC in the default region, default service catalogue.
+5. CCP notifies Coredge GPUaaS tenant onboarding API (`POST /api/tenants`) to create the corresponding domain, allocate a VRF pool (4 VLANs), and set initial resource quotas.
 6. Coredge GPUaaS auto-provisions: (a) Keycloak realm for the domain, (b) VRF/VLAN allocation in Cisco NDFC, (c) Initial storage directory structure in DDN Lustre, (d) Quota records in orbiter-metering.
-7. Tenant administrator receives credentials and can log in to CCS portal. CCS identity federation is active.
-8. Resource hierarchy is enforced: Tenant (mapped to LSI) → Cell → Resources (in CCS); Domain → Organization → Project (in GPUaaS).
+7. Tenant administrator receives credentials and can log in to CCP portal. CCP identity federation is active.
+8. Resource hierarchy is enforced: Tenant (mapped to LSI) → Cell → Resources (in CCP); Domain → Organization → Project (in GPUaaS).
 
 #### 4.8.2 Coredge to GPUaaS Entity Mapping
 
@@ -854,7 +854,7 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
   <thead>
     <tr>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Coredge Entity</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCS (ACP) Entity</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCP (ACP) Entity</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>GPUaaS Entity</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Notes</th>
     </tr>
@@ -943,7 +943,7 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
     <tr>
       <td style={{padding: '3px 12px'}}>Network</td>
       <td style={{padding: '3px 12px'}}>mTLS (Service Mesh)</td>
-      <td style={{padding: '3px 12px'}}>Mutual TLS with automated PKI for all inter-service calls (CCS microservices, Coredge microservices, cross-system integration).</td>
+      <td style={{padding: '3px 12px'}}>Mutual TLS with automated PKI for all inter-service calls (CCP microservices, Coredge microservices, cross-system integration).</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Network</td>
@@ -953,7 +953,7 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
     <tr>
       <td style={{padding: '3px 12px'}}>Network</td>
       <td style={{padding: '3px 12px'}}>API Gateway</td>
-      <td style={{padding: '3px 12px'}}>CCS API Gateway enforces authentication and rate limiting on all inbound API calls.</td>
+      <td style={{padding: '3px 12px'}}>CCP API Gateway enforces authentication and rate limiting on all inbound API calls.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Data</td>
@@ -990,9 +990,9 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
 
 ## 6. High Availability and Disaster Recovery
 
-### 6.1 CCS High Availability
+### 6.1 CCP High Availability
 
-- Each region has two CCS clusters: AZ1 (Primary / Active) and AZ2 (Standby / Passive).
+- Each region has two CCP clusters: AZ1 (Primary / Active) and AZ2 (Standby / Passive).
 - 3-node web layer (reverse proxy) in DMZ per AZ. Kubernetes cluster: 3 master + 5 worker nodes per AZ.
 - PostgreSQL: Active-Passive with Logical/Streaming Replication across AZs. 3-node cluster per AZ (3+3 node setup, with arbiter VM for manual failover).
 - MongoDB: Active-Passive replication within region. MongoDB Active-Active replication (change-stream) for global services (tenant/project/user metadata) across North and South regions.
@@ -1021,28 +1021,28 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
   </thead>
   <tbody>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS Keycloak PostgreSQL</td>
+      <td style={{padding: '3px 12px'}}>CCP Keycloak PostgreSQL</td>
       <td style={{padding: '3px 12px'}}>Veritas backup agent</td>
       <td style={{padding: '3px 12px'}}>Incremental 30 min / Full 24 hrs</td>
       <td style={{padding: '3px 12px'}}>3 months</td>
       <td style={{padding: '3px 12px'}}>Cross-region object storage</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS Config MongoDB</td>
+      <td style={{padding: '3px 12px'}}>CCP Config MongoDB</td>
       <td style={{padding: '3px 12px'}}>Veritas backup agent</td>
       <td style={{padding: '3px 12px'}}>Incremental 30 min / Full 24 hrs</td>
       <td style={{padding: '3px 12px'}}>3 months</td>
       <td style={{padding: '3px 12px'}}>Cross-region object storage</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS Metrics MongoDB</td>
+      <td style={{padding: '3px 12px'}}>CCP Metrics MongoDB</td>
       <td style={{padding: '3px 12px'}}>Veritas backup agent</td>
       <td style={{padding: '3px 12px'}}>Incremental 30 min / Full 24 hrs</td>
       <td style={{padding: '3px 12px'}}>3 months</td>
       <td style={{padding: '3px 12px'}}>Cross-region object storage</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS K8s etcd</td>
+      <td style={{padding: '3px 12px'}}>CCP K8s etcd</td>
       <td style={{padding: '3px 12px'}}>etcdctl snapshot</td>
       <td style={{padding: '3px 12px'}}>Incremental 30 min / Full 24 hrs</td>
       <td style={{padding: '3px 12px'}}>3 months</td>
@@ -1074,7 +1074,7 @@ The Coredge GPUaaS Platform meters GPU resource consumption at hardware level (1
 
 ## 7. API Integration Matrix
 
-The following table provides a consolidated view of all integration APIs between CCS and the Coredge GPUaaS Platform. All APIs are secured with mTLS between systems and require a valid JWT in the Authorization header.
+The following table provides a consolidated view of all integration APIs between CCP and the Coredge GPUaaS Platform. All APIs are secured with mTLS between systems and require a valid JWT in the Authorization header.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -1091,134 +1091,134 @@ The following table provides a consolidated view of all integration APIs between
       <td style={{padding: '3px 12px'}}>1</td>
       <td style={{padding: '3px 12px'}}>IAM</td>
       <td style={{padding: '3px 12px'}}><code>JWKS URI: /realms/&#123;realm&#125;/protocol/openid-connect/certs</code></td>
-      <td style={{padding: '3px 12px'}}>CCS ← GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP ← GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Keycloak public key endpoint for JWT signature verification.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>2</td>
       <td style={{padding: '3px 12px'}}>IAM</td>
       <td style={{padding: '3px 12px'}}><code>POST /realms/&#123;realm&#125;/protocol/openid-connect/token</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Service-to-service token exchange for integration calls.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>3</td>
       <td style={{padding: '3px 12px'}}>Onboarding</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/organizations</code></td>
-      <td style={{padding: '3px 12px'}}>CCS</td>
-      <td style={{padding: '3px 12px'}}>creates tenant organization in CCS upon subscription.</td>
+      <td style={{padding: '3px 12px'}}>CCP</td>
+      <td style={{padding: '3px 12px'}}>creates tenant organization in CCP upon subscription.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>4</td>
       <td style={{padding: '3px 12px'}}>Onboarding</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/tenants</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
-      <td style={{padding: '3px 12px'}}>CCS creates corresponding domain in GPUaaS after CCS tenant is created.</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP creates corresponding domain in GPUaaS after CCP tenant is created.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>5</td>
       <td style={{padding: '3px 12px'}}>Compute</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/baremetal-manager/allocate</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Allocate bare-metal GPU node to tenant.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>6</td>
       <td style={{padding: '3px 12px'}}>Compute</td>
       <td style={{padding: '3px 12px'}}><code>GET /api/baremetal-manager/&#123;node_id&#125;/status</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Poll GPU node provisioning state.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>7</td>
       <td style={{padding: '3px 12px'}}>Compute</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/baremetal-manager/&#123;node_id&#125;/release</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Release bare-metal GPU node.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>8</td>
       <td style={{padding: '3px 12px'}}>Webhook</td>
-      <td style={{padding: '3px 12px'}}><code>POST /ccs/webhooks/baremetal/state-change</code></td>
-      <td style={{padding: '3px 12px'}}>GPUaaS → CCS</td>
+      <td style={{padding: '3px 12px'}}><code>POST /ccp/webhooks/baremetal/state-change</code></td>
+      <td style={{padding: '3px 12px'}}>GPUaaS → CCP</td>
       <td style={{padding: '3px 12px'}}>Async state-change notification (ACTIVE, FAILED, RELEASED).</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>9</td>
       <td style={{padding: '3px 12px'}}>K8s</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/orbiter/clusters/register</code></td>
-      <td style={{padding: '3px 12px'}}>CCS ← GPUaaS</td>
-      <td style={{padding: '3px 12px'}}>Register GPU K8s cluster with CCS Cloud Orbiter.</td>
+      <td style={{padding: '3px 12px'}}>CCP ← GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>Register GPU K8s cluster with CCP Cloud Orbiter.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>10</td>
       <td style={{padding: '3px 12px'}}>K8s</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/orbiter/clusters/&#123;id&#125;/scale</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Scale GPU K8s cluster worker nodes.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>11</td>
       <td style={{padding: '3px 12px'}}>K8s</td>
       <td style={{padding: '3px 12px'}}><code>DELETE /api/orbiter/clusters/&#123;id&#125;</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Tear down GPU K8s cluster.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>12</td>
       <td style={{padding: '3px 12px'}}>Network</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/network-manager/vpc</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
-      <td style={{padding: '3px 12px'}}>Allocate tenant VRF/VLAN from pool (triggered alongside CCS VPC creation).</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>Allocate tenant VRF/VLAN from pool (triggered alongside CCP VPC creation).</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>13</td>
       <td style={{padding: '3px 12px'}}>Storage</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/storage/tenant</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Create DDN tenant directory + NodeMap + UFM PKey.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>14</td>
       <td style={{padding: '3px 12px'}}>Metering</td>
       <td style={{padding: '3px 12px'}}><code>GET /api/metering/usage</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Retrieve aggregated GPU usage records for billing period.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>15</td>
       <td style={{padding: '3px 12px'}}>Metering</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/metering/quota/&#123;id&#125;</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Update tenant quota allocation after subscription change.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>16</td>
       <td style={{padding: '3px 12px'}}>Metering</td>
       <td style={{padding: '3px 12px'}}><code>GET /api/metering/export/csv</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
       <td style={{padding: '3px 12px'}}>Download billing CSV for invoice generation.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>17</td>
       <td style={{padding: '3px 12px'}}>Monitoring</td>
       <td style={{padding: '3px 12px'}}><code>GET /api/metrics/gpu/&#123;tenant_id&#125;</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
-      <td style={{padding: '3px 12px'}}>Fetch GPU utilization metrics for CCS tenant dashboard.</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>Fetch GPU utilization metrics for CCP tenant dashboard.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>18</td>
       <td style={{padding: '3px 12px'}}>Monitoring</td>
       <td style={{padding: '3px 12px'}}><code>POST /api/alerts/subscribe</code></td>
-      <td style={{padding: '3px 12px'}}>CCS → GPUaaS</td>
-      <td style={{padding: '3px 12px'}}>Register CCS webhook to receive GPU infrastructure alerts.</td>
+      <td style={{padding: '3px 12px'}}>CCP → GPUaaS</td>
+      <td style={{padding: '3px 12px'}}>Register CCP webhook to receive GPU infrastructure alerts.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>19</td>
       <td style={{padding: '3px 12px'}}>Monitoring</td>
-      <td style={{padding: '3px 12px'}}><code>POST /ccs/webhooks/alerts</code></td>
-      <td style={{padding: '3px 12px'}}>GPUaaS → CCS</td>
-      <td style={{padding: '3px 12px'}}>GPU alert delivery to CCS Notification Service (SMTP/SMS).</td>
+      <td style={{padding: '3px 12px'}}><code>POST /ccp/webhooks/alerts</code></td>
+      <td style={{padding: '3px 12px'}}>GPUaaS → CCP</td>
+      <td style={{padding: '3px 12px'}}>GPU alert delivery to CCP Notification Service (SMTP/SMS).</td>
     </tr>
   </tbody>
 </table>
@@ -1346,14 +1346,14 @@ All integration API responses follow a consistent error schema:
 
 ## 9. Pre-Requisites and Deployment Considerations
 
-### 9.1 CCS Pre-Requisites
+### 9.1 CCP Pre-Requisites
 
-- Wildcard SSL certificates for CCS hosting and dynamic customer account URLs
-- Load Balancer VIPs for each CCS endpoint (console, API gateway, orbiter, auth)
+- Wildcard SSL certificates for CCP hosting and dynamic customer account URLs
+- Load Balancer VIPs for each CCP endpoint (console, API gateway, orbiter, auth)
 - DNS server with credentials to create dynamic domains per customer account
-- Accessible container registry for CCS component images
+- Accessible container registry for CCP component images
 - Kubernetes-compliant storage with high IOPS performance (NVMe-backed NFS)
-- SMTP server credentials for CCS Notification Service
+- SMTP server credentials for CCP Notification Service
 - NTP and DNS server connectivity
 - Connectivity and API credentials to integrate with platform
 - Private network link to Coredge GPUaaS integration API endpoints
@@ -1366,13 +1366,13 @@ All integration API responses follow a consistent error schema:
 - DDN AI400 MGS SSH access for Storage Plugin tenant directory management
 - VAST Data CSI driver deployed in GPUaaS management Kubernetes cluster
 - Palo Alto firewall API access for tenant network rule management
-- CCS Keycloak JWKS URI reachable from Coredge GPUaaS (for JWT validation)
-- Private network link to CCS for webhook delivery and integration API calls
+- CCP Keycloak JWKS URI reachable from Coredge GPUaaS (for JWT validation)
+- Private network link to CCP for webhook delivery and integration API calls
 - NVIDIA GPU drivers and GPU Operator images in accessible container registry
 
 ### 9.3 Deployment Constraints
 
-- CCS must be deployed in the control plane of each availability zone, not in the workload pod.
+- CCP must be deployed in the control plane of each availability zone, not in the workload pod.
 - The Coredge GPUaaS management cluster must be on a dedicated infrastructure separate from GPU workload nodes.
 - All VMs within a cluster (Postgres, Kubernetes) must have anti-affinity rules enabled to prevent co-location on a single physical host.
 - Database clusters use a 3+3 node setup (3 VMs per AZ). The two-AZ setup requires manual failover scripts (developed by Coredge team) due to the absence of a third AZ for automatic arbiter node placement.
@@ -1400,21 +1400,21 @@ All integration API responses follow a consistent error schema:
   </thead>
   <tbody>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS Major / Minor Upgrade</td>
+      <td style={{padding: '3px 12px'}}>CCP Major / Minor Upgrade</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>OS Patching — CCS Cluster VMs</td>
+      <td style={{padding: '3px 12px'}}>OS Patching — CCP Cluster VMs</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>CCS Kubernetes Cluster Patching</td>
+      <td style={{padding: '3px 12px'}}>CCP Kubernetes Cluster Patching</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
@@ -1428,14 +1428,14 @@ All integration API responses follow a consistent error schema:
       <td style={{padding: '3px 12px'}}>Coredge</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>Infrastructure for CCS Management Cluster</td>
+      <td style={{padding: '3px 12px'}}>Infrastructure for CCP Management Cluster</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>Storage Driver Plugin for CCS PVCs</td>
+      <td style={{padding: '3px 12px'}}>Storage Driver Plugin for CCP PVCs</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
@@ -1449,21 +1449,21 @@ All integration API responses follow a consistent error schema:
       <td style={{padding: '3px 12px'}}>Coredge</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>Keycloak Federation Configuration (CCS ↔ GPUaaS)</td>
+      <td style={{padding: '3px 12px'}}>Keycloak Federation Configuration (CCP ↔ GPUaaS)</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>Integration APIs (CCS)</td>
+      <td style={{padding: '3px 12px'}}>Integration APIs (CCP)</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>Integration API Development (CCS ↔ GPUaaS)</td>
+      <td style={{padding: '3px 12px'}}>Integration API Development (CCP ↔ GPUaaS)</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
@@ -1541,12 +1541,12 @@ All integration API responses follow a consistent error schema:
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Integration Testing</td>
-      <td style={{padding: '3px 12px'}}>End-to-end provisioning flow: CCS → GPUaaS → bare-metal node ACTIVE</td>
+      <td style={{padding: '3px 12px'}}>End-to-end provisioning flow: CCP → GPUaaS → bare-metal node ACTIVE</td>
       <td style={{padding: '3px 12px'}}>Node provisioned within SLA. Webhook received. Portal reflects ACTIVE state.</td>
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>IAM / Auth Testing</td>
-      <td style={{padding: '3px 12px'}}>JWT federation: CCS token accepted by GPUaaS orbiter-auth</td>
+      <td style={{padding: '3px 12px'}}>JWT federation: CCP token accepted by GPUaaS orbiter-auth</td>
       <td style={{padding: '3px 12px'}}>All role mappings enforce correct RBAC + ABAC. Expired/tampered tokens rejected.</td>
     </tr>
     <tr>
@@ -1556,7 +1556,7 @@ All integration API responses follow a consistent error schema:
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Failover Testing</td>
-      <td style={{padding: '3px 12px'}}>CCS AZ failover: traffic switches from AZ1 to AZ2</td>
+      <td style={{padding: '3px 12px'}}>CCP AZ failover: traffic switches from AZ1 to AZ2</td>
       <td style={{padding: '3px 12px'}}>Recovery within RTO. No data loss. Tenant sessions restored.</td>
     </tr>
     <tr>
@@ -1566,12 +1566,12 @@ All integration API responses follow a consistent error schema:
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>Monitoring Integration</td>
-      <td style={{padding: '3px 12px'}}>Alert delivery: GPU temp alert fires and reaches CCS Notification Service</td>
+      <td style={{padding: '3px 12px'}}>Alert delivery: GPU temp alert fires and reaches CCP Notification Service</td>
       <td style={{padding: '3px 12px'}}>Alert delivered within 60 seconds of threshold breach.</td>
     </tr>
     <tr>
-      <td style={{padding: '3px 12px'}}>Performance Testing (CCS)</td>
-      <td style={{padding: '3px 12px'}}>CCS portal load: 50,000 VMs and 200,000 pods under management</td>
+      <td style={{padding: '3px 12px'}}>Performance Testing (CCP)</td>
+      <td style={{padding: '3px 12px'}}>CCP portal load: 50,000 VMs and 200,000 pods under management</td>
       <td style={{padding: '3px 12px'}}>Portal response &lt; 3s P95. No degradation at peak load.</td>
     </tr>
   </tbody>
@@ -1580,7 +1580,7 @@ All integration API responses follow a consistent error schema:
 ### 11.2 Exclusions from Test Scope
 
 - Penetration testing (scheduled separately, not in scope of this integration IDD)
-- Performance testing for infrastructure components other than CCS (handled by respective component owners)
+- Performance testing for infrastructure components other than CCP (handled by respective component owners)
 - Day-2 operations testing for underlying bare-metal physical infrastructure
 
 ## 12. Open Items and Known Constraints
@@ -1597,7 +1597,7 @@ All integration API responses follow a consistent error schema:
   <tbody>
     <tr>
       <td style={{padding: '3px 12px'}}>1</td>
-      <td style={{padding: '3px 12px'}}>Network Load Balancer — no out-of-the-box integration from CCS. Requires Automation Platform.</td>
+      <td style={{padding: '3px 12px'}}>Network Load Balancer — no out-of-the-box integration from CCP. Requires Automation Platform.</td>
       <td style={{padding: '3px 12px'}}>Open</td>
       <td style={{padding: '3px 12px'}}>Integration approach to be defined with Coredge Network team. Automation Platform API contract to be agreed.</td>
     </tr>
@@ -1627,7 +1627,7 @@ All integration API responses follow a consistent error schema:
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>6</td>
-      <td style={{padding: '3px 12px'}}>CCS API mapping for Party, Billing Account (BA), and Logical Subscriber Identity (LSI) entities is incomplete.</td>
+      <td style={{padding: '3px 12px'}}>CCP API mapping for Party, Billing Account (BA), and Logical Subscriber Identity (LSI) entities is incomplete.</td>
       <td style={{padding: '3px 12px'}}>Open</td>
       <td style={{padding: '3px 12px'}}>Mapping to be finalized by Business team guidance. Required before go-live.</td>
     </tr>

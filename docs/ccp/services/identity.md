@@ -5,11 +5,11 @@ sidebar_position: 4
 
 # Identity & Access Management
 
-**Business Value:** CCS delivers enterprise-grade, multi-tenant identity and access management as a foundational service — not an add-on. Every tenant gets a dedicated identity domain, every user gets the right level of access and no more, and every action is attributed to an authenticated, authorized identity.
+**Business Value:** CCP delivers enterprise-grade, multi-tenant identity and access management as a foundational service — not an add-on. Every tenant gets a dedicated identity domain, every user gets the right level of access and no more, and every action is attributed to an authenticated, authorized identity.
 
 ## IAM Architecture
 
-CCS IAM is built on two complementary components:
+CCP IAM is built on two complementary components:
 
 - **Keycloak v24.0.5** — The authentication engine: manages user identities, sessions, tokens, MFA, and federation with external identity providers
 - **OpenFGA** — The authorization engine: evaluates fine-grained role-based access control for every resource operation based on relationship tuples
@@ -18,9 +18,9 @@ This separation ensures that authentication (who you are) and authorization (wha
 
 ## Per-Tenant Keycloak Realm Isolation
 
-The most critical architectural property of CCS IAM is that every tenant gets a **dedicated Keycloak realm** — a completely isolated identity domain.
+The most critical architectural property of CCP IAM is that every tenant gets a **dedicated Keycloak realm** — a completely isolated identity domain.
 
-Unlike platforms that implement multi-tenancy as namespace-level separation within a shared identity store, CCS creates a fully independent Keycloak realm per tenant, with:
+Unlike platforms that implement multi-tenancy as namespace-level separation within a shared identity store, CCP creates a fully independent Keycloak realm per tenant, with:
 
 - Its own user database and password policies
 - Its own role definitions and group memberships
@@ -86,7 +86,7 @@ Service-specific roles provide granular access to individual service categories,
 
 ### OAuth2 / OpenID Connect
 
-All CCS portal and API authentication uses OAuth2/OIDC, implemented through Keycloak:
+All CCP portal and API authentication uses OAuth2/OIDC, implemented through Keycloak:
 
 - **JWT Tokens:** Short-lived JSON Web Tokens for API authentication
 - **Token Refresh:** Seamless token refresh for long-lived sessions without re-authentication
@@ -95,7 +95,7 @@ All CCS portal and API authentication uses OAuth2/OIDC, implemented through Keyc
 
 ### Multi-Factor Authentication
 
-CCS supports multiple MFA methods through Keycloak's MFA engine:
+CCP supports multiple MFA methods through Keycloak's MFA engine:
 
 - **TOTP (Time-based OTP):** Standard authenticator apps (Google Authenticator, Microsoft Authenticator)
 - **SMS:** One-time codes delivered via SMS to the user's registered mobile number
@@ -107,7 +107,7 @@ CCS supports multiple MFA methods through Keycloak's MFA engine:
 
 ### SAML 2.0 Federation
 
-CCS supports SAML 2.0 federation with enterprise identity providers, enabling organizations to use their existing corporate identity infrastructure:
+CCP supports SAML 2.0 federation with enterprise identity providers, enabling organizations to use their existing corporate identity infrastructure:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -124,7 +124,7 @@ CCS supports SAML 2.0 federation with enterprise identity providers, enabling or
   </tbody>
 </table>
 
-When a user authenticates via a federated IdP, Keycloak maps the external identity to the appropriate CCS tenant realm and role assignment — without storing the user's credentials in CCS.
+When a user authenticates via a federated IdP, Keycloak maps the external identity to the appropriate CCP tenant realm and role assignment — without storing the user's credentials in CCP.
 
 ## Session Management
 
@@ -135,7 +135,7 @@ When a user authenticates via a federated IdP, Keycloak maps the external identi
 
 ## Privileged Access Management
 
-CCS includes Privileged Access Management (PAM) as a Foundation Service in MVP1:
+CCP includes Privileged Access Management (PAM) as a Foundation Service in MVP1:
 
 - **Privileged Session Recording:** Administrative sessions to infrastructure are recorded for audit
 - **Just-in-Time Access:** Temporary privilege elevation with automatic expiration

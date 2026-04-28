@@ -14,8 +14,6 @@ The following abbreviations and acronyms are used throughout the CKP documentati
 | BYOH | Bring Your Own Host |
 | CA | Certificate Authority |
 | CAPI | Cluster API (Kubernetes Cluster Lifecycle Management) |
-| CCP | Coredge Cloud Provider |
-| CCS | Coredge Cloud Services |
 | CIDR | Classless Inter-Domain Routing |
 | CNCF | Cloud Native Computing Foundation |
 | CKP | Coredge Kubernetes Platform (Coredge Kubernetes Platform) |

@@ -51,7 +51,7 @@ const config = {
         },
         items: [
           { type: "docSidebar", sidebarId: "dflareAi", label: "Dflare AI", position: "left" },
-          { type: "docSidebar", sidebarId: "ccs", label: "CCS", position: "left" },
+          { type: "docSidebar", sidebarId: "ccp", label: "CCP", position: "left" },
           { type: "docSidebar", sidebarId: "ckp", label: "CKP", position: "left" },
           { type: "docSidebar", sidebarId: "cloudOrbiter", label: "Cloud Orbiter", position: "left" },
           // { type: "docSidebar", sidebarId: "corobots", label: "CoRobots", position: "left" },
@@ -67,7 +67,7 @@ const config = {
             title: "Products",
             items: [
               { label: "Dflare AI", to: "/dflare-ai" },
-              { label: "CCS", to: "/ccs" },
+              { label: "CCP", to: "/ccp" },
               { label: "CKP", to: "/ckp" },
               { label: "Cloud Orbiter", to: "/cloud-orbiter" },
               // { label: "CoRobots", to: "/corobots" },

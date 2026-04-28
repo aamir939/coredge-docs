@@ -7,9 +7,9 @@ sidebar_position: 1
 
 ## What is Cloud Orbiter?
 
-Cloud Orbiter is a comprehensive, centralized Universal Application Control Plane that allows enterprises to manage the complete application lifecycle across any combination of Kubernetes environments — from cloud-native clusters to on-premise deployments and distributed edge sites.
+Cloud Orbiter is a comprehensive, centralized Universal Application Control Plane that allows enterprises to manage the complete application lifecycle of CKP Kubernetes clusters — from on-premise deployments to bare metal environments.
 
-It is designed to handle the complexity of managing hundreds of thousands of clusters and large-scale distributed applications across different data centres, private clouds, hybrid environments, and public clouds — all from a single intuitive dashboard.
+It is designed to handle the complexity of managing large-scale distributed applications across different data centres and on-premise environments — all from a single intuitive dashboard.
 
 Cloud Orbiter follows a **zero-trust security principle**, providing highly secure infrastructure management with centralized IAM and RBAC. It supports integration with any external identity provider and automates workflows across any infrastructure type.
 
@@ -21,9 +21,9 @@ Cloud Orbiter manages your entire infrastructure from a single, centralized dash
 
 ### Multi-Cluster Management at Scale
 
-- Deploy, manage, monitor, and upgrade multiple clusters across geo-distributed environments
-- Provision Kubernetes clusters at the edge with zero-downtime updates and upgrades
-- Remotely manage target and orbiter clusters through a centralized console
+- Deploy, manage, monitor, and upgrade multiple CKP clusters across geo-distributed environments
+- Provision Kubernetes clusters with zero-downtime updates and upgrades
+- Remotely manage clusters through a centralized console
 - Connect multiple clusters so that all management flows through Cloud Orbiter
 
 ### Complete Kubernetes Resource Management
@@ -65,13 +65,13 @@ Comprehensive observability tools provide complete visibility into infrastructur
     </tr>
   </thead>
   <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Cluster Orchestration</td><td style={{padding: '3px 12px'}}>Create, import, manage Kubernetes clusters across environments</td><td style={{padding: '3px 12px'}}>CKP, EKS, AKS, GKE, KubeAdm, Edge</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Cluster Orchestration</td><td style={{padding: '3px 12px'}}>Create and manage CKP Kubernetes clusters</td><td style={{padding: '3px 12px'}}>CKP, CAPI, Orbiter Baremetal</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Application Delivery</td><td style={{padding: '3px 12px'}}>Helm, GitOps, app repositories, lifecycle management</td><td style={{padding: '3px 12px'}}>Helm, ArgoCD / GitOps, Container Registry</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Identity & Access</td><td style={{padding: '3px 12px'}}>Multi-tenant IAM, RBAC, SSO federation</td><td style={{padding: '3px 12px'}}>Keycloak, OpenID Connect, Okta, Google, Microsoft</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Observability</td><td style={{padding: '3px 12px'}}>Metrics, logs, tracing, alerting</td><td style={{padding: '3px 12px'}}>Prometheus, Grafana, Access Logs</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Backup & Recovery</td><td style={{padding: '3px 12px'}}>Namespace backup, PV snapshots, cluster migration</td><td style={{padding: '3px 12px'}}>Velero, S3-compatible storage</td></tr>
     <tr><td style={{padding: '3px 12px'}}>VM Management</td><td style={{padding: '3px 12px'}}>Virtual machine lifecycle on Kubernetes nodes</td><td style={{padding: '3px 12px'}}>KubeVirt add-on</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Edge Management</td><td style={{padding: '3px 12px'}}>Remote edge cluster provisioning and lifecycle</td><td style={{padding: '3px 12px'}}>Cloud Orbiter Agent, NAT GW, Host Groups</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Host Management</td><td style={{padding: '3px 12px'}}>Baremetal host provisioning and lifecycle</td><td style={{padding: '3px 12px'}}>Cloud Orbiter Agent, Host Groups</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Notifications</td><td style={{padding: '3px 12px'}}>Real-time dashboard notifications for cluster and app events</td><td style={{padding: '3px 12px'}}>WebSocket, event-driven notifications</td></tr>
   </tbody>
 </table>
@@ -94,4 +94,4 @@ Cloud Orbiter manages clusters using an outbound connection model:
 - Once connected, the control plane can issue commands, proxy Kubernetes API calls, and stream logs — all **without inbound firewall rules** on the target cluster
 - Connections route through **NAT Gateway** for private network-to-internet traversal
 
-This model enables management of clusters across private data centres, edge sites, and public clouds — even behind strict firewalls.
+This model enables management of clusters across private data centres and on-premise environments — even behind strict firewalls.

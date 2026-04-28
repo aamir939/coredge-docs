@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Database Services
 
-**Business Value:** CCS delivers managed database services as a catalogue offering — Oracle, MongoDB, MS SQL, MariaDB, and Kubernetes-native database solutions — provisioned through the self-service portal, backed by NetApp enterprise storage, and monitored via Prometheus and Grafana. Teams get production-ready databases without managing infrastructure.
+**Business Value:** CCP delivers managed database services as a catalogue offering — Oracle, MongoDB, MS SQL, MariaDB, and Kubernetes-native database solutions — provisioned through the self-service portal, backed by NetApp enterprise storage, and monitored via Prometheus and Grafana. Teams get production-ready databases without managing infrastructure.
 
 ## Database Service Portfolio
 
@@ -73,7 +73,7 @@ MongoDB DBaaS provides managed MongoDB clusters for document storage, real-time 
 - Content management systems with hierarchical or varied content structures
 - IoT data collection and real-time event processing
 - Catalogue and product data management with complex attribute sets
-- CCS internal state storage (MongoDB 5.0.3 is used by CCS itself)
+- CCP internal state storage (MongoDB 5.0.3 is used by CCP itself)
 
 ## MS SQL-as-a-Service (MVP2)
 
@@ -159,6 +159,6 @@ Veritas NetBackup v10.11.2 provides all DBaaS backup operations:
     <tr><td style={{padding: '3px 12px'}}>MongoDB</td><td style={{padding: '3px 12px'}}>Prometheus / Grafana</td><td style={{padding: '3px 12px'}}>Op counts, replication lag, index hit rate, connection pool</td></tr>
     <tr><td style={{padding: '3px 12px'}}>MS SQL</td><td style={{padding: '3px 12px'}}>Prometheus / Grafana</td><td style={{padding: '3px 12px'}}>Query wait times, blocking chains, transaction log usage, AG health</td></tr>
     <tr><td style={{padding: '3px 12px'}}>MariaDB</td><td style={{padding: '3px 12px'}}>Prometheus / Grafana</td><td style={{padding: '3px 12px'}}>Slow queries, thread status, InnoDB buffer pool, replication lag</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Internal (CCS)</td><td style={{padding: '3px 12px'}}>Prometheus / Grafana</td><td style={{padding: '3px 12px'}}>PostgreSQL 15.7 and MongoDB 5.0.3 platform databases</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Internal (CCP)</td><td style={{padding: '3px 12px'}}>Prometheus / Grafana</td><td style={{padding: '3px 12px'}}>PostgreSQL 15.7 and MongoDB 5.0.3 platform databases</td></tr>
   </tbody>
 </table>

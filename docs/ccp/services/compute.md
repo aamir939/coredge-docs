@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Compute Services
 
-**Business Value:** CCS delivers a complete compute portfolio — virtual machines, containerized workloads, and bare metal — all provisioned through one self-service portal, governed by one RBAC system, and tracked by one metering engine. Teams provision the right compute for the right workload without operations team intervention.
+**Business Value:** CCP delivers a complete compute portfolio — virtual machines, containerized workloads, and bare metal — all provisioned through one self-service portal, governed by one RBAC system, and tracked by one metering engine. Teams provision the right compute for the right workload without operations team intervention.
 
 ## Compute Service Portfolio
 
@@ -26,7 +26,7 @@ sidebar_position: 1
 
 ## Virtual Machine (VM)
 
-CCS provides self-service virtual machine provisioning backed by OpenStack (v2023.2) through the Cirrus Cloud Platform (CCP) IaaS orchestrator. Users select from pre-configured flavors and images, attach network interfaces and storage volumes, and deploy production VMs in minutes.
+CCP provides self-service virtual machine provisioning backed by OpenStack (v2023.2) through the CCP - Cirrus Cloud Platform IaaS orchestrator. Users select from pre-configured flavors and images, attach network interfaces and storage volumes, and deploy production VMs in minutes.
 
 ### VM Capabilities
 
@@ -48,7 +48,7 @@ CCS provides self-service virtual machine provisioning backed by OpenStack (v202
 
 ## Container as a Service (CaaS)
 
-CCS delivers Kubernetes-based containerized workloads through Cloud Orbiter, the Kubernetes orchestrator component. The platform manages the full Kubernetes cluster lifecycle — provisioning, upgrades, scaling, and decommissioning — through the self-service portal.
+CCP delivers Kubernetes-based containerized workloads through Cloud Orbiter, the Kubernetes orchestrator component. The platform manages the full Kubernetes cluster lifecycle — provisioning, upgrades, scaling, and decommissioning — through the self-service portal.
 
 ### CaaS Capabilities
 
@@ -62,7 +62,7 @@ CCS delivers Kubernetes-based containerized workloads through Cloud Orbiter, the
 
 ### Kubernetes Cluster Management
 
-CCS uses the Coredge Kubernetes Platform (CKP) as the underlying Kubernetes distribution, providing enterprise-grade cluster management with:
+CCP uses the Coredge Kubernetes Platform (CKP) as the underlying Kubernetes distribution, providing enterprise-grade cluster management with:
 
 - Production-ready Kubernetes with CKP distribution
 - Cluster agent architecture for secure multi-cluster management
@@ -71,7 +71,7 @@ CCS uses the Coredge Kubernetes Platform (CKP) as the underlying Kubernetes dist
 
 ## Bare Metal as a Service (BMaaS)
 
-For workloads that require direct hardware access — databases requiring maximum I/O performance, HPC workloads, GPU compute, or applications where virtualization overhead is unacceptable — CCS provides Bare Metal as a Service through MaaS (Metal as a Service, v3.4.9) integration via the baremetal-plugin microservice.
+For workloads that require direct hardware access — databases requiring maximum I/O performance, HPC workloads, GPU compute, or applications where virtualization overhead is unacceptable — CCP provides Bare Metal as a Service through MaaS (Metal as a Service, v3.4.9) integration via the baremetal-plugin microservice.
 
 ### BMaaS Capabilities
 

@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Monitoring Services
 
-**Business Value:** Full operational visibility into platform health, workload performance, and resource utilization — for both platform operators and tenants — with proactive alerting and structured incident response. CCS monitoring ensures problems are detected before users are impacted.
+**Business Value:** Full operational visibility into platform health, workload performance, and resource utilization — for both platform operators and tenants — with proactive alerting and structured incident response. CCP monitoring ensures problems are detected before users are impacted.
 
 ## Monitoring Service Portfolio
 
@@ -27,7 +27,7 @@ sidebar_position: 5
 
 ## Monitoring Architecture
 
-CCS monitoring is delivered through two integrated toolsets:
+CCP monitoring is delivered through two integrated toolsets:
 
 - **Zabbix v7.4.3:** Operational metrics collection, alarm management, and notification delivery. The primary tool for infrastructure-level monitoring — servers, network devices, services, and platform components.
 - **Prometheus & Grafana v9.4.3:** Cluster and database health monitoring. Prometheus collects time-series metrics from Kubernetes clusters, OpenStack nodes, and database components. Grafana provides rich visualization dashboards.
@@ -35,7 +35,7 @@ CCS monitoring is delivered through two integrated toolsets:
 
 ## Tier 1 — Platform Operations Monitoring
 
-Platform operations monitoring is always active, deployed alongside the CCS control plane for the service provider's operations team. It covers the full infrastructure stack:
+Platform operations monitoring is always active, deployed alongside the CCP control plane for the service provider's operations team. It covers the full infrastructure stack:
 
 ### Infrastructure Metrics
 
@@ -44,7 +44,7 @@ Platform operations monitoring is always active, deployed alongside the CCS cont
 - **Storage Systems:** Volume utilization, IOPS, throughput, latency, and capacity thresholds
 - **Network:** Switch and router health, bandwidth utilization, packet loss, and latency
 - **OpenStack Services:** Nova, Neutron, Cinder, Keystone, Glance service health and API response times
-- **Platform Microservices:** Health endpoints for all CCS microservices; alerting on service degradation
+- **Platform Microservices:** Health endpoints for all CCP microservices; alerting on service degradation
 
 ### Platform Service Health
 
@@ -78,7 +78,7 @@ For DBaaS instances, dedicated monitoring is available via Prometheus exporters:
 
 The Log Analyzer service provides centralized log aggregation and search for platform and workload logs:
 
-- **Platform Logs:** All CCS microservice logs, API gateway logs, authentication events, and infrastructure logs aggregated centrally
+- **Platform Logs:** All CCP microservice logs, API gateway logs, authentication events, and infrastructure logs aggregated centrally
 - **Workload Logs:** Application logs from VMs and containers forwarded to Log Analyzer for storage and search
 - **Security Logs:** Firewall logs, VPN access logs, and access control decision logs forwarded to SIEM
 - **Log Retention:** Configurable retention per log category; compliance-driven retention policies for security and audit logs
@@ -108,7 +108,7 @@ The Alarm Service provides configurable, threshold-based alerting across all mon
     <tr><td style={{padding: '3px 12px'}}>API Error Rate</td><td style={{padding: '3px 12px'}}>HTTP 5xx error rate above threshold</td><td style={{padding: '3px 12px'}}>Service degradation alert; escalation</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Database Replication Lag</td><td style={{padding: '3px 12px'}}>Replication lag exceeds threshold</td><td style={{padding: '3px 12px'}}>HA risk alert; DR readiness review</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Backup Failure</td><td style={{padding: '3px 12px'}}>Scheduled backup job fails or misses window</td><td style={{padding: '3px 12px'}}>Immediate alert; data protection risk escalation</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Service Unavailability</td><td style={{padding: '3px 12px'}}>CCS microservice health check fails</td><td style={{padding: '3px 12px'}}>Platform alert; auto-restart attempt</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Service Unavailability</td><td style={{padding: '3px 12px'}}>CCP microservice health check fails</td><td style={{padding: '3px 12px'}}>Platform alert; auto-restart attempt</td></tr>
   </tbody>
 </table>
 

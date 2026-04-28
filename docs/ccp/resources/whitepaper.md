@@ -3,19 +3,19 @@ title: White Paper
 sidebar_position: 1
 ---
 
-# Building a Sovereign Cloud Platform with Cirrus Cloud Suite
+# Building a Sovereign Cloud Platform with Cirrus Cloud Platform
 ## A unified cloud management platform for government and enterprise cloud services delivery
 
 ## Executive Summary	
 Governments and enterprises across the globe are accelerating their transition to sovereign cloud infrastructure — cloud platforms that are locally controlled, independently operated, and built to meet the unique compliance, security, and governance requirements of national and regulated industries.
-Cirrus Cloud Suite (CCS), developed by Coredge, is a hyper-scaler grade Cloud Management Platform (CMP) purpose-built to address this need. In combination with Cirrus Cloud Platform (CCP), the IaaS Orchestrator, and Cloud Orbiter, the Kubernetes Orchestrator, CCS delivers a unified cloud services platform that enables service providers to offer Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service (SaaS) to their customers through a single, self-service portal.
-This White Paper presents the capabilities, architecture, service portfolio, and delivery approach of Cirrus Cloud Suite as deployed for a sovereign cloud platform serving government and enterprise customers. It is intended for technology leaders, cloud architects, and business decision makers evaluating a Cloud Management Platform for sovereign or enterprise cloud deployments.
+CCP - Cirrus Cloud Platform, developed by Coredge, is a hyper-scaler grade Cloud Management Platform (CMP) purpose-built to address this need. In combination with CCP - Cirrus Cloud Platform, the IaaS Orchestrator, and Cloud Orbiter, the Kubernetes Orchestrator, CCP delivers a unified cloud services platform that enables service providers to offer Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service (SaaS) to their customers through a single, self-service portal.
+This White Paper presents the capabilities, architecture, service portfolio, and delivery approach of Cirrus Cloud Platform as deployed for a sovereign cloud platform serving government and enterprise customers. It is intended for technology leaders, cloud architects, and business decision makers evaluating a Cloud Management Platform for sovereign or enterprise cloud deployments.
 
 <div style={{borderLeft: '4px solid #0066cc', background: 'linear-gradient(135deg, #f0f6ff 0%, #e8f0fe 100%)', borderRadius: '0 8px 8px 0', padding: '16px 20px', margin: '24px 0', display: 'flex', alignItems: 'flex-start', gap: '12px'}}>
   <span style={{fontSize: '1.4rem', lineHeight: '1'}}>💡</span>
   <div>
     <div style={{fontWeight: '700', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#0066cc', marginBottom: '4px'}}>Key Insight</div>
-    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>Cirrus Cloud Suite provides hyper-scaler grade self-service capabilities for Infrastructure, Platform, and Software services — designed for sovereign cloud environments.</div>
+    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>Cirrus Cloud Platform provides hyper-scaler grade self-service capabilities for Infrastructure, Platform, and Software services — designed for sovereign cloud environments.</div>
   </div>
 </div>
 
@@ -48,9 +48,9 @@ Building and operating a sovereign cloud platform at scale presents significant 
   </tbody>
 </table>
 
-### 2. The Solution — Cirrus Cloud Suite
-Cirrus Cloud Suite (CCS) is a Cloud Management Platform developed by Coredge that provides hyper-scaler grade self-service capabilities for Infrastructure, Platform, and Software services. CCS is designed to operate as the management and orchestration layer above existing cloud infrastructure, enabling service providers to deliver cloud services to their customers through a unified, self-service experience.
-CCS operates in combination with two complementary Coredge products:
+### 2. The Solution — Cirrus Cloud Platform
+CCP - Cirrus Cloud Platform is a Cloud Management Platform developed by Coredge that provides hyper-scaler grade self-service capabilities for Infrastructure, Platform, and Software services. CCP is designed to operate as the management and orchestration layer above existing cloud infrastructure, enabling service providers to deliver cloud services to their customers through a unified, self-service experience.
+CCP operates in combination with two complementary Coredge products:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -60,8 +60,8 @@ CCS operates in combination with two complementary Coredge products:
     </tr>
   </thead>
   <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Cirrus Cloud Suite (CCS)</td><td style={{padding: '3px 12px'}}>Cloud Management Platform — the top-layer self-service and governance platform that customers and operators interact with directly.</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Cirrus Cloud Platform (CCP)</td><td style={{padding: '3px 12px'}}>IaaS Orchestrator — manages the underlying OpenStack infrastructure, providing compute, storage, and networking resources.</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>CCP - Cirrus Cloud Platform</td><td style={{padding: '3px 12px'}}>Cloud Management Platform — the top-layer self-service and governance platform that customers and operators interact with directly.</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>CCP - Cirrus Cloud Platform</td><td style={{padding: '3px 12px'}}>IaaS Orchestrator — manages the underlying OpenStack infrastructure, providing compute, storage, and networking resources.</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Cloud Orbiter</td><td style={{padding: '3px 12px'}}>Kubernetes Orchestrator — manages Kubernetes clusters across the platform, enabling container workload management and application deployment.</td></tr>
   </tbody>
 </table>
@@ -70,9 +70,9 @@ CCS operates in combination with two complementary Coredge products:
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" style={{maxWidth:"800px"}} font-family="Arial, sans-serif">
   <rect width="800" height="420" fill="#f8faff" rx="12"/>
-  <text x="400" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#0a1628">Cirrus Cloud Suite — Platform Stack Architecture</text>
+  <text x="400" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#0a1628">Cirrus Cloud Platform — Platform Stack Architecture</text>
   <rect x="60" y="58" width="680" height="72" rx="10" fill="url(#grad1)" stroke="#1a56db" stroke-width="1.5"/>
-  <text x="400" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" letter-spacing="0.06em">CIRRUS CLOUD SUITE (CCS)</text>
+  <text x="400" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" letter-spacing="0.06em">CIRRUS CLOUD SUITE (CCP)</text>
   <text x="400" y="102" text-anchor="middle" font-size="11" fill="#cfe0ff">Cloud Management Platform — Self-Service Portal · Admin Console · Governance · Metering</text>
   <text x="400" y="118" text-anchor="middle" font-size="10" fill="#a8c4f0">Identity &amp; Access (Keycloak · OpenFGA) · RBAC · Multi-Tenancy · API Gateway</text>
   <rect x="60" y="152" width="326" height="72" rx="10" fill="url(#grad2)" stroke="#0e9f6e" stroke-width="1.5"/>
@@ -112,14 +112,14 @@ CCS operates in combination with two complementary Coredge products:
   </defs>
 </svg>
 
-*Figure 1: Cirrus Cloud Suite — Layered Platform Architecture*
+*Figure 1: Cirrus Cloud Platform — Layered Platform Architecture*
 
 </div>
 
 Together, these three components provide a complete, end-to-end sovereign cloud platform layer that serves both the internal teams of the cloud service provider — Day 2 operations, business units, security, FinOps, and cloud governance — and the end customers who consume cloud services.
 
 ### 3. Platform Capabilities
-Cirrus Cloud Suite delivers five foundational capabilities that address the core challenges of sovereign and enterprise cloud management:
+Cirrus Cloud Platform delivers five foundational capabilities that address the core challenges of sovereign and enterprise cloud management:
 
 <div style={{textAlign: "center", margin: "32px 0", maxWidth: "680px", marginLeft: "auto", marginRight: "auto"}}>
 
@@ -179,29 +179,29 @@ Cirrus Cloud Suite delivers five foundational capabilities that address the core
   </defs>
 </svg>
 
-*Figure 2: Five Core Platform Capabilities of Cirrus Cloud Suite*
+*Figure 2: Five Core Platform Capabilities of Cirrus Cloud Platform*
 
 </div>
 
 #### 3.1 Self-Service Access for Automated Provisioning and Deployments
-CCS provides a rich, user-friendly Self-Service Console as the primary interface for end users. Through intuitive interfaces, customers can provision and manage virtual machines, storage volumes, load balancers, container workloads, and bare metal servers without requiring intervention from the service provider's operations team.
+CCP provides a rich, user-friendly Self-Service Console as the primary interface for end users. Through intuitive interfaces, customers can provision and manage virtual machines, storage volumes, load balancers, container workloads, and bare metal servers without requiring intervention from the service provider's operations team.
 Organisation administrators can create and manage Projects and Cells, define access control policies, and ensure proper resource allocation and usage — all from a single portal.
 #### 3.2 Visibility Across Environments
-The CCS Admin Console provides the service provider's operations team with a comprehensive view of the entire cloud environment — all virtual machines, volumes, load balancers, container namespaces, and infrastructure health indicators — across all regions and availability zones.
+The CCP Admin Console provides the service provider's operations team with a comprehensive view of the entire cloud environment — all virtual machines, volumes, load balancers, container namespaces, and infrastructure health indicators — across all regions and availability zones.
 
 Integrated monitoring through Prometheus and Grafana enables proactive health tracking, alerting, and automated recovery workflows for cluster and database components.
 #### 3.3 Centralised Management
-CCS Coredge Platform Services is composed of purpose-built microservices that communicate through well-defined REST APIs and internal routing mechanisms. The platform provides centralized access control and API logging through an in-built API gateway, ensuring secure and authorized access to all platform resources from a single management plane.
+CCP Coredge Platform Services is composed of purpose-built microservices that communicate through well-defined REST APIs and internal routing mechanisms. The platform provides centralized access control and API logging through an in-built API gateway, ensuring secure and authorized access to all platform resources from a single management plane.
 The platform's resource hierarchy — Tenant → Cell → Resources — provides a structured, governed model for multi-tenant resource management, with quota management enforced at both tenant and cell levels.
 #### 3.4 Improved Compliance and Security
-CCS provides multi-layered security architecture. The built-in Identity and Access Management server (powered by Keycloak) is multi-tenant by design, with the capability to federate with external identity providers including BSS Portal and ADFS using SAML 2.0. For each customer organisation, CCS creates a unique identity account, ensuring complete isolation between tenants.
+CCP provides multi-layered security architecture. The built-in Identity and Access Management server (powered by Keycloak) is multi-tenant by design, with the capability to federate with external identity providers including BSS Portal and ADFS using SAML 2.0. For each customer organisation, CCP creates a unique identity account, ensuring complete isolation between tenants.
 Role-Based Access Control (RBAC) is enforced across all platform layers through OpenFGA, Coredge's AuthZ engine. Eleven pre-defined service-specific roles and seven organisation-level roles provide granular access control aligned with the principle of least privilege.
 All data is protected with encryption in transit (mTLS) and encryption at rest (AES-256). Regular security assessments and compliance checks are built into the platform's operational model.
 #### 3.5 Optimised Cloud Spends
-CCS includes built-in metering, showback, and quota management through the orbiter-metering module. This provides full visibility in resource consumption across all tenants and cells, enabling the service provider to generate notional invoices, enforce spending limits, and give customers visibility into their own cloud usage.
+CCP includes built-in metering, showback, and quota management through the orbiter-metering module. This provides full visibility in resource consumption across all tenants and cells, enabling the service provider to generate notional invoices, enforce spending limits, and give customers visibility into their own cloud usage.
 
 ### 4. Service Portfolio
-CCS delivers cloud services to customers in a phased manner across three milestones. This approach ensures that foundational services are delivered and stabilised before expanding the portfolio, reducing deployment risk and enabling early value realisation.
+CCP delivers cloud services to customers in a phased manner across three milestones. This approach ensures that foundational services are delivered and stabilised before expanding the portfolio, reducing deployment risk and enabling early value realisation.
 
 <div style={{textAlign: "center", margin: "32px 0", maxWidth: "680px", marginLeft: "auto", marginRight: "auto"}}>
 
@@ -350,7 +350,7 @@ The third milestone delivers advanced network, database, disaster recovery, and 
 </div>
 
 ### 5. Architecture and High Availability
-The CCS architecture is designed from the ground up for high availability, fault tolerance, and multi-region resilience. The platform operates across multiple regions and availability zones, with every layer of the stack engineered for continuous operation even in the event of infrastructure failures.
+The CCP architecture is designed from the ground up for high availability, fault tolerance, and multi-region resilience. The platform operates across multiple regions and availability zones, with every layer of the stack engineered for continuous operation even in the event of infrastructure failures.
 #### 5.1 Multi-Region, Multi-AZ Architecture
 
 <div style={{textAlign: "center", margin: "32px 0", maxWidth: "680px", marginLeft: "auto", marginRight: "auto"}}>
@@ -370,7 +370,7 @@ The CCS architecture is designed from the ground up for high availability, fault
   <text x="125" y="208" text-anchor="middle" font-size="8.5" fill="#6b7280">3 VMs · Reverse Proxy</text>
   <rect x="58" y="228" width="135" height="36" rx="5" fill="#fff" stroke="#93c5fd" stroke-width="1"/>
   <text x="125" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">K8s Cluster</text>
-  <text x="125" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCS Microservices</text>
+  <text x="125" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCP Microservices</text>
   <rect x="58" y="274" width="135" height="36" rx="5" fill="#fff" stroke="#93c5fd" stroke-width="1"/>
   <text x="125" y="287" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">MongoDB Primary</text>
   <text x="125" y="300" text-anchor="middle" font-size="8.5" fill="#6b7280">Config + Metrics DB</text>
@@ -387,7 +387,7 @@ The CCS architecture is designed from the ground up for high availability, fault
   <text x="300" y="208" text-anchor="middle" font-size="8.5" fill="#6b7280">3 VMs · Standby</text>
   <rect x="228" y="228" width="145" height="36" rx="5" fill="#fff" stroke="#c4b5fd" stroke-width="1"/>
   <text x="300" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="#5b21b6">K8s Cluster Replica</text>
-  <text x="300" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCS Microservices</text>
+  <text x="300" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCP Microservices</text>
   <rect x="228" y="274" width="145" height="36" rx="5" fill="#fff" stroke="#c4b5fd" stroke-width="1"/>
   <text x="300" y="287" text-anchor="middle" font-size="9" font-weight="600" fill="#5b21b6">MongoDB Replica</text>
   <text x="300" y="300" text-anchor="middle" font-size="8.5" fill="#6b7280">Config + Metrics DB</text>
@@ -409,7 +409,7 @@ The CCS architecture is designed from the ground up for high availability, fault
   <text x="555" y="208" text-anchor="middle" font-size="8.5" fill="#6b7280">3 VMs · Reverse Proxy</text>
   <rect x="488" y="228" width="135" height="36" rx="5" fill="#fff" stroke="#6ee7b7" stroke-width="1"/>
   <text x="555" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="#065f46">K8s Cluster</text>
-  <text x="555" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCS Microservices</text>
+  <text x="555" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCP Microservices</text>
   <rect x="488" y="274" width="135" height="36" rx="5" fill="#fff" stroke="#6ee7b7" stroke-width="1"/>
   <text x="555" y="287" text-anchor="middle" font-size="9" font-weight="600" fill="#065f46">MongoDB Primary</text>
   <text x="555" y="300" text-anchor="middle" font-size="8.5" fill="#6b7280">Config + Metrics DB</text>
@@ -426,7 +426,7 @@ The CCS architecture is designed from the ground up for high availability, fault
   <text x="730" y="208" text-anchor="middle" font-size="8.5" fill="#6b7280">3 VMs · Standby</text>
   <rect x="658" y="228" width="145" height="36" rx="5" fill="#fff" stroke="#fcd34d" stroke-width="1"/>
   <text x="730" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="#92400e">K8s Cluster Replica</text>
-  <text x="730" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCS Microservices</text>
+  <text x="730" y="254" text-anchor="middle" font-size="8.5" fill="#6b7280">CCP Microservices</text>
   <rect x="658" y="274" width="145" height="36" rx="5" fill="#fff" stroke="#fcd34d" stroke-width="1"/>
   <text x="730" y="287" text-anchor="middle" font-size="9" font-weight="600" fill="#92400e">MongoDB Replica</text>
   <text x="730" y="300" text-anchor="middle" font-size="8.5" fill="#6b7280">Config + Metrics DB</text>
@@ -457,13 +457,13 @@ The CCS architecture is designed from the ground up for high availability, fault
 
 </div>
 
-Each region consists of multiple Availability Zones (AZs). Within each region, CCS runs independent components per AZ — all microservices managing infrastructure in that AZ operate autonomously. Two clusters run per region in an active-passive configuration:
+Each region consists of multiple Availability Zones (AZs). Within each region, CCP runs independent components per AZ — all microservices managing infrastructure in that AZ operate autonomously. Two clusters run per region in an active-passive configuration:
 
 **Cluster 1 (Primary):** Hosts the main application services and primary MongoDB database in Availability Zone 1. This is an active cluster during normal operations. The web layer is deployed across 3 virtual machines in the DMZ, acting as a reverse proxy to the Kubernetes cluster in the production zone.
 
 **Cluster 2 (Standby):** Hosts replica application services and a replica MongoDB database in Availability Zone 2. This cluster remains in standby, ready to assume primary responsibilities immediately upon failure of Cluster 1.
 #### 5.2 Failover and Continuity
-CCS provides automated failovers at multiple levels:
+CCP provides automated failovers at multiple levels:
 
 **Regional Failover:** Traffic is automatically routed to the passive cluster when the active cluster fails. MongoDB replica sets ensure data consistency during failover within a region.
 
@@ -476,9 +476,9 @@ Global services store Tenant, Project, and User information in MongoDB, replicat
 A 3+3 node setup distributes database responsibility evenly across two availability zones. In the event of an AZ failure, the surviving AZ retains a full set of 3 nodes, enabling safe manual failover. Administrators can force reconfiguration — such as reinitiating leader elections in the surviving AZ when quorum is lost.
 
 #### 5.4 Backup and Data Protection
-CCS implements a comprehensive, automated backup strategy:
+CCP implements a comprehensive, automated backup strategy:
 
-**Application Data Backup:** Active CCS cluster data — including Keycloak PostgreSQL DB, Config MongoDB, Metrics MongoDB, and ETCD DB of the Kubernetes cluster — is continuously backed up to a geo-replicated object storage bucket. North region backups are stored in the south region and vice versa.
+**Application Data Backup:** Active CCP cluster data — including Keycloak PostgreSQL DB, Config MongoDB, Metrics MongoDB, and ETCD DB of the Kubernetes cluster — is continuously backed up to a geo-replicated object storage bucket. North region backups are stored in the south region and vice versa.
 
 **Database VM Backup:** Database clusters hosted on virtual machines are backed up using the Veritas backup agent.
 Backup Schedule: Incremental backup every 30 minutes, full back up every 24 hours, with a 3-month retention period.
@@ -486,15 +486,15 @@ Backup Schedule: Incremental backup every 30 minutes, full back up every 24 hour
 **Storage Allocation:** 5 TB object storage per region for configuration replication, 5 TB for log retention, and 10 TB cross-region object storage for backup data.
 
 ### 6. Identity, Access Management and Multi-Tenancy
-CCS is built as a multi-tenant platform from the ground up. Each customer organisation operates within a completely isolated identity and resource boundary, governed by a structured hierarchy and role-based access control framework.
+CCP is built as a multi-tenant platform from the ground up. Each customer organisation operates within a completely isolated identity and resource boundary, governed by a structured hierarchy and role-based access control framework.
 #### 6.1 Platform Hierarchy
-Resources in CCS are organized in a structured hierarchy that maps directly to the customer's BSS Portal construct:
+Resources in CCP are organized in a structured hierarchy that maps directly to the customer's BSS Portal construct:
 
 <div style={{textAlign: "center", margin: "32px 0", maxWidth: "680px", marginLeft: "auto", marginRight: "auto"}}>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" width="100%" style={{maxWidth:"760px"}} font-family="Arial, sans-serif">
   <rect width="760" height="390" fill="#f8faff" rx="12"/>
-  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#0a1628">Platform Resource Hierarchy — BSS Portal to CCS Mapping</text>
+  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#0a1628">Platform Resource Hierarchy — BSS Portal to CCP Mapping</text>
   <rect x="40" y="50" width="310" height="36" rx="8" fill="#1a56db"/>
   <text x="195" y="74" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.05em">BSS PORTAL</text>
   <rect x="410" y="50" width="310" height="36" rx="8" fill="#0e9f6e"/>
@@ -546,7 +546,7 @@ Resources in CCS are organized in a structured hierarchy that maps directly to t
   </defs>
 </svg>
 
-*Figure 5: Platform Resource Hierarchy — BSS Portal to CCS Mapping*
+*Figure 5: Platform Resource Hierarchy — BSS Portal to CCP Mapping*
 
 </div>
 
@@ -557,18 +557,18 @@ Resources in CCS are organized in a structured hierarchy that maps directly to t
   </div>
   <div style={{fontSize: '1.1rem', color: '#003399', fontWeight: '700'}}>⇕</div>
   <div style={{display: 'inline-block', background: 'linear-gradient(135deg, #dbeafe 0%, #e8f0fe 100%)', border: '1px solid #b0c8f5', borderRadius: '8px', padding: '10px 28px', fontSize: '0.9rem', color: '#003399', fontWeight: '600', letterSpacing: '0.03em'}}>
-    <span style={{opacity: '0.65', fontWeight: '500', fontSize: '0.75rem', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.08em'}}>CCS</span>
+    <span style={{opacity: '0.65', fontWeight: '500', fontSize: '0.75rem', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.08em'}}>CCP</span>
     Tenant &nbsp;→&nbsp; Cell &nbsp;→&nbsp; Resources
   </div>
 </div>
 
-Each customer account maps a single Tenant in CCS. Multiple Cells can be created within a Tenant, providing logical isolation for different business units, projects, or environments. Nesting of Tenants and Cells is not permitted. Quotas are enforced at both tenant and cell levels, with all cells inheriting quota by default.
+Each customer account maps a single Tenant in CCP. Multiple Cells can be created within a Tenant, providing logical isolation for different business units, projects, or environments. Nesting of Tenants and Cells is not permitted. Quotas are enforced at both tenant and cell levels, with all cells inheriting quota by default.
 
 #### 6.2 Identity Federation
-The BSS Portal serves as the primary user identity store. All customer user accounts are created, modified, and deleted exclusively through the BSS Portal. CCS IAM (Keycloak) federates with the BSS Portal as its Identity Provider, supporting SAML 2.0 and ADFS federation. For each customer organisation, a unique Keycloak realm is created, ensuring complete identity isolation between tenants.
+The BSS Portal serves as the primary user identity store. All customer user accounts are created, modified, and deleted exclusively through the BSS Portal. CCP IAM (Keycloak) federates with the BSS Portal as its Identity Provider, supporting SAML 2.0 and ADFS federation. For each customer organisation, a unique Keycloak realm is created, ensuring complete identity isolation between tenants.
 
 #### 6.3 Role-Based Access Control
-CCS provides a comprehensive, pre-defined role framework covering all platform functions. Seven organisation-level roles govern Tenant and Cell management:
+CCP provides a comprehensive, pre-defined role framework covering all platform functions. Seven organisation-level roles govern Tenant and Cell management:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -591,13 +591,13 @@ CCS provides a comprehensive, pre-defined role framework covering all platform f
 Eleven service-specific roles provide granular access control for individual cloud services, including VM Admin, VM Reader, Block/Object/File Storage Admin, Backup Admin, Network Admin, Container Admin, BareMetal Admin, Database Admin, and InfoSec Admin.
 
 ### 7. Scalability
-CCS is engineered to scale with the demands of a sovereign cloud platform serving government and enterprise customers on national scale. The platform's Kubernetes-based deployment model enables horizontal scaling of all CCS microservices by adding worker nodes to the management cluster.
+CCP is engineered to scale with the demands of a sovereign cloud platform serving government and enterprise customers on national scale. The platform's Kubernetes-based deployment model enables horizontal scaling of all CCP microservices by adding worker nodes to the management cluster.
 
 <div style={{borderLeft: '4px solid #0066cc', background: 'linear-gradient(135deg, #f0f6ff 0%, #e8f0fe 100%)', borderRadius: '0 8px 8px 0', padding: '16px 20px', margin: '24px 0', display: 'flex', alignItems: 'flex-start', gap: '12px'}}>
   <span style={{fontSize: '1.4rem', lineHeight: '1'}}>💡</span>
   <div>
     <div style={{fontWeight: '700', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#0066cc', marginBottom: '4px'}}>Note</div>
-    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>CCS scales to support 50,000 virtual machines and 200,000 pods per deployment — with additional worker nodes added on demand to handle increased load.</div>
+    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>CCP scales to support 50,000 virtual machines and 200,000 pods per deployment — with additional worker nodes added on demand to handle increased load.</div>
   </div>
 </div>
 
@@ -615,8 +615,8 @@ The production infrastructure per availability zone is dimensioned to handle thi
   <tbody>
     <tr><td style={{padding: '3px 12px'}}>K8s Master Nodes</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>12 vCPU</td><td style={{padding: '3px 12px'}}>24 GB</td></tr>
     <tr><td style={{padding: '3px 12px'}}>K8s Worker Nodes</td><td style={{padding: '3px 12px'}}>5</td><td style={{padding: '3px 12px'}}>48 vCPU</td><td style={{padding: '3px 12px'}}>128 GB</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>CCS PostgreSQL DB</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>32 vCPU</td><td style={{padding: '3px 12px'}}>64 GB</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>CCS MongoDB</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>24 vCPU</td><td style={{padding: '3px 12px'}}>48 GB</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>CCP PostgreSQL DB</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>32 vCPU</td><td style={{padding: '3px 12px'}}>64 GB</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>CCP MongoDB</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>24 vCPU</td><td style={{padding: '3px 12px'}}>48 GB</td></tr>
     <tr><td style={{padding: '3px 12px'}}>OpenFGA PostgreSQL DB **</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>24 vCPU</td><td style={{padding: '3px 12px'}}>48 GB</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Global MongoDB **</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>12 vCPU</td><td style={{padding: '3px 12px'}}>24 GB</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Web Layer (DMZ)</td><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>12 vCPU</td><td style={{padding: '3px 12px'}}>24 GB</td></tr>
@@ -634,11 +634,11 @@ The production infrastructure per availability zone is dimensioned to handle thi
 </div>
 
 ### 8. Implementation Approach
-CCS is deployed on a Kubernetes management cluster, separate from the workload infrastructure. The Cloud Management Platform solutions: Cirrus Cloud Suite, Cirrus Cloud Platform, and Cloud Orbiter — is deployed in the control plane of each availability zone and must not be deployed in the workload pod. This separation ensures that the management layer is not affected by workload activity.
+CCP is deployed on a Kubernetes management cluster, separate from the workload infrastructure. The Cloud Management Platform solutions: Cirrus Cloud Platform, Cirrus Cloud Platform, and Cloud Orbiter — is deployed in the control plane of each availability zone and must not be deployed in the workload pod. This separation ensures that the management layer is not affected by workload activity.
 #### 8.1 Deployment Pre-Requisites
-The following infrastructure and services must be in place before CCS deployment can commence:
-- Wildcard SSL certificates for CCS hosting and dynamic customer account URLs
-- Load Balancer and VIPs for each CCS endpoint
+The following infrastructure and services must be in place before CCP deployment can commence:
+- Wildcard SSL certificates for CCP hosting and dynamic customer account URLs
+- Load Balancer and VIPs for each CCP endpoint
 - DNS Server with credentials to create dynamic domains based on customer accounts
 - Accessible Container Registry to store container images
 - Kubernetes-compliant storage with High IOPS performance
@@ -647,36 +647,36 @@ The following infrastructure and services must be in place before CCS deployment
 - Connectivity and APIs to integrate with the BSS Portal
 
 #### 8.2 Phased Delivery
-CCS services are delivered in three phases — MVP1, MVP2, and MVP3 — allowing the platform to be operational with foundational services quickly, while the full-service portfolio is built out progressively. This phased approach reduces risk, allows for early customer onboarding, and provides the operations team time to build operational maturity with each new service category before the next phase begins.
+CCP services are delivered in three phases — MVP1, MVP2, and MVP3 — allowing the platform to be operational with foundational services quickly, while the full-service portfolio is built out progressively. This phased approach reduces risk, allows for early customer onboarding, and provides the operations team time to build operational maturity with each new service category before the next phase begins.
 #### 8.3 What is Out of Scope
-The following are explicitly out of scope for the CCS platform delivery:
+The following are explicitly out of scope for the CCP platform delivery:
 - Hardware procurement and its deployment
-- Software procurement and associated licensing (operating system, database, backup software, management software) other than CCS
+- Software procurement and associated licensing (operating system, database, backup software, management software) other than CCP
 - Penetration Testing
-- Performance Testing for components other than CCS
+- Performance Testing for components other than CCP
 - Day 2 operations for underlying infrastructure (Compute, Storage, and Network)
 - Application or configuration changes within the BSS Portal
 
 ### 9. Conclusion
 Sovereign cloud is no longer a future aspiration for governments and regulated enterprises — it is an immediate operational requirement. Building it successfully demands a Cloud Management Platform that combines the self-service convenience of public cloud with the control, governance, and security posture that sovereign deployments demand.
-Cirrus Cloud Suite delivers exactly this. With its unified management layer spanning virtual machines, containers, and bare metal; its multi-region, multi-AZ high availability architecture; its comprehensive role-based access control and identity federation capabilities; and its phased, risk-managed service delivery model, CCS provides a complete, proven foundation for sovereign cloud platform operations.
+Cirrus Cloud Platform delivers exactly this. With its unified management layer spanning virtual machines, containers, and bare metal; its multi-region, multi-AZ high availability architecture; its comprehensive role-based access control and identity federation capabilities; and its phased, risk-managed service delivery model, CCP provides a complete, proven foundation for sovereign cloud platform operations.
 The platform's ability to scale to 50,000 virtual machines and 200,000 pods, combined with its enterprise-grade backup, security, and monitoring capabilities, positions it as a long-term platform for cloud services growth — from foundational IaaS in MVP1 through advanced database, security, and disaster recovery services in MVP2 and MVP3.
 
 <div style={{borderLeft: '4px solid #0066cc', background: 'linear-gradient(135deg, #f0f6ff 0%, #e8f0fe 100%)', borderRadius: '0 8px 8px 0', padding: '16px 20px', margin: '24px 0', display: 'flex', alignItems: 'flex-start', gap: '12px'}}>
   <span style={{fontSize: '1.4rem', lineHeight: '1'}}>💡</span>
   <div>
     <div style={{fontWeight: '700', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#0066cc', marginBottom: '4px'}}>Note</div>
-    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>Cirrus Cloud Suite — built for sovereign cloud, designed for scale, engineered for continuity.</div>
+    <div style={{fontSize: '0.95rem', color: '#1a1a2e', lineHeight: '1.6'}}>Cirrus Cloud Platform — built for sovereign cloud, designed for scale, engineered for continuity.</div>
   </div>
 </div>
 
 ## About Coredge
-Coredge is the developer of Cirrus Cloud Suite, Cirrus Cloud Platform, and Cloud Orbiter — a complete, integrated Cloud Management and Orchestration platform designed for service providers, enterprises, and government organisations building and operating sovereign and private cloud infrastructure.
-Cirrus Cloud Suite provides hyper-scaler grade Cloud Management Platform capabilities for OpenStack and Kubernetes-based deployments, enabling service providers to deliver IaaS, PaaS, and SaaS services through a unified, self-service portal with enterprise-grade governance, security, and operational tools.
+Coredge is the developer of Cirrus Cloud Platform, Cirrus Cloud Platform, and Cloud Orbiter — a complete, integrated Cloud Management and Orchestration platform designed for service providers, enterprises, and government organisations building and operating sovereign and private cloud infrastructure.
+Cirrus Cloud Platform provides hyper-scaler grade Cloud Management Platform capabilities for OpenStack and Kubernetes-based deployments, enabling service providers to deliver IaaS, PaaS, and SaaS services through a unified, self-service portal with enterprise-grade governance, security, and operational tools.
 
 ## Contact
 
-For more information or questions about Coredge's CCS:
+For more information or questions about Coredge's CCP:
 
 - **Website:** [https://coredge.io](https://coredge.io)
 - **Email:** [info@coredge.io](mailto:info@coredge.io)

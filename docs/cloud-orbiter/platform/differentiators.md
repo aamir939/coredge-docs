@@ -12,11 +12,10 @@ Cloud Orbiter is purpose-built to solve the operational complexity of managing K
 ## Universal Application Control Plane
 
 Most Kubernetes management tools are designed for a single environment — either cloud-native or on-premise. Cloud Orbiter manages **all** cluster types from one dashboard:
-- Public cloud managed services: AWS EKS, Azure AKS, Google GKE
+- **CKP — Coredge Kubernetes Platform (Primary):** Enterprise-grade Kubernetes distribution for on-premise, bare metal, edge, and IoT deployments
 - On-premise and bare metal clusters
 - Edge and remote site clusters
-- Brownfield import of any existing Kubernetes distribution (VMware, OpenShift, EKS-Anywhere, and more)
-- Coredge Kubernetes Platform (CKP) clusters
+- Brownfield import of any existing Kubernetes distribution (VMware, OpenShift, KubeAdm, and more)
 
 No other tool needed. No context switching. One control plane for every cluster.
 

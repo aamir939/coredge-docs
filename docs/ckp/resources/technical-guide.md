@@ -82,7 +82,7 @@ For CAPI-managed cluster provisioning, CKP packages are distributed as **BYOH (B
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | Available for all supported K8s versions (v1.33.7+) |
+| Ubuntu 22.04, Ubuntu 24.04 | Available for all supported K8s versions (v1.33.7+) |
 | Red Hat Enterprise Linux 9 | Available for all supported K8s versions (v1.33.7+) |
 
 Each bundle is published as an OCI artifact per Kubernetes version and OS combination, ensuring precise version-locked delivery.
@@ -135,7 +135,7 @@ The kube-apiserver, kube-controller-manager, kube-scheduler, and kube-proxy imag
 
 | Dependency | Details |
 |------------|---------|
-| Supported OS | Ubuntu 20.04, Ubuntu 22.04, Red Hat Enterprise Linux 9 |
+| Supported OS | Ubuntu 22.04, Ubuntu 24.04, Ubuntu 22.04, Red Hat Enterprise Linux 9 |
 | Container Runtime | Containerd (v1.6.14+) |
 | OCI Runtime | runc (v1.1.3 – v1.1.10) |
 | CRI Tools | crictl (v1.27.0) |
@@ -232,33 +232,24 @@ Worker nodes follow the same drain, install, restart, and uncordon pattern. The 
 
 ---
 
-## 08 Infrastructure Providers
+## 08 Infrastructure Provider
 
-CKP supports two provider types for infrastructure provisioning: **Orbiter Baremetal Provider** for physical server allocation and **CCS Virtual Machine Provider** for VM-based provisioning. Provider selection is made at the cluster or host group level and determines how machines are sourced and configured.
+CKP integrates with **Orbiter Baremetal** infrastructure, enabling Kubernetes clusters to be provisioned directly on physical servers.
 
-### 8.1 CKP BMS Provider (Orbiter Baremetal)
+### CKP BMS Provider (Orbiter Baremetal)
 
-The BMS Provider integrates CKP with the **Orbiter Baremetal** infrastructure, enabling Kubernetes clusters to be provisioned directly on physical servers.
+The BMS Provider handles automated server allocation and release, cloud-init provisioning, and hardware secret management.
 
 | Capability | Description |
 |------------|-------------|
 | Server Allocation | Automated allocation and release of baremetal servers |
 | Cloud-Init Provisioning | Server initialization using cloud-init templates |
 | Hardware Secret Management | Secure handling of hardware credentials and access keys |
+| Host Group Management | Logical grouping of hosts for cluster assignment |
 
-### 8.2 CKP CCP Provider (CCS Virtual Machine)
+**Supported Architecture:** AMD64
 
-The CCP Provider integrates CKP with the **Coredge Cloud Services (CCS)** virtual machine platform, enabling Kubernetes clusters to be provisioned on virtual infrastructure.
-
-| Capability | Description |
-|------------|-------------|
-| VM Lifecycle Management | Automated creation, configuration, and teardown of virtual machines |
-| Security Group Management | Network security rules for cluster VMs |
-| Network Integration | Subnet and network configuration via the Neutron networking service |
-| OS Image Selection | CKP-optimized operating system images for cluster nodes |
-| Supported Architectures | AMD64 and ARM64 |
-
-![CKP Infrastructure Providers](/img/ckp/diagram_providers_HD.png)
+**Supported OS:** Ubuntu 22.04, Ubuntu 24.04, RHEL 9
 
 ---
 
@@ -373,15 +364,7 @@ This registry allows CKP to manage multiple CAPI management clusters from a sing
 
 ---
 
-## 15 Autoscaling (Karpenter)
-
-CKP integrates **Karpenter** for automated cluster autoscaling. The Karpenter integration handles automatic installation and configuration, node class creation for CAPI-managed nodes, node pool management, and CPU-based scaling limits.
-
-> **Karpenter autoscaling is supported only for dynamically provisioned host groups using the CCS Virtual Machine provider. Baremetal (BMS) host groups do not support automatic scaling due to the nature of physical server provisioning.**
-
----
-
-## 16 Storage Plugin
+## 15 Storage Plugin
 
 CKP provides a built-in storage plugin that delivers persistent block storage for cluster workloads.
 
@@ -395,25 +378,25 @@ For standalone installations (outside CAPI-managed clusters), **OpenEBS hostpath
 
 ---
 
-## 17 Backup (Velero)
+## 16 Backup (Velero)
 
 CKP integrates **Velero** for cluster backup and disaster recovery. The backup system provides S3-compatible storage location management, backup storage location lifecycle handling (creation, updates, deletion), cloud provider and endpoint configuration, and project-level backup location isolation. Velero is deployed as an addon within the cluster and managed by the Compass platform.
 
 ---
 
-## 18 Certificate Management
+## 17 Certificate Management
 
 CKP includes a built-in certificate management system that handles TLS certificates for cluster communication. Certificates are issued with a **10-year validity period**, ensuring long-term operational stability without frequent renewal. The certificate manager integrates with a Root CA for trust chain establishment and stores certificate metadata in the platform database for lifecycle tracking and management.
 
 ---
 
-## 19 Cluster Lifecycle (End-to-End via CAPI)
+## 18 Cluster Lifecycle (End-to-End via CAPI)
 
 The full end-to-end lifecycle for a CAPI-managed CKP cluster:
 
 1. User requests a managed cluster via the Compass UI or API
-2. The appropriate provider cluster is resolved (CCS Virtual Machine or Orbiter Baremetal)
-3. Machine hosts are provisioned through the selected infrastructure provider
+2. The Orbiter Baremetal provider cluster is resolved
+3. Machine hosts are provisioned through the infrastructure provider
 4. Host agents register with the management plane via mutual TLS (mTLS)
 5. Hosts are approved (automatically or manually, depending on configuration)
 6. Approved hosts are assigned to the designated host group
@@ -423,14 +406,13 @@ The full end-to-end lifecycle for a CAPI-managed CKP cluster:
 10. Worker nodes join the cluster via the bootstrap configuration
 11. The cluster reaches Ready state
 12. Addons are deployed: CKP Storage Plugin, Cilium CNI, and Velero backup
-13. Karpenter autoscaling is installed (CCS Virtual Machine provider only)
-14. TLS certificates are issued with 10-year validity
+13. TLS certificates are issued with 10-year validity
 
 ![CKP Cluster Lifecycle](/img/ckp/diagram_lifecycle_flow_HD.png)
 
 ---
 
-## 20 Build Artifacts
+## 19 Build Artifacts
 
 CKP produces two primary container images for its management layer:
 
@@ -443,7 +425,7 @@ Both images are built on a minimal, security-hardened base image and run as non-
 
 ---
 
-## 21 Troubleshooting
+## 20 Troubleshooting
 
 ### Container Runtime Not Running (Shows Active)
 
@@ -451,7 +433,7 @@ If the container runtime appears active in system status but containers are not 
 
 ---
 
-## 22 Glossary
+## 21 Glossary
 
 | Term | Definition |
 |------|------------|
@@ -462,12 +444,10 @@ If the container runtime appears active in system status but containers are not 
 | Compass | Coredge platform for CKP cluster management (UI and API) |
 | Calico | Default CNI in Compass UI (v3.30.5) |
 | Cilium | eBPF-based CNI, default in CAPI-provisioned clusters |
-| Karpenter | Kubernetes autoscaler integrated in CKP (CCS VM provider only) |
 | Velero | Backup and disaster recovery tool integrated in CKP |
 | imgpkg | OCI image tool used to pull BYOH bundles onto target hosts |
 | Konnectivity | Agent for secure management-to-worker communication in Managed Control Planes |
 | BMS | Baremetal Server — Orbiter Baremetal infrastructure provider |
-| CCP / CCS | Coredge Cloud Services — Virtual Machine infrastructure provider |
 | PSK | Pre-Shared Key — Used for host agent authentication |
 | mTLS | Mutual TLS — Two-way certificate-based authentication |
 | OCI | Open Container Initiative — Standard for container image formats |

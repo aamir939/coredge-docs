@@ -18,7 +18,7 @@ sidebar_position: 4
 
 ## Deployment Architecture
 
-CCS is deployed on Kubernetes — one control plane per availability zone. The platform follows an active-passive HA model at the region level:
+CCP is deployed on Kubernetes — one control plane per availability zone. The platform follows an active-passive HA model at the region level:
 
 - **Cluster 1 (Primary):** Active control plane in AZ1, serving all production traffic
 - **Cluster 2 (Standby):** Passive cluster in AZ2, continuously synchronized, ready for failover
@@ -28,7 +28,7 @@ This architecture delivers zero-downtime maintenance, AZ-level fault tolerance, 
 
 ## Deployment Phases — Phased Service Delivery
 
-CCS delivers its full service catalogue across three phased milestones (MVP), allowing progressive capability expansion:
+CCP delivers its full service catalogue across three phased milestones (MVP), allowing progressive capability expansion:
 
 ### MVP1 — Core Cloud Platform (Initial Deployment)
 
@@ -120,9 +120,9 @@ The third milestone delivers bandwidth services, additional managed databases, a
 
 ## Infrastructure Pre-Requisites
 
-The following infrastructure must be provisioned before CCS deployment:
+The following infrastructure must be provisioned before CCP deployment:
 
-- **Wildcard SSL Certificates** — For CCS hosting domain and all subdomains
+- **Wildcard SSL Certificates** — For CCP hosting domain and all subdomains
 - **Load Balancer with VIPs** — Virtual IPs per endpoint for portal, API gateway, and services
 - **DNS Server** — With dynamic domain support for service discovery
 - **High IOPS Storage** — Kubernetes-compliant storage for control plane etcd and persistent volumes

@@ -17,9 +17,9 @@ CKP (Coredge Kubernetes Platform) is a **custom Kubernetes distribution** built 
 
 The platform operates across two layers: the **CKP Distribution Layer**, which delivers custom-built Kubernetes packages (kubeadm, kubelet, kubectl) and Coredge-hosted core component images; and the **CKP Management Layer**, which handles cluster lifecycle management through CAPI (Cluster API) with Managed Control Plane.
 
-CKP currently supports Kubernetes versions **v1.33.7 through v1.35.1**, all **CNCF Certified**, running on **Ubuntu 20.04**, **Ubuntu 22.04**, and **Red Hat Enterprise Linux 9**. It supports two infrastructure providers: **Orbiter Baremetal (BMS)** for physical server provisioning and **Coredge Cloud Services (CCS)** for virtual machine-based provisioning, with support for both AMD64 and ARM64 architectures.
+CKP currently supports Kubernetes versions **v1.33.7 through v1.35.1**, all **CNCF Certified**, running on **Ubuntu 22.04**, **Ubuntu 24.04**, and **Red Hat Enterprise Linux 9**. It uses **Orbiter Baremetal (BMS)** for physical server provisioning with AMD64 architecture support.
 
-Key platform capabilities include PGP-signed package distribution via BYOH (Bring Your Own Host) bundles, automated cluster provisioning through the Compass UI and API, Karpenter-based autoscaling (CCS VM provider), Ceph-backed persistent storage (ckp-block storage class), Velero backup and disaster recovery, and TLS certificate management with 10-year validity. The platform integrates Cluster API v1.7.7, BYOH Infrastructure Provider v0.6.1, Managed Control Plane, and Cert-Manager v1.15.3 to deliver a complete, enterprise-ready Kubernetes lifecycle management solution.
+Key platform capabilities include PGP-signed package distribution via BYOH (Bring Your Own Host) bundles, automated cluster provisioning through the Compass UI and API, Ceph-backed persistent storage (ckp-block storage class), Velero backup and disaster recovery, and TLS certificate management with 10-year validity. The platform integrates Cluster API v1.7.7, BYOH Infrastructure Provider v0.6.1, Managed Control Plane, and Cert-Manager v1.15.3 to deliver a complete, enterprise-ready Kubernetes lifecycle management solution.
 
 ---
 

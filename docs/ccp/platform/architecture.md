@@ -43,7 +43,7 @@ sidebar_position: 2
   <rect width="720" height="560" fill="url(#archBg)" rx="14"/>
 
   <!-- Title -->
-  <text x="360" y="38" textAnchor="middle" fill="#f1f5f9" fontSize="17" fontWeight="700" letterSpacing="0.5">CCS Platform Architecture</text>
+  <text x="360" y="38" textAnchor="middle" fill="#f1f5f9" fontSize="17" fontWeight="700" letterSpacing="0.5">CCP Platform Architecture</text>
   <text x="360" y="56" textAnchor="middle" fill="#94a3b8" fontSize="10.5">Microservices · Kubernetes-native · Multi-AZ</text>
 
   <!-- ── Layer 1: Portal & API ── -->
@@ -80,7 +80,7 @@ sidebar_position: 2
   <rect x="36" y="240" width="648" height="74" rx="9" fill="url(#orchGrad)" filter="url(#archShadow)"/>
   <text x="56" y="260" fill="#99f6e4" fontSize="9.5" fontWeight="600" letterSpacing="1">ORCHESTRATION</text>
   <rect x="56" y="267" width="192" height="32" rx="5" fill="#115e59" fillOpacity="0.7"/>
-  <text x="152" y="283" textAnchor="middle" fill="#ccfbf1" fontSize="10" fontWeight="600">CCS — Cloud Mgmt Platform</text>
+  <text x="152" y="283" textAnchor="middle" fill="#ccfbf1" fontSize="10" fontWeight="600">CCP — Cloud Mgmt Platform</text>
   <text x="152" y="295" textAnchor="middle" fill="#99f6e4" fontSize="8.5">Workflow · Lifecycle · Metering</text>
   <rect x="258" y="267" width="192" height="32" rx="5" fill="#115e59" fillOpacity="0.7"/>
   <text x="354" y="283" textAnchor="middle" fill="#ccfbf1" fontSize="10" fontWeight="600">CCP — IaaS Orchestrator</text>
@@ -129,7 +129,7 @@ sidebar_position: 2
 
   <!-- Footer legend -->
   <text x="360" y="516" textAnchor="middle" fill="#64748b" fontSize="9">50,000 VMs · 200,000 Pods · Active-Passive HA · AES-256 Encryption</text>
-  <text x="360" y="530" textAnchor="middle" fill="#475569" fontSize="8.5">CCS v3 · CCP OpenStack 2023.2 · Cloud Orbiter · Veritas NetBackup v10.11.2</text>
+  <text x="360" y="530" textAnchor="middle" fill="#475569" fontSize="8.5">CCP v3 · CCP OpenStack 2023.2 · Cloud Orbiter · Veritas NetBackup v10.11.2</text>
 
   <!-- Side label -->
   <text x="14" y="290" textAnchor="middle" fill="#475569" fontSize="8.5" transform="rotate(-90,14,290)">DATA FLOW</text>
@@ -149,7 +149,7 @@ sidebar_position: 2
 
 ## Platform Component Map
 
-CCS is a microservices-based Cloud Management Platform deployed on Kubernetes, organized into layered tiers from the user-facing portal down to the physical infrastructure it orchestrates.
+CCP is a microservices-based Cloud Management Platform deployed on Kubernetes, organized into layered tiers from the user-facing portal down to the physical infrastructure it orchestrates.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -174,7 +174,7 @@ CCS is a microservices-based Cloud Management Platform deployed on Kubernetes, o
 
 ## Core Microservices
 
-CCS is composed of purpose-built microservices communicating through well-defined REST APIs, internal routing, and Kafka message queues.
+CCP is composed of purpose-built microservices communicating through well-defined REST APIs, internal routing, and Kafka message queues.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -196,7 +196,7 @@ CCS is composed of purpose-built microservices communicating through well-define
     <tr><td style={{padding: '3px 12px'}}>orbiter-term</td><td style={{padding: '3px 12px'}}>Terminal access — Kubernetes-based shell for clusters</td></tr>
     <tr><td style={{padding: '3px 12px'}}>core-mgmt</td><td style={{padding: '3px 12px'}}>Project manager service — organizations, cells, user mappings</td></tr>
     <tr><td style={{padding: '3px 12px'}}>onboarding</td><td style={{padding: '3px 12px'}}>User and organization onboarding workflows</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>workflow-controller</td><td style={{padding: '3px 12px'}}>Workflow provider for internal CCS provisioning and lifecycle workflows</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>workflow-controller</td><td style={{padding: '3px 12px'}}>Workflow provider for internal CCP provisioning and lifecycle workflows</td></tr>
     <tr><td style={{padding: '3px 12px'}}>notification</td><td style={{padding: '3px 12px'}}>Sends notifications to external platforms — SMS, email (SMTP), webhooks</td></tr>
     <tr><td style={{padding: '3px 12px'}}>socketio</td><td style={{padding: '3px 12px'}}>Pushes real-time events and notifications to the console UI</td></tr>
     <tr><td style={{padding: '3px 12px'}}>storage-plugin</td><td style={{padding: '3px 12px'}}>Storage capabilities integration — NetApp backend</td></tr>
@@ -213,7 +213,7 @@ CCS is composed of purpose-built microservices communicating through well-define
 
 ## High Availability Architecture
 
-CCS implements a multi-AZ high availability model designed for zero-downtime failover and continuous service delivery.
+CCP implements a multi-AZ high availability model designed for zero-downtime failover and continuous service delivery.
 
 ### HA Design
 
@@ -245,17 +245,17 @@ Backup operations are managed through Veritas NetBackup v10.11.2.
 
 ## Resource Hierarchy
 
-CCS organizes all resources in a three-level governance hierarchy:
+CCP organizes all resources in a three-level governance hierarchy:
 
 1. **Tenant** — Top-level boundary. One per customer account. All users, cells, and resources are scoped within a tenant. Quota enforced at this level.
 2. **Cell** — An isolated project or environment within a Tenant. Represents a department, workload environment, or service tier. Quota enforced independently.
 3. **Resources** — The cloud services consumed within a Cell: VMs, volumes, clusters, load balancers, databases, and more.
 
-The BSS Portal is the primary identity store for tenant and user creation. CCS creates a unique Keycloak realm per tenant to ensure complete identity isolation.
+The BSS Portal is the primary identity store for tenant and user creation. CCP creates a unique Keycloak realm per tenant to ensure complete identity isolation.
 
 ## Portal Architecture
 
-CCS is accessed through two complementary portals with distinct personas:
+CCP is accessed through two complementary portals with distinct personas:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <thead>
@@ -271,16 +271,16 @@ CCS is accessed through two complementary portals with distinct personas:
   </tbody>
 </table>
 
-Both portals share the same underlying CCS platform, ensuring consistent governance, RBAC enforcement, and resource management across all interactions.
+Both portals share the same underlying CCP platform, ensuring consistent governance, RBAC enforcement, and resource management across all interactions.
 
 ## Kubernetes Cluster Management — Cluster Controller and Agent
 
-CCS manages Kubernetes clusters through a controller-agent architecture:
+CCP manages Kubernetes clusters through a controller-agent architecture:
 
 - **Cluster Controller:** Central entity connecting and orchestrating all customer Kubernetes clusters. Communicates with agents over port 8030/8040. Centralizes Kubernetes API and CLI access.
 - **Cluster Agent:** Deployed on each target Kubernetes cluster. Initiates outbound connection to the Cluster Controller. Once the handshake completes, the Controller can issue commands and act as proxy for Kubernetes CLI and APIs.
 
-This model allows CCS to manage Kubernetes clusters across multiple AZs and regions without requiring inbound firewall rules into each cluster.
+This model allows CCP to manage Kubernetes clusters across multiple AZs and regions without requiring inbound firewall rules into each cluster.
 
 ## Infrastructure Pre-Requisites
 
@@ -292,7 +292,7 @@ This model allows CCS to manage Kubernetes clusters across multiple AZs and regi
     </tr>
   </thead>
   <tbody>
-    <tr><td style={{padding: '3px 12px'}}>SSL Certificates</td><td style={{padding: '3px 12px'}}>Wildcard SSL certificates for CCS hosting domain</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>SSL Certificates</td><td style={{padding: '3px 12px'}}>Wildcard SSL certificates for CCP hosting domain</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Load Balancer</td><td style={{padding: '3px 12px'}}>Load balancer with Virtual IPs (VIPs) per endpoint</td></tr>
     <tr><td style={{padding: '3px 12px'}}>DNS</td><td style={{padding: '3px 12px'}}>DNS server with dynamic domain support</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Storage</td><td style={{padding: '3px 12px'}}>Kubernetes-compliant high IOPS storage for control plane</td></tr>

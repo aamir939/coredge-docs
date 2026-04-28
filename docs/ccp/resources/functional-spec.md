@@ -9,18 +9,18 @@ sidebar_position: 1
 
 ## 1.1 Purpose
 
-This Functional Specification Document (FSD) describes the functional capabilities, features, user roles, and service offerings of Cirrus Cloud Suite (CCS) as deployed for the Client's sovereign cloud platform. It defines what the system does from a functional perspective and serves as the reference document for product understanding, testing, and stakeholder alignment.
+This Functional Specification Document (FSD) describes the functional capabilities, features, user roles, and service offerings of CCP - Cirrus Cloud Platform as deployed for the Client's sovereign cloud platform. It defines what the system does from a functional perspective and serves as the reference document for product understanding, testing, and stakeholder alignment.
 
 ## 1.2 Scope
 
-This document covers the functional specification of the following CCS components:
+This document covers the functional specification of the following CCP components:
 
 - Self-Service Console
 - Admin Console
 - Coredge Platform Services
 - Identity and Access Management (IAM)
 - Cluster Controller and Cluster Agent (Kubernetes)
-- CCS Core Microservices
+- CCP Core Microservices
 - Service Catalogue (MVP1 / MVP2 / MVP3)
 - User Onboarding and Platform Hierarchy
 - Pre-defined User Roles and Service-Specific Roles
@@ -50,7 +50,7 @@ This document covers the functional specification of the following CCS component
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Term / Acronym</th>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>Definition</th>
     </tr>
-    <tr><td style={{padding: '3px 12px'}}>CCS</td><td style={{padding: '3px 12px'}}>Cirrus Cloud Suite – Cloud Management Platform</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>CCP</td><td style={{padding: '3px 12px'}}>Cirrus Cloud Platform – Cloud Management Platform</td></tr>
     <tr><td style={{padding: '3px 12px'}}>CCP</td><td style={{padding: '3px 12px'}}>Cirrus Cloud Platform – IaaS Orchestrator</td></tr>
     <tr><td style={{padding: '3px 12px'}}>CMP</td><td style={{padding: '3px 12px'}}>Cloud Management Platform</td></tr>
     <tr><td style={{padding: '3px 12px'}}>BSS Portal</td><td style={{padding: '3px 12px'}}>Business Support System Portal – the Client's customer-facing subscription and identity platform</td></tr>
@@ -60,7 +60,7 @@ This document covers the functional specification of the following CCS component
     <tr><td style={{padding: '3px 12px'}}>VPC</td><td style={{padding: '3px 12px'}}>Virtual Private Cloud</td></tr>
     <tr><td style={{padding: '3px 12px'}}>MaaS</td><td style={{padding: '3px 12px'}}>Metal as a Service</td></tr>
     <tr><td style={{padding: '3px 12px'}}>GSLB</td><td style={{padding: '3px 12px'}}>Global Server Load Balancing</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>OpenFGA</td><td style={{padding: '3px 12px'}}>Open Fine-Grained Authorization – AuthZ engine used within CCS</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>OpenFGA</td><td style={{padding: '3px 12px'}}>Open Fine-Grained Authorization – AuthZ engine used within CCP</td></tr>
     <tr><td style={{padding: '3px 12px'}}>MVP</td><td style={{padding: '3px 12px'}}>Minimum Viable Product</td></tr>
     <tr><td style={{padding: '3px 12px'}}>HA</td><td style={{padding: '3px 12px'}}>High Availability</td></tr>
     <tr><td style={{padding: '3px 12px'}}>DR</td><td style={{padding: '3px 12px'}}>Disaster Recovery</td></tr>
@@ -80,15 +80,15 @@ This document covers the functional specification of the following CCS component
 
 The Client is building a sovereign cloud platform for government and enterprise customers in the India region.
 
-A combination of Cirrus Cloud Suite (Cloud Management Platform), Cirrus Cloud Platform (IaaS Orchestrator) and Cloud Orbiter (Kubernetes Orchestrator) will provide a unified cloud services platform layer for the Client's internal teams (Day 2 operations, business unit, security, FinOps, and cloud governance) and customers for delivering and accessing various services.
+A combination of Cirrus Cloud Platform (Cloud Management Platform), Cirrus Cloud Platform (IaaS Orchestrator) and Cloud Orbiter (Kubernetes Orchestrator) will provide a unified cloud services platform layer for the Client's internal teams (Day 2 operations, business unit, security, FinOps, and cloud governance) and customers for delivering and accessing various services.
 
 ## 2.2 Current State
 
-The Client Cloud is a new deployment and Cirrus Cloud Suite would be used for the Cloud Management Platform layer.
+The Client Cloud is a new deployment and Cirrus Cloud Platform would be used for the Cloud Management Platform layer.
 
 ## 2.3 Key Platform Capabilities
 
-Cirrus Cloud Suite will deliver the following key features of the Cloud Management Platform:
+Cirrus Cloud Platform will deliver the following key features of the Cloud Management Platform:
 
 - Self-service access for automated provisioning and deployments
 - Visibility across environments
@@ -98,7 +98,7 @@ Cirrus Cloud Suite will deliver the following key features of the Cloud Manageme
 
 # 3. Functional Components
 
-The Cirrus Cloud Suite (Cloud Management Platform) / Cloud Orbiter (Kubernetes Orchestrator) / Cirrus Cloud Platform (IaaS Orchestrator) consists of the key functional components listed below.
+The Cirrus Cloud Platform (Cloud Management Platform) / Cloud Orbiter (Kubernetes Orchestrator) / Cirrus Cloud Platform (IaaS Orchestrator) consists of the key functional components listed below.
 
 ## 3.1 Self-Service Console
 
@@ -128,9 +128,9 @@ Central entity managing all Kubernetes platform functionality, connecting and or
 
 Deployed on each target Kubernetes cluster to enable management via the Controller. Cluster Agent initiates outbound connection towards Cluster Controller and once handshake is complete, Controller can provide commands to cluster and act as proxy to Kubernetes CLI/APIs.
 
-# 4. CCS Core Modules
+# 4. CCP Core Modules
 
-The table below lists all core microservice modules that form the Cirrus Cloud Suite platform, along with their functional descriptions.
+The table below lists all core microservice modules that form the Cirrus Cloud Platform platform, along with their functional descriptions.
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <tbody>
@@ -143,11 +143,11 @@ The table below lists all core microservice modules that form the Cirrus Cloud S
     <tr><td style={{padding: '3px 12px'}}>2</td><td style={{padding: '3px 12px'}}>orbiter-controller</td><td style={{padding: '3px 12px'}}>Controller for orbiter which handles the runtime. Backend engine for orbiter-api</td></tr>
     <tr><td style={{padding: '3px 12px'}}>3</td><td style={{padding: '3px 12px'}}>observability-ui</td><td style={{padding: '3px 12px'}}>UI service for cluster observability. It exposes cluster metrics like CPU, RAM usage etc.</td></tr>
     <tr><td style={{padding: '3px 12px'}}>4</td><td style={{padding: '3px 12px'}}>frontend</td><td style={{padding: '3px 12px'}}>Cluster management UI service. Interacts with orbiter-api to expose various cluster level operations to end user like registration/removal of K8s clusters, application deployment on K8s clusters, container registry etc.</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>5</td><td style={{padding: '3px 12px'}}>workflow-controller</td><td style={{padding: '3px 12px'}}>Workflow provider for internal CCS workflows</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>6</td><td style={{padding: '3px 12px'}}>console</td><td style={{padding: '3px 12px'}}>UI service for CCS</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>7</td><td style={{padding: '3px 12px'}}>admin-console</td><td style={{padding: '3px 12px'}}>Admin UI for CCS</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>8</td><td style={{padding: '3px 12px'}}>platform</td><td style={{padding: '3px 12px'}}>Platform APIs for CCS comprising of compute, volume, core-mgmt, network etc. functionalities</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>9</td><td style={{padding: '3px 12px'}}>admin-platform</td><td style={{padding: '3px 12px'}}>Admin Platform APIs for CCS to manage flavors, images, AZs, regions and other virtual resources and constructs</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>5</td><td style={{padding: '3px 12px'}}>workflow-controller</td><td style={{padding: '3px 12px'}}>Workflow provider for internal CCP workflows</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>6</td><td style={{padding: '3px 12px'}}>console</td><td style={{padding: '3px 12px'}}>UI service for CCP</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>7</td><td style={{padding: '3px 12px'}}>admin-console</td><td style={{padding: '3px 12px'}}>Admin UI for CCP</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>8</td><td style={{padding: '3px 12px'}}>platform</td><td style={{padding: '3px 12px'}}>Platform APIs for CCP comprising of compute, volume, core-mgmt, network etc. functionalities</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>9</td><td style={{padding: '3px 12px'}}>admin-platform</td><td style={{padding: '3px 12px'}}>Admin Platform APIs for CCP to manage flavors, images, AZs, regions and other virtual resources and constructs</td></tr>
     <tr><td style={{padding: '3px 12px'}}>10</td><td style={{padding: '3px 12px'}}>celery</td><td style={{padding: '3px 12px'}}>Multiple Celery services for different tasks</td></tr>
     <tr><td style={{padding: '3px 12px'}}>11</td><td style={{padding: '3px 12px'}}>auth</td><td style={{padding: '3px 12px'}}>Keycloak Authentication Service</td></tr>
     <tr><td style={{padding: '3px 12px'}}>12</td><td style={{padding: '3px 12px'}}>core-mgmt</td><td style={{padding: '3px 12px'}}>Project manager service to manage organizations, cells, user mapping etc.</td></tr>
@@ -185,7 +185,7 @@ The table below lists all core microservice modules that form the Cirrus Cloud S
 
 # 5. Service Catalogue
 
-Client Cloud requires delivery of the services below from the Cloud Management Platform (Cirrus Cloud Suite) in a phased manner:
+Client Cloud requires delivery of the services below from the Cloud Management Platform (Cirrus Cloud Platform) in a phased manner:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <tbody>
@@ -270,7 +270,7 @@ Onboarding of the Client's customers will be initiated on the BSS Portal which s
 
 ### Step a
 
-Customer will order/subscribe to CCS on the BSS Portal. Upon subscription, the BSS Portal will call CCS APIs for creation of organization. Cirrus Cloud Suite will automatically configure and create the resources below for the new organization:
+Customer will order/subscribe to CCP on the BSS Portal. Upon subscription, the BSS Portal will call CCP APIs for creation of organization. Cirrus Cloud Platform will automatically configure and create the resources below for the new organization:
 
 - Default User roles for an organization (Organization Administrator and Cell Administrator)
 - Default project / cell / VPC in default region
@@ -278,7 +278,7 @@ Customer will order/subscribe to CCS on the BSS Portal. Upon subscription, the B
 
 ### Step b
 
-Mapping between the BSS Portal and CCS will be developed in accordance with the guidance provided by business teams and will be enforced for billing, governance, and resource hierarchy.
+Mapping between the BSS Portal and CCP will be developed in accordance with the guidance provided by business teams and will be enforced for billing, governance, and resource hierarchy.
 
 ### Step c
 
@@ -286,7 +286,7 @@ The BSS Portal will serve as user identity store and provide authentication serv
 
 ### Step d
 
-Each customer account will be mapped with only a single Tenant in CCS. Multiple cells can be created within a single Tenant. Nesting of Tenants and cells is not allowed currently.
+Each customer account will be mapped with only a single Tenant in CCP. Multiple cells can be created within a single Tenant. Nesting of Tenants and cells is not allowed currently.
 
 ### Step e
 
@@ -298,13 +298,13 @@ Resource Hierarchy will be maintained as:
 
 Tenant → Cell → Resources
 
-The BSS Portal to CCS mapping is as follows:
+The BSS Portal to CCP mapping is as follows:
 
 <table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
   <tbody>
     <tr>
       <th style={{padding: '4px 12px', textAlign: 'left'}}>BSS Portal</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCS</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>CCP</th>
     </tr>
     <tr><td style={{padding: '3px 12px'}}>Party</td><td style={{padding: '3px 12px'}}></td></tr>
     <tr><td style={{padding: '3px 12px'}}>Billing Account (BA)</td><td style={{padding: '3px 12px'}}></td></tr>
@@ -474,9 +474,9 @@ Pre-defined roles will be mapped with the user identities.
 
 # 7. Solution Design
 
-The proposed architecture ensures high availability, fault tolerance, and efficient management for a multi-region Cloud Management platform. The platform is designed to support a CCS application with dual clusters per region, robust failover mechanisms, and global services. The architecture aligns with business continuity goals and optimal resource utilization.
+The proposed architecture ensures high availability, fault tolerance, and efficient management for a multi-region Cloud Management platform. The platform is designed to support a CCP application with dual clusters per region, robust failover mechanisms, and global services. The architecture aligns with business continuity goals and optimal resource utilization.
 
-Each Region consisting of multiple AZs will run independent Cirrus Cloud Suite components per AZ for all the microservices to manage infrastructure in that AZ. Cirrus Cloud Suite Root account services will run globally, which is responsible for aggregating organization specific data like metering, quota, project management. Furthermore, each region has two Cirrus Cloud Suite global services running in active-passive mode with their databases also in active-passive mode. Postgres and MongoDB clusters will run on virtual machines and will have different DB clusters in each zone working as active-passive clusters.
+Each Region consisting of multiple AZs will run independent Cirrus Cloud Platform components per AZ for all the microservices to manage infrastructure in that AZ. Cirrus Cloud Platform Root account services will run globally, which is responsible for aggregating organization specific data like metering, quota, project management. Furthermore, each region has two Cirrus Cloud Platform global services running in active-passive mode with their databases also in active-passive mode. Postgres and MongoDB clusters will run on virtual machines and will have different DB clusters in each zone working as active-passive clusters.
 
 ## 7.1 Regional Architecture
 
@@ -550,12 +550,12 @@ Database Failover: A two-site solution for HA within a region has been considere
 
 ## 7.5 Backup Strategy
 
-Data from Active CCS cluster will be continuously backed up into a geo-replicated object storage bucket. Backup of north region CCS will be stored in south region and vice-a-versa. A scheduled backup job will be configured for incremental backup after every 30 minutes and full back up after every 24 hours with 3 months retention period. The backup data will consist of following files:
+Data from Active CCP cluster will be continuously backed up into a geo-replicated object storage bucket. Backup of north region CCP will be stored in south region and vice-a-versa. A scheduled backup job will be configured for incremental backup after every 30 minutes and full back up after every 24 hours with 3 months retention period. The backup data will consist of following files:
 
 - Keycloak PostgreSQL DB
 - Config Mongo DB
 - Metrics Mongo DB
-- ETCD DB of K8s cluster running CCS
+- ETCD DB of K8s cluster running CCP
 
 Database clusters hosted in Virtual machines will be backed up using Veritas backup agent every 30 minutes and full back up after every 24 hours with 3 months retention period.
 
@@ -564,7 +564,7 @@ Database clusters hosted in Virtual machines will be backed up using Veritas bac
 ### 1. Database Replication
 
 - MongoDB Replication: Cluster 1 hosts the primary database and Cluster 2 hosts a replica with automatic synchronization in real time
-- PostgreSQL Replication: Each region has an active standby database for Keycloak and CCS Application (using Logical Replication)
+- PostgreSQL Replication: Each region has an active standby database for Keycloak and CCP Application (using Logical Replication)
 
 ### 2. Networking
 
@@ -584,10 +584,10 @@ Database clusters hosted in Virtual machines will be backed up using Veritas bac
 
 # 8. Pre-Requisites
 
-The pre-requisites below are required for deployment of CCS on Kubernetes cluster:
+The pre-requisites below are required for deployment of CCP on Kubernetes cluster:
 
-- Wildcard SSL certificates for CCS hosting and dynamic customer account URLs
-- Load Balancer and VIPs for each CCS endpoint
+- Wildcard SSL certificates for CCP hosting and dynamic customer account URLs
+- Load Balancer and VIPs for each CCP endpoint
 - DNS Server and credentials to create dynamic domains based on customer accounts
 - Accessible Container registry to store container images
 - Kubernetes compliant Storage with High IOPS performance
@@ -597,16 +597,16 @@ The pre-requisites below are required for deployment of CCS on Kubernetes cluste
 
 # 9. Constraints and Dependencies
 
-The Cloud Management Platform solution (i.e. Cirrus Cloud Suite / CCP / Cloud Orbiter) will be deployed in control planes of each availability zone. It should not be deployed in workload pod.
+The Cloud Management Platform solution (i.e. Cirrus Cloud Platform / CCP / Cloud Orbiter) will be deployed in control planes of each availability zone. It should not be deployed in workload pod.
 
 # 10. Exclusions
 
-The following tasks are out of scope for Cirrus Cloud Suite:
+The following tasks are out of scope for Cirrus Cloud Platform:
 
 - Any hardware procurement and its deployment
 - Any software procurement and associated licensing (operating system, database, backup software, management software) and its deployment
 - Penetration Testing
-- Performance Testing for any other component other than CCS
+- Performance Testing for any other component other than CCP
 - Day2 operations for underlying infrastructure (Compute, Storage, and Network)
 - Any application / configuration changes in the BSS Portal
 
@@ -628,7 +628,7 @@ R = Responsible | A = Accountable | C = Consulted | I = Informed
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>1</td>
-      <td style={{padding: '3px 12px'}}>CCS Major / Minor Upgrade</td>
+      <td style={{padding: '3px 12px'}}>CCP Major / Minor Upgrade</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>The Client</td>
@@ -636,7 +636,7 @@ R = Responsible | A = Accountable | C = Consulted | I = Informed
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>2</td>
-      <td style={{padding: '3px 12px'}}>OS patching and upgrades on CCS cluster VMs</td>
+      <td style={{padding: '3px 12px'}}>OS patching and upgrades on CCP cluster VMs</td>
       <td style={{padding: '3px 12px'}}>The Client</td>
       <td style={{padding: '3px 12px'}}>The Client</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
@@ -644,7 +644,7 @@ R = Responsible | A = Accountable | C = Consulted | I = Informed
     </tr>
     <tr>
       <td style={{padding: '3px 12px'}}>3</td>
-      <td style={{padding: '3px 12px'}}>CCS Kubernetes Cluster Patching</td>
+      <td style={{padding: '3px 12px'}}>CCP Kubernetes Cluster Patching</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>Coredge</td>
       <td style={{padding: '3px 12px'}}>The Client</td>

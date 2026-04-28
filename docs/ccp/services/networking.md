@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Networking Services
 
-**Business Value:** CCS delivers a complete virtual networking stack through the self-service portal — from isolated private cloud networks to global load balancing, VPN connectivity, firewalls, and DNS. Every networking resource is tenant-isolated, RBAC-governed, and metered from the moment of creation.
+**Business Value:** CCP delivers a complete virtual networking stack through the self-service portal — from isolated private cloud networks to global load balancing, VPN connectivity, firewalls, and DNS. Every networking resource is tenant-isolated, RBAC-governed, and metered from the moment of creation.
 
 ## Networking Service Portfolio
 
@@ -35,11 +35,11 @@ sidebar_position: 3
 
 ## Virtual Private Cloud (VPC)
 
-A VPC is a tenant-isolated virtual network environment. Each VPC provides a completely private routing domain — traffic from one tenant's VPC cannot reach another tenant's VPC unless explicitly configured. VPCs are the foundational networking construct in CCS, and all other networking services (load balancers, VPNs, firewalls) operate within or at the boundary of VPCs.
+A VPC is a tenant-isolated virtual network environment. Each VPC provides a completely private routing domain — traffic from one tenant's VPC cannot reach another tenant's VPC unless explicitly configured. VPCs are the foundational networking construct in CCP, and all other networking services (load balancers, VPNs, firewalls) operate within or at the boundary of VPCs.
 
 ### VPC Architecture
 
-VPCs in CCS are backed by OpenStack Neutron networking with VXLAN/EVPN overlay. Each VPC consists of:
+VPCs in CCP are backed by OpenStack Neutron networking with VXLAN/EVPN overlay. Each VPC consists of:
 
 - **Subnets:** CIDR-defined IP ranges within the VPC; each subnet has a gateway and can be associated with security groups
 - **Routing Tables:** Control how traffic flows between subnets and to external destinations
@@ -100,7 +100,7 @@ Enable individual users to securely connect to cloud resources from their device
 
 ## Firewall
 
-CCS integrates with enterprise firewall platforms (CheckPoint, Palo Alto) to provide stateful perimeter firewall protection at the VPC boundary.
+CCP integrates with enterprise firewall platforms (CheckPoint, Palo Alto) to provide stateful perimeter firewall protection at the VPC boundary.
 
 - **ACL-Based Rules:** Ingress and egress access control lists per VPC and subnet
 - **Stateful Inspection:** Connection state tracking; return traffic automatically permitted
@@ -112,7 +112,7 @@ CCS integrates with enterprise firewall platforms (CheckPoint, Palo Alto) to pro
 
 ### Public IP Management
 
-Public IP addresses are managed via TCPWare (ccs-1.14.0-rc5) integration:
+Public IP addresses are managed via TCPWare (ccp-1.14.0-rc5) integration:
 
 - **On-Demand Allocation:** Allocate public IPs from the regional pool through the portal
 - **Floating IP:** Associate and disassociate public IPs from VMs and load balancers dynamically
@@ -130,7 +130,7 @@ NAT Gateway provides outbound internet connectivity for private subnet resources
 
 ## DNS Services
 
-CCS includes integrated DNS management as part of the Foundation Services layer:
+CCP includes integrated DNS management as part of the Foundation Services layer:
 
 - **Private DNS Zones:** Create internal DNS zones visible only within the tenant VPC
 - **Public DNS Zones:** Manage public-facing DNS for internet-accessible services
