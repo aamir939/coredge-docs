@@ -146,6 +146,6 @@ Example log entry:
 
 | Time | Username | Operation | IP Address | API |
 |---|---|---|---|---|
-| 16/3/2023, 2:28:07 pm | user@org.com | GET | 174.91.166.94 | /v1/domain/default-domain/features |
+| &lt;timestamp&gt; | &lt;user-email&gt; | &lt;HTTP method&gt; | &lt;client-ip&gt; | &lt;api-endpoint&gt; |
 
 Regular review of access logs is recommended to detect and resolve potential security threats.

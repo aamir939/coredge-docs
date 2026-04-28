@@ -1,10 +1,18 @@
 ---
-title: Autoscaling (Karpenter)
+title: Autoscaling
 sidebar_position: 1
 ---
 
-# CKP Autoscaling (Karpenter)
+# CKP Autoscaling
 
-CKP integrates **Karpenter** for automated cluster autoscaling. The integration handles automatic installation and configuration, node class creation for CAPI-managed nodes, node pool management, and CPU-based scaling limits.
+CKP clusters on Orbiter Baremetal infrastructure use manual scaling through host group management. Administrators can add or remove hosts from host groups to scale cluster capacity.
 
-**Note:** Karpenter autoscaling is **supported only** for dynamically provisioned host groups using the CCS Virtual Machine provider. Baremetal host groups do not support automatic scaling.
+## Host-Based Scaling
+
+| Operation | Description |
+|-----------|-------------|
+| Add Hosts | Register new baremetal servers and assign them to host groups |
+| Remove Hosts | Remove servers from host groups and deregister them |
+| Host Group Management | Organize hosts into logical groups for cluster assignment |
+
+For cluster scaling operations, use the Compass UI or API to manage host group membership.

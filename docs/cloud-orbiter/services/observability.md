@@ -76,7 +76,7 @@ Audit logs capture all administrative actions within Cloud Orbiter:
 
 | Time | Username | Operation | IP Address | API |
 |---|---|---|---|---|
-| 16/3/2023, 2:28:07 pm | user@org.com | GET | 174.91.166.94 | /v1/domain/default-domain/features |
+| &lt;timestamp&gt; | &lt;user-email&gt; | &lt;HTTP method&gt; | &lt;client-ip&gt; | &lt;api-endpoint&gt; |
 
 **To access Cloud Orbiter audit logs:**
 1. Log in as Tenant Administrator

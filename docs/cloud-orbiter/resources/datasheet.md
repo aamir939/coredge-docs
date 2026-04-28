@@ -7,27 +7,13 @@ sidebar_position: 2
 
 Modern distributed cloud environments — spanning 5G networks, smart city deployments, autonomous vehicles, and IoT — are pushing application footprints to the edge at unprecedented scale. Managing Kubernetes clusters across public clouds, private datacenters, and edge sites from separate tools introduces operational fragility, inconsistent security posture, and slow time-to-market for distributed workloads.
 
-Cloud Orbiter was purpose-built to address this gap — delivering a unified Kubernetes management platform that provides a public cloud experience for distributed and edge environments, with centralised operations, full lifecycle automation, and enterprise-grade security across every cluster and site.
-
----
-
-## Platform Overview
-
-Cloud Orbiter is an enterprise multi-cluster Kubernetes orchestration platform designed to manage virtual machines, containers, and bare metal across any infrastructure from a single control plane. The platform is composed of three primary layers:
-
-- **Access Layer** — Portal UI, REST APIs, CLI
-- **Control Plane** — Cluster Orchestration Engine, IAM & RBAC, Application Lifecycle Manager, Observability Stack, Marketplace
-- **Data Plane** — Kubernetes Clusters, Virtual Machines, Bare Metal Nodes, Edge Sites, Public Cloud (AWS, Azure, GCP)
-
-Cloud Orbiter efficiently manages infrastructure across public clouds, private datacenters, and edge locations, offering a unified experience for application and infrastructure lifecycle management. The platform caters to enterprises, service providers, government organisations, and telecom operators — assisting in Kubernetes cluster provisioning, workload orchestration, security, and multi-tenant governance.
-
----
+## Cloud Orbiter by Coredge
+A unified Kubernetes management platform designed for distributed and edge clouds that provides an enterprise cloud experience for edge data centres, enabling centralized operations and automation for distributed Kubernetes clusters. The platform efficiently manages virtual machines, containers, and bare metal across any infrastructure, offering a unified cloud experience for application and infrastructure lifecycle management. Cloud Orbiter caters to diverse service providers, government organizations, and data centres, assisting in various aspects of cloud services, including engineering, delivery management, and maintenance.
 
 ## Industry Use Cases
+1. **Multi-Environment Management**
 
-### Hybrid-Cloud Management
-
-Control cloud-native applications deployed across multiple public clouds (AWS, Microsoft Azure, Google Cloud), private datacenters, and edge sites from a single integrated solution. Eliminate the need for separate management consoles per environment.
+Control cloud-native applications deployed across private datacenters, on-premise infrastructure, and edge sites from a single integrated solution.
 
 ### Application Delivery at Scale
 
@@ -35,9 +21,7 @@ Deploy applications consistently across multiple Kubernetes clusters and regions
 
 ### Multi-Cluster Management Service
 
-Manage the full lifecycle of clusters deployed on public cloud, private infrastructure, and edge locations. Automate Kubernetes cluster upgrades, health monitoring, and day-2 operations from a single control plane with governance and audit trails.
-
----
+Manages the lifecycle of applications deployed on CKP clusters, private clouds, and edge locations, allowing for automated Kubernetes cluster upgrades and centralized management.
 
 ## Key Features
 

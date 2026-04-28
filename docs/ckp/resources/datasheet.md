@@ -42,7 +42,7 @@ sidebar_position: 3
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | All K8s versions (v1.33.7+) |
+| Ubuntu 22.04, Ubuntu 24.04 | All K8s versions (v1.33.7+) |
 | RHEL 9 | All K8s versions (v1.33.7+) |
 
 All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-compliant image artifacts pulled via imgpkg. Container images for all core components (kube-apiserver, kube-controller-manager, kube-scheduler, kube-proxy, etcd, CoreDNS, pause) are hosted on the Coredge Docker Hub registry.
@@ -72,15 +72,15 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 
 ---
 
-## Infrastructure Providers
+## Infrastructure Provider
 
-| Capability | Orbiter Baremetal (BMS) | CCS Virtual Machine (CCP) |
-|------------|-------------------------|---------------------------|
-| Provisioning | Cloud-init templates | Automated VM lifecycle |
-| Networking | Physical server allocation | Neutron integration, security groups |
-| Autoscaling | Not supported | Karpenter (CPU-based) |
-| Architecture | AMD64 | AMD64 and ARM64 |
-| OS Support | Ubuntu 20.04, RHEL 9 | Ubuntu 20.04, RHEL 9 |
+| Capability | Details |
+|------------|---------|
+| Provider | Orbiter Baremetal (BMS) |
+| Provisioning | Cloud-init templates |
+| Networking | Physical server allocation |
+| Architecture | AMD64 |
+| OS Support | Ubuntu 22.04, Ubuntu 24.04, RHEL 9 |
 
 ---
 
@@ -97,14 +97,12 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 | Storage | Ceph (ckp-block) |
 | Standalone CSI | OpenEBS hostpath |
 
-### Backup & Autoscaling
+### Backup
 
 | Property | Details |
 |----------|---------|
 | Backup Tool | Velero (S3-compatible) |
 | Backup Isolation | Project-level |
-| Autoscaler | Karpenter (CCS VM only) |
-| Scaling Limits | CPU-based |
 | Storage Class | ckp-block (Delete reclaim) |
 | Volume Expansion | Enabled |
 | Deployment | Helm chart |
@@ -128,7 +126,7 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 
 | Prerequisite | Details |
 |--------------|---------|
-| Supported OS | Ubuntu 20.04, 22.04, RHEL 9 |
+| Supported OS | Ubuntu 22.04, Ubuntu 24.04, RHEL 9 |
 | Container Runtime | Containerd (v1.6.14+) |
 | OCI Runtime | runc (v1.1.3–v1.1.10) |
 | CRI Tools | crictl (v1.27.0) |
@@ -145,7 +143,7 @@ All packages are custom-built Debian binaries for AMD64. BYOH bundles are OCI-co
 | Provisioning | Request → Resolve provider → Provision hosts → Register (mTLS) |
 | Bootstrap | Approve → Assign group → CAPI resources → Reconcilers |
 | Cluster Ready | Control Plane up → Workers join → Ready state |
-| Addons | Storage + Cilium + Velero + Karpenter + 10yr TLS |
+| Addons | Storage + Cilium + Velero + 10yr TLS |
 
 ---
 

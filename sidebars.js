@@ -221,8 +221,7 @@ const sidebars = {
       collapsed: false,
       items: [
         "cloud-orbiter/services/clusters",
-        "cloud-orbiter/services/edge-clusters",
-        "cloud-orbiter/services/public-cloud",
+        "cloud-orbiter/services/kubernetes-engine",
         "cloud-orbiter/services/applications",
         "cloud-orbiter/services/observability",
         "cloud-orbiter/services/identity",

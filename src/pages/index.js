@@ -198,7 +198,7 @@ function ProductsSection() {
     },
     {
       icon: CloudIcon,
-      title: 'Cloud Orbiter',
+      title: 'CO-CKP',
       description: 'Multi-cloud management and orchestration for hybrid cloud environments.',
       link: '/cloud-orbiter',
     },
