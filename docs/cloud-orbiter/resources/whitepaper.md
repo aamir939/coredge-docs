@@ -215,3 +215,7 @@ Ensuring robust security and maintaining data privacy are critical consideration
 
 ### Conclusion
 In conclusion, Hyperledger Fabric offers a robust and flexible framework for enterprises seeking to harness the potential of blockchain technology. **Coredge’s Cloud Orbiter** platform together provides a simplified, secure and reliable way of deploying production-grade enterprise networks spanning multiple data centers and different organizational boundaries. With a solid understanding of the deployment process, architectural considerations, and security measures, organizations are well-equipped to embark on their own blockchain initiatives, driving digital transformation, and unlocking new possibilities in their respective industries.
+
+---
+
+[Download PDF](/downloads/whitepapers/CloudOrbiter_Whitepaper.pdf)
