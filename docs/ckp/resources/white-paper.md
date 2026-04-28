@@ -19,9 +19,9 @@ A complete, CNCF-certified Kubernetes distribution with integrated cluster lifec
 
 The platform operates across two layers: the **CKP Distribution Layer**, which delivers custom-built Kubernetes packages and Coredge-hosted core component images; and the **CKP Management Layer**, which handles cluster lifecycle management through CAPI (Cluster API) with Managed Control Plane.
 
-> **CKP currently supports Kubernetes versions v1.33.7 through v1.35.1, all CNCF Certified, running on Ubuntu 20.04 and Red Hat Enterprise Linux 9 across both baremetal and virtual infrastructure.**
+> **CKP currently supports Kubernetes versions v1.33.7 through v1.35.1, all CNCF Certified, running on Ubuntu 22.04, Ubuntu 24.04 and Red Hat Enterprise Linux 9 across both baremetal and virtual infrastructure.**
 
-Key capabilities include PGP-signed package distribution via BYOH (Bring Your Own Host) bundles, automated cluster provisioning through the Compass UI and API, Karpenter-based autoscaling, Ceph-backed persistent storage, Velero backup and disaster recovery, and TLS certificate management with 10-year validity. The platform integrates Cluster API v1.7.7, Managed Control Plane, BYOH Infrastructure Provider v0.6.1, and Cert-Manager v1.15.3.
+Key capabilities include PGP-signed package distribution via BYOH (Bring Your Own Host) bundles, automated cluster provisioning through the Compass UI and API, Ceph-backed persistent storage, Velero backup and disaster recovery, and TLS certificate management with 10-year validity. The platform integrates Cluster API v1.7.7, Managed Control Plane, BYOH Infrastructure Provider v0.6.1, and Cert-Manager v1.15.3.
 
 ---
 
@@ -81,7 +81,7 @@ For CAPI-managed cluster provisioning, CKP packages are distributed as BYOH (Bri
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | Available for all supported K8s versions (v1.33.7+) |
+| Ubuntu 22.04, Ubuntu 24.04 | Available for all supported K8s versions (v1.33.7+) |
 | Red Hat Enterprise Linux 9 | Available for all supported K8s versions (v1.33.7+) |
 
 ### 5.4 Supported Kubernetes Versions
@@ -122,19 +122,23 @@ CKP uses Managed Control Plane as the hosted control plane provider. For each ma
 
 ---
 
-## 7. Infrastructure Providers
+## 7. Infrastructure Provider
 
-CKP supports two infrastructure providers, enabling Kubernetes clusters to run on both physical and virtual infrastructure:
+CKP integrates with **Orbiter Baremetal** infrastructure, enabling Kubernetes clusters to be provisioned directly on physical servers.
 
-### 7.1 Orbiter Baremetal Provider (BMS)
+### Orbiter Baremetal Provider (BMS)
 
-The BMS Provider enables Kubernetes clusters to be provisioned directly on physical servers. It handles automated server allocation and release, cloud-init provisioning, and hardware secret management. Baremetal deployments support AMD64 architecture.
+The BMS Provider handles automated server allocation and release, cloud-init provisioning, and hardware secret management. Baremetal deployments support AMD64 architecture.
 
-### 7.2 CCS Virtual Machine Provider (CCP)
+| Capability | Description |
+|------------|-------------|
+| Server Allocation | Automated allocation and release of baremetal servers |
+| Cloud-Init Provisioning | Server initialization using cloud-init templates |
+| Hardware Secret Management | Secure handling of hardware credentials and access keys |
 
-The CCP Provider integrates CKP with Coredge Cloud Services (CCS) for virtual machine-based provisioning. It manages VM lifecycle, network integration via Neutron, security group configuration, and OS image selection. Virtual deployments support both AMD64 and ARM64 architectures and include Karpenter-based autoscaling.
+**Supported Architecture:** AMD64
 
-![CKP Infrastructure Providers](/img/ckp/diagram_providers_drawio_HD.png)
+**Supported OS:** Ubuntu 22.04, Ubuntu 24.04, RHEL 9
 
 ---
 
@@ -147,7 +151,7 @@ The lifecycle follows 14 steps organized into four phases:
 1. **Provisioning** — Request, provider resolution, host provisioning, agent registration
 2. **Bootstrap** — Host approval, group assignment, CAPI resource creation, reconciler bootstrap
 3. **Cluster Ready** — Control plane up, workers join, ready state
-4. **Addons and Scaling** — Storage, CNI, backup, Karpenter, TLS certificates
+4. **Addons** — Storage, CNI, backup, TLS certificates
 
 > **CKP also supports rolling upgrades across Kubernetes versions using a node-by-node drain, install, restart, and uncordon pattern to maintain cluster availability throughout the upgrade process.**
 
@@ -169,7 +173,6 @@ Security is embedded throughout the CKP platform:
 
 - **Mutual TLS (mTLS)** — Host agents register with the management plane via mTLS
 - **Configurable CIDR** — Pod and Service network ranges are fully configurable during cluster creation
-- **Security Groups** — Network security rules for cluster VMs (CCS provider)
 
 ### 9.3 Certificate Management
 
@@ -181,7 +184,7 @@ All supported CKP Kubernetes versions are **CNCF Certified**, ensuring conforman
 
 ---
 
-## 10. Storage, Backup, and Autoscaling
+## 10. Storage and Backup
 
 ### 10.1 CKP Storage Plugin
 
@@ -190,12 +193,6 @@ CKP provides a built-in storage plugin backed by Ceph. The default storage class
 ### 10.2 Velero Backup
 
 CKP integrates Velero for cluster backup and disaster recovery with S3-compatible storage. The backup system provides storage location management, lifecycle handling, cloud provider configuration, and project-level isolation.
-
-### 10.3 Karpenter Autoscaling
-
-CKP integrates Karpenter for automated cluster autoscaling with CPU-based scaling limits. Karpenter handles automatic installation, node class creation for CAPI-managed nodes, and node pool management.
-
-> **Karpenter autoscaling is supported only for dynamically provisioned host groups using the CCS Virtual Machine provider. Baremetal host groups do not support automatic scaling.**
 
 ---
 
@@ -213,7 +210,7 @@ CKP integrates Karpenter for automated cluster autoscaling with CPU-based scalin
 
 | Dependency | Details |
 |------------|---------|
-| Supported OS | Ubuntu 20.04, Ubuntu 22.04, Red Hat Enterprise Linux 9 |
+| Supported OS | Ubuntu 22.04, Ubuntu 24.04, Ubuntu 22.04, Red Hat Enterprise Linux 9 |
 | Container Runtime | Containerd (v1.6.14+) |
 | OCI Runtime | runc (v1.1.3 – v1.1.10) |
 | CRI Tools | crictl (v1.27.0) |
@@ -237,14 +234,13 @@ CKP delivers a complete, enterprise-ready Kubernetes platform that addresses the
 |-----------|---------|
 | Distribution | Custom-built K8s binaries (v1.33.7–v1.35.1), PGP-signed, CNCF Certified |
 | Management | CAPI v1.7.7 + Managed Control Plane |
-| Infrastructure | Orbiter Baremetal (BMS) and CCS Virtual Machine (CCP) |
+| Infrastructure | Orbiter Baremetal (BMS) |
 | Networking | Calico v3.30.5, Cilium; Configurable CIDR |
 | Storage | CKP Storage Plugin (ckp-block / Ceph) + OpenEBS (standalone) |
 | Backup | Velero with S3-compatible storage |
-| Autoscaling | Karpenter (CCS VM provider, CPU-based) |
 | Security | PGP signing, mTLS, 10-year TLS certs, CNCF Certified |
-| Operating Systems | Ubuntu 20.04, Red Hat Enterprise Linux 9 |
-| Architectures | AMD64 (packages), AMD64 + ARM64 (CCS VM provider) |
+| Operating Systems | Ubuntu 22.04, Ubuntu 24.04, Red Hat Enterprise Linux 9 |
+| Architecture | AMD64 |
 
 > **For more information about CKP, contact the Coredge.io platform team or visit the Compass management portal.**
 

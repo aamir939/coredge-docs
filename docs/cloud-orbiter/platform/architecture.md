@@ -66,24 +66,15 @@ sidebar_position: 2
   <!-- Layer 3: Cluster Orchestration -->
   <rect x="36" y="228" width="648" height="80" rx="8" fill="url(#coOrch)" filter="url(#coShadow)"/>
   <text x="56" y="247" fill="#a7f3d0" fontSize="9" fontWeight="600" letterSpacing="1">CLUSTER ORCHESTRATION</text>
-  <rect x="56" y="253" width="104" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
-  <text x="108" y="270" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">CKP Clusters</text>
-  <text x="108" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Coredge K8s</text>
-  <rect x="170" y="253" width="104" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
-  <text x="222" y="270" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">AWS EKS</text>
-  <text x="222" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Public Cloud</text>
-  <rect x="284" y="253" width="104" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
-  <text x="336" y="270" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Azure AKS</text>
-  <text x="336" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Public Cloud</text>
-  <rect x="398" y="253" width="104" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
-  <text x="450" y="270" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Google GKE</text>
-  <text x="450" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Public Cloud</text>
-  <rect x="512" y="253" width="104" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
-  <text x="564" y="270" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Edge Clusters</text>
-  <text x="564" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Remote Sites</text>
-  <rect x="626" y="253" width="46" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
-  <text x="649" y="270" textAnchor="middle" fill="#d1fae5" fontSize="8" fontWeight="500">Brown</text>
-  <text x="649" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">field</text>
+  <rect x="56" y="253" width="280" height="44" rx="4" fill="#064e3b" fillOpacity="0.7" stroke="#10b981" strokeWidth="1"/>
+  <text x="196" y="268" textAnchor="middle" fill="#d1fae5" fontSize="11" fontWeight="600">CKP — Coredge Kubernetes Platform</text>
+  <text x="196" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Primary · Enterprise-Grade · On-Premise · Edge · IoT</text>
+  <rect x="350" y="253" width="150" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
+  <text x="425" y="270" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Edge Clusters</text>
+  <text x="425" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Remote Sites · Distributed</text>
+  <rect x="514" y="253" width="158" height="44" rx="4" fill="#064e3b" fillOpacity="0.7"/>
+  <text x="593" y="270" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Brownfield Import</text>
+  <text x="593" y="283" textAnchor="middle" fill="#6ee7b7" fontSize="8">Existing K8s Clusters</text>
 
   <!-- Layer 4: Services -->
   <rect x="36" y="326" width="648" height="74" rx="8" fill="url(#coInfra)" filter="url(#coShadow)"/>
@@ -124,7 +115,7 @@ sidebar_position: 2
   <text x="606" y="457" textAnchor="middle" fill="#475569" fontSize="9">outbound only</text>
 
   <!-- footer -->
-  <text x="360" y="500" textAnchor="middle" fill="#475569" fontSize="8.5">No inbound firewall rules required · Supports private, edge, and public cloud clusters</text>
+  <text x="360" y="500" textAnchor="middle" fill="#475569" fontSize="8.5">No inbound firewall rules required · Supports on-premise, edge, and private cloud clusters</text>
 </svg>
 </div>
 
@@ -143,10 +134,37 @@ Cloud Orbiter is organized into four functional layers:
   <tbody>
     <tr><td style={{padding: '3px 12px'}}>User Interface & API</td><td style={{padding: '3px 12px'}}>Management Dashboard, REST API, kubectl Proxy, WebSocket Notifications</td><td style={{padding: '3px 12px'}}>React, REST, WebSocket</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Identity & Access</td><td style={{padding: '3px 12px'}}>Authentication, RBAC, SSO federation, session management</td><td style={{padding: '3px 12px'}}>Keycloak, OpenID Connect, Okta, Google, Microsoft</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Cluster Orchestration</td><td style={{padding: '3px 12px'}}>CKP, EKS, AKS, GKE, Edge, Brownfield cluster management</td><td style={{padding: '3px 12px'}}>Kubernetes API, CKP, Cloud Provider SDKs</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Cluster Orchestration</td><td style={{padding: '3px 12px'}}>CKP cluster provisioning and lifecycle management</td><td style={{padding: '3px 12px'}}>Kubernetes API, CKP, CAPI</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Platform Services</td><td style={{padding: '3px 12px'}}>App Lifecycle, Observability, Backup, VMs, Test Suites, Add-ons</td><td style={{padding: '3px 12px'}}>Helm, Prometheus, Velero, KubeVirt</td></tr>
   </tbody>
 </table>
+
+## CKP Architecture
+
+CKP (Coredge Kubernetes Platform) operates across two functional layers:
+
+<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
+  <thead>
+    <tr>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Layer</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Function</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Components</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style={{padding: '3px 12px'}}><strong>Distribution Layer</strong></td><td style={{padding: '3px 12px'}}>Delivers custom-built, validated Kubernetes packages</td><td style={{padding: '3px 12px'}}>kubeadm, kubelet, kubectl, Coredge-hosted core images</td></tr>
+    <tr><td style={{padding: '3px 12px'}}><strong>Management Layer</strong></td><td style={{padding: '3px 12px'}}>Handles cluster lifecycle through CAPI</td><td style={{padding: '3px 12px'}}>Cluster API, Provisioning, Scaling, Upgrades</td></tr>
+  </tbody>
+</table>
+
+### Supported Configurations
+
+| Specification | Details |
+|---------------|---------|
+| **Kubernetes Versions** | v1.33.7, v1.34.3, v1.35.1 (CNCF Certified) |
+| **Operating Systems** | Ubuntu 22.04, Ubuntu 24.04, Red Hat Enterprise Linux 9 |
+| **Infrastructure Provider** | Orbiter Baremetal (BMS) |
+| **Architectures** | AMD64, ARM64 |
 
 ## Connectivity Model
 
@@ -166,22 +184,128 @@ This model means:
 
 ## Tenant & Project Isolation
 
-```
-Cloud Orbiter
-└── Tenant (Organization)
-    ├── Project A (Team / Application)
-    │   ├── Clusters
-    │   ├── Applications
-    │   └── Users & Roles
-    └── Project B
-        ├── Clusters
-        ├── Applications
-        └── Users & Roles
-```
+<div style={{textAlign: "center", margin: "32px auto", maxWidth: "680px"}}>
+<svg viewBox="0 0 680 420" width="100%" xmlns="http://www.w3.org/2000/svg" fontFamily="Inter, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="tiBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#0f172a"/>
+      <stop offset="100%" stopColor="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="tiOrbiter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#0369a1"/>
+      <stop offset="100%" stopColor="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="tiTenant" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#6d28d9"/>
+      <stop offset="100%" stopColor="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="tiProject" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#065f46"/>
+      <stop offset="100%" stopColor="#047857"/>
+    </linearGradient>
+    <linearGradient id="tiResource" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#92400e"/>
+      <stop offset="100%" stopColor="#b45309"/>
+    </linearGradient>
+    <filter id="tiShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.4"/>
+    </filter>
+  </defs>
 
-- **Tenant** — Top-level organizational boundary. Fully isolated identity realm per tenant.
-- **Project** — Logical grouping within a tenant. Resources, clusters, and applications are scoped to a project.
-- **Users & Groups** — Assigned to projects with explicit roles (Tenant Admin, Project Admin, Default User).
+  <rect width="680" height="420" fill="url(#tiBg)" rx="14"/>
+  <text x="340" y="32" textAnchor="middle" fill="#f1f5f9" fontSize="15" fontWeight="700">Tenant & Project Isolation Model</text>
+  <text x="340" y="50" textAnchor="middle" fill="#94a3b8" fontSize="9">Multi-Tenant Hierarchy · RBAC · Resource Scoping</text>
+
+  <!-- Cloud Orbiter Control Plane -->
+  <rect x="200" y="66" width="280" height="44" rx="8" fill="url(#tiOrbiter)" filter="url(#tiShadow)"/>
+  <text x="340" y="84" textAnchor="middle" fill="#bae6fd" fontSize="9" fontWeight="600" letterSpacing="0.5">CONTROL PLANE</text>
+  <text x="340" y="100" textAnchor="middle" fill="#e0f2fe" fontSize="11" fontWeight="500">Cloud Orbiter</text>
+
+  <!-- Connector line from Orbiter to Tenant -->
+  <line x1="340" y1="110" x2="340" y2="130" stroke="#475569" strokeWidth="2"/>
+  <polygon points="340,138 335,130 345,130" fill="#475569"/>
+
+  <!-- Tenant Box -->
+  <rect x="80" y="140" width="520" height="260" rx="10" fill="url(#tiTenant)" filter="url(#tiShadow)" fillOpacity="0.95"/>
+  <text x="100" y="162" fill="#ddd6fe" fontSize="9" fontWeight="600" letterSpacing="1">TENANT (ORGANIZATION)</text>
+  <rect x="100" y="170" width="130" height="22" rx="4" fill="#4c1d95" fillOpacity="0.7"/>
+  <text x="165" y="185" textAnchor="middle" fill="#ede9fe" fontSize="9">Isolated Identity Realm</text>
+  <rect x="240" y="170" width="100" height="22" rx="4" fill="#4c1d95" fillOpacity="0.7"/>
+  <text x="290" y="185" textAnchor="middle" fill="#ede9fe" fontSize="9">Quota Policies</text>
+  <rect x="350" y="170" width="110" height="22" rx="4" fill="#4c1d95" fillOpacity="0.7"/>
+  <text x="405" y="185" textAnchor="middle" fill="#ede9fe" fontSize="9">Tenant Admin Role</text>
+  <rect x="470" y="170" width="110" height="22" rx="4" fill="#4c1d95" fillOpacity="0.7"/>
+  <text x="525" y="185" textAnchor="middle" fill="#ede9fe" fontSize="9">Audit Logging</text>
+
+  <!-- Project A -->
+  <rect x="100" y="210" width="230" height="170" rx="8" fill="url(#tiProject)" filter="url(#tiShadow)"/>
+  <text x="120" y="230" fill="#a7f3d0" fontSize="9" fontWeight="600" letterSpacing="0.5">PROJECT A</text>
+  <text x="120" y="244" fill="#6ee7b7" fontSize="8">Team / Application Scope</text>
+
+  <!-- Project A Resources -->
+  <rect x="115" y="258" width="90" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="160" y="274" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Clusters</text>
+  <text x="160" y="287" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">CKP · Edge</text>
+
+  <rect x="215" y="258" width="100" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="265" y="274" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Applications</text>
+  <text x="265" y="287" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">Helm · GitOps</text>
+
+  <rect x="115" y="304" width="90" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="160" y="320" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Users</text>
+  <text x="160" y="333" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">Project Members</text>
+
+  <rect x="215" y="304" width="100" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="265" y="320" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Roles</text>
+  <text x="265" y="333" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">Admin · User</text>
+
+  <rect x="115" y="350" width="200" height="20" rx="4" fill="url(#tiResource)" fillOpacity="0.9"/>
+  <text x="215" y="364" textAnchor="middle" fill="#fef3c7" fontSize="8">Observability · Backup · Add-ons</text>
+
+  <!-- Project B -->
+  <rect x="350" y="210" width="230" height="170" rx="8" fill="url(#tiProject)" filter="url(#tiShadow)"/>
+  <text x="370" y="230" fill="#a7f3d0" fontSize="9" fontWeight="600" letterSpacing="0.5">PROJECT B</text>
+  <text x="370" y="244" fill="#6ee7b7" fontSize="8">Team / Application Scope</text>
+
+  <!-- Project B Resources -->
+  <rect x="365" y="258" width="90" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="410" y="274" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Clusters</text>
+  <text x="410" y="287" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">CKP · Edge</text>
+
+  <rect x="465" y="258" width="100" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="515" y="274" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Applications</text>
+  <text x="515" y="287" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">Helm · GitOps</text>
+
+  <rect x="365" y="304" width="90" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="410" y="320" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Users</text>
+  <text x="410" y="333" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">Project Members</text>
+
+  <rect x="465" y="304" width="100" height="36" rx="4" fill="#064e3b" fillOpacity="0.8"/>
+  <text x="515" y="320" textAnchor="middle" fill="#d1fae5" fontSize="9" fontWeight="500">Roles</text>
+  <text x="515" y="333" textAnchor="middle" fill="#6ee7b7" fontSize="7.5">Admin · User</text>
+
+  <rect x="365" y="350" width="200" height="20" rx="4" fill="url(#tiResource)" fillOpacity="0.9"/>
+  <text x="465" y="364" textAnchor="middle" fill="#fef3c7" fontSize="8">Observability · Backup · Add-ons</text>
+
+  <!-- Footer -->
+  <text x="340" y="410" textAnchor="middle" fill="#475569" fontSize="8">Projects are fully isolated · No cross-project resource visibility · RBAC enforced at every layer</text>
+</svg>
+</div>
+
+<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse', marginTop: '16px'}}>
+  <thead>
+    <tr>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Level</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Description</th>
+      <th style={{padding: '4px 12px', textAlign: 'left'}}>Isolation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style={{padding: '3px 12px'}}>Tenant</td><td style={{padding: '3px 12px'}}>Top-level organizational boundary (enterprise, department, customer)</td><td style={{padding: '3px 12px'}}>Fully isolated identity realm per tenant</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Project</td><td style={{padding: '3px 12px'}}>Logical grouping within a tenant for teams or applications</td><td style={{padding: '3px 12px'}}>Resources, clusters, and apps scoped to project</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Users & Roles</td><td style={{padding: '3px 12px'}}>Assigned to projects with explicit RBAC roles</td><td style={{padding: '3px 12px'}}>Tenant Admin, Project Admin, Default User</td></tr>
+  </tbody>
+</table>
 
 ## Add-On Architecture
 

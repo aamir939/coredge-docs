@@ -9,7 +9,7 @@ sidebar_position: 4
 
 | Dependency | Details |
 |------------|---------|
-| Supported OS | Ubuntu 20.04, Ubuntu 22.04, Red Hat Enterprise Linux 9 |
+| Supported OS | Ubuntu 22.04, Ubuntu 24.04, Red Hat Enterprise Linux 9 |
 | Container Runtime | Containerd (v1.6.14+) |
 | OCI Runtime | runc (v1.1.3 - v1.1.10) |
 | CRI Tools | crictl (v1.27.0) |

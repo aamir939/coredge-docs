@@ -9,12 +9,12 @@ With the evolution of new-generation cloud-native solutions like 5G, innovative 
 However, it presents operational challenges, making mini-data centres and edge locations difficult to manage across multiple distributed locations. Managing multi-cloud and edge clouds from a single control point has become crucial as dispersed cloud environments rise. Enterprises seek methods to orchestrate, automate, and manage their infrastructure resources, focusing on security and privacy.
 
 ## Cloud Orbiter by Coredge
-A unified Kubernetes management platform designed for distributed and edge clouds that provides a public cloud experience for edge data centres, enabling centralized operations and automation for distributed Kubernetes clusters. The platform efficiently manages virtual machines, containers, and bare metal across any infrastructure, offering a unified cloud experience for application and infrastructure lifecycle management. Cloud Orbiter caters to diverse service providers, government organizations, and data centres, assisting in various aspects of cloud services, including engineering, delivery management, and maintenance.
+A unified Kubernetes management platform designed for distributed and edge clouds that provides an enterprise cloud experience for edge data centres, enabling centralized operations and automation for distributed Kubernetes clusters. The platform efficiently manages virtual machines, containers, and bare metal across any infrastructure, offering a unified cloud experience for application and infrastructure lifecycle management. Cloud Orbiter caters to diverse service providers, government organizations, and data centres, assisting in various aspects of cloud services, including engineering, delivery management, and maintenance.
 
 ## Industry Use Cases
-1. **Hybrid-cloud Management**
+1. **Multi-Environment Management**
 
-Control cloudnative applications deployed on multiple public clouds (e.g., AWS, Microsoft Azure, Google Cloud), private datacenters, and edge sites from a single integrated solution.
+Control cloud-native applications deployed across private datacenters, on-premise infrastructure, and edge sites from a single integrated solution.
 
 2. **Application Delivery** 
 
@@ -22,7 +22,7 @@ Deploy applications across multiple Kubernetes clusters and regions, improving t
 
 3. **Multi-cluster Management Service** 
 
-Manages the lifecycle of applications deployed on clusters, public clouds, and edge locations, allowing for automated Kubernetes cluster upgrades and centralized management.
+Manages the lifecycle of applications deployed on CKP clusters, private clouds, and edge locations, allowing for automated Kubernetes cluster upgrades and centralized management.
 
 ## Key Features
 - **Centralized Infrastructure Management:** Cloud Orbiter offers an intuitive dashboard for managing the entire infrastructure from a single point of control, including Day 2 Operations.

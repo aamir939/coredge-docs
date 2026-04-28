@@ -103,9 +103,9 @@ Focusing on Zero Trust Security, Cloud Orbiter ensures that all clusters and edg
 
 Cloud Orbiter automates the deployment of applications, reducing complexity and streamlining workflows.
 
-**Multi-Cloud Management**
+**Multi-Environment Management**
 
-Cloud Orbiter provides multi-cloud management for Kubernetes clusters, allowing you to manage your clusters across multiple clouds, including AWS and Azure.
+Cloud Orbiter provides multi-environment management for Kubernetes clusters, allowing you to manage your clusters across on-premise, private cloud, and edge environments.
 
 **RBAC and Identity Access Management**
 
@@ -357,115 +357,25 @@ RBAC in Cloud Orbiter is a mechanism that enables admin to create users and role
 
 ---
 
-## 9. Cloud Onboarding
+## 9. Clusters
 
-Cloud Orbiter is designed to help you manage your cloud resources with ease. It provides a single dashboard where you can view and manage all your cloud resources, regardless of where they are located. With the Cloud Onboarding feature, Cloud Orbiter allows you to seamlessly integrate with AWS, Azure and Google Cloud, three of the most popular cloud providers, and manage your clusters in one place.
+### 9.1 Overview
 
-It guides you through the process of adding your AWS, Azure and Google Cloud accounts and ensures that your credentials are validated before bringing your clusters into the dashboard. This means you can start managing your clusters in a read-only mode right away, without any delay or additional configuration. If your credentials are expiring or have expired, Cloud Orbiter also allows easy editing of the configured Google Cloud account to update descriptions or provide new credentials, by validating new inputs upfront to avoid any disruption in management.
-
-### 9.1 AWS Account Management
-
-To integrate your AWS account with Cloud Orbiter, you'll need to provide your Access key and Secret key, which are the credentials required to access your AWS resources. Adding an AWS account is a straightforward process with Cloud Orbiter's Cloud Onboarding feature. Here's how you can add an AWS account to Cloud Orbiter:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Add Account** button in front of the AWS account option.
-3. Provide an account name and description (optional).
-4. Enter your Access key and Secret key in the fields provided.
-5. Click on the **Save** button.
-
-By following these steps, Cloud Orbiter will validate your credentials and you are ready to create clusters on AWS.
-
-In addition to adding an AWS account, you can also modify or remove your account credentials from Cloud Orbiter. To modify your AWS account credentials, follow these steps:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Edit** button next to the AWS account you want to modify.
-3. Update your Access key and Secret key in the fields provided.
-4. Click on the **Save** button.
-
-To remove an AWS account from Cloud Orbiter, follow these steps:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Delete** button next to the AWS account you want to remove.
-3. Confirm that you want to remove the account by clicking on the **Yes** button.
-
-### 9.2 Azure Account Management
-
-To integrate your Azure account with Cloud Orbiter, you'll need to provide your Tenant ID, Subscription ID, Client ID, and Client Secret. Adding an Azure account is a straightforward process with Cloud Orbiter's Cloud Onboarding feature. Here's how you can add an Azure account to Cloud Orbiter:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Add Account** button in front of the Azure account option.
-3. Provide an account name and description (optional).
-4. Enter your Tenant ID, Subscription ID, Client ID, and Client Secret in the fields provided.
-5. Click on the **Save** button.
-
-By following these steps, Cloud Orbiter will validate your credentials and you are ready to create clusters on Azure cloud.
-
-In addition to adding an Azure account, you can also modify or remove your account credentials from Cloud Orbiter. To modify your Azure account credentials, follow these steps:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Edit** button next to the Azure account you want to modify.
-3. Update your Tenant ID, Subscription ID, Client ID, and Client Secret in the fields provided.
-4. Click on the **Save** button.
-
-To remove an Azure account from Cloud Orbiter, follow these steps:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Delete** button next to the Azure account you want to remove.
-3. Confirm that you want to remove the account by clicking on the **Yes** button.
-
-### 9.3 Google Cloud Account Management
-
-To integrate your Google Cloud account with Cloud Orbiter, you'll need to use a Google credential file format. Here's how you can add a Google Cloud account to Cloud Orbiter:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Add Account** button in front of the Google Cloud account option.
-3. Provide an account name and description (optional).
-4. Upload your credential file.
-5. Click on the **Save** button.
-
-By following these steps, Cloud Orbiter will validate your credentials, and you are ready to create clusters on Google Cloud Platform.
-
-In addition to adding a Google Cloud account, you can also modify or remove your account credentials from Cloud Orbiter. To modify your Google Cloud account credentials, follow these steps:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Edit** button next to the Google Cloud account you want to modify.
-3. Update your credential file.
-4. Click on the **Save** button.
-
-To remove a Google Cloud account from Cloud Orbiter, follow these steps:
-
-1. Open Cloud Orbiter and switch to Admin view and navigate to the Infrastructure provider section.
-2. Click on the **Delete** button next to the Google Cloud account you want to remove.
-3. Confirm that you want to remove the account by clicking on the **Yes** button.
-
-### 9.4 Cluster Creation with Cloud Orbiter's Cloud Onboarding Feature
-
-Once you have added your AWS, Azure and Google accounts to Cloud Orbiter, you can manage your clusters in the following ways:
-
-- **View all your clusters:** You can view all your clusters in one place and get a quick overview of their status and other details.
-- **Create new clusters:** You can create new clusters directly from Cloud Orbiter without needing to switch between different platforms/dashboards. This saves you time and effort and helps you get things done faster.
-
----
-
-## 10. Clusters
-
-### 10.1 Overview
-
-Cloud Orbiter is a cloud-native platform that enables users to quickly and easily deploy and manage Kubernetes clusters. With Cloud Orbiter, users can create secure, scalable, and highly available Kubernetes clusters in minutes. It aims to provide an excellent user experience in managing hundreds of thousands of clusters and maintaining large-scale distributed applications. When working across various settings, such as different data centers and private, hybrid, and public clouds, enterprises confront issues that must be addressed. Cloud Orbiter provides the capabilities to address the challenges organizations face.
+Cloud Orbiter is a cloud-native platform that enables users to quickly and easily deploy and manage Kubernetes clusters. With Cloud Orbiter, users can create secure, scalable, and highly available Kubernetes clusters in minutes. It aims to provide an excellent user experience in managing hundreds of thousands of clusters and maintaining large-scale distributed applications. When working across various settings, such as different data centers, private clouds, and edge environments, enterprises confront issues that must be addressed. Cloud Orbiter provides the capabilities to address the challenges organizations face.
 
 - Cloud Orbiter allows you to easily deploy, create, manage, monitor, and upgrade multiple clusters across geo-locations environments.
 - With Cloud Orbiter, Kubernetes clusters can be provisioned easily at the edge. They can be updated and upgraded without any downtime.
 - Cloud Orbiter integrates with various logging metric platforms for detailed cluster resource visibility and monitoring across edge environments.
 - With Cloud Orbiter, a user can remotely manage target and orbiter clusters.
 - Cloud Orbiter connects multiple clusters to itself so that through Cloud Orbiter, users can manage their target clusters.
-- The connection establishes through NAT GW (NAT GW connects private networks to the Internet), through the Internet into the public cloud region. Once it enters the public cloud region, it will go into the Cloud Orbiter, where it is hosted.
+- The connection establishes through NAT GW (NAT GW connects private networks to the Internet), through the Internet into the Cloud Orbiter control plane, where cluster management is hosted.
 - Cloud Orbiter manages applications on the target cluster.
 - NAT GW works as a translation layer between these networks.
 - So, once deployed, the HTTP request goes back and forth, and the request will hit the target clusters a user has connected to Cloud Orbiter.
 
 Cloud Orbiter manages all the Kubernetes resources like nodes, events, namespaces, workloads, pods, Replicasets, deployments, Daemonsets, Statefulsets, access control, roles, role binding, cluster roles, cluster roles bindings, service accounts, network policies, storage, storage classes, secrets, ConfigMaps, and more. You can access all the Kubernetes resources, and manage them, using Cloud Orbiter for your application and cluster management.
 
-### 10.2 Day 2 Management
+### 9.2 Day 2 Management
 
 Cloud orbiters provide several options to manage Kubernetes clusters on an ongoing basis, ensuring smooth and efficient operations throughout the entire cluster lifecycle. With features such as auto-scaling, cluster upgrades, and application deployment, the platform lets you focus on your core business rather than the complex infrastructure supporting it. Day 2 operations, which encompass the ongoing management of your cluster once it is up and running, are a critical aspect of cluster lifecycle management.
 
@@ -493,7 +403,7 @@ Cloud Orbiters provide a range of security features that help organizations ensu
 
 By providing a centralized platform for day 2 operations, Cloud Orbiters simplify the management and maintenance of Kubernetes clusters, allowing organizations to focus on building and deploying applications with confidence.
 
-### 10.3 Cluster Monitoring
+### 9.3 Cluster Monitoring
 
 One of the critical aspects of managing a Kubernetes cluster is monitoring the health and performance of the nodes and workloads running on the cluster. Cloud Orbiters provides robust cluster monitoring capabilities that enable users to track critical metrics such as CPU, memory, and node health.
 
@@ -509,7 +419,7 @@ Monitoring the CPU and memory usage of a Kubernetes cluster is crucial to ensure
 
 Cloud Orbiters' node monitoring capabilities allow users to monitor each cluster node's health and performance. It includes monitoring the node's CPU, memory, disk usage, and network activity. Users can view the node metrics in real-time and set alerts to receive notifications if any issues arise.
 
-### 10.4 Application deployment
+### 9.4 Application deployment
 
 Cloud Orbiter offers several options to deploy applications on Kubernetes clusters, making it easier and faster for developers to deliver their applications to end-users. One of the key features of Cloud Orbiter is its ability to automate the deployment process, which saves a lot of time and reduces the risk of human error. To deploy an application on a Kubernetes cluster using Cloud Orbiter, developers can integrate with helm and gitOps repository.
 
@@ -525,7 +435,7 @@ Managed instances provides you details of an application, namespace, release nam
 
 You can actively check the unmanaged app instances, their chart details, and application status with Cloud Orbiter. Cloud Orbiter allows you to interact with unmanaged app instances and enables you to move from unmanaged instances to manage instances to automate the application life cycle.
 
-### 10.5 Location Tagging
+### 9.5 Location Tagging
 
 ![Location Tagging](../location-tag.png)
 
@@ -543,7 +453,7 @@ From the map view dashboard, you can also enable Add-ons:
 - Click on **go to Add-ons**.
 - Select **Enable** from the three dots in the right corner.
 
-### 10.6 Service Discovery
+### 9.6 Service Discovery
 
 #### 10.6.1 Services
 
@@ -556,152 +466,25 @@ When a service is created, Kubernetes assigns it an IP address that can only be 
 - Centralized Ingress allows access to multiple services without any extra configuration. Cloud Orbiter enables applications to be accessed across clusters without writing Ingress files or establishing service NodePorts or Load Balancers manually.
 - The Centralized Ingress solution eliminates the need for service configuration or exposure mapping. You can access the services in the target cluster without using an external tenant or IP-based configuration.
 
-### 10.7 Test Suites
+### 9.7 Test Suites
 
 Cloud Orbiter offers a pre-configured set of test suites containing pre-packaged test cases. These pre-bundled test suites enable you to proactively verify your clusters before application deployment and post-deployment to ensure optimal performance.
 
-### 10.8 Access Logs
+### 9.8 Access Logs
 
 Access logs are a crucial aspect of monitoring your cluster activity, identifying security threats, and troubleshooting operational issues. Cloud Orbiter provides a robust solution for managing and analyzing your cluster access logs.
 
-### 10.9 Backup & Restore Jobs
+### 9.9 Backup & Restore Jobs
 
 Cloud Orbiter's backup and restore provides a backup of your namespace and applications deployed on multiple clusters at remote locations.
 
-### 10.10 Add-ons
+### 9.10 Add-ons
 
 Cloud Orbiter Add-ons is a collection of preconfigured components that enhance the functionality of a Kubernetes cluster.
 
 ---
 
-## 11. Public Cloud Cluster Management
-
-Cloud Orbiter's primary objective is to provide comprehensive cluster lifecycle management for public cloud Kubernetes deployments. It enables you to manage your cloud-native infrastructure more effectively by providing an intuitive, easy-to-use interface to deploy, operate, and scale your Kubernetes clusters. With Cloud Orbiter, you can simplify your Kubernetes operations and ensure your cluster's high availability, scalability, and security.
-
-**Supported Public Cloud Providers:**
-
-- AWS EKS
-- Azure AKS
-- Google GKE
-
-By leveraging Cloud Orbiter's support for AWS EKS, Azure AKS, and Google GKE, you can easily deploy and manage your Kubernetes clusters without worrying about the underlying infrastructure. Cloud Orbiter automates deploying, upgrading, and scaling your clusters, making it an ideal solution for enterprises looking to adopt a cloud-native approach to managing their Kubernetes workloads.
-
-### 11.1 Amazon Elastic Kubernetes Service (Amazon EKS)
-
-Cloud Orbiter provides seamless integration with Amazon EKS to help you deploy and manage your clusters in the cloud. Whether you're looking to create a new cluster or manage an existing one, Cloud Orbiter simplifies the process and streamlines your workflows.
-
-Here's how Cloud Orbiter supports integration with AWS:
-
-- **Onboarding:** To help you get started quickly, Cloud Orbiter provides an easy-to-use onboarding process. The onboarding process guides you through the necessary steps to connect your AWS account to Cloud Orbiter and deploy your first EKS cluster.
-- **Deployment:** With Cloud Orbiter, you can easily create new clusters on AWS using Amazon Elastic Kubernetes Service (EKS). This managed Kubernetes service makes it easy to run Kubernetes on AWS without needing your own Kubernetes control plane.
-- **Management:** Once your cluster is up and running, Cloud Orbiter provides a centralized dashboard to help you monitor and manage your EKS cluster. From scaling your applications to monitoring performance metrics, Cloud Orbiter has everything you need to manage your EKS cluster effectively.
-
-**Create and Manage AWS EKS Cluster with Cloud Orbiter**
-
-Cloud Orbiter supports creating and managing AWS EKS clusters through a simple and intuitive interface. Before you can create and manage an EKS cluster with Cloud Orbiter, there are a few prerequisites you must have in place:
-
-**Prerequisites:**
-
-- AWS Account: You must have an AWS account with the necessary permissions to create and manage EKS clusters.
-- AWS CLI: You must install the AWS Command Line Interface (CLI) on your local machine.
-- kubectl: You must have the Kubernetes command-line tool, kubectl, installed on your local machine.
-- Cloud Orbiter Account: To access the platform, you must have a Cloud Orbiter account.
-
-**Create EKS Cluster:**
-
-Once you have the prerequisites in place, you can create an EKS cluster with Cloud Orbiter:
-
-1. **Log in to Cloud Orbiter:** Log in to your Cloud Orbiter account and navigate to the dashboard.
-2. **Create a Cluster:** Click the Create Cluster button to create a new EKS cluster.
-3. **Select Cloud Provider:** Select AWS as the cloud provider for your EKS cluster.
-4. **Configure Cluster:** Configure your EKS cluster by specifying the desired cluster name, region, and node instance type.
-5. **Create:** Review your configuration and create your EKS cluster.
-
-**Manage EKS Cluster:**
-
-Once you have created an EKS cluster with Cloud Orbiter, you can easily manage it from the dashboard:
-
-1. Navigate to the project: Log in to your Cloud Orbiter account and navigate to the dashboard.
-2. Select Cluster: Select the EKS cluster you want to manage from the list of available clusters.
-3. Manage Cluster: Manage your EKS cluster by scaling nodes, deploying applications, and monitoring the health of your cluster.
-
-### 11.2 Azure Kubernetes Service (Azure AKS)
-
-Cloud Orbiter provides seamless integration with Microsoft's Azure AKS to help you deploy and manage your AKS clusters in the cloud. Whether you're looking to create a new cluster or manage an existing one, Cloud Orbiter simplifies the process and streamlines your workflows.
-
-Here's how Cloud Orbiter supports integration with Azure:
-
-- **Onboarding:** To help you get started quickly, Cloud Orbiter provides an easy-to-use onboarding process. The onboarding process guides you through the necessary steps to connect your Azure account to Cloud Orbiter and deploy your first AKS cluster.
-- **Deployment:** With Cloud Orbiter, you can easily create new clusters on Azure using Azure Kubernetes Service (AKS). This managed Kubernetes service makes it easy to run Kubernetes on Azure without needing your own Kubernetes control plane.
-- **Management:** Once your cluster is up and running, Cloud Orbiter provides a centralized dashboard to help you monitor and manage your AKS cluster. From scaling your applications to monitoring performance metrics, Cloud Orbiter has everything you need to manage your AKS cluster effectively.
-
-**Create and Manage Azure AKS Cluster:**
-
-Cloud Orbiter integrates with Microsoft Azure, allowing you to deploy and manage Azure AKS clusters through the platform.
-
-**Prerequisites:**
-
-- An Azure subscription to create an AKS cluster on Azure.
-- Azure CLI installed on your local machine.
-- kubectl installed on your local machine.
-
-**Create AKS Cluster:**
-
-1. Log in to the Cloud Orbiter platform and navigate to the Clusters section.
-2. Click **Create Cluster** and select **Microsoft Azure AKS** as the cluster type.
-3. Enter a name for your cluster and select the Azure subscription you want to use.
-4. Choose the Azure region where you want to create the cluster.
-5. Configure the node pool settings, such as the node size, count, and disk size.
-6. Review and confirm the cluster configuration, then click **Create** to provision the AKS cluster in Azure.
-
-**Managing an AKS Cluster:**
-
-Once you have created an AKS cluster using Cloud Orbiter, you can manage it using the platform's built-in tools. Some of the management capabilities include:
-
-- Scaling the cluster nodes up or down.
-- Upgrading the Kubernetes version or node pool configuration.
-- Adding or removing node pools.
-- Viewing cluster metrics and logs.
-
-To manage an AKS cluster using Cloud Orbiter, follow these steps:
-
-1. Log in to the Cloud Orbiter platform and navigate to the Clusters section.
-2. Select the AKS cluster you want to manage.
-3. Use the management tools provided by Cloud Orbiter to perform the desired actions on the cluster.
-
-### 11.3 Google Kubernetes Engine (Google GKE)
-
-Cloud Orbiter integrates seamlessly with Google Kubernetes Engine (GKE), enabling you to efficiently deploy and manage your Kubernetes clusters on Google Cloud.
-
-Here's how Cloud Orbiter supports integration with Google GKE:
-
-- **Onboarding:** Cloud Orbiter provides a straightforward onboarding process, guiding you through the steps to connect your Google Cloud account and deploy your first GKE cluster.
-- **Deployment:** Create and configure new GKE clusters directly from the Cloud Orbiter interface, utilizing the infrastructure provided by Google cloud.
-- **Management:** Once your cluster is running, use Cloud Orbiter's centralized dashboard to monitor, scale, and manage your GKE cluster. Manage node pools, view performance metrics, and ensure the optimal operation of your Kubernetes workloads.
-
-**Create and Manage Google GKE Cluster:**
-
-Integrate Google GKE with Cloud Orbiter and manage your clusters seamlessly through our platform.
-
-**Prerequisites:**
-
-- A Google Cloud account with the necessary permissions to create and manage Kubernetes clusters.
-
-**Create GKE Cluster:**
-
-1. Log in to Cloud Orbiter: Access your account and navigate to the dashboard.
-2. Create a Cluster: Choose to create a new cluster and select Google GKE as the cluster type.
-3. Configure Your Cluster: Enter your cluster details, select the Google Cloud project, choose the region, and configure the node pools according to your requirements.
-4. Review and Create: Double-check your configurations and create your GKE cluster.
-
-**Manage GKE Cluster:**
-
-1. Access Your Cluster: From the Cloud Orbiter dashboard, select the GKE cluster you wish to manage.
-2. Manage Your Cluster: Utilize the tools provided to scale your applications, monitor performance, and ensure the stability and efficiency of your deployments.
-
----
-
-## 12. Edge Clusters
+## 10. Edge Clusters
 
 Edge clusters are Kubernetes clusters deployed on edge hosts installed in isolated locations. These edge hosts can be virtual machines and are managed by operators at remote sites. Cloud Orbiter deploys workload clusters on edge hosts through its SaaS-based management console. In addition to provisioning clusters, Cloud Orbiter provides end-to-end cluster management through scaling, upgrades, and reconfiguration operations.
 
@@ -744,13 +527,13 @@ Once the host groups are created, you can onboard a cluster. There are two metho
 
 ---
 
-## 13. Brown Field Clusters
+## 11. Brown Field Clusters
 
 Cloud Orbiter provides the ability to import existing Kubernetes clusters into the platform, enabling users to gain visibility, management, and additional capabilities, such as application lifecycle management. The platform supports the import and management of Kubernetes clusters in various public, private, and bare-metal environments.
 
 With Cloud Orbiter, users can also import their existing clusters to the platform regardless of the cloud service provider using the Generic Cluster import feature. This feature enables the user to import the cluster and perform generic operations like scans and backups not specific to the cloud infrastructure.
 
-Cloud Orbiter supports various public cloud-managed services such as Amazon, Azure, Google Cloud, VMware, OpenShift, and EKS-Anywhere. It makes Cloud Orbiter a powerful platform that simplifies the management of existing Kubernetes clusters, enabling organizations to streamline their operations and improve efficiency.
+Cloud Orbiter supports importing clusters from various environments including VMware, OpenShift, KubeAdm, and other Kubernetes distributions. This makes Cloud Orbiter a powerful platform that simplifies the management of existing Kubernetes clusters, enabling organizations to streamline their operations and improve efficiency.
 
 You can use import cluster when you already have a cluster and want to connect with Cloud Orbiter.
 
@@ -766,7 +549,7 @@ You can use import cluster when you already have a cluster and want to connect w
 8. Connect to your cluster: `ssh core@192.168.0.114`
 9. Apply the downloaded file to your cluster: `kubectl apply -f bootstrap-cluster.yaml`
 
-### 13.1 Create Cluster
+### 11.1 Create Cluster
 
 When you do not have a cluster and only have nodes with you and want to deploy your workload over a cluster, then you can use create cluster option via Cloud Orbiter.
 
@@ -779,7 +562,7 @@ When you do not have a cluster and only have nodes with you and want to deploy y
 5. Give a name to a cluster (the name is a mandatory field).
 6. Select cluster type > cluster registry > Kubernetes distribution > Kubernetes version > networking > networking version > virtual IP > description > select master nodes > master host group > select worker nodes > worker host group > click **create**.
 
-### 13.2 Manage Cluster
+### 11.2 Manage Cluster
 
 After importing a brownfield cluster into Cloud Orbiter, users can immediately access all the platform's features and capabilities. It includes health check monitoring, event logging, cost and usage analysis, and application lifecycle management.
 
@@ -791,11 +574,11 @@ To delete an imported cluster, users can go to the Clusters page in the Cloud Or
 
 ---
 
-## 14. Manage Cluster Access
+## 12. Manage Cluster Access
 
 In Cloud Orbiter, cluster access is managed by creating and managing users and service accounts.
 
-### 14.1 Service Accounts
+### 12.1 Service Accounts
 
 Service accounts act as user accounts created explicitly to provide security context mappings for supporting Kubernetes Role-Based Access Control (RBAC) to Cloud Orbiter users. By mapping a user to a target cluster service account, the user can only perform actions on the target cluster that are allowed to that service account.
 
@@ -806,7 +589,7 @@ To map a user to a service account, you can follow the below steps:
 
 With this feature, Cloud Orbiter makes it easy for organizations to manage their service accounts and provide secure access to the Kubernetes clusters.
 
-### 14.2 Cluster Terminal
+### 12.2 Cluster Terminal
 
 Cloud Orbiter also provides a cluster terminal that allows you to access the command line interface (CLI) of your Kubernetes clusters directly from the Cloud Orbiter Management Console. To access the cluster terminal, click the Terminal tab in the Clusters section of the Cloud Orbiter Management Console. You can then enter commands and interact with your clusters just as you would from the command line on your local machine.
 
@@ -817,7 +600,7 @@ Cloud Orbiter also provides a cluster terminal that allows you to access the com
 3. Click on the **Terminal** button from the right corner of the dashboard.
 4. Perform commands over the terminal to fetch the details of Kubernetes resources (e.g., pods, namespaces, config maps, secret, etc.).
 
-### 14.3 Kubeconfig
+### 12.3 Kubeconfig
 
 KubeConfig is a file that contains all the necessary information to access a Kubernetes cluster, including authentication details, server information, and cluster configuration. You can use KubeConfig to access your cluster from a local command line interface (CLI) or from within another application.
 
@@ -834,13 +617,13 @@ You can use the below commands mentioned in Terminal to get a shell to a running
 
 ---
 
-## 15. Observability
+## 13. Observability
 
 Cloud Orbiter offers comprehensive observability for your Kubernetes cluster. Observability is crucial for managing your cluster's health, reliability, and security. Observing your Kubernetes cluster is similar to having a team of experts working around the clock to ensure your cluster's optimal performance.
 
 With observability, you can quickly identify and resolve issues, predict usage patterns and plan for growth, and protect your cluster from potential threats. Observability is achieved through a set of best practices, including monitoring and alerting, centralized logging, metrics collection, tracing, visualizations, and security auditing. These practices enable you to collect and analyze data about your cluster's resources, performance, and security.
 
-### 15.1 What does Cloud Orbiter offer for achieving observability?
+### 13.1 What does Cloud Orbiter offer for achieving observability?
 
 Cloud Orbiter uses Prometheus to achieve observability in your Kubernetes cluster. Prometheus is an open-source monitoring system well-suited for monitoring and alerting in Kubernetes environments. It is designed to collect time-series data from various sources, including Kubernetes metrics APIs, and provide powerful querying and alerting capabilities.
 
@@ -878,7 +661,7 @@ This metric displays the amount of RAM used by each namespace in your cluster. T
 
 This metric measures the network input-output (I/O) pressure on your cluster. By monitoring network I/O pressure, you can detect any potential network bottlenecks and optimize your cluster's network performance.
 
-### 15.2 How can you enable the Prometheus add-on?
+### 13.2 How can you enable the Prometheus add-on?
 
 To enable the Prometheus add-on for your Kubernetes cluster in Cloud Orbiter, follow these simple steps:
 
@@ -895,7 +678,7 @@ Once enabled, you will be able to use the powerful monitoring and alerting capab
 
 ---
 
-## 16. Access Logs
+## 14. Access Logs
 
 Access logs are a crucial aspect of monitoring your cluster activity, identifying security threats, and troubleshooting operational issues. Cloud Orbiter provides a robust solution for managing and analyzing your cluster access logs. There are several reasons why users may find cluster access logs to be important:
 
@@ -909,11 +692,11 @@ For example:
 
 | Time | Username | Project | Operation | IP Address | API |
 |---|---|---|---|---|---|
-| 16/3/2023, 2:28:07 pm | xxxx@yyyy.com | default-user | GET | 174.91.166.94 | /api/v1/namespaces/default/pods?limit=500 |
+| &lt;timestamp&gt; | &lt;user-email&gt; | &lt;project&gt; | &lt;HTTP method&gt; | &lt;client-ip&gt; | &lt;api-endpoint&gt; |
 
-This log entry provides specific information about a user's API access. The user, "xxxx@yyyy.com", accessed the API endpoint "/api/v1/namespaces/default/pods?limit=500" using the HTTP method "GET". The access was made from the IP address "174.91.166.94" at 2:28:07 pm on March 16, 2023, for selected project as "default-project".
+Each entry captures who accessed which API endpoint, the HTTP method used, the originating IP address, the timestamp of the access, and the project context in which the access occurred.
 
-### 16.1 Accessing Cluster Access Logs
+### 14.1 Accessing Cluster Access Logs
 
 With Cloud Orbiter, accessing your cluster access logs is straightforward.
 
@@ -922,7 +705,7 @@ With Cloud Orbiter, accessing your cluster access logs is straightforward.
 3. Select the "access logs" option.
 4. This will display two tabs: "live logs" and "audit logs."
 
-### 16.2 Audit Logs
+### 14.2 Audit Logs
 
 The "audit logs" tab also provides a historical view of all the access logs, making it easy to investigate past events and troubleshoot issues. With the audit logs feature, you can:
 
@@ -936,11 +719,11 @@ For example:
 
 | Time | Username | Operation | IP Address | API |
 |---|---|---|---|---|
-| 16/3/2023, 2:28:07 pm | xxxx@yyyy.com | GET | 174.91.166.94 | /api/v1/namespaces/default/pods?limit=500 |
+| &lt;timestamp&gt; | &lt;user-email&gt; | &lt;HTTP method&gt; | &lt;client-ip&gt; | &lt;api-endpoint&gt; |
 
 The audit logs can be easily searched and filtered using various criteria such as user, date and time, IP address, and API endpoint. This allows you to quickly find specific entries in the log and pinpoint any issues or anomalies.
 
-### 16.3 Live Logs
+### 14.3 Live Logs
 
 The "live logs" tab provides a continuous stream of log events as they occur in your cluster, enabling you to monitor your system's performance and quickly identify any issues. For instance, you can track the number of requests, response times, and error rates, and take action to optimize your system accordingly. The live logs feature helps you:
 
@@ -950,7 +733,7 @@ The "live logs" tab provides a continuous stream of log events as they occur in 
 
 ---
 
-## 17. Test Suites
+## 15. Test Suites
 
 With the rapid advancements in cloud computing and containerization technology, Cloud Orbiter recognizes the importance of ensuring that the cluster's behavior during the ups and downs of application scaling remains predictable to avoid application downtime, which can lead to lost revenue and damage your business's reputation.
 
@@ -978,7 +761,7 @@ Provides an API interface that lets you query and manipulate the state of the AP
 
 Executes a series of tests to ensure the ability of the pods to withstand unexpected disruptions and maintain their stability under varying conditions. These tests evaluate the resilience of the pods to different types of failures, including node failures, network disruptions, and service disruptions.
 
-### 17.1 Bringing Your Own Test Suites
+### 15.1 Bringing Your Own Test Suites
 
 At Cloud Orbiter, we understand that every business has unique requirements and needs regarding application deployment. To cater to this, we offer you the option to bring your own test suites and customize them to meet your specific requirements.
 
@@ -1059,7 +842,7 @@ Once the test suite execution is completed, you can access the execution informa
 3. Select the status that you want to filter (All/Pass/Fail/Warn/Info).
 4. The summary will show the executions related to that status.
 
-### 17.2 Downloading Logs and Reports
+### 15.2 Downloading Logs and Reports
 
 Furthermore, you can view detailed logs related to the test suite execution, allowing you to troubleshoot and diagnose any issues that may arise during the testing process. The logs provide a record of all test steps executed, along with any errors or exceptions encountered during the test execution.
 
@@ -1071,7 +854,7 @@ Apart from the logs, you can download a detailed report that includes an interac
 
 ---
 
-## 18. Application Repositories
+## 16. Application Repositories
 
 ![Application Repositories](../app-repo.png)
 
@@ -1103,9 +886,9 @@ App catalog lists created applications with repositories. Using the refresh butt
 
 ---
 
-## 19. Application Lifecycle Management
+## 17. Application Lifecycle Management
 
-### 19.1 Overview
+### 17.1 Overview
 
 ![Cloud Orbiter Application Lifecycle Management](../app1.png)
 
@@ -1119,9 +902,9 @@ With Cloud Orbiter, you can manage repositories, applications, and application o
 - You can clone your application to any cluster and can make several instances out of the applications.
 - Cloud Orbiter enhances scalability because of which a cloud operation team can install and update a large volume of applications across multiple clusters. Cloud Orbiter helps update, deploy, monitor, and scale applications across clusters in a distinct physical location.
 
-Cloud Orbiter provides multiple applications like Apache, Argo CD, Joomla, Kafka, Cassandra, Cert-manager, Drupal, Grafana, and more. You can deploy multiple applications on multiple public cloud-provided target clusters or ISP/enterprise edge networks.
+Cloud Orbiter provides multiple applications like Apache, Argo CD, Joomla, Kafka, Cassandra, Cert-manager, Drupal, Grafana, and more. You can deploy multiple applications on CKP clusters, edge clusters, or ISP/enterprise edge networks.
 
-### 19.2 Application Onboarding
+### 17.2 Application Onboarding
 
 Application onboarding allows you to create or add application to a cluster. You can create, manage, update, delete, and monitor your application. One major functionality Cloud Orbiter offers application onboarding to the target cluster, including application delivery on the remote Kubernetes clusters. The industry has evolved using a variety of different types of application packaging schemes. However, Cloud Orbiter focuses on supporting the following standard application packaging:
 
@@ -1139,7 +922,7 @@ Helm helps you manage Kubernetes applications. Helm Charts help you define, inst
 
 > **NOTE:** You can create application directly from packaged chart file chart.tgz or with URL of the chart file. Also, app name, release name, namespace, repository name, and chart name is mandatory fields.
 
-### 19.3 Helm Repository
+### 17.3 Helm Repository
 
 The helm repository provides privacy, high availability, massively scalable storage, and access control. It also offers advanced and enterprise-ready repository management for all Helm charts features of Helm repositories.
 
@@ -1154,7 +937,7 @@ Application providers using Helm Chart bundles for packaging usually follow one 
 
 The Helm repository provides a mechanism to manually update/sync the helm repository catalog based on the updates available in the helm repository. This can be triggered by the sync operation provided for a repository.
 
-### 19.4 Helm Application
+### 17.4 Helm Application
 
 Helm is a tool to help you define, install, and upgrade applications running on Kubernetes. At its most basic, Helm is a templating engine that creates Kubernetes manifests. What makes Helm more than that is it can upgrade and scale applications.
 
@@ -1177,7 +960,7 @@ Rest of the details can be filled in as per requirement:
 - **Chart name** — the name of the chart from the list depending upon your selected repository name, for example, grafana, loki, etc.
 - **Version** — version of the chart name. Version, it takes automatically based on what chart name you have selected.
 
-### 19.5 Application Instance
+### 17.5 Application Instance
 
 Once the application is created, you can view application details on its card.
 
@@ -1211,7 +994,7 @@ You can select multiple clusters to add instance. Submitting the form will creat
 
 ---
 
-## 20. Add-ons
+## 18. Add-ons
 
 Cloud Orbiter Add-Ons is a collection of preconfigured components that enhance the functionality of a Kubernetes cluster. These add-ons cater to essential features like monitoring, logging, networking, and more. The purpose of Cloud Orbiter Add-Ons is to offer a simple and seamless way to extend the functionality of Kubernetes.
 
@@ -1273,7 +1056,7 @@ If you encounter an issue while installing or uninstalling an Add-On, use the "v
 
 ---
 
-## 21. Backup and Restore
+## 19. Backup and Restore
 
 ![Backup and Restore](../backup&restore.png)
 
@@ -1325,7 +1108,7 @@ Some examples of when users might want to use Backup Resource Customization incl
 
 ---
 
-## 22. GitOps Integration
+## 20. GitOps Integration
 
 Cloud Orbiter provides a GitOps automation solution for managing your cloud resources with Continuous Delivery. This approach allows you to automate the deployment process and quickly roll out updates to your applications and services.
 
@@ -1352,13 +1135,13 @@ To get started with GitOps automation for Continuous Delivery in Cloud Orbiter, 
 
 ---
 
-## 23. Notification
+## 21. Notification
 
-To provide our users with the best experience, Cloud Orbiter has integrated a real time dashboard notification feature. Keeping our users informed about their projects, infrastructure (clusters, VMs, application deployments), and other important updates is crucial. Our dashboard notification feature sends real-time notifications through the application's dashboard or user interface, ensuring that users are always aware of critical events or alerts. For instance, when a cluster is created on a public cloud, the cluster owner and project admin will automatically receive a notification. This enables users to remain up-to-date with their activities and take prompt action when necessary, without continuously monitoring the app.
+To provide our users with the best experience, Cloud Orbiter has integrated a real time dashboard notification feature. Keeping our users informed about their projects, infrastructure (clusters, VMs, application deployments), and other important updates is crucial. Our dashboard notification feature sends real-time notifications through the application's dashboard or user interface, ensuring that users are always aware of critical events or alerts. For instance, when a cluster is created, the cluster owner and project admin will automatically receive a notification. This enables users to remain up-to-date with their activities and take prompt action when necessary, without continuously monitoring the app.
 
 ---
 
-## 24. What Trigger Notification?
+## 22. What Trigger Notification?
 
 Cloud Orbiter's real time dashboard notification is triggered by various events, ensuring our users are always up-to-date with their project's progress. Some examples of the different triggers that result in a notification being sent to the dashboard include the following:
 
@@ -1398,7 +1181,7 @@ Here are the key features for managing your notifications:
 
 ---
 
-## 25. Settings
+## 23. Settings
 
 Settings are the configurable options and preferences that allow you to customize your experience within the Cloud Orbiter portal. Settings can help you to improve usability, security, and privacy, and provide with more control over how you interact with the portal. It includes the following:
 
@@ -1430,7 +1213,7 @@ Cloud Orbiter's session management capabilities make it easy for you to keep tra
 
 ---
 
-## 26. Cloud Orbiter Access Logs
+## 24. Cloud Orbiter Access Logs
 
 The Cloud Orbiter Access Logs feature allows tenant administrators to view access logs related to their tenancy within the Cloud Orbiter console. This feature provides valuable insights into the activity and usage of the tenancy, and helps identify potential security risks or performance issues. By regularly reviewing and analyzing these logs, you can quickly identify and resolve issues, ensuring that your portal remains secure and functional for all users.
 
@@ -1438,9 +1221,9 @@ Each log entry includes details such as the user's identity, date and time of ac
 
 | Time | Username | Operation | IP Address | API |
 |---|---|---|---|---|
-| 16/3/2023, 2:28:07 pm | xxxx@yyyy.com | GET | 174.91.166.94 | /v1/domain/default-domain/features |
+| &lt;timestamp&gt; | &lt;user-email&gt; | &lt;HTTP method&gt; | &lt;client-ip&gt; | &lt;api-endpoint&gt; |
 
-The user, "xxxx@yyyy.com", accessed the API endpoint "/v1/domain/default-domain/features" using the HTTP method "GET". The access was made from the IP address "174.91.166.94" at 2:28:07 pm on March 16, 2023.
+Each entry captures who accessed which API endpoint, the HTTP method used, the originating IP address, and the exact timestamp of the access.
 
 ### 26.1 Accessing Cloud Orbiter Access Logs
 
@@ -1454,11 +1237,11 @@ By following these steps, you can access the Domain Logs and review the activity
 
 ---
 
-## 27. Creating a Virtual Machine with Cloud Orbiter
+## 25. Creating a Virtual Machine with Cloud Orbiter
 
 ### 27.1 Introduction
 
-Cloud Orbiter provides a seamless public cloud experience for edge data centers, centralizing operations and automation for distributed Kubernetes clusters. With the integration of KubeVirt as an addon, users can efficiently manage VMs, containers, and workloads across various infrastructures.
+Cloud Orbiter provides a seamless enterprise cloud experience for edge data centers, centralizing operations and automation for distributed Kubernetes clusters. With the integration of KubeVirt as an addon, users can efficiently manage VMs, containers, and workloads across various infrastructures.
 
 ### 27.2 Prerequisites
 
@@ -1514,7 +1297,7 @@ With Cloud Orbiter, you can leverage the power of Kubernetes for managing VMs al
 
 ---
 
-## 28. Coredge Kubernetes Platform (CKP)
+## 26. Coredge Kubernetes Platform (CKP)
 
 ### 28.1 Overview
 

@@ -15,24 +15,11 @@ Cloud Orbiter provides comprehensive Kubernetes cluster lifecycle management —
 - Connect multiple clusters so that all management flows through the Cloud Orbiter control plane
 - Remote cluster management via outbound agent — no inbound firewall rules required
 
-## Cluster Types
+## Kubernetes Engine
 
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Cluster Type</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style={{padding: '3px 12px'}}>CKP</td><td style={{padding: '3px 12px'}}>Coredge Kubernetes Platform — custom K8s distribution for cloud, bare metal, edge, and IoT</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>AWS EKS</td><td style={{padding: '3px 12px'}}>Amazon Elastic Kubernetes Service — managed K8s on AWS</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Azure AKS</td><td style={{padding: '3px 12px'}}>Azure Kubernetes Service — managed K8s on Microsoft Azure</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Google GKE</td><td style={{padding: '3px 12px'}}>Google Kubernetes Engine — managed K8s on Google Cloud</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Edge Clusters</td><td style={{padding: '3px 12px'}}>K8s clusters at remote/isolated edge sites managed via central console</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Brownfield Import</td><td style={{padding: '3px 12px'}}>Existing Kubernetes clusters imported from any provider (VMware, OpenShift, EKS-Anywhere, etc.)</td></tr>
-  </tbody>
-</table>
+Cloud Orbiter's Kubernetes engine is **CKP** — Coredge's enterprise-grade, CNCF-certified Kubernetes distribution, purpose-built for on-premise and bare metal. It delivers production clusters with zero distribution-management work on your part.
+
+For the full version stack, provisioning internals, engine components, and built-in add-ons, see [Kubernetes Engine](./kubernetes-engine).
 
 ## Creating a Cluster
 
@@ -47,20 +34,6 @@ Cloud Orbiter provides comprehensive Kubernetes cluster lifecycle management —
    - Master nodes: count, host group, virtual IP
    - Worker nodes: count, host group
 5. Click **Create** — a real-time cluster state dashboard tracks provisioning progress
-
-## Importing an Existing Cluster (Brownfield)
-
-If you already have a running Kubernetes cluster, use the import option:
-
-1. Go to **Clusters → + Add Cluster → Import Cluster**
-2. Provide a cluster name, cluster type, description, and location parameters
-3. Click **Create**
-4. Download the generated bootstrap YAML config file
-5. Apply the config to your existing cluster:
-   ```bash
-   kubectl apply -f bootstrap-cluster.yaml
-   ```
-6. The cluster connects to Cloud Orbiter and appears in the dashboard
 
 ## Day 2 Operations
 

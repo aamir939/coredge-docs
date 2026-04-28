@@ -46,5 +46,6 @@ BYOH bundles are available for the following operating systems:
 
 | Operating System | Availability |
 |------------------|--------------|
-| Ubuntu 20.04 | Available for all supported K8s versions (v1.33.7+) |
+| Ubuntu 22.04 | Available for all supported K8s versions (v1.33.7+) |
+| Ubuntu 24.04 | Available for all supported K8s versions (v1.33.7+) |
 | Red Hat Enterprise Linux 9 | Available for all supported K8s versions (v1.33.7+) |

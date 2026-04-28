@@ -47,30 +47,9 @@ Projects in Cloud Orbiter organize and isolate infrastructure and application re
 4. Enter the user's email address or select a group
 5. Click **Save**
 
-## Onboarding Clusters
+## Onboarding CKP Clusters
 
-Cloud Orbiter supports several cluster onboarding methods:
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Method</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Use Case</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Steps</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Create Cluster</td><td style={{padding: '3px 12px'}}>New clusters on existing nodes or cloud accounts</td><td style={{padding: '3px 12px'}}>Select provider, configure nodes, create</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Import Cluster (Brownfield)</td><td style={{padding: '3px 12px'}}>Existing Kubernetes clusters from any provider</td><td style={{padding: '3px 12px'}}>Download bootstrap YAML, apply to cluster</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Edge Cluster</td><td style={{padding: '3px 12px'}}>Clusters at remote or isolated edge sites</td><td style={{padding: '3px 12px'}}>Add host, create host group, onboard cluster</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Public Cloud (EKS/AKS/GKE)</td><td style={{padding: '3px 12px'}}>Managed Kubernetes on AWS, Azure, or Google Cloud</td><td style={{padding: '3px 12px'}}>Onboard cloud account, create cluster</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>CKP Cluster</td><td style={{padding: '3px 12px'}}>Coredge Kubernetes Platform — custom K8s distribution</td><td style={{padding: '3px 12px'}}>Add hosts, create host groups, create CKP cluster</td></tr>
-  </tbody>
-</table>
-
-## CKP (Coredge Kubernetes Platform) Installation
-
-CKP is a custom Kubernetes distribution built from upstream Kubernetes, preconfigured with all features needed to build production clusters. It supports cloud, bare metal, edge, and IoT deployments with Enterprise support aligned to community release versions.
+Cloud Orbiter exclusively supports **CKP (Coredge Kubernetes Platform)** clusters. CKP is a custom Kubernetes distribution built from upstream Kubernetes, preconfigured with all features needed to build production clusters on bare metal infrastructure with Enterprise support aligned to community release versions.
 
 ### Step 1 — Add Hosts
 
@@ -107,34 +86,3 @@ CKP is a custom Kubernetes distribution built from upstream Kubernetes, preconfi
 7. Click **Create**
 
 A cluster state dashboard appears, tracking provisioning progress in real time.
-
-## Cloud Account Onboarding
-
-To create clusters on public clouds, first onboard your cloud provider account:
-
-### AWS
-
-**Settings:** Admin view → Infrastructure Provider → **Add Account (AWS)**
-
-Required credentials:
-- Access Key
-- Secret Key
-
-### Azure
-
-**Settings:** Admin view → Infrastructure Provider → **Add Account (Azure)**
-
-Required credentials:
-- Tenant ID
-- Subscription ID
-- Client ID
-- Client Secret
-
-### Google Cloud
-
-**Settings:** Admin view → Infrastructure Provider → **Add Account (Google Cloud)**
-
-Required credentials:
-- Google credential JSON file (upload)
-
-After adding credentials, Cloud Orbiter validates them and enables cluster creation on the respective cloud provider.
