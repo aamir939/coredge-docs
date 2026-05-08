@@ -5,6 +5,8 @@ sidebar_position: 2
 
 # CCP Data Sheet
 
+## Hyper-Scaler Grade Cloud Management Platform for Sovereign and Enterprise Cloud
+
 Enterprise and sovereign cloud deployments demand self-service provisioning, strict multi-tenant isolation, high availability across availability zones, and unified governance over compute, storage, networking, and security. Traditional cloud management tools either lack the depth required for regulated environments or fail to deliver the operational simplicity that modern cloud teams expect.
 
 Cirrus Cloud Platform (CCP) was purpose-built to address this gap — delivering hyper-scaler grade cloud management for sovereign, enterprise, and service provider environments with full lifecycle automation, centralized governance, and a self-service portal that scales to 10,000 VMs and 50,000 pods.
