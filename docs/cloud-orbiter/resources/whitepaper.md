@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Production Grade Enterprise Deployment of Hyperledger Fabric Whitepaper
 
-## Abstract
+## Executive Summary
 This whitepaper provides an approach to deploying Hyperledger Fabric, a leading Open-Source blockchain framework, in enterprise environments using Coredge’s Cloud Orbiter platform. Hyperledger Fabric offers a robust and flexible platform for building distributed ledger solutions, enabling organizations to achieve secure, transparent, and efficient business processes.
 Deploying and managing a Hyperledger Fabric production network spanning multiple organizations was time-consuming. The Cloud Orbiter platform made deployment, management, and operating the network seamless.
 This whitepaper aims to equip readers with the knowledge and insights to deploy Hyperledger Fabric networks successfully. It explores the core concepts, architectural components, and key considerations involved in the deployment process. Organizations can leverage the power of Hyperledger Fabric to address complex business challenges and unlock new opportunities without worrying about managing the underlying infrastructure.
