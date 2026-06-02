@@ -100,6 +100,7 @@ const sidebars = {
       collapsed: false,
       items: [
         "ccp/resources/whitepaper",
+        "ccp/resources/technical-guide",
         "ccp/resources/datasheet",
         "ccp/resources/integration-design",
         "ccp/resources/functional-spec",
