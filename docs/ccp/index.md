@@ -14,10 +14,9 @@ CCP works in combination with **Cirrus Cloud Platform (CCP)**, the IaaS Orchestr
 - **Self-Service Provisioning** — On-demand VMs, containers, bare metal, storage, and networking without manual intervention
 - **Centralised Governance** — Unified management plane across all regions and availability zones with built-in API gateway and access control
 - **Multi-Tenant IAM** — Keycloak-based identity with per-tenant realm isolation, SAML 2.0 federation, and 18 pre-defined RBAC roles
-- **High Availability** — Active-passive dual-cluster per region with automated GSLB failover and 2N+1 quorum detection
 - **Metering & FinOps** — Built-in metering, showback, and quota management across all tenants and cells
 - **Enterprise Security** — mTLS in-transit, AES-256 at-rest, OpenFGA RBAC, and per-tenant Keycloak realm isolation
-- **Scalable Architecture** — Scales to 50,000 VMs and 200,000 pods; add worker nodes on demand as workloads grow
+- **Scalable Architecture** — Scales thousands of VMs and pods; add worker nodes on demand as workloads grow
 
 ## Platform Stack
 
@@ -42,21 +41,6 @@ CCP delivers services in three phased milestones:
 
 | Phase | Highlights |
 |---|---|
-| MVP1 | Compute (VM, CaaS, BMaaS), Storage, Networking, Security, Database, Monitoring, IAM, Backup |
-| MVP2 | Archival Storage, MS SQL DBaaS, CDN, MPLS, HSM, DDoS, TLS Management, Kafka |
-| MVP3 | Bandwidth as a Service, MariaDB, NoSQL, DRaaS, Message Broker |
-
-## Key Specifications
-
-| Specification | Value |
-|---|---|
-| Platform Type | Cloud Management Platform (CMP) |
-| Scalability | 50,000 VMs · 200,000 pods |
-| HA Model | Active-Passive dual cluster per region |
-| Failover | Automated GSLB · 2N+1 quorum detection |
-| Encryption | mTLS in-transit · AES-256 at-rest |
-| IAM Engine | Keycloak v24.0.5 · SAML 2.0 |
-| AuthZ Engine | OpenFGA |
-| Database | PostgreSQL 15.7 · MongoDB 5.0.3 |
-| Deployment | Kubernetes — control plane per AZ |
-| OpenStack | v2023.2 |
+| Compute | Virtual Machines, Kubernetes Clusters, and VM Snapshots |
+| Storage | Volumes, Volume Snapshots, Object Storage, File System, Object Storage Archival, and Container Registry |
+| Networks | VPC, Security Groups, Load Balancers, Security, and Monitoring Dashboard |

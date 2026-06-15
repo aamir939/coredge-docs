@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Architecture
 
-## Architecture Overview
+## Architecture Tiers
 
 <div style={{textAlign: "center", margin: "32px auto", maxWidth: "720px"}}>
 <svg viewBox="0 0 720 560" width="100%" xmlns="http://www.w3.org/2000/svg" fontFamily="Inter, Segoe UI, sans-serif">
@@ -37,6 +37,9 @@ sidebar_position: 2
     <filter id="archShadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.4"/>
     </filter>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#475569"/>
+    </marker>
   </defs>
 
   <!-- Background -->
@@ -44,12 +47,11 @@ sidebar_position: 2
 
   <!-- Title -->
   <text x="360" y="38" textAnchor="middle" fill="#f1f5f9" fontSize="17" fontWeight="700" letterSpacing="0.5">CCP Platform Architecture</text>
-  <text x="360" y="56" textAnchor="middle" fill="#94a3b8" fontSize="10.5">Microservices · Kubernetes-native · Multi-AZ</text>
+  <text x="360" y="56" textAnchor="middle" fill="#94a3b8" fontSize="10.5">Microservices · Kubernetes-native · Multi-AZ · Sovereign-Ready</text>
 
-  <!-- ── Layer 1: Portal & API ── -->
+  <!-- Layer 1: Portal & API -->
   <rect x="36" y="74" width="648" height="74" rx="9" fill="url(#portalGrad)" filter="url(#archShadow)"/>
   <text x="56" y="96" fill="#bfdbfe" fontSize="9.5" fontWeight="600" letterSpacing="1" textAnchor="start">PORTAL &amp; API</text>
-  <!-- boxes inside -->
   <rect x="56" y="103" width="144" height="32" rx="5" fill="#1e40af" fillOpacity="0.6"/>
   <text x="128" y="123" textAnchor="middle" fill="#e0f2fe" fontSize="10" fontWeight="500">Self-Service Console</text>
   <rect x="210" y="103" width="130" height="32" rx="5" fill="#1e40af" fillOpacity="0.6"/>
@@ -59,10 +61,9 @@ sidebar_position: 2
   <rect x="490" y="103" width="178" height="32" rx="5" fill="#1e40af" fillOpacity="0.6"/>
   <text x="579" y="123" textAnchor="middle" fill="#e0f2fe" fontSize="10" fontWeight="500">WebSocket / Notifications</text>
 
-  <!-- connector arrow -->
-  <line x1="360" y1="148" x2="360" y2="162" stroke="#475569" strokeWidth="2" markerEnd="url(#arr)"/>
+  <line x1="360" y1="148" x2="360" y2="162" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
 
-  <!-- ── Layer 2: Identity & Access ── -->
+  <!-- Layer 2: Identity & Access -->
   <rect x="36" y="162" width="648" height="64" rx="9" fill="url(#iamGrad)" filter="url(#archShadow)"/>
   <text x="56" y="182" fill="#ddd6fe" fontSize="9.5" fontWeight="600" letterSpacing="1">IDENTITY &amp; ACCESS</text>
   <rect x="56" y="189" width="158" height="28" rx="5" fill="#5b21b6" fillOpacity="0.6"/>
@@ -74,9 +75,9 @@ sidebar_position: 2
   <rect x="518" y="189" width="150" height="28" rx="5" fill="#5b21b6" fillOpacity="0.6"/>
   <text x="593" y="207" textAnchor="middle" fill="#ede9fe" fontSize="10" fontWeight="500">Kafka · Redis · SocketIO</text>
 
-  <line x1="360" y1="226" x2="360" y2="240" stroke="#475569" strokeWidth="2"/>
+  <line x1="360" y1="226" x2="360" y2="240" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
 
-  <!-- ── Layer 3: Orchestration ── -->
+  <!-- Layer 3: Orchestration -->
   <rect x="36" y="240" width="648" height="74" rx="9" fill="url(#orchGrad)" filter="url(#archShadow)"/>
   <text x="56" y="260" fill="#99f6e4" fontSize="9.5" fontWeight="600" letterSpacing="1">ORCHESTRATION</text>
   <rect x="56" y="267" width="192" height="32" rx="5" fill="#115e59" fillOpacity="0.7"/>
@@ -89,9 +90,9 @@ sidebar_position: 2
   <text x="564" y="283" textAnchor="middle" fill="#ccfbf1" fontSize="10" fontWeight="600">Cloud Orbiter — K8s Orchestrator</text>
   <text x="564" y="295" textAnchor="middle" fill="#99f6e4" fontSize="8.5">Cluster Controller · Agent · API</text>
 
-  <line x1="360" y1="314" x2="360" y2="328" stroke="#475569" strokeWidth="2"/>
+  <line x1="360" y1="314" x2="360" y2="328" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
 
-  <!-- ── Layer 4: Services ── -->
+  <!-- Layer 4: Managed Services -->
   <rect x="36" y="328" width="648" height="84" rx="9" fill="url(#svcGrad)" filter="url(#archShadow)"/>
   <text x="56" y="348" fill="#fef3c7" fontSize="9.5" fontWeight="600" letterSpacing="1">MANAGED SERVICES</text>
   <rect x="56" y="355" width="92" height="44" rx="5" fill="#92400e" fillOpacity="0.6"/>
@@ -113,9 +114,9 @@ sidebar_position: 2
   <text x="617" y="372" textAnchor="middle" fill="#fef9c3" fontSize="9.5" fontWeight="500">Monitoring</text>
   <text x="617" y="385" textAnchor="middle" fill="#fde68a" fontSize="8">Zabbix · Prometheus · Grafana</text>
 
-  <line x1="360" y1="412" x2="360" y2="426" stroke="#475569" strokeWidth="2"/>
+  <line x1="360" y1="412" x2="360" y2="426" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
 
-  <!-- ── Layer 5: Infrastructure ── -->
+  <!-- Layer 5: Infrastructure -->
   <rect x="36" y="426" width="648" height="64" rx="9" fill="url(#infraGrad)" filter="url(#archShadow)"/>
   <text x="56" y="446" fill="#bae6fd" fontSize="9.5" fontWeight="600" letterSpacing="1">PHYSICAL INFRASTRUCTURE</text>
   <rect x="56" y="453" width="150" height="28" rx="5" fill="#0c2a4a" fillOpacity="0.7"/>
@@ -127,176 +128,120 @@ sidebar_position: 2
   <rect x="536" y="453" width="148" height="28" rx="5" fill="#0c2a4a" fillOpacity="0.7"/>
   <text x="610" y="471" textAnchor="middle" fill="#e0f2fe" fontSize="10">Multi-AZ · Geo-Replicated</text>
 
-  <!-- Footer legend -->
   <text x="360" y="516" textAnchor="middle" fill="#64748b" fontSize="9">50,000 VMs · 200,000 Pods · Active-Passive HA · AES-256 Encryption</text>
-  <text x="360" y="530" textAnchor="middle" fill="#475569" fontSize="8.5">CCP v3 · CCP OpenStack 2023.2 · Cloud Orbiter · Veritas NetBackup v10.11.2</text>
-
-  <!-- Side label -->
-  <text x="14" y="290" textAnchor="middle" fill="#475569" fontSize="8.5" transform="rotate(-90,14,290)">DATA FLOW</text>
-
-  <!-- Arrows between layers using simple lines with triangles -->
-  <defs>
-    <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
-      <polygon points="0 0, 7 3.5, 0 7" fill="#475569"/>
-    </marker>
-  </defs>
-  <line x1="360" y1="148" x2="360" y2="162" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
-  <line x1="360" y1="226" x2="360" y2="240" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
-  <line x1="360" y1="314" x2="360" y2="328" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
-  <line x1="360" y1="412" x2="360" y2="426" stroke="#475569" strokeWidth="1.5" markerEnd="url(#arr)"/>
+  <text x="360" y="530" textAnchor="middle" fill="#475569" fontSize="8.5">CCP v3 · OpenStack 2023.2 · Cloud Orbiter · Veritas NetBackup v10.11.2</text>
 </svg>
 </div>
 
 ## Platform Component Map
 
-CCP is a microservices-based Cloud Management Platform deployed on Kubernetes, organized into layered tiers from the user-facing portal down to the physical infrastructure it orchestrates.
+| Layer | Components | Technology |
+|---|---|---|
+| **Portal & API** | Self-Service Console, Admin Console, REST API Gateway, WebSocket notifications | Microservices, Kafka, Redis, SocketIO |
+| **Identity & Access** | Authentication, multi-tenant IAM, fine-grained authorization, SAML federation | Keycloak v24.0.5, OpenFGA, SAML 2.0, ADFS / Entra |
+| **Orchestration** | Cloud lifecycle management, IaaS provisioning, Kubernetes cluster orchestration | CCP (Cloud Mgmt), OpenStack v2023.2, Cloud Orbiter, MaaS v3.4.9 |
+| **Compute** | Virtual machines, Kubernetes clusters, bare metal provisioning, snapshots | Nova (KVM), CKP, MaaS, baremetal-plugin |
+| **Storage** | Block volumes, shared file, object buckets, archival, container registry | NetApp v11.9.0, Cinder, Swift/S3, storage-plugin |
+| **Networking** | VPC, subnets, security groups, NAT gateway, elastic IPs, load balancers, VPN, DNS | OpenStack Neutron, Zscaler VPN, CheckPoint / Palo Alto |
+| **Security** | Firewall rules, SSL certificate management, cyber security requests, RBAC | OpenFGA, mTLS, AES-256, Keycloak realms |
+| **Monitoring** | Per-resource metrics, dashboards, alert rules, access logs | Zabbix v7.4.3, Prometheus, Grafana v9.4.3 |
+| **Metering & Billing** | Tenant/cell quota management, showback, notional invoicing, quota requests | orbiter-metering microservice, BSS Portal integration |
+| **Database** | Platform state, session management, caching, audit store | PostgreSQL 15.7, MongoDB 5.0.3, Redis 7.2.5 / 6.2.5 |
+| **Backup** | Incremental and full backup, geo-replication | Veritas NetBackup v10.11.2 |
 
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Layer</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Components</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Technology</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Portal & API</td><td style={{padding: '3px 12px'}}>Self-Service Console, Admin Console, REST API Gateway, WebSocket notifications</td><td style={{padding: '3px 12px'}}>Microservices, Kafka, Redis, SocketIO</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Identity & Access</td><td style={{padding: '3px 12px'}}>Authentication, authorization, multi-tenant IAM, federation</td><td style={{padding: '3px 12px'}}>Keycloak v24.0.5, OpenFGA, SAML 2.0</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Orchestration</td><td style={{padding: '3px 12px'}}>Cluster lifecycle, workflow engine, provisioning logic</td><td style={{padding: '3px 12px'}}>Cloud Orbiter (K8s), CCP (OpenStack), MaaS v3.4.9</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Storage</td><td style={{padding: '3px 12px'}}>Block, object, file, archival storage management</td><td style={{padding: '3px 12px'}}>NetApp v11.9.0, storage-plugin microservice</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Networking</td><td style={{padding: '3px 12px'}}>VPC, LB, VPN, firewall, NAT, DNS, public IP</td><td style={{padding: '3px 12px'}}>OpenStack Neutron, Zscaler VPN, CheckPoint / Palo Alto, TCPWare</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Monitoring</td><td style={{padding: '3px 12px'}}>Operational metrics, dashboards, alarms, log analysis</td><td style={{padding: '3px 12px'}}>Zabbix v7.4.3, Prometheus & Grafana v9.4.3</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Metering & Billing</td><td style={{padding: '3px 12px'}}>Showback, quota management, usage tracking, licensing</td><td style={{padding: '3px 12px'}}>orbiter-metering microservice</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Database</td><td style={{padding: '3px 12px'}}>Platform state storage, session management, caching</td><td style={{padding: '3px 12px'}}>PostgreSQL 15.7, MongoDB 5.0.3, Redis 7.2.5/6.2.5</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Backup</td><td style={{padding: '3px 12px'}}>Incremental and full backup, geo-replication</td><td style={{padding: '3px 12px'}}>Veritas NetBackup v10.11.2</td></tr>
-  </tbody>
-</table>
+## Key Microservices
 
-## Core Microservices
-
-CCP is composed of purpose-built microservices communicating through well-defined REST APIs, internal routing, and Kafka message queues.
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Microservice</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Functional Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style={{padding: '3px 12px'}}>console</td><td style={{padding: '3px 12px'}}>Self-Service Portal UI — primary user-facing interface for cloud resource provisioning</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>admin-console</td><td style={{padding: '3px 12px'}}>Admin Portal UI — platform operator interface for tenant, quota, and infrastructure management</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>platform</td><td style={{padding: '3px 12px'}}>Core platform APIs — compute, volume, network, core-mgmt functionalities</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>admin-platform</td><td style={{padding: '3px 12px'}}>Admin platform APIs — manage flavors, images, AZs, regions, and virtual resource constructs</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>auth</td><td style={{padding: '3px 12px'}}>Keycloak authentication service — identity and multi-tenant IAM</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>orbiter-api</td><td style={{padding: '3px 12px'}}>API server for Cloud Orbiter — exposes Kubernetes cluster management APIs</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>orbiter-controller</td><td style={{padding: '3px 12px'}}>Backend engine for orbiter-api — runtime controller for Kubernetes orchestration</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>orbiter-auth</td><td style={{padding: '3px 12px'}}>Authorization gateway for the Orbiter subsystem</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>orbiter-metering</td><td style={{padding: '3px 12px'}}>Metering, showback, quota management, and licensing</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>orbiter-term</td><td style={{padding: '3px 12px'}}>Terminal access — Kubernetes-based shell for clusters</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>core-mgmt</td><td style={{padding: '3px 12px'}}>Project manager service — organizations, cells, user mappings</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>onboarding</td><td style={{padding: '3px 12px'}}>User and organization onboarding workflows</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>workflow-controller</td><td style={{padding: '3px 12px'}}>Workflow provider for internal CCP provisioning and lifecycle workflows</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>notification</td><td style={{padding: '3px 12px'}}>Sends notifications to external platforms — SMS, email (SMTP), webhooks</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>socketio</td><td style={{padding: '3px 12px'}}>Pushes real-time events and notifications to the console UI</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>storage-plugin</td><td style={{padding: '3px 12px'}}>Storage capabilities integration — NetApp backend</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>baremetal-plugin</td><td style={{padding: '3px 12px'}}>Bare metal server management — MaaS backend integration</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>observability-ui</td><td style={{padding: '3px 12px'}}>Cluster observability UI — exposes CPU, RAM, and cluster metrics</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>frontend</td><td style={{padding: '3px 12px'}}>Cluster management UI — K8s cluster registration, app deployment, container registry</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>ordr_mgmt</td><td style={{padding: '3px 12px'}}>Pushes CRUD events externally for integration and audit purposes</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>OpenFGA</td><td style={{padding: '3px 12px'}}>Authorization database — fine-grained RBAC enforcement</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>kafka</td><td style={{padding: '3px 12px'}}>Internal messaging queue for inter-component communication</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>client-plugin</td><td style={{padding: '3px 12px'}}>Client-specific custom flows and integration hooks</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>platform-celery / celery</td><td style={{padding: '3px 12px'}}>Asynchronous task processing — multiple Celery workers for different task domains</td></tr>
-  </tbody>
-</table>
-
-## High Availability Architecture
-
-CCP implements a multi-AZ high availability model designed for zero-downtime failover and continuous service delivery.
-
-### HA Design
-
-- **Active-Passive Dual Cluster Per Region:** Cluster 1 (primary) in AZ1, Cluster 2 (standby) in AZ2. Automated GSLB-based failover with 2N+1 quorum cluster detection
-- **Kubernetes Control Plane Per AZ:** Each availability zone hosts an independent Kubernetes control plane, ensuring cluster-level resilience
-- **Database HA:**
-  - PostgreSQL: Logical and Streaming Replication between AZs
-  - MongoDB: Active-Active with change-stream replication
-  - Redis: Clustered session and cache replication
-
-### Backup Strategy
-
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Backup Type</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Frequency</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Retention</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Incremental Backup</td><td style={{padding: '3px 12px'}}>Every 30 minutes</td><td style={{padding: '3px 12px'}}>3 months, geo-replicated</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Full Backup</td><td style={{padding: '3px 12px'}}>Every 24 hours</td><td style={{padding: '3px 12px'}}>3 months, geo-replicated</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Audit Logs</td><td style={{padding: '3px 12px'}}>Continuous</td><td style={{padding: '3px 12px'}}>Long-term retention per compliance requirement</td></tr>
-  </tbody>
-</table>
-
-Backup operations are managed through Veritas NetBackup v10.11.2.
-
-## Resource Hierarchy
-
-CCP organizes all resources in a three-level governance hierarchy:
-
-1. **Tenant** — Top-level boundary. One per customer account. All users, cells, and resources are scoped within a tenant. Quota enforced at this level.
-2. **Cell** — An isolated project or environment within a Tenant. Represents a department, workload environment, or service tier. Quota enforced independently.
-3. **Resources** — The cloud services consumed within a Cell: VMs, volumes, clusters, load balancers, databases, and more.
-
-The BSS Portal is the primary identity store for tenant and user creation. CCP creates a unique Keycloak realm per tenant to ensure complete identity isolation.
+- **console** — Self-Service Portal UI; primary user-facing interface for VM, storage, networking, and Kubernetes provisioning
+- **admin-console** — Admin Portal UI; operator interface for tenant lifecycle, quota packages, catalogs, and provider management
+- **platform** — Core platform APIs; compute, volume, network, and core-mgmt functionalities
+- **admin-platform** — Admin platform APIs; manage flavors, images, availability zones, regions, and virtual resource constructs
+- **auth** — Keycloak authentication service; identity management and per-tenant realm isolation
+- **orbiter-api** — API server for Cloud Orbiter; exposes Kubernetes cluster management and application deployment APIs
+- **orbiter-controller** — Backend runtime engine for orbiter-api; handles Kubernetes orchestration logic
+- **orbiter-auth** — Authorization gateway for the Cloud Orbiter subsystem
+- **orbiter-metering** — Metering, showback, quota management, and licensing
+- **orbiter-term** — In-browser terminal; Kubernetes shell access for managed and imported clusters
+- **core-mgmt** — Project manager service; organizations, cells, user mappings, and resource hierarchy
+- **onboarding** — User and organization onboarding workflows; BSS Portal integration
+- **workflow-controller** — Declarative workflow engine; provisioning, lifecycle, and step sequencing
+- **notification** — Sends notifications to external platforms — SMS, email (SMTP), webhooks
+- **socketio** — Pushes real-time events and notifications to the console UI
+- **storage-plugin** — Storage capabilities integration with NetApp backend
+- **baremetal-plugin** — Bare metal server management via MaaS backend
+- **observability-ui** — Cluster observability UI; exposes CPU, RAM, and cluster metrics
+- **OpenFGA** — Fine-grained authorization database; RBAC enforcement at every API boundary
+- **kafka** — Internal messaging queue for inter-component communication
 
 ## Portal Architecture
 
-CCP is accessed through two complementary portals with distinct personas:
+CCP is accessed through two complementary portals serving distinct personas:
 
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Portal</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Audience</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Primary Functions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Self-Service Console</td><td style={{padding: '3px 12px'}}>End users, tenant administrators</td><td style={{padding: '3px 12px'}}>Provision VMs, storage, networking, containers, databases; manage cells and users</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Admin Console</td><td style={{padding: '3px 12px'}}>Cloud administrators, platform operators</td><td style={{padding: '3px 12px'}}>Manage tenants, quotas, catalogs, providers, infrastructure health, OpenStack environment</td></tr>
-  </tbody>
-</table>
+| Portal | Audience | Primary Functions |
+|---|---|---|
+| **Self-Service Console** | End users, tenant administrators | Provision VMs, storage, networking, Kubernetes clusters, databases; manage snapshots, quotas, users, and monitoring |
+| **Admin Console** | Cloud administrators, platform operators | Manage tenants, quota packages, compute/storage/backup providers, catalogs, regions, availability zones, and platform health |
 
-Both portals share the same underlying CCP platform, ensuring consistent governance, RBAC enforcement, and resource management across all interactions.
+Both portals share the same underlying CCP platform, ensuring consistent RBAC enforcement, audit trails, and resource governance across all interactions.
 
-## Kubernetes Cluster Management — Cluster Controller and Agent
+## Infrastructure Specifications
 
-CCP manages Kubernetes clusters through a controller-agent architecture:
+### Compute
 
-- **Cluster Controller:** Central entity connecting and orchestrating all customer Kubernetes clusters. Communicates with agents over port 8030/8040. Centralizes Kubernetes API and CLI access.
-- **Cluster Agent:** Deployed on each target Kubernetes cluster. Initiates outbound connection to the Cluster Controller. Once the handshake completes, the Controller can issue commands and act as proxy for Kubernetes CLI and APIs.
+| Specification | Detail |
+|---|---|
+| **VM Hypervisor** | KVM via OpenStack Nova |
+| **Bare Metal** | Metal-as-a-Service (MaaS v3.4.9) |
+| **Kubernetes** | CKP-managed and externally imported clusters |
+| **VM Flavors** | Configurable — tiered compute types with vCPU, RAM, disk, and GPU profiles |
+| **Availability Zones** | Multi-AZ placement; AZ-scoped resource scheduling |
+| **Maximum VMs** | 50,000 VMs per platform |
+| **Maximum Pods** | 200,000 pods per platform |
+| **Auto-scaling** | Node pool auto-scaling with configurable min/max node counts |
 
-This model allows CCP to manage Kubernetes clusters across multiple AZs and regions without requiring inbound firewall rules into each cluster.
+### Storage
 
-## Infrastructure Pre-Requisites
+| Storage Tier | Backend | Key Capabilities |
+|---|---|---|
+| **Block (Volumes)** | NetApp Cinder-style | Tiered performance, extend size, snapshots, VPC-scoped |
+| **Shared File** | NetApp NFS/CIFS | Access Points with protocol/permission profiles, AZ-scoped |
+| **Object Storage** | S3-API compatible | Versioning, object lock (WORM), replication, per-bucket access keys |
+| **Archival (Coldline)** | Cold tier | Low-cost long-term retention, compliance/DR use cases |
+| **Container Registry** | OCI-compliant | Plan-based image registry for managed and imported clusters |
+| **Volume Snapshots** | Point-in-time | Clone-and-restore workflows, disaster recovery |
 
-<table style={{fontSize: '0.85rem', width: 'auto', borderCollapse: 'collapse'}}>
-  <thead>
-    <tr>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Requirement</th>
-      <th style={{padding: '4px 12px', textAlign: 'left'}}>Detail</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style={{padding: '3px 12px'}}>SSL Certificates</td><td style={{padding: '3px 12px'}}>Wildcard SSL certificates for CCP hosting domain</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Load Balancer</td><td style={{padding: '3px 12px'}}>Load balancer with Virtual IPs (VIPs) per endpoint</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>DNS</td><td style={{padding: '3px 12px'}}>DNS server with dynamic domain support</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Storage</td><td style={{padding: '3px 12px'}}>Kubernetes-compliant high IOPS storage for control plane</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Connectivity</td><td style={{padding: '3px 12px'}}>SMTP, NTP, and DNS server connectivity</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Container Registry</td><td style={{padding: '3px 12px'}}>Container registry access for platform image deployment</td></tr>
-  </tbody>
-</table>
+### Network
+
+| Component | Technology | Purpose |
+|---|---|---|
+| **VPC** | OpenStack Neutron + SDN | Tenant-isolated L3 network boundary per project |
+| **Subnets** | AZ-scoped CIDR blocks | L2 segmentation within VPC; DHCP-managed |
+| **Security Groups** | Stateful firewall | Per-VM inbound/outbound traffic control by protocol, port, and IP |
+| **NAT Gateway** | Egress-only gateway | Private subnet internet access without inbound exposure |
+| **Elastic IP** | Reserved static public IPv4 | Fixed ingress endpoints for tenant workloads |
+| **Load Balancers** | L4 (TCP/UDP) + L7 (HTTP/HTTPS) | Traffic distribution with health checks and SSL certificate management |
+| **VPN Gateway** | Site-to-Site + Point-to-Site | Secure on-premises connectivity |
+| **DNS Management** | Internal DNS zones | Resource record management per tenant |
+
+### Security
+
+| Layer | Mechanism | Detail |
+|---|---|---|
+| **Identity** | Keycloak v24 + SAML 2.0 | Per-tenant realm isolation; ADFS and Entra federation |
+| **Authorization** | OpenFGA RBAC | Fine-grained per-API authorization; 18 pre-defined roles |
+| **Network** | VPC + Security Groups + NAT | Hardware-enforced segmentation; no cross-tenant routing |
+| **Data at Rest** | AES-256 | Platform-wide encryption across all storage tiers |
+| **Data in Transit** | mTLS | Mutual TLS for all service-to-service communication |
+| **Audit** | Organization Activity Logs | Real-time, searchable, organisation-scoped audit feed |
+| **Workload** | VM Lock + Key Pair auth | Prevents concurrent conflicting operations; per-VM credentials |
+
+### High Availability
+
+| Component | HA Mechanism |
+|---|---|
+| **Control Plane** | Active-Passive dual cluster per region — Cluster 1 (AZ1) primary, Cluster 2 (AZ2) standby |
+| **Failover** | Automated GSLB-based failover with 2N+1 quorum detection |
+| **PostgreSQL** | Logical and Streaming Replication between AZs |
+| **MongoDB** | Active-Active with change-stream replication |
+| **Redis** | Clustered session and cache replication |
+| **Backup — Incremental** | Every 30 minutes, geo-replicated, 3-month retention |
+| **Backup — Full** | Every 24 hours, geo-replicated, 3-month retention |

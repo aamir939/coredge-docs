@@ -74,10 +74,9 @@ CCP operates as the top layer of a three-tier platform stack:
     </tr>
   </thead>
   <tbody>
-    <tr><td style={{padding: '3px 12px'}}>Virtual Machines</td><td style={{padding: '3px 12px'}}>Up to 50,000 VMs per deployment</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Container Pods</td><td style={{padding: '3px 12px'}}>Up to 200,000 pods per deployment</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>High Availability</td><td style={{padding: '3px 12px'}}>Active-Passive dual cluster per region; automated GSLB failover</td></tr>
-    <tr><td style={{padding: '3px 12px'}}>Multi-Region</td><td style={{padding: '3px 12px'}}>Multi-region with per-AZ Kubernetes control planes</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Virtual Machines</td><td style={{padding: '3px 12px'}}>Up to hundreds' of VMs per deployment</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Container Pods</td><td style={{padding: '3px 12px'}}>Support large scale containerized workloads</td></tr>
+    <tr><td style={{padding: '3px 12px'}}>Multi-Region</td><td style={{padding: '3px 12px'}}>Multi-region with Kubernetes control planes</td></tr>
     <tr><td style={{padding: '3px 12px'}}>Scalability</td><td style={{padding: '3px 12px'}}>Worker nodes added on demand as workloads grow</td></tr>
   </tbody>
 </table>
